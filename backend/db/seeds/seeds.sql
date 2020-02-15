@@ -22,7 +22,7 @@ INSERT INTO destinations(id, city, country, image_url) VALUES
 INSERT INTO activities(name, price_cents, time_operation, latitude, longtitude, image_url, destination_id) VALUES
 -- korea
 ('Fishing', 6000, '5AM-5PM', 33.2323525,126.5407906, 'https://c.badatime.com/data/editor/1708/thumb-20170807125058_ulwcwqqk_600x450.jpg', 7),
-('Snerkling', 4000, '10AM-6PM', 33.2383688,126.5459496, 'https://lh3.googleusercontent.com/proxy/-BcB0oMqAdNWwYF-HFoHFhTtapvwoGxv6_ZonP2nu4yDdEcAZ8vHNYsdDKpuGPCfd0pSHbHBJfR__aSI3SRc1nFqUDceZKpA8TXKmo6TRVUx02t9aLNsphhN-S5aiBhU7AOum3Zn36RVvNK_zO05GA', 7),
+('Snorkling', 4000, '10AM-6PM', 33.2383688,126.5459496, 'https://lh3.googleusercontent.com/proxy/-BcB0oMqAdNWwYF-HFoHFhTtapvwoGxv6_ZonP2nu4yDdEcAZ8vHNYsdDKpuGPCfd0pSHbHBJfR__aSI3SRc1nFqUDceZKpA8TXKmo6TRVUx02t9aLNsphhN-S5aiBhU7AOum3Zn36RVvNK_zO05GA', 7),
 ('Parasailing', 10000, '10AM-6PM', 33.2390202,126.55439, 'https://thumb-wishbeen.akamaized.net/8Z_Ok8ER1LoMYPY23ebMj6gnEZA=/880x/smart/filters:no_upscale()/img-wishbeen.akamaized.net/post/1467880176342_%ED%8C%A8%EB%9F%AC%EC%84%B8%EC%9D%BC%EB%A7%81.jpg', 7),
 ('Whale Seeing', 12000, '11AM-4PM', 33.2387977,126.5985461, 'https://thumb-wishbeen.akamaized.net/-d94EHHM10G9IWeKQHhYPDe546k=/880x/smart/filters:no_upscale()/img-wishbeen.akamaized.net/post/1467880250226_%EC%9B%A8%EC%9D%BC%EC%99%80%EC%B9%AD.jpg', 7),
 ('Kayaking', 8000, '9AM-3PM', 33.2403173,126.6087719, 'https://thumb-wishbeen.akamaized.net/6gMM2w1V6atNn5o8cel9XdSfQvQ=/880x/smart/filters:no_upscale()/img-wishbeen.akamaized.net/post/1467880304166_2943614679_598a8cb0fb_z.jpg', 7),
