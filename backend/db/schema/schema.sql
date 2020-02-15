@@ -1,6 +1,12 @@
 -- Drop and recreate Users table (Example)
 
 DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS friends CASCADE;
+DROP TABLE IF EXISTS trips CASCADE;
+DROP TABLE IF EXISTS schedules CASCADE;
+DROP TABLE IF EXISTS itineraries CASCADE;
+DROP TABLE IF EXISTS activities CASCADE;
+DROP TABLE IF EXISTS destinations CASCADE;
 
 
 CREATE TABLE users (
@@ -8,14 +14,14 @@ CREATE TABLE users (
   first_name VARCHAR(55) NOT NULL,
   last_name VARCHAR(55) NOT NULL,
   email VARCHAR(55) NOT NULL,
-  password VARCHAR(55) NOT NULL,
+  password VARCHAR(55) NOT NULL
 );
 
 CREATE TABLE friends(
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   friend_id INTEGER REFERENCES users(id) ON DELETE CASCADE
-)
+);
 
 CREATE TABLE trips (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -42,7 +48,7 @@ CREATE TABLE activities (
   latitude DECIMAL(10,8) NOT NULL,
   longtitude DECIMAL(11,8) NOT NULL,
   image_url TEXT,
-  destination_id INTEGER REFERENCES destinations(id) ON DELETE CASCADE,
+  destination_id INTEGER REFERENCES destinations(id) ON DELETE CASCADE
 );
 
 CREATE TABLE itineraries (
