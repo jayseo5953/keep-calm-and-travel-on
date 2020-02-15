@@ -7,12 +7,13 @@
 
 const express = require('express');
 const router  = express.Router();
-
+/*
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT * FROM users;`)
+    db.query(`SELECT * FROM users`)
       .then(data => {
         const users = data.rows;
+        console.log(users)
         res.json({ users });
       })
       .catch(err => {
@@ -20,6 +21,26 @@ module.exports = (db) => {
           .status(500)
           .json({ error: err.message });
       });
+  });
+  return router;
+};
+*/
+module.exports = (userService) => {
+  
+  router.get("/", (req, res) => {
+    res.render("index");
+  });
+
+  router.get("/api/users", async (req, res) => {
+    try {
+      const [users] = await Promise.all([
+        await userService.getUser()
+      ]);
+      console.log(users);
+      res.send({ users });
+    } catch (err) {
+      console.error(err);
+    }
   });
   return router;
 };
