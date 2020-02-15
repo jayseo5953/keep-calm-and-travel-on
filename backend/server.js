@@ -34,11 +34,28 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
+const activityRoutes = require("./routes/activities");
 const widgetsRoutes = require("./routes/widgets");
+
+
+// All Repository Factories (CONTAINS ALL THE DATABASE LOGICS)
+const userRepositoryFactory = require("./repository/users_repository");
+const activityRepositoryFactory = require("./repository/activities_repository");
+const userServiceFactory = require("./service/users_service");
+const activityServiceFactory = require("./service/activities_service");
+
+// All Services (CONTAINS ALL CRUD ACTIONS THAT ULTIMATELY LEAD TO REPOSITORIES)
+const usersRepository = userRepositoryFactory(db);
+const userService = userServiceFactory(usersRepository);
+
+const activtiesRepository = activityRepositoryFactory(db);
+const activityService = activityServiceFactory(activtiesRepository);
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
-app.use("/api/users", usersRoutes(db));
+app.use("/", usersRoutes(userService));
+app.use("/", activityRoutes(activityService));
+
 app.use("/api/widgets", widgetsRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
