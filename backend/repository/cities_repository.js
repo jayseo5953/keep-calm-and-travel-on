@@ -7,26 +7,26 @@ module.exports = (db) => {
         .then((res) => res.rows)
         .catch(e => console.error(e))
     },
-    getCity: (arg) => {
+    getCityByCity: (arg) => {
       arg = arg.toLowerCase()
-      const qs = `SELECT city FROM destinations WHERE lower(city) like $1;`;
+      const qs = `SELECT city FROM destinations WHERE lower(city) LIKE '%'|| $1 || '%';`;
+      return db.query(qs, [arg])
+        .then((res) => res.rows)
+        .catch(e => console.error(e))
+    },
+    getCityByCountry: (arg) => {
+      const qs = `SELECT city FROM destinations WHERE lower(country) LIKE '%'|| $1 || '%';`;
       return db.query(qs,[arg])
         .then((res) => res.rows)
         .catch(e => console.error(e))
     },
-    getCityWithCountry: (arg) => {
+    getCityByBudget: (arg) => {
       const qs = `SELECT city FROM destinations WHERE lower(city) = $1;`;
       return db.query(qs,[arg])
         .then((res) => res.rows)
         .catch(e => console.error(e))
     },
-    getCityWithBudget: (arg) => {
-      const qs = `SELECT city FROM destinations WHERE lower(city) = $1;`;
-      return db.query(qs,[arg])
-        .then((res) => res.rows)
-        .catch(e => console.error(e))
-    },
-    getCityWithActivity: (arg) => {
+    getCityByActivity: (arg) => {
       const qs = `SELECT city FROM destinations WHERE lower(city) = $1;`;
       return db.query(qs,[arg])
         .then((res) => res.rows)
