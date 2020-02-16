@@ -8,7 +8,6 @@ module.exports = (db) => {
         .catch(e => console.error(e))
     },
     getCityByCity: (arg) => {
-      arg = arg.toLowerCase()
       const qs = `SELECT city FROM destinations WHERE lower(city) LIKE '%'|| $1 || '%';`;
       return db.query(qs, [arg])
         .then((res) => res.rows)

@@ -10,7 +10,7 @@ module.exports = (activityService) => {
   router.get("/", async (req, res) => {
     try {
       const [activities] = await Promise.all([
-        await activityService.getAllActivities()
+        await activityService.getActivitiesByCity('bali')
         // await activityService.test()
       ]);
       console.log(activities);
