@@ -7,7 +7,16 @@ module.exports = (db) => {
         .then((res) => res.rows[0])
         .catch(e => console.error(e))
     },
-
+    getActivitiesByCity: (arg) => {
+      const qs = `
+      SELECT * FROM activities 
+      JOIN destinations 
+      ON destination_id = destinations.id 
+      WHERE lower(city) = $1;`;
+      return db.query(qs,[arg])
+        .then((res) => res.rows)
+        .catch(e => console.error(e))
+    },
     test: async () => {
       try {
         const qs = `SELECT * FROM activities AS activity;`;
