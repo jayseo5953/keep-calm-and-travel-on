@@ -8,7 +8,7 @@ module.exports = (citiesService) => {
     try {
       const [cities] = await Promise.all([
         // await citiesService.getAllCities()
-        await citiesService.getCity('spa')
+        await citiesService.getCity('aqua')
       ]);
       console.log(cities);
       res.send({ cities });

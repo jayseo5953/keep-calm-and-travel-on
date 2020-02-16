@@ -4,15 +4,22 @@ module.exports = (citiesRepository) => {
     getAllCities: () => {
       return citiesRepository.getAllCities();
     },
-    getCity: async (a) => {
-     let result = await Promise.resolve (citiesRepository.getCityByCity(a))
-     console.log("result"+result)
-     if (!result.length) {
-      return Promise.resolve (citiesRepository.getCityByCountry(a))
-     } else {
-       return result
-     }
-    
+    getCity: async (userInput) => {
+      if (!isNaN(userInput)) {
+        return Promise.resolve(citiesRepository.getCityByBudget(Number(userInput)*100))
+      } else {
+        let result = await Promise.resolve (citiesRepository.getCityByCity(userInput))
+        if (result.length === 0) {
+          let result2 = await Promise.resolve (citiesRepository.getCityByCountry(userInput))
+          if (result2.length === 0) {
+            return Promise.resolve(citiesRepository.getCityByActivity(userInput))
+          } else {
+            return result2
+          }
+        } else {
+         return result
+        }
+      }
     }
   }
 }
