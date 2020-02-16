@@ -26,18 +26,15 @@ module.exports = (db) => {
 };
 */
 module.exports = (userService) => {
-  
-  router.get("/", (req, res) => {
-    res.render("index");
-  });
 
-  router.get("/api/users", async (req, res) => {
+  router.get("/", async (req, res) => {
     try {
-      const [users] = await Promise.all([
-        await userService.getUser()
-      ]);
-      console.log(users);
-      res.send({ users });
+      // const [users] = await Promise.all([
+      //   await userService.getUser()
+      // ]);
+      // console.log(users);
+      // res.send({ users });
+      res.render("users")
     } catch (err) {
       console.error(err);
     }

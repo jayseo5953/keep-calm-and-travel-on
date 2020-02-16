@@ -4,6 +4,5 @@ module.exports = (usersRepository) => {
     getUser: (userId) => {
       return usersRepository.getUser(userId)
     }
-    
   }
 }
