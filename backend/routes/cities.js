@@ -1,16 +1,19 @@
 const express = require('express');
 const router  = express.Router();
 
-module.exports = (activityService) => {
+
+module.exports = (citiesService) => {
 
   router.get("/", async (req, res) => {
     try {
-      // const [users] = await Promise.all([
-      //   await userService.getUser()
-      // ]);
-      // console.log(users);
-      // res.send({ users });
-      res.render("cities")
+      const [cities] = await Promise.all([
+        // await citiesService.getAllCities()
+        await citiesService.getCity('bali')
+      ]);
+      console.log(cities);
+      res.send({ cities });
+      // res.render("cities")
+      // const test = 'Inside cities routes'
     } catch (err) {
       console.error(err);
     }

@@ -44,6 +44,9 @@ const activityRepositoryFactory = require("./repository/activities_repository");
 const userServiceFactory = require("./service/users_service");
 const activityServiceFactory = require("./service/activities_service");
 
+const cityServiceFactory = require('./service/cities_service');
+const cityRepositoryFactory = require('./repository/cities_repository');
+
 // All Services (CONTAINS ALL CRUD ACTIONS THAT ULTIMATELY LEAD TO REPOSITORIES)
 const usersRepository = userRepositoryFactory(db);
 const userService = userServiceFactory(usersRepository);
@@ -51,10 +54,15 @@ const userService = userServiceFactory(usersRepository);
 const activtiesRepository = activityRepositoryFactory(db);
 const activityService = activityServiceFactory(activtiesRepository);
 
+const citiesRepository = cityRepositoryFactory(db);
+const cityService = cityServiceFactory(citiesRepository);
+
+
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(userService));
-app.use("/api", apiRoutes);
+app.use("/api", apiRoutes(activityService,cityService));
 
 // Note: mount other resources here, using the same pattern above
 
