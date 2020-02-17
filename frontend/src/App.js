@@ -1,5 +1,4 @@
 /* Nested Routing */
-
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -9,8 +8,22 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+import axios from 'axios';
+
+const getActivityByCityName = function (cityName) {
+  let result
+  let req = {
+    url: `/api/activities/${cityName}`,
+    method: `GET`
+  }
+  return axios(req)
+};
 
 export default function App() {
+  let activities = getActivityByCityName('cebu');
+  activities.then(res => {
+    console.log(res.data)
+  })
   return (
     <Router>
       <div>
