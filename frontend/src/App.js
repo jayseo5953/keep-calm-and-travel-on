@@ -1,5 +1,4 @@
 /* Nested Routing */
-
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -9,11 +8,31 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
+import axios from 'axios';
+
+import SearchBar from './components/SearchBar';
+
+const getActivityByCityName = function (cityName) {
+  let req = {
+    url: `/api/activities/${cityName}`,
+    method: `GET`
+  }
+  return axios(req)
+};
+
+const consoleLogTest = function (a) {
+  console.log(a)
+}
 
 export default function App() {
+  let activities = getActivityByCityName('cebu');
+  activities.then(res => {
+    console.log(res.data)
+  })
   return (
     <Router>
       <div>
+        <SearchBar onChange={consoleLogTest}/>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -43,7 +62,7 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2>Jay Says it wont work</h2>;
 }
 
 function About() {
