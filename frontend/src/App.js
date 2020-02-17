@@ -20,8 +20,8 @@ const getActivityByCityName = function (cityName) {
   return axios(req)
 };
 
-const consoleLogTest = function () {
-  console.log('I am the console log function')
+const consoleLogTest = function (a) {
+  console.log(a)
 }
 
 export default function App() {
@@ -62,7 +62,7 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2>Jay Says it wont work</h2>;
 }
 
 function About() {
