@@ -10,14 +10,19 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 
+import SearchBar from './components/SearchBar';
+
 const getActivityByCityName = function (cityName) {
-  let result
   let req = {
     url: `/api/activities/${cityName}`,
     method: `GET`
   }
   return axios(req)
 };
+
+const consoleLogTest = function () {
+  console.log('I am the console log function')
+}
 
 export default function App() {
   let activities = getActivityByCityName('cebu');
@@ -27,6 +32,7 @@ export default function App() {
   return (
     <Router>
       <div>
+        <SearchBar onChange={consoleLogTest}/>
         <ul>
           <li>
             <Link to="/">Home</Link>
