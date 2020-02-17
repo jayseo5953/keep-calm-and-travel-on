@@ -51,5 +51,5 @@
     "@storybook/preset-create-react-app": "^1.5.2",
     "@storybook/react": "^5.3.13"
   },
-  "proxy": "http://localhost:8001"
+  "proxy": "http://localhost:3001"
 }
