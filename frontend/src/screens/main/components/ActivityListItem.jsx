@@ -3,7 +3,6 @@ import React from 'react';
 
 const ActivityListItem = (props) => {
 
-
   const dragStart = e => {
     const target = e.target;
 

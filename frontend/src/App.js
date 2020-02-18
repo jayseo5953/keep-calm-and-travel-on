@@ -22,7 +22,6 @@ import ActivityItem from './components/ActivityItem';
 
 export default function App() {
   return (
-    
     <div className='flexbox'>
      <Router>
       <div>

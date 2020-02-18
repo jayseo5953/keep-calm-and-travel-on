@@ -11,8 +11,7 @@ const Main = (props) => {
   const budget = props.match.params.budget
 
   const [activities, setActivities] = useState([])
-
-  
+    
   useEffect(()=>{
     getActivities(city, setActivities)
   },[])
