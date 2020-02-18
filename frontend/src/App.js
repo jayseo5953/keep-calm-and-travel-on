@@ -62,7 +62,7 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Jay Says it wont work</h2>;
+  return <h2>Jay Says it wont work. What really?!</h2>
 }
 
 function About() {
