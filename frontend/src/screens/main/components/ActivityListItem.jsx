@@ -8,18 +8,18 @@ const ActivityListItem = (props) => {
     const target = e.target;
 
     e.dataTransfer.setData("activityId", target.id);
+    // e.dataTransfer.effectAllowed = props.dropEffect;
 
-    setTimeout( () => {
-      target.style.display = "none";
-    }, 0);
+    // setTimeout( () => {
+    //   target.style.display = "none";
+    // }, 0);
 
   };
 
   const dragOver = e => {
     e.stopPropagation();
+    // e.dataTransfer.dropEffect = props.dropEffect
   }
-
-  let activity = props.activity
 
   return (
     <div
@@ -29,10 +29,9 @@ const ActivityListItem = (props) => {
       onDragStart = {dragStart} 
       onDragOver = {dragOver}
     >
-      <p>{activity.name} ${activity.price_cents/100}</p>
+      {props.children}
     </div>
   );
 };
 
 export default ActivityListItem;
-

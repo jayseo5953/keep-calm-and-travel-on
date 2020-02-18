@@ -3,6 +3,7 @@ import axios from 'axios';
 import getActivities from '../helpers/getActivities.js'
 import ActivityList from './ActivityList'
 import DayList from './DayList'
+import ActivityListItem from './ActivityListItem'
 
 
 const Main = (props) => {
@@ -16,7 +17,7 @@ const Main = (props) => {
     getActivities(city, setActivities)
   },[])
 
-  console.log("a", activities)
+  console.log("activities", activities)
 
   return (
     <div>
@@ -26,12 +27,27 @@ const Main = (props) => {
       
       <div className="flexbox">
 
-        <div>
-          <DayList key='day-1' id="day-1" className="day_list"> Day1 </DayList>
-        </div>
-        <div>
-          <DayList key='day-2' id="day-2" className="day_list" activities={activities} > List of Activities </DayList>
-        </div>
+ 
+          <DayList key='day-1' id="day-1" className="day_list">
+
+          {activities.map(activity=>{ 
+            return (<ActivityListItem 
+
+              id={activity.id}
+              className="activity"
+              draggable="true"
+           
+              > 
+              {<p>{activity.name} ${activity.price_cents/100}</p>} 
+              
+              </ActivityListItem>)
+          })}
+          
+          </DayList>
+       
+          <DayList key='day-2' id="day-2" className="day_list" activities={activities}   >
+          
+          </DayList>
         
 
       </div>
@@ -42,23 +58,4 @@ const Main = (props) => {
 
 export default Main;
 
-
-
-// const Main = () => {
-//   return (
-//     <div className='flexbox'>
-//       <h2>Main</h2>
-//       <DayList id="day-1" className="day_list">
-//         <ActivityItem id="activity-1" className="activity" draggable='true'>
-//           <p>Activity 1</p>
-//         </ActivityItem>
-//       </DayList>
-
-//       <DayList id="day-2" className="day_list">
-//         <ActivityItem id="activity-2" className="activity" draggable='true'>
-//         <p>Activity 2</p>
-//         </ActivityItem>
-//       </DayList>
-//     </div>
-//   );
-// };
+// dropEffect="none"

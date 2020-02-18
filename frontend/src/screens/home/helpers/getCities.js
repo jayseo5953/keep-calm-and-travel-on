@@ -7,6 +7,7 @@ export default function getCities (arg,cb) {
   axios.get(`/api/cities/${arg}`)
     .then(res=> {
       const result = res.data
+      console.log("result of axios",result)
       cb(result.cities)
     })
     .catch((err) => {
