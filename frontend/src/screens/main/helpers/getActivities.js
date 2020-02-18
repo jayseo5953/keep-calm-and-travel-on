@@ -9,6 +9,8 @@ export default function getActivities (arg,cb,setColumns,columnsFromBackend, bud
     .then(res=> {
       console.log(res)
       const activities = res.data.activities
+      console.log("original: ", activities)
+     
       const result = activities.map((act)=>{
         return {
           id: uuid(),
@@ -22,6 +24,7 @@ export default function getActivities (arg,cb,setColumns,columnsFromBackend, bud
           name: act.name
         }
       })
+      console.log("after: ",result)
    
       let prices = activities.map((activity)=>{
         return activity.price_cents

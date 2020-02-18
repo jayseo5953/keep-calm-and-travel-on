@@ -17,7 +17,6 @@ function Main(props) {
   console.log("acts",activities)
 
   const [columns, setColumns] = useState(columnsFromBackend(activities));
-
   const [days,setDays] =useState(0)
 
   console.log('columns',columns)
@@ -25,9 +24,8 @@ function Main(props) {
   const city = props.match.params.city
   const budget = props.match.params.budget
 
-
   useEffect(()=>{
-    getActivities(city,setActivities, setColumns, columnsFromBackend, budget, setDays)
+    getActivities(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
   },[])
 
   return (
@@ -115,28 +113,4 @@ export default Main;
 //props for droppable
 
 // isDropDisabled='true'
-// can put my own logic to this
-
-
-// const Main = (props) => {
-//   const city = props.match.params.city
-//   const budget = props.match.params.budget
-
-  // const [activities, setActivities] = useState([])
-
-  
-  // useEffect(()=>{
-  //   getActivities(city,setActivities)
-  // },[])
-
-//   console.log("a", activities)
-
-//   return (
-//     <div>
-//       <h2>Main</h2>
-//       <h1>{city}</h1>
-//       <h1>My Bugdet: ${budget}</h1>
-//       <ActivityList activities={activities} />
-//     </div>
-//   );
-// };
+// can put my own logic to this;
