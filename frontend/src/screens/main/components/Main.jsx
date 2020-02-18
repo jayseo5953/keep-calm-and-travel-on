@@ -18,15 +18,29 @@ function Main(props) {
 
   const [columns, setColumns] = useState(columnsFromBackend(activities));
 
+  const [days,setDays] =useState(0)
+
   console.log('columns',columns)
   
   const city = props.match.params.city
+  const budget = props.match.params.budget
+
+
   useEffect(()=>{
-    getActivities(city,setActivities, setColumns, columnsFromBackend)
+    getActivities(city,setActivities, setColumns, columnsFromBackend, budget, setDays)
   },[])
 
   return (
+  <>
+    {!isNaN(budget)?
+      <div> 
+      <h1>My Budget: ${budget}</h1>
+      <h1>Numbe of Days: {days}</h1>
+      </div>:
+      ""}
+    
     <div className='container-1'>
+      
       <DragDropContext
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
       >
@@ -91,6 +105,7 @@ function Main(props) {
         })}
       </DragDropContext>
     </div>
+  </>
   );
 }
 

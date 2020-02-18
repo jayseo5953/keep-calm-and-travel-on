@@ -1,6 +1,6 @@
 import axios from 'axios'
 import uuid from "uuid/v4";
-export default function getActivities (arg,cb,setColumns,columnsFromBackend) {
+export default function getActivities (arg,cb,setColumns,columnsFromBackend, budget, setDays) {
   if(!arg) {
     cb([])
     return
@@ -8,7 +8,8 @@ export default function getActivities (arg,cb,setColumns,columnsFromBackend) {
   return axios.get(`/api/activities/${arg}`)
     .then(res=> {
       console.log(res)
-      const result = res.data.activities.map((act)=>{
+      const activities = res.data.activities
+      const result = activities.map((act)=>{
         return {
           id: uuid(),
           activity_id: act.id,
@@ -21,10 +22,29 @@ export default function getActivities (arg,cb,setColumns,columnsFromBackend) {
           name: act.name
         }
       })
+   
+      let prices = activities.map((activity)=>{
+        return activity.price_cents
+      })
+
+      let totalPrice = prices.reduce((accumulator, currentValue)=>{
+        return accumulator + currentValue
+      },0)/100
+
+      let averagePrice = totalPrice/activities.length
+      let averageCostPerDay = averagePrice*3
+      let numberOfDays = Math.floor(budget/averageCostPerDay)
+
+      setDays(numberOfDays)
+      console.log("total price:",totalPrice)
+      console.log("num acts: ", activities.length)
+      console.log("avg price: ",averagePrice)
+      
+
       console.log(result)
       cb(result)
-      
-      setColumns(columnsFromBackend(result))
+
+      setColumns(columnsFromBackend(result, numberOfDays))
     })
     .catch((err) => {
       if (err.status === 404) {
