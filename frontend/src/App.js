@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 
-import SearchBar from './components/SearchBar';
+import SearchBar from './components//HomePage/SearchBar';
 
 const getActivityByCityName = function (cityName) {
   let req = {
