@@ -11,14 +11,14 @@ import Submit from "../components/General/Buttons/Submit"
 import AddButton from "../components/General/Buttons/AddButton"
 import EditButton from "../components/General/Buttons/EditButton"
 import CircularDeterminate from "../components/CircularDeterminate"
-import ButtonAppBar from "../components/ButtonAppBar"
+import ButtonAppBar from "../components/NavBar"
 import DatePickers from "../components/DatePickers"
 
 
 // Nav Bar Stories
 
-storiesOf("ButtonAppBar", module) 
-  .add("ButtonAppBar", () => <ButtonAppBar></ButtonAppBar>)
+storiesOf("NavBar", module) 
+  .add("NavBar", () => <ButtonAppBar></ButtonAppBar>)
 
 // SearchBar Stories
 storiesOf("SearchBar", module)
