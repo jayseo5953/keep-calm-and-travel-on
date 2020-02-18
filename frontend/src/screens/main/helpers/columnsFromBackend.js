@@ -10,10 +10,10 @@ export default function columnsFromBackend (arg, numOfDays) {
     name: "Day 1",
     items: []
   }
-  // ,
-  // [uuid()]: {
-  //   name: "Day 2",
-  //   items: []
-  // }
+  ,
+  [uuid()]: {
+    name: "Day 2",
+    items: []
+  }
 }};
 
