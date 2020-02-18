@@ -1,0 +1,37 @@
+.container-1 {
+  display: flex;
+  justify-content: center;
+  height: "100%" 
+}
+
+.container-2 {
+  display: flex;
+  flex-Direction: column;
+  align-Items: center;
+}
+
+.container-3 {
+  margin:8px
+}
+
+.container-4 {
+  padding: 4px;
+  width: 350px;
+  min-height: 500px;
+  overflow-y: scroll;
+  max-height: 500px;
+}
+
+.container-5 {
+  padding: 16px;
+  margin: 0 0 8px 0;
+  min-width: 250px;
+  min-height: 50px;
+  color: white;
+}
+
+.activity-image {
+  border-radius: 300px;
+  height: 50px;
+  width: 60px;
+}

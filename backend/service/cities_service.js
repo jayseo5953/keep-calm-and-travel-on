@@ -10,15 +10,15 @@ module.exports = (citiesRepository) => {
       } else {
         userInput = userInput.toLowerCase()
         let result = await Promise.resolve (citiesRepository.getCityByCity(userInput))
-        if (result.length === 0) {
+        if (result && !result.length) {
           let result2 = await Promise.resolve (citiesRepository.getCityByCountry(userInput))
-          if (result2.length === 0) {
+          if (result2 && !result2.length) {
             return Promise.resolve(citiesRepository.getCityByActivity(userInput))
           } else {
             return result2
           }
         } else {
-         return result
+          return result
         }
       }
     }

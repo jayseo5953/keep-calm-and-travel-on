@@ -9,9 +9,9 @@ module.exports = (db) => {
     },
     getActivitiesByCity: (arg) => {
       const qs = `
-      SELECT * FROM activities 
-      JOIN destinations 
-      ON destination_id = destinations.id 
+      SELECT activities.* FROM activities
+      JOIN destinations
+      ON destination_id = destinations.id
       WHERE lower(city) = $1;`;
       return db.query(qs,[arg])
         .then((res) => res.rows)
