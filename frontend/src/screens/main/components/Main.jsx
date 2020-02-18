@@ -26,33 +26,23 @@ const Main = (props) => {
       <h1>My Bugdet: ${budget}</h1>
       
       <div className="flexbox">
-
- 
           <DayList key='day-1' id="day-1" className="day_list">
-
-          {activities.map(activity=>{ 
-            return (<ActivityListItem 
-              key={activity.id}
-              id={activity.id}
-              className="activity"
-              draggable="true"
-           
-              > 
-              {<p>{activity.name} ${activity.price_cents/100}</p>} 
-              
-              </ActivityListItem>)
-          })}
-          
+            {activities.map(activity=>{ 
+              return (
+                <ActivityListItem 
+                  key={activity.id}
+                  id={activity.id}
+                  className="activity"
+                  draggable="true"
+                > 
+                {<p>{activity.name} ${activity.price_cents/100}</p>} 
+                </ActivityListItem>)
+            })}
           </DayList>
        
-          <DayList key='day-2' id="day-2" className="day_list" activities={activities}   >
-          
-          </DayList>
-        
-
+          <DayList key='day-2' id="day-2" className="day_list" activities={activities}></DayList>
+        </div>
       </div>
-
-    </div>
   );
 };
 

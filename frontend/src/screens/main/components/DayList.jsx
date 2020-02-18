@@ -1,5 +1,6 @@
 import React from 'react';
 import ActivityListItem from './ActivityListItem'
+
 const DayList = (props) => {
 
   const drop = e => {
@@ -15,12 +16,11 @@ const DayList = (props) => {
   const dragOver = e => {
     e.preventDefault();
     e.dataTransfer.dropEffect = props.dropEffect
-
   }
 
   return (
     <div
-      id = {props.id}
+      id={props.id}
       className={props.className}
       onDrop={drop}
       onDragOver={dragOver}
