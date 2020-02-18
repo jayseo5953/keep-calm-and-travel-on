@@ -13,7 +13,7 @@ import {
 
 //components
 import Home from './screens/home/components/Home'
-import Main from './screens/main/components/Main'
+import Main from './components/Main'
 import Trips from './screens/trips/components/Trips'
 
 

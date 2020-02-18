@@ -5,9 +5,39 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.flexbox {border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 768px;
+  height: 50vh;
+  overflow-y: hidden;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.flexbox .day_list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  background-color: #313131;
+  padding: 15px;
+}
+
+.flexbox .day_list .activity {
+  padding: 15px 25px;
+  background-color: #f3f3f3;
+  cursor: pointer;
+  margin-bottom: 15px;
 }
