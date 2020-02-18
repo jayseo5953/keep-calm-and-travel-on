@@ -3,16 +3,16 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import SearchBar from "../components/SearchBar"
-import CustomizedSlider from "../components/CustomizedSlider"
+import SearchBar from "../components/HomePage/SearchBar"
+import CustomizedSlider from "../components/TheMainEvent/CustomizedSlider"
 import Delete from "../components/General/Buttons/Delete"
 import SaveTrip from "../components/General/Buttons/SaveTrip"
 import Submit from "../components/General/Buttons/Submit"
 import AddButton from "../components/General/Buttons/AddButton"
 import EditButton from "../components/General/Buttons/EditButton"
-import CircularDeterminate from "../components/CircularDeterminate"
-import ButtonAppBar from "../components/NavBar"
-import DatePickers from "../components/DatePickers"
+import CircularDeterminate from "../components/General/CircularDeterminate"
+import ButtonAppBar from "../components/General/NavBar"
+import DatePickers from "../components/TheMainEvent/DatePickers"
 
 
 // Nav Bar Stories
