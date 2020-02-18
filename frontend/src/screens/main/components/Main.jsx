@@ -52,7 +52,8 @@ function Main(props) {
             >
               <h2>{column.name}</h2>
               <div className='container-3'>
-                <Droppable droppableId={columnId} key={columnId}>
+                <Droppable droppableId={columnId} key={columnId}
+                >
                   {(provided, snapshot) => {
                     return (
                       <div
@@ -111,6 +112,10 @@ function Main(props) {
 
 export default Main;
 
+//props for droppable
+
+// isDropDisabled='true'
+// can put my own logic to this
 
 
 // const Main = (props) => {
