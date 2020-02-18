@@ -5,7 +5,7 @@ module.exports = (activitiesRepository) => {
       return activitiesRepository.getAllActivities();
     },
     getActivitiesByCity: (userInput) => {
-      userInput.toLowerCase()
+      userInput = userInput.toLowerCase()
       return activitiesRepository.getActivitiesByCity(userInput);
     },
     test: () => {
