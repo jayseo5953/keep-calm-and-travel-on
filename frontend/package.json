@@ -43,16 +43,14 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
     "@storybook/addon-actions": "^5.3.13",
     "@storybook/addon-links": "^5.3.13",
     "@storybook/addons": "^5.3.13",
     "@storybook/preset-create-react-app": "^1.5.2",
     "@storybook/react": "^5.3.13",
     "@types/date-fns": "^2.6.0",
-    "babel-loader": "^8.0.5",
     "date-fns": "^2.9.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "prop-types": "^15.7.2"
   },
   "proxy": "http://localhost:3001"

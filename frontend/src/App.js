@@ -1,17 +1,18 @@
 /* Nested Routing */
 import React from "react";
 
-import NavBar from "./components/General/NavBar"
+import NavBar from "./components/General/NavBar";
 import SearchBar from './components/HomePage/SearchBar';
+import BudgetGauge from './components/TheMainEvent/BudgetGauge';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   Link,
+//   useRouteMatch,
+//   useParams
+// } from "react-router-dom";
 import axios from 'axios';
 
 
@@ -24,9 +25,9 @@ const getActivityByCityName = function (cityName) {
   return axios(req)
 };
 
-const consoleLogTest = function (a) {
-  console.log(a)
-}
+// const consoleLogTest = function (a) {
+//   console.log(a)
+// }
 
 export default function App() {
   let activities = getActivityByCityName('cebu');
@@ -39,7 +40,7 @@ export default function App() {
       <SearchBar />
     </div>
       
-
+  // <div className="App">
     // <Router>
     //   <div>
     //     <SearchBar onChange={consoleLogTest}/>
@@ -71,49 +72,49 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Jay Says it wont work. What really?!</h2>
-}
+// function Home() {
+//   return <h2>Jay Says it wont work. What really?!</h2>
+// }
 
-function About() {
-  return <h2>About</h2>;
-}
+// function About() {
+//   return <h2>About</h2>;
+// }
 
-function Topics() {
-  let match = useRouteMatch();
+// function Topics() {
+//   let match = useRouteMatch();
 
-  return (
-    <div>
-      <h2>Topics</h2>
+//   return (
+//     <div>
+//       <h2>Topics</h2>
 
-      <ul>
-        <li>
-          <Link to={`${match.url}/components`}>Components</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/props-v-state`}>
-            Props v. State
-          </Link>
-        </li>
-      </ul>
+//       <ul>
+//         <li>
+//           <Link to={`${match.url}/components`}>Components</Link>
+//         </li>
+//         <li>
+//           <Link to={`${match.url}/props-v-state`}>
+//             Props v. State
+//           </Link>
+//         </li>
+//       </ul>
 
-      {/* The Topics page has its own <Switch> with more routes
-          that build on the /topics URL path. You can think of the
-          2nd <Route> here as an "index" page for all topics, or
-          the page that is shown when no topic is selected */}
-      <Switch>
-        <Route path={`${match.path}/:topicId`}>
-          <Topic />
-        </Route>
-        <Route path={match.path}>
-          <h3>Please select a topic.</h3>
-        </Route>
-      </Switch>
-    </div>
-  );
-}
+//       {/* The Topics page has its own <Switch> with more routes
+//           that build on the /topics URL path. You can think of the
+//           2nd <Route> here as an "index" page for all topics, or
+//           the page that is shown when no topic is selected */}
+//       <Switch>
+//         <Route path={`${match.path}/:topicId`}>
+//           <Topic />
+//         </Route>
+//         <Route path={match.path}>
+//           <h3>Please select a topic.</h3>
+//         </Route>
+//       </Switch>
+//     </div>
+//   );
+// }
 
-function Topic() {
-  let { topicId } = useParams();
-  return <h3>Requested topic ID: {topicId}</h3>;
-}
+// function Topic() {
+//   let { topicId } = useParams();
+//   return <h3>Requested topic ID: {topicId}</h3>;
+// }

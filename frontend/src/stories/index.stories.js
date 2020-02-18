@@ -3,9 +3,6 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 
-import ActivityListItem from "../components/ActivityListItem"
-// import ActivityList  from "../components/Activity"
-
 import SearchBar from "../components/HomePage/SearchBar"
 import CustomizedSlider from "../components/TheMainEvent/CustomizedSlider"
 import Delete from "../components/General/Buttons/Delete"
@@ -16,15 +13,11 @@ import EditButton from "../components/General/Buttons/EditButton"
 import CircularDeterminate from "../components/General/CircularDeterminate"
 import ButtonAppBar from "../components/General/NavBar"
 import DatePickers from "../components/TheMainEvent/DatePickers"
+import BudgetGauge from "../components/TheMainEvent/BudgetGauge"
 
 
 
 import Footer from "../components/General/Footer"
-
-// ActivityListItem Story
-storiesOf("ActivityListItem", module) 
-  .add("Activities", () => <ActivityListItem></ActivityListItem>)
-
 
 // Nav Bar Stories
 
@@ -54,6 +47,7 @@ storiesOf("Loading Animations", module)
 // The Main Event Stories
 storiesOf("The Main Event", module)
   .add("Slider", () => <CustomizedSlider></CustomizedSlider>)
+  .add("Budget Gauge", ()=> <BudgetGauge></BudgetGauge>)
 
 
 // Date Stories
