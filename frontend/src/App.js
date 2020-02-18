@@ -8,102 +8,77 @@ import {
   useRouteMatch,
   useParams
 } from "react-router-dom";
-import axios from 'axios';
 
-import SearchBar from './components/SearchBar';
+// import getActivityByCityName from './helpers/fetcher'
 
-const getActivityByCityName = function (cityName) {
-  let req = {
-    url: `/api/activities/${cityName}`,
-    method: `GET`
-  }
-  return axios(req)
-};
+//components
+import Home from './screens/home/components/Home'
+import Main from './screens/main/components/Main'
+import Trips from './screens/trips/components/Trips'
 
-const consoleLogTest = function (a) {
-  console.log(a)
-}
 
 export default function App() {
-  let activities = getActivityByCityName('cebu');
-  activities.then(res => {
-    console.log(res.data)
-  })
   return (
     <Router>
       <div>
-        <SearchBar onChange={consoleLogTest}/>
         <ul>
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/main">Main</Link>
           </li>
           <li>
-            <Link to="/topics">Topics</Link>
+            <Link to="/trips">trips</Link>
           </li>
         </ul>
-
         <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/topics">
-            <Topics />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
+         
+          <Route path="/main" component={Main} />
+          <Route path="/trips" component={Trips} />
+          <Route path="/" component={Home} />
         </Switch>
       </div>
     </Router>
   );
 }
 
-function Home() {
-  return <h2>Jay Says it wont work</h2>;
-}
 
-function About() {
-  return <h2>About</h2>;
-}
+// function Topics() {
+//   let match = useRouteMatch();
 
-function Topics() {
-  let match = useRouteMatch();
+//   return (
+//     <div>
+//       <h2>Topics</h2>
 
-  return (
-    <div>
-      <h2>Topics</h2>
+//       <ul>
+//         <li>
+//           <Link to={`${match.url}/components`}>Components</Link>
+//         </li>
+//         <li>
+//           <Link to={`${match.url}/props-v-state`}>
+//             Props v. State
+//           </Link>
+//         </li>
+//       </ul>
 
-      <ul>
-        <li>
-          <Link to={`${match.url}/components`}>Components</Link>
-        </li>
-        <li>
-          <Link to={`${match.url}/props-v-state`}>
-            Props v. State
-          </Link>
-        </li>
-      </ul>
+//       {/* The Topics page has its own <Switch> with more routes
+//           that build on the /topics URL path. You can think of the
+//           2nd <Route> here as an "index" page for all topics, or
+//           the page that is shown when no topic is selected */}
+//       <Switch>
+//         <Route path={`${match.path}/:topicId`}>
+//           <Topic />
+//         </Route>
+//         <Route path={match.path}>
+//           <h3>Please select a topic.</h3>
+//         </Route>
+//       </Switch>
+//     </div>
+//   );
+// }
 
-      {/* The Topics page has its own <Switch> with more routes
-          that build on the /topics URL path. You can think of the
-          2nd <Route> here as an "index" page for all topics, or
-          the page that is shown when no topic is selected */}
-      <Switch>
-        <Route path={`${match.path}/:topicId`}>
-          <Topic />
-        </Route>
-        <Route path={match.path}>
-          <h3>Please select a topic.</h3>
-        </Route>
-      </Switch>
-    </div>
-  );
-}
-
-function Topic() {
-  let { topicId } = useParams();
-  return <h3>Requested topic ID: {topicId}</h3>;
-}
+// function Topic() {
+//   let { topicId } = useParams();
+//   return <h3>Requested topic ID: {topicId}</h3>;
+// }

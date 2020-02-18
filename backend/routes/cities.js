@@ -4,19 +4,36 @@ const router  = express.Router();
 
 module.exports = (citiesService) => {
 
-  router.get("/", async (req, res) => {
+  router.get("/:input", async (req, res) => {
+    let userInput = req.params.input
+    console.log("userinput: ", userInput)
     try {
       const [cities] = await Promise.all([
         // await citiesService.getAllCities()
-        await citiesService.getCity(4500)
+        await citiesService.getCity(userInput)
       ]);
-      console.log(cities);
+      console.log("res: ",cities);
+      if(!cities) throw "Cities Not Found"
       res.send({ cities });
       // res.render("cities")
       // const test = 'Inside cities routes'
     } catch (err) {
-      console.error(err);
+      console.error("err from cities search API:", err);
     }
   });
+
+
+  // router.get("/:input", async (req, res) => {
+  //   let userInput = req.params.input
+  //   console.log(`The userinput is: ${userInput}`);
+  //   try {
+  //     const [cities] = await Promise.all([
+  //       await citiesService.getCity(userInput)
+  //     ]);
+  //     res.send({ cities });
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // })
   return router;
 };

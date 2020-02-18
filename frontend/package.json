@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.3",
     "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.43",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
@@ -18,7 +19,7 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "start": "react-scripts start -p 8000",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -51,5 +52,5 @@
     "@storybook/preset-create-react-app": "^1.5.2",
     "@storybook/react": "^5.3.13"
   },
-  "proxy": "http://localhost:8001"
+  "proxy": "http://localhost:3001"
 }
