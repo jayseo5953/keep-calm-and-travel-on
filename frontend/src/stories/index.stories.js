@@ -5,13 +5,14 @@ import { action } from "@storybook/addon-actions";
 
 import SearchBar from "../components/SearchBar"
 import CustomizedSlider from "../components/CustomizedSlider"
-import Delete from "../components/Delete"
-import SaveTrip from "../components/SaveTrip"
-import Submit from "../components/Submit"
-import AddButton from "../components/AddButton"
-import EditButton from "../components/EditButton"
+import Delete from "../components/General/Buttons/Delete"
+import SaveTrip from "../components/General/Buttons/SaveTrip"
+import Submit from "../components/General/Buttons/Submit"
+import AddButton from "../components/General/Buttons/AddButton"
+import EditButton from "../components/General/Buttons/EditButton"
 import CircularDeterminate from "../components/CircularDeterminate"
 import ButtonAppBar from "../components/ButtonAppBar"
+import DatePickers from "../components/DatePickers"
 
 
 // Nav Bar Stories
@@ -26,7 +27,6 @@ storiesOf("SearchBar", module)
 
 
 // Button Stories
-
 storiesOf("Buttons", module) 
   .add("Delete", () => <Delete onClick={action()}></Delete>)
   .add("SaveTrip", () => <SaveTrip onClick={action()}></SaveTrip>)
@@ -43,3 +43,8 @@ storiesOf("Loading Animations", module)
 // The Main Event Stories
 storiesOf("The Main Event", module)
   .add("Slider", () => <CustomizedSlider></CustomizedSlider>)
+
+
+// Date Stories
+storiesOf("Date", module)
+ .add("DatePickers", () => <DatePickers></DatePickers>)
