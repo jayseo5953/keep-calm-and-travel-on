@@ -20,7 +20,7 @@ code {
   justify-content: space-between;
   width: 100%;
   max-width: 768px;
-  height: 50vh;
+  height: 100vh;
   overflow-y: hidden;
   margin: 0 auto;
   padding: 15px;
@@ -33,6 +33,8 @@ code {
   max-width: 300px;
   background-color: #313131;
   padding: 15px;
+  color:white;
+  border: 1px solid white
 }
 
 .flexbox .day_list .activity {
@@ -41,3 +43,4 @@ code {
   cursor: pointer;
   margin-bottom: 15px;
 }
+

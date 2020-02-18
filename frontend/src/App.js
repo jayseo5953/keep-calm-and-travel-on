@@ -13,13 +13,18 @@ import {
 
 //components
 import Home from './screens/home/components/Home'
-import Main from './components/Main'
+import Main from './screens/main/components/Main'
 import Trips from './screens/trips/components/Trips'
+
+import DayList from './screens/main/components/DayList';
+import ActivityItem from './components/ActivityItem';
 
 
 export default function App() {
   return (
-    <Router>
+    
+    <div className='flexbox'>
+     <Router>
       <div>
       <Link to="/">Home</Link>
         <Switch>
@@ -29,9 +34,24 @@ export default function App() {
         </Switch>
       </div>
     </Router>
+    </div>
   );
 }
 
+
+
+    // <h2>Main</h2>
+    // <DayList id="day-1" className="day_list">
+    //   <ActivityItem id="activity-1" className="activity" draggable='true'>
+    //     <p>Activity 1</p>
+    //   </ActivityItem>
+    // </DayList>
+
+    // <DayList id="day-2" className="day_list">
+    //   <ActivityItem id="activity-2" className="activity" draggable='true'>
+    //   <p>Activity 2</p>
+    //   </ActivityItem>
+    // </DayList>
 
 // <ul>
 // <li>
