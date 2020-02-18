@@ -1,13 +1,9 @@
 import React from 'react';
-import SearchBar from '../../../components/SearchBar'
+import SearchBar from './SearchBar'
 const Home = () => {
-  // let activities = getActivityByCityName('cebu');
-  // activities.then(res => {
-  //   console.log(res.data)
-  // })
   return (
     <div>
-      <h2>Home</h2>
+      <h1>Home</h1>
       <SearchBar />
     </div>
   );

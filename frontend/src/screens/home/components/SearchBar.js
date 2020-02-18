@@ -1,29 +1,7 @@
 import React, {useState,useEffect,Link} from 'react';
-import TextField from "@material-ui/core/TextField";
-import Autocomplete from '@material-ui/lab/Autocomplete'
-import axios from 'axios';
-
-
+import getCities from '../helpers/getCities'
 import CityItemList from './CityItemList'
 
-function getCities (arg,cb) {
-  if(!arg) {
-    cb([])
-    return
-  }
-  axios.get(`/api/cities/${arg}`)
-    .then(res=> {
-      const result = res.data
-      cb(result.cities)
-    })
-    .catch((err) => {
-      if (err.status === 404) {
-        console.log("yupnsole 404")
-      } else {
-        console.error(err);
-      }
-    })
-}
 export default function SearchBar (props) {
   const [cities, setCities] = useState([]);
   const [city, setCity] = useState('');
@@ -33,13 +11,17 @@ export default function SearchBar (props) {
       <form autoComplete="off" onSubmit={event=>event.preventDefault()}>
         <input 
           type='text'
-          onChange={(event)=>getCities(event.target.value, setCities)}
+          onChange={(event)=>
+            {
+              setCity(event.target.value);
+              getCities(event.target.value, setCities);
+            }}
           placeholder='e.g Bali'
-          // value={city}
+          value={city}
         />
       </form>
 
-      <CityItemList cities={cities} setCity={setCity}/>
+      <CityItemList cities={cities} setCity={setCity} value={city}/>
     </>
   )
 

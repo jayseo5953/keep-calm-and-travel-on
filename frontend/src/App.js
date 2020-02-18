@@ -21,27 +21,29 @@ export default function App() {
   return (
     <Router>
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/main">Main</Link>
-          </li>
-          <li>
-            <Link to="/trips">trips</Link>
-          </li>
-        </ul>
+      <Link to="/">Home</Link>
         <Switch>
-         
-          <Route path="/main" component={Main} />
-          <Route path="/trips" component={Trips} />
+          <Route path="/main/:city/:budget" component={Main} />
+          <Route path="/trips/:user" component={Trips} />
           <Route path="/" component={Home} />
         </Switch>
       </div>
     </Router>
   );
 }
+
+
+// <ul>
+// <li>
+//  
+// </li>
+// <li>
+//   <Link to="/main">Main</Link>
+// </li>
+// <li>
+//   <Link to="/trips">trips</Link>
+// </li>
+// </ul>
 
 
 // function Topics() {
