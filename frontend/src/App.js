@@ -1,5 +1,9 @@
 /* Nested Routing */
 import React from "react";
+
+import NavBar from "./components/General/NavBar"
+import SearchBar from './components/HomePage/SearchBar';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,7 +14,7 @@ import {
 } from "react-router-dom";
 import axios from 'axios';
 
-import SearchBar from './components//HomePage/SearchBar';
+
 
 const getActivityByCityName = function (cityName) {
   let req = {
@@ -30,34 +34,40 @@ export default function App() {
     console.log(res.data)
   })
   return (
-    <Router>
-      <div>
-        <SearchBar onChange={consoleLogTest}/>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/topics">Topics</Link>
-          </li>
-        </ul>
+    <div>
+      <NavBar />
+      <SearchBar />
+    </div>
+      
 
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/topics">
-            <Topics />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    // <Router>
+    //   <div>
+    //     <SearchBar onChange={consoleLogTest}/>
+    //     <ul>
+    //       <li>
+    //         <Link to="/">Home</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/about">About</Link>
+    //       </li>
+    //       <li>
+    //         <Link to="/topics">Topics</Link>
+    //       </li>
+    //     </ul>
+
+    //     <Switch>
+    //       <Route path="/about">
+    //         <About />
+    //       </Route>
+    //       <Route path="/topics">
+    //         <Topics />
+    //       </Route>
+    //       <Route path="/">
+    //         <Home />
+    //       </Route>
+    //     </Switch>
+    //   </div>
+    // </Router>
   );
 }
 
