@@ -32,7 +32,7 @@ const Main = (props) => {
 
           {activities.map(activity=>{ 
             return (<ActivityListItem 
-
+              key={activity.id}
               id={activity.id}
               className="activity"
               draggable="true"
