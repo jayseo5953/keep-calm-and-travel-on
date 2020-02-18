@@ -14,6 +14,8 @@ import CircularDeterminate from "../components/General/CircularDeterminate"
 import ButtonAppBar from "../components/General/NavBar"
 import DatePickers from "../components/TheMainEvent/DatePickers"
 
+import Footer from "../components/General/Footer"
+
 
 // Nav Bar Stories
 
@@ -48,3 +50,8 @@ storiesOf("The Main Event", module)
 // Date Stories
 storiesOf("Date", module)
  .add("DatePickers", () => <DatePickers></DatePickers>)
+
+ // Footer Stories
+
+ storiesOf("Footer", module)
+  .add("Footer", () => <Footer></Footer>)
