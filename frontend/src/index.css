@@ -15,7 +15,8 @@ code {
     monospace;
 }
 
-.flexbox {border: 1px solid red;
+.flexbox {
+  border: 1px solid red;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -30,6 +31,7 @@ code {
   display: flex;
   flex-direction: column;
   width: 100%;
+  width:300px;
   max-width: 300px;
   background-color: #313131;
   padding: 15px;

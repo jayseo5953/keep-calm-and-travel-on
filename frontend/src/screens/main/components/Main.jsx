@@ -24,10 +24,15 @@ const Main = (props) => {
       <h1>{city}</h1>
       <h1>My Bugdet: ${budget}</h1>
       
-      <div className="container">
+      <div className="flexbox">
 
-        <DayList id="day-1" className="day_list"> Day1 </DayList>
-        <DayList id="day-2" className="day_list" activities={activities} > List of Activities </DayList>
+        <div>
+          <DayList key='day-1' id="day-1" className="day_list"> Day1 </DayList>
+        </div>
+        <div>
+          <DayList key='day-2' id="day-2" className="day_list" activities={activities} > List of Activities </DayList>
+        </div>
+        
 
       </div>
 

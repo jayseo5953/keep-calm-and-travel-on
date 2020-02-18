@@ -20,30 +20,33 @@ const DayList = (props) => {
 
 
   if (!activities) {
-    return <div
-    id={props.id}
-    className={props.className}
-    onDrop={drop}
-    onDragOver={dragOver}></div>
+    let arr=[1,2,3,4,5,6,7]
+    return arr.map((e)=>{
+      return (
+        <div
+        key={e}
+        id={`activity-${e}`}
+        className={props.className}
+        onDrop={drop}
+        onDragOver={dragOver}
+        draggable={true}
+        onDragOver={dragOver}><p>{e}</p></div>
+      )
+    })
   }
   
     return activities.map(activity=>{ 
       return (
         <ActivityListItem 
         key={activity.id}
-        id={props.id}
+        id={`activity-${activity.id}`}
         className={props.className}
         onDrop={drop}
         onDragOver={dragOver}
+        draggable={true}
         activity={activity}/>
       )
     })
-
-
-
-  
-
-  
 };
 
 

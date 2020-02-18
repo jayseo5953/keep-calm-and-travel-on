@@ -23,7 +23,7 @@ const ActivityListItem = (props) => {
 
   return (
     <div
-     id = {props.id}
+      id = {props.id}
       className = {props.className}
       draggable = {props.draggable}
       onDragStart = {dragStart} 
