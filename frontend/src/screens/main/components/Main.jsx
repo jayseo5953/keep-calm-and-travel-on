@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React, {useEffect, useState} from 'react'
 import getActivities from '../helpers/getActivities.js'
+import axios from 'axios';
 import ActivityList from './ActivityList'
 import uuid from "uuid/v4";
 
