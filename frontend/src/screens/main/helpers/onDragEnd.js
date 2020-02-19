@@ -1,10 +1,25 @@
 
 export default function onDragEnd (result, columns, setColumns){
-  if (!result.destination) return;
   const { source, destination } = result;
+  if (!result.destination && source.droppableId === 'list') {
+    return
+  } else if (!result.destination && source.droppableId !== 'list') {
+    let srcColumn = columns[source.droppableId];
+    let srcItems = [...srcColumn.items];
+    const [removed] = srcItems.splice(source.index, 1);
 
-  console.log("source:",source)
-  console.log("destinaiton: ", destination)
+    setColumns({
+      ...columns,
+      [source.droppableId]: {
+        ...srcColumn,
+        items: srcItems
+      }
+    });
+    return
+  }
+ 
+  // console.log("source:",source)
+  // console.log("destinaiton: ", destination)
 
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];

@@ -1,4 +1,4 @@
-import React, {useState,useEffect,Link} from 'react';
+import React, {useState} from 'react';
 import getCities from '../helpers/getCities'
 import CityItemList from './CityItemList'
 
@@ -26,16 +26,3 @@ export default function SearchBar (props) {
   )
 
 }
-
-// <div style={{width: 300}}>
-      
-// <Autocomplete
-//   id="combo-box-demo"
-//   options={cities.map(city => city.city)}
-//   // getOptionLabel={option => option.title}
-//   style={{ width: 300 }}
-//   renderInput={params => (
-//     <TextField {...params} label="comboBox" margin="normal" variant="outlined" fullWidth onChange={(event)=>getCities(event.target.value, setCities)} />
-// )}
-// />
-// </div>

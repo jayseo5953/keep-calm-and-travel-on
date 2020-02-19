@@ -1,35 +1,34 @@
 import React, {useEffect, useState} from 'react'
 import manageStates from '../helpers/manageStates'
-// import axios from 'axios';
-// import ActivityList from './ActivityList'
-// import uuid from "uuid/v4";
-
 import columnsFromBackend from '../helpers/columnsFromBackend'
 import onDragEnd from '../helpers/onDragEnd'
 import './main.css';
-
-
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd'
+import DndContext from './DndContext'
 
 
 function Main(props) {
   const [activities, setActivities] = useState([])
-  console.log("acts",activities)
+  // console.log("acts",activities)
 
   const [columns, setColumns] = useState(columnsFromBackend(activities));
   const [days,setDays] =useState(0)
 
-  console.log('columns',columns)
+  // console.log('columns',columns)
   
   const city = props.match.params.city
   const budget = props.match.params.budget
 
   useEffect(()=>{
     manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
-  },[])
+  },[budget, city])
+
+
+  console.log("list items: ",columns['list'].items)
+  console.log("day1 items: ",columns['day1'].items)
 
   return (
   <>
+    <h1>Destination: {city}</h1>
     {!isNaN(budget)?
       <div> 
       <h1>My Budget: ${budget}</h1>
@@ -38,81 +37,13 @@ function Main(props) {
       ""}
     
     <div className='container-1'>
-
-      
-      <DragDropContext
+      <DndContext
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
-      >
-        {Object.entries(columns).map(([columnId, column], index) => {
-          return (
-            <div
-            className='container-2'
-              key={columnId}
-            >
-              <h2>{column.name}</h2>
-              <div className='container-3'>
-                <Droppable droppableId={columnId} key={columnId}
-                >
-                  {(provided, snapshot) => {
-                    return (
-                      <div
-                        {...provided.droppableProps}
-                        ref={provided.innerRef}
-                        className='container-4'
-                        style={{
-                          background: snapshot.isDraggingOver
-                            ? "lightblue"
-                            : "lightgrey"
-                        }}
-                      >
-                        {column.items.map((item, index) => {
-                          return (
-                            <Draggable
-                              key={item.id}
-                              draggableId={item.id}
-                              index={index}
-                            >
-                              {(provided, snapshot) => {
-                                return (
-                                  <div
-                                    ref={provided.innerRef}
-                                    {...provided.draggableProps}
-                                    {...provided.dragHandleProps}
-                                    className='container-5'
-                                    style={{
-                                      userSelect: "none",
-                                      backgroundColor: snapshot.isDragging
-                                        ? "#263B4A"
-                                        : "#456C86",
-                                      ...provided.draggableProps.style
-                                    }}
-                                  >
-                                    <img className='activity-image' 
-                                    src={`${item.image_url}`} alt="activty-image"/> {item.name} ${item.price_cents/100} 
-                                  </div>
-                                );
-                              }}
-                            </Draggable>
-                          );
-                        })}
-                        {provided.placeholder}
-                      </div>
-                    );
-                  }}
-                </Droppable>
-              </div>
-            </div>
-          );
-        })}
-      </DragDropContext>
+        columns={columns} setColumns={setColumns}
+      />
     </div>
   </>
   );
 }
 
 export default Main;
-
-//props for droppable
-
-// isDropDisabled='true'
-// can put my own logic to this;
