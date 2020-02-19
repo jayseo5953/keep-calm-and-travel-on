@@ -7,9 +7,9 @@ export default function manageStates (arg,cb,setColumns,columnsFromBackend, budg
   }
   return axios.get(`/api/activities/${arg}`)
     .then(res=> {
-      console.log(res)
+      // console.log(res)
       const activities = res.data.activities
-      console.log("original: ", activities)
+      // console.log("original: ", activities)
      
       const result = activities.map((act)=>{
         return {
@@ -24,7 +24,7 @@ export default function manageStates (arg,cb,setColumns,columnsFromBackend, budg
           name: act.name
         }
       })
-      console.log("after: ",result)
+      // console.log("after: ",result)
    
       let prices = activities.map((activity)=>{
         return activity.price_cents
@@ -39,12 +39,10 @@ export default function manageStates (arg,cb,setColumns,columnsFromBackend, budg
       let numberOfDays = Math.floor(budget/averageCostPerDay)
 
       setDays(numberOfDays)
-      console.log("total price:",totalPrice)
-      console.log("num acts: ", activities.length)
-      console.log("avg price: ",averagePrice)
+      // console.log("total price:",totalPrice)
+      // console.log("num acts: ", activities.length)
+      // console.log("avg price: ",averagePrice)
       
-
-      console.log(result)
       cb(result)
 
       setColumns(columnsFromBackend(result, numberOfDays))
