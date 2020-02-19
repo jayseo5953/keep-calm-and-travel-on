@@ -3,7 +3,8 @@ import React from 'react';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
-import SearchBar from './SearchBar'
+// import SearchBar from './SearchBar'
+import SearchBar from '../../../components/SearchBar/SearchBar'
 import Header from '../../../components/Header/Header'
 import Parallax from '../../../components/Parallax/Parallax'
 import GridContainer from '../../../components/Grid/GridContainer'
@@ -29,8 +30,8 @@ const Home = () => {
       <Parallax filter image={require("../../../assets/img/miami-bg.jpg")}>
         <div className={classes.container}>
           <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
-            <h1 className={classes.title}>Keep on and carry on.</h1>
+            <GridItem>
+            <h1 className={classes.title}>Plan your own unique itinerary.</h1>
               <h4>
                 Choose your destination, budget or activity
                 and we will give you recommendations!
