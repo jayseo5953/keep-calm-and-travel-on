@@ -1,8 +1,6 @@
-// TO BE DELETED - Porson (Feb 19, 2019 - 12:50pm)
-
 import React, {useState,useEffect,Link} from 'react';
-import getCities from '../helpers/getCities'
-import CityItemList from './CityItemList'
+import getCities from '../../screens/home/helpers/getCities'
+import CityItemList from '../../screens/home/components/CityItemList'
 
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from '@material-ui/core/styles';
@@ -46,18 +44,18 @@ export default function SearchBar (props) {
 
 }
 
-<div style={{width: 300}}>
+// <div style={{width: 300}}>
       
-<Autocomplete
-  id="combo-box-demo"
-  options={cities.map(city => city.city)}
-  // getOptionLabel={option => option.title}
-  style={{ width: 300 }}
-  renderInput={params => (
-    <TextField {...params} label="comboBox" margin="normal" variant="outlined" fullWidth onChange={(event)=>getCities(event.target.value, setCities)} />
-)}
-/>
-</div>
+// <Autocomplete
+//   id="combo-box-demo"
+//   options={cities.map(city => city.city)}
+//   // getOptionLabel={option => option.title}
+//   style={{ width: 300 }}
+//   renderInput={params => (
+//     <TextField {...params} label="comboBox" margin="normal" variant="outlined" fullWidth onChange={(event)=>getCities(event.target.value, setCities)} />
+// )}
+// />
+// </div>
 
 
 
