@@ -4,15 +4,4 @@ export default function deleteList (columnId, columns, setColumns) {
   delete newState[columnId];
   newState['list'].items = [...deletedItems, ...newState['list'].items]
   setColumns(newState)
-  // console.log({
-  //   ...newState['list'],
-  //   items: [...newState['list'].items, ...deletedItems] 
-  // })
-
-  // setColumns(
-    // {
-    //   ...newState['list'],
-    //   items: [...newState['list'].items, ...deletedItems] 
-    // }
-  // )
 }
