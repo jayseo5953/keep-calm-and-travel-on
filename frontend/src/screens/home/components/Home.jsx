@@ -35,7 +35,7 @@ const Home = () => {
                 Choose your destination, budget or activity
                 and we will give you recommendations!
               </h4>
-              <SearchBar />
+              <SearchBar/>
             </GridItem>
             
           </GridContainer>
