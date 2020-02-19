@@ -16,13 +16,30 @@ function Main(props) {
   // console.log('columns',columns)
   
   const city = props.match.params.city
-  const budget = props.match.params.budget
+  let mybudget = props.match.params.budget
+  
+  const [totalCost, setTotalCost] = useState(0);
+  const [budget, setBudget] = useState(mybudget-totalCost);
 
   useEffect(()=>{
     manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
-  },[budget, city])
+  },[city])
 
+  useEffect(()=>{
+    let total = 0;
+    for (let column in columns) {
+      if (column !== 'list')
+      total += columns[column].total
+    }
+    setTotalCost(total)
+ 
+  },[columns])
 
+  useEffect(()=>{
+    setBudget(mybudget-totalCost)
+  },[totalCost])
+
+  console.log('totalCost state: ', totalCost)
   // console.log("list items: ",columns['list'].items)
   // console.log("day1 items: ",columns['day1'].items)
 
@@ -41,6 +58,10 @@ function Main(props) {
         className='container-6'
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
         columns={columns} setColumns={setColumns}
+        // budget={budget}
+        // setBudget={setBudget}
+        totalCost={totalCost}
+        setTotalCost={setTotalCost}
       />
     </div>
   </>

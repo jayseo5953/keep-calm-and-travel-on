@@ -27,6 +27,10 @@ const DndContext = (props) => {
               column={column}
               columns={props.columns}
               setColumns={props.setColumns}
+              // budget={props.budget}
+              // setBudget={props.setBudget}
+              totalCost={props.totalCost}
+              setTotalCost={props.setTotalCost}
               />
             </div>
             {columnId!=='list'? <button className='delete-list' onClick={()=>deleteList(columnId, props.columns, props.setColumns)}>delete</button>:""}
