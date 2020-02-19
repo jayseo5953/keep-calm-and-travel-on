@@ -1,3 +1,5 @@
+import uuid from 'uuid/v4'
+
 export default function columnsFromBackend (arg, numOfDays) {
   let result = {
     'list': {
@@ -5,14 +7,14 @@ export default function columnsFromBackend (arg, numOfDays) {
       items: arg,
       total: 0
     },
-    'day1': {
+    [uuid()]: {
       name: 'Day1',
       items: [],
       total: 0
     }
   }
   for (let i = 2; i<= numOfDays; i++) {
-    result[`day${i}`]={
+    result[uuid()]={
       name: `Day${i}`,
       items: [],
       total: 0
