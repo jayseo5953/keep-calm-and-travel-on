@@ -1,6 +1,6 @@
 import axios from 'axios'
 import uuid from "uuid/v4";
-export default function getActivities (arg,cb,setColumns,columnsFromBackend, budget, setDays) {
+export default function manageStates (arg,cb,setColumns,columnsFromBackend, budget, setDays) {
   if(!arg) {
     cb([])
     return

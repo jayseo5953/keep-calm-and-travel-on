@@ -3,6 +3,9 @@ export default function onDragEnd (result, columns, setColumns){
   if (!result.destination) return;
   const { source, destination } = result;
 
+  console.log("source:",source)
+  console.log("destinaiton: ", destination)
+
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];

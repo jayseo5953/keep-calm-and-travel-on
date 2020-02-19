@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import getActivities from '../helpers/getActivities.js'
-import axios from 'axios';
-import ActivityList from './ActivityList'
-import uuid from "uuid/v4";
+import manageStates from '../helpers/manageStates'
+// import axios from 'axios';
+// import ActivityList from './ActivityList'
+// import uuid from "uuid/v4";
 
 import columnsFromBackend from '../helpers/columnsFromBackend'
 import onDragEnd from '../helpers/onDragEnd'
@@ -25,7 +25,7 @@ function Main(props) {
   const budget = props.match.params.budget
 
   useEffect(()=>{
-    getActivities(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
+    manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
   },[])
 
   return (
@@ -38,6 +38,7 @@ function Main(props) {
       ""}
     
     <div className='container-1'>
+
       
       <DragDropContext
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
@@ -86,7 +87,8 @@ function Main(props) {
                                       ...provided.draggableProps.style
                                     }}
                                   >
-                                    <img className='activity-image' src={`${item.image_url}`}  alt="image"/> {item.name} ${item.price_cents/100} 
+                                    <img className='activity-image' 
+                                    src={`${item.image_url}`} alt="activty-image"/> {item.name} ${item.price_cents/100} 
                                   </div>
                                 );
                               }}
