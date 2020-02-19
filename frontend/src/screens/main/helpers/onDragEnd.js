@@ -7,12 +7,19 @@ export default function onDragEnd (result, columns, setColumns){
     let srcColumn = columns[source.droppableId];
     let srcItems = [...srcColumn.items];
     const [removed] = srcItems.splice(source.index, 1);
+    const list = columns[`list`];
+    const listItems = [...list.items]
+    listItems.unshift(removed);
 
     setColumns({
       ...columns,
       [source.droppableId]: {
         ...srcColumn,
         items: srcItems
+      },
+      ['list']: {
+        ...list,
+        items: listItems
       }
     });
     return
