@@ -30,7 +30,7 @@ export default function Header(props) {
       <div className={classes.flex}>
         <Button className={classes.title}>{brand}</Button>
       </div>
-        <Button className={classes.title}>Login</Button>
+        <Button className={classes.title}>LOGIN</Button>
     </AppBar>
   )
 }

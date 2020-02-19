@@ -27,6 +27,7 @@ export default function SearchBar (props) {
           id="standard-search" 
           label="Enter your destination, budget or activity" 
           type='text'
+          color="secondary"
           onChange={(event)=>
             {
               setCity(event.target.value);
