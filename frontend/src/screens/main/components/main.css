@@ -1,6 +1,7 @@
 .container-1 {
   display: flex;
   justify-content: center;
+  overflow-x: scroll;
   height: "100%" 
 }
 
