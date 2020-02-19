@@ -25,6 +25,17 @@ function Main(props) {
     manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
   },[city])
 
+  // useEffect(()=>{
+  //   let newState = {...columns};
+  //   newState['list'].items = activities
+  //   const delay = setTimeout(()=>{
+  //     setColumns(newState)
+  //   },500)
+  //   return () => {                                                               // 
+  //     clearTimeout(delay);
+  //   };
+  // },[columns['list'].items])
+
   useEffect(()=>{
     let total = 0;
     for (let column in columns) {
@@ -40,8 +51,6 @@ function Main(props) {
   },[totalCost])
 
   console.log('totalCost state: ', totalCost)
-  // console.log("list items: ",columns['list'].items)
-  // console.log("day1 items: ",columns['day1'].items)
 
   return (
   <>
@@ -58,8 +67,6 @@ function Main(props) {
         className='container-6'
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
         columns={columns} setColumns={setColumns}
-        // budget={budget}
-        // setBudget={setBudget}
         totalCost={totalCost}
         setTotalCost={setTotalCost}
       />

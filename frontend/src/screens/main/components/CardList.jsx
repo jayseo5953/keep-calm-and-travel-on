@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import { Droppable } from 'react-beautiful-dnd'
 import Card from './Card'
+import uuid from 'uuid/v4'
 
 
 const CardList = (props) => {
@@ -10,10 +11,10 @@ const CardList = (props) => {
       const listOfCosts = props.column.items.map((act)=>{
         return act.price_cents/100
       })
-      console.log("list of costs: ", props.column.name, listOfCosts)
+      // console.log("list of costs: ", props.column.name, listOfCosts)
     
       const totalCosts = listOfCosts.reduce((a,b)=> a+b,0)
-      console.log('total cost: ', totalCosts)
+      // console.log('total cost: ', totalCosts)
       
       let newState = {...props.columns}
       newState[props.columnId].total=totalCosts
@@ -22,7 +23,11 @@ const CardList = (props) => {
   },[props.column.items])
 
   return (
-    <Droppable droppableId={props.columnId} key={props.columnId}>
+    <Droppable 
+    droppableId={props.columnId}
+    key={props.columnId}
+    isDropDisabled={props.columnId==='list'}
+    >
     {(provided, snapshot) => {
       return (
         <div
@@ -38,6 +43,7 @@ const CardList = (props) => {
           {props.column.items.map((item, index) => {
             return (
               <Card
+                isClone='true'
                 key={item.id}
                 draggableId={item.id}
                 droppableId={props.columnId}

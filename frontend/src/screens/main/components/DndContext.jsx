@@ -2,12 +2,9 @@ import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd'
 import CardList from './CardList'
 import addCardList from '../helpers/addCardList'
+import deleteList from '../helpers/deleteList'
 
-function deleteList (columnId, columns, setColumns) {
-  let newState = {...columns};
-  delete newState[columnId];
-  setColumns(newState)
-}
+
 const DndContext = (props) => {
   return (
     <DragDropContext
@@ -27,8 +24,6 @@ const DndContext = (props) => {
               column={column}
               columns={props.columns}
               setColumns={props.setColumns}
-              // budget={props.budget}
-              // setBudget={props.setBudget}
               totalCost={props.totalCost}
               setTotalCost={props.setTotalCost}
               />

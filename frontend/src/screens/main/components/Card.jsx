@@ -2,7 +2,6 @@ import React,{ useState, useEffect } from 'react';
 import { Draggable } from 'react-beautiful-dnd'
 import deleteCard from '../helpers/deleteCard'
 
-
 const Card = (props) => {
 
   return (
