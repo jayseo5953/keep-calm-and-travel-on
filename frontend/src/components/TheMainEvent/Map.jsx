@@ -25,7 +25,7 @@ const Map = (props) => {
           }}
           icon={{
             url: activity.image_url,
-            scaledSize: new window.google.maps.Size(40, 40)
+            scaledSize: new window.google.maps.Size(20, 20)
           }}
         />)
       })}
@@ -52,13 +52,11 @@ const Map = (props) => {
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 export default function GMap (props) {
-  const key = process.env.REACT_APP_GOOGLE_KEY;
-  console.log(`THE KEY IS: ${key}`)
-  console.log(process.env)
+  const mapApiKey = process.env.REACT_APP_GMAPKey;
   return (
     <div style={{ width: "60vw", height: "60vh" }}>
       <MapWrapped
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${key}`}
+        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${mapApiKey}`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
