@@ -12,13 +12,9 @@ function Main(props) {
   let mybudget = props.match.params.budget
 
   const [activities, setActivities] = useState([])
-
   const [columns, setColumns] = useState(columnsFromBackend(activities));
-
   const [days,setDays] =useState(0)
-  
   const [totalCost, setTotalCost] = useState(0);
-
   const [budget, setBudget] = useState(mybudget-totalCost);
 
 
