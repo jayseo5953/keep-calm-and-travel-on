@@ -4,36 +4,61 @@ import CardList from './CardList'
 import addCardList from '../helpers/addCardList'
 import deleteList from '../helpers/deleteList'
 
-
 const DndContext = (props) => {
+
   return (
     <DragDropContext
       onDragEnd={props.onDragEnd}>
 
+      <div className='days-container'>
       {Object.entries(props.columns).map(([columnId, column]) => {
-        return (
-          <div
-          className='container-2'
-            key={columnId}
-          >
-            <h2>{column.name}</h2>
-            <div className='container-3'>
-              <CardList 
-              droppableId={columnId} 
+        if(columnId !== 'list'){
+          return (
+            <div
+            className='container-2'
               key={columnId}
-              columnId={columnId}
-              column={column}
-              columns={props.columns}
-              setColumns={props.setColumns}
-              totalCost={props.totalCost}
-              setTotalCost={props.setTotalCost}
-              />
+            >
+              <h2>{column.name}</h2>
+              <div className='container-3'>
+                <CardList 
+                droppableId={columnId} 
+                key={columnId}
+                columnId={columnId}
+                column={column}
+                columns={props.columns}
+                setColumns={props.setColumns}
+                totalCost={props.totalCost}
+                setTotalCost={props.setTotalCost}
+                budget={props.budget}
+                />
+              </div>
+              {columnId!=='list'? <button className='delete-list' onClick={()=>deleteList(columnId, props.columns, props.setColumns)}>X</button>:""}
             </div>
-            {columnId!=='list'? <button className='delete-list' onClick={()=>deleteList(columnId, props.columns, props.setColumns)}>delete</button>:""}
-          </div>
-        );
+          );
+        }
+        return
       })}
-      <button className='add-list' onClick={(()=>{addCardList(props.columns, props.setColumns)})} >+</button>
+          <button className='add-list' onClick={(()=>{addCardList(props.columns, props.setColumns)
+      })} >+</button>
+      </div>
+        <div
+        className='container-2 list'
+        >
+          {/* <h2>{props.columns['list'].name}</h2> */}
+          <div className='container-3'>
+            <CardList 
+            droppableId='list'
+            columnId={'list'}
+            column={props.columns['list']}
+            columns={props.columns}
+            setColumns={props.setColumns}
+            totalCost={props.totalCost}
+            setTotalCost={props.setTotalCost}
+            budget={props.budget}
+            />
+          </div>
+        </div>
+
    </DragDropContext>
   );
 };
