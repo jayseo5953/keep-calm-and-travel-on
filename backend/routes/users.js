@@ -29,15 +29,16 @@ module.exports = (userService) => {
 
   router.get("/", async (req, res) => {
     try {
-      // const [users] = await Promise.all([
-      //   await userService.getUser()
-      // ]);
-      // console.log(users);
-      // res.send({ users });
-      res.render("users")
+      const [users] = await Promise.all([
+        await userService.getUser()
+      ]);
+      console.log(users);
+      res.send({ users });
+      // res.render("users")
     } catch (err) {
       console.error(err);
     }
   });
+
   return router;
 };

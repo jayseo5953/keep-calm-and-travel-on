@@ -2,6 +2,8 @@ import React, {useState,useEffect,Link} from 'react';
 import getCities from '../../screens/home/helpers/getCities'
 import CityItemList from '../../screens/home/components/CityItemList'
 
+import '../../screens/home/components/home.css';
+
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -22,7 +24,7 @@ export default function SearchBar (props) {
 
   return(
     <>
-      <form className={classes.root} noValidateautoComplete="off" onSubmit={event=>event.preventDefault()}>
+      <form className={classes.root} autoComplete="off" onSubmit={event=>event.preventDefault()}>
         <TextField 
           InputLabelProps={{
             style: { color: '#fff' },
@@ -41,12 +43,13 @@ export default function SearchBar (props) {
           value={city}
         />
       </form>
-
+      <div className="cityItemList">
       <CityItemList 
         cities={cities} 
         setCity={setCity} 
         value={city}
       />
+      </div>
       
     </>
   )
