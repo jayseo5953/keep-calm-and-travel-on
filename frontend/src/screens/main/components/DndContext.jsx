@@ -28,7 +28,7 @@ const DndContext = (props) => {
                 columns={props.columns}
                 setColumns={props.setColumns}
                 totalCost={props.totalCost}
-                setTotalCost={props.setTotalCost}
+                // setTotalCost={props.setTotalCost}
                 budget={props.budget}
                 />
               </div>
@@ -53,7 +53,7 @@ const DndContext = (props) => {
             columns={props.columns}
             setColumns={props.setColumns}
             totalCost={props.totalCost}
-            setTotalCost={props.setTotalCost}
+            // setTotalCost={props.setTotalCost}
             budget={props.budget}
             />
           </div>

@@ -1,5 +1,5 @@
 import uuid from 'uuid/v4'
-export default function onDragEnd (result, columns, setColumns, setTotalCost){
+export default function onDragEnd (result, columns, setColumns){
   const { source, destination } = result;
 
   if (!result.destination && source.droppableId === 'list') {

@@ -14,8 +14,8 @@ function Main(props) {
 
   const [activities, setActivities] = useState([])
   const [columns, setColumns] = useState(columnsFromBackend(activities));
-  const [totalCost, setTotalCost] = useState(0);
-  const [budget, setBudget] = useState(mybudget-totalCost);
+  // const [totalCost, setTotalCost] = useState(0);
+  // const [budget, setBudget] = useState(mybudget-totalCost);
 
   // const [days,setDays] = useState(0)
 
@@ -24,18 +24,26 @@ function Main(props) {
     manageStates(city, setActivities, setColumns, columnsFromBackend)
   },[city])
 
-  useEffect(()=>{
-    let total = 0;
-    for (let column in columns) {
-      if (column !== 'list')
-      total += columns[column].total
-    }
-    setTotalCost(total)
-  },[columns])
+  // useEffect(()=>{
+  //   let total = 0;
+  //   for (let column in columns) {
+  //     if (column !== 'list')
+  //     total += columns[column].total
+  //   }
+  //   setTotalCost(total)
+  // },[columns])
 
-  useEffect(()=>{
-    setBudget(mybudget-totalCost)
-  },[totalCost])
+  let totalCost = 0;
+  for (let column in columns) {
+    if (column !== 'list')
+    totalCost += columns[column].total
+  }
+
+
+  
+  // useEffect(()=>{
+  //   setBudget(mybudget-totalCost)
+  // },[totalCost])
 
   useEffect(()=>{
     let newColumns = {...columns}
@@ -49,6 +57,8 @@ function Main(props) {
     setColumns(newColumns)
   },[Object.keys(columns).length])
 
+
+  const budget = mybudget-totalCost
   return (
   <div className="main">
     {/* <h3>Destination: {city}</h3> */}
@@ -67,12 +77,12 @@ function Main(props) {
       <DndContext
         className='container-6'
         onBeforeCapture={console.log("aastarted")}
-        onDragEnd={result => onDragEnd(result, columns, setColumns, setTotalCost)}
+        onDragEnd={result => onDragEnd(result, columns, setColumns)}
         budget={budget}
         columns={columns} 
         setColumns={setColumns}
         totalCost={totalCost}
-        setTotalCost={setTotalCost}
+        // setTotalCost={setTotalCost}
       />
     </div>
   </div>
