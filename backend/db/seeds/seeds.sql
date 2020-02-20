@@ -19,7 +19,7 @@ INSERT INTO destinations(id, city, country, image_url) VALUES
 (10,'Barcelona', 'Spain', 'https://s27363.pcdn.co/wp-content/uploads/2019/03/Tibidabo-and-Sagrat-Cor.jpg.optimal.jpg');
 
 
-INSERT INTO activities(name, price_cents, time_operation, latitude, longtitude, image_url, destination_id) VALUES
+INSERT INTO activities(name, price_cents, time_operation, lat, long, image_url, destination_id) VALUES
 -- korea
 ('Fishing', 6000, '5AM-5PM', 33.2323525,126.5407906, 'https://c.badatime.com/data/editor/1708/thumb-20170807125058_ulwcwqqk_600x450.jpg', 7),
 ('Snorkeling', 4000, '10AM-6PM', 33.2383688,126.5459496, 'https://img.traveltriangle.com/blog/wp-content/uploads/2018/10/cover-for-snorkeling-in-new-zealand.jpg', 7),
@@ -42,10 +42,10 @@ INSERT INTO activities(name, price_cents, time_operation, latitude, longtitude, 
 ('National Aquarium', 7000, '7AM-6PM', 22.756033,120.0253376, 'https://i.ytimg.com/vi/uQTHDwP6d2k/maxresdefault.jpg', 9);
 
 
-INSERT INTO activities(name, price_cents, time_operation, latitude, longtitude, destination_id, image_url) VALUES
+INSERT INTO activities(name, price_cents, time_operation, lat, long, destination_id, image_url) VALUES
 --bali
 ('Snorkeling', 2000, '7AM-5PM', -8.6311346, 115.1904754, 3, 'https://p0.piqsels.com/preview/464/699/802/brown-and-grey-turtle-in-underwater-photography.jpg'),
-('Scuba Diving', 10000, '7AM-5PM',8.6502089, 115.2246838, 3, 'https://s.iha.com/228100013484/Short-term-rentals-Nusa-lembongan-Scooby-Doo-Beach-Bungalow_13.jpeg'),
+('Scuba Diving', 10000, '7AM-5PM',-8.669589, 115.256625, 3, 'https://s.iha.com/228100013484/Short-term-rentals-Nusa-lembongan-Scooby-Doo-Beach-Bungalow_13.jpeg'),
 ('Paragliding', 2500, '7AM-5PM',-8.7330639, 115.1681143, 3, 'https://df8r7aly9nid3.cloudfront.net/app/uploads/production/photo/photo/22298/large_73d9135398f21b27f00f5ac1e3398385.jpg'),
 ('Sunset Tour', 5000, '10AM-7PM', -8.6633737,115.2115082, 3, 'https://storage.needpix.com/rsynced_images/bali-992566_1280.jpg'),
 ('Island Hopping', 1500, '7AM-5PM', -8.7394861,115.1827169, 3, 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_beautiful_turquoise_water_surrounding_the_Gili_Islands_%2816975598051%29.jpg/800px-The_beautiful_turquoise_water_surrounding_the_Gili_Islands_%2816975598051%29.jpg'),
@@ -54,10 +54,10 @@ INSERT INTO activities(name, price_cents, time_operation, latitude, longtitude, 
 
 -- cebu
 ('Snorkeling', 3000, '7AM-5PM', 10.2937683,123.8996013, 4, 'https://p1.pxfuel.com/preview/510/537/300/fish-school-snorkeling-nature.jpg'),
-('Scuba Diving', 20000, '7AM-5PM',8.6502089, 115.2246838, 4, 'https://storage.needpix.com/rsynced_images/sea-684352_1280.jpg'),
-('Island Hopping', 7000, '7AM-5PM', -8.7396129,115.1316263, 4, 'https://p0.piqsels.com/preview/210/826/517/andavaree-boat-island-hopping.jpg'),
-('City Tour', 2000, '7AM-10PM', -8.6311346, 115.1904754, 4, 'https://upload.wikimedia.org/wikipedia/commons/1/17/Year_of_The_Dragon.jpg'),
-('Badian Canyon Trek', 8000, '7AM-5PM', 9.8094689,123.3607373, 4, 'https://live.staticflickr.com/938/43938354401_fbe7f5ac84_b.jpg'),
+('Scuba Diving', 20000, '7AM-5PM',10.300977, 123.898556, 4, 'https://storage.needpix.com/rsynced_images/sea-684352_1280.jpg'),
+('Island Hopping', 7000, '7AM-5PM', 10.294135, 123.904126, 4, 'https://p0.piqsels.com/preview/210/826/517/andavaree-boat-island-hopping.jpg'),
+('City Tour', 2000, '7AM-10PM', 10.295613, 123.897126, 4, 'https://upload.wikimedia.org/wikipedia/commons/1/17/Year_of_The_Dragon.jpg'),
+('Badian Canyon Trek', 8000, '7AM-5PM', 9.8024994,123.3664732, 4, 'https://live.staticflickr.com/938/43938354401_fbe7f5ac84_b.jpg'),
 
 -- hl
 ('City Tour', 2000, '10AM',20.9538501,107.0040515, 5, 'https://static.asiawebdirect.com/m/bangkok/portals/vietnam/homepage/ha-long-bay/pagePropertiesImage/ha-long-bay.jpg.jpg'),

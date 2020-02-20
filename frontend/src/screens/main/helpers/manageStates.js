@@ -16,9 +16,9 @@ export default function manageStates (city,setActivities,setColumns,columnsFromB
           id: uuid(),
           activity_id: act.id,
           price_cents: act.price_cents,
-          time_operations: act.time_operations,
-          latitude: act.latitude,
-          longtitude: act.longitude,
+          time_operations: act.time_operation,
+          lat: act.lat,
+          long: act.long,
           image_url: act.image_url,
           destination_id: act.destination_id,
           name: act.name

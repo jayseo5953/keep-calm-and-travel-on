@@ -32,6 +32,7 @@ module.exports = (db) => {
     //     .catch(e => console.error(e))
     // },
     getCityByBudget: (arg) => {
+
       const qs =
       `SELECT id, city, $1 /avg_per_act AS number_of_activities
       FROM(select destinations.id, city, sum(price_cents)/(count(*)) AS AVG_PER_ACT from activities
