@@ -4,6 +4,7 @@ import columnsFromBackend from '../helpers/columnsFromBackend'
 import onDragEnd from '../helpers/onDragEnd'
 import './main.css';
 import DndContext from './DndContext'
+import BudgetGuage from './BudgetGuage'
 
 
 function Main(props) {
@@ -50,19 +51,19 @@ function Main(props) {
 
   return (
   <div className="main">
-    {/* <h1>Destination: {city}</h1> */}
+    <h1>Destination: {city}</h1>
     {!isNaN(budget)?
       <div> 
-      <h1>My Budget: ${budget}</h1>
-      {/* <h1>Number of Days: {days}</h1> */}
+       <BudgetGuage budget={budget} initialBudget={mybudget} />
       </div>:
       ""}
     
     <div className='container-1'>
       <DndContext
         className='container-6'
-        onDragEnd={result => onDragEnd(result, columns, setColumns)}
-
+        onBeforeCapture={console.log("aastarted")}
+        onDragEnd={result => onDragEnd(result, columns, setColumns, setTotalCost)}
+        budget={budget}
         columns={columns} 
         setColumns={setColumns}
         totalCost={totalCost}

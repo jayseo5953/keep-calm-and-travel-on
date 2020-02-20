@@ -4,7 +4,6 @@ import CardList from './CardList'
 import addCardList from '../helpers/addCardList'
 import deleteList from '../helpers/deleteList'
 
-
 const DndContext = (props) => {
 
   return (
@@ -30,6 +29,7 @@ const DndContext = (props) => {
                 setColumns={props.setColumns}
                 totalCost={props.totalCost}
                 setTotalCost={props.setTotalCost}
+                budget={props.budget}
                 />
               </div>
               {columnId!=='list'? <button className='delete-list' onClick={()=>deleteList(columnId, props.columns, props.setColumns)}>X</button>:""}
@@ -54,6 +54,7 @@ const DndContext = (props) => {
             setColumns={props.setColumns}
             totalCost={props.totalCost}
             setTotalCost={props.setTotalCost}
+            budget={props.budget}
             />
           </div>
         </div>

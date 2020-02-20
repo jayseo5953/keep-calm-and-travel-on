@@ -1,5 +1,5 @@
 import uuid from 'uuid/v4'
-export default function onDragEnd (result, columns, setColumns){
+export default function onDragEnd (result, columns, setColumns, setTotalCost){
   const { source, destination } = result;
 
   if (!result.destination && source.droppableId === 'list') {
@@ -26,8 +26,6 @@ export default function onDragEnd (result, columns, setColumns){
     return
   }
 
-  // console.log("source:",source)
-  // console.log("destinaiton: ", destination)
 
   if (source.droppableId =='list' && source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
@@ -40,7 +38,7 @@ export default function onDragEnd (result, columns, setColumns){
     removed.id = uuid();
     // console.log("after: ", removed)
     destItems.splice(destination.index, 0, removed);
-    
+
     setColumns({
       ...columns,
       [source.droppableId]: {
@@ -87,4 +85,5 @@ export default function onDragEnd (result, columns, setColumns){
       }
     });
   }
+
 };

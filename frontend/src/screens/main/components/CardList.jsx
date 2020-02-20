@@ -1,32 +1,53 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Droppable } from 'react-beautiful-dnd'
 import Card from './Card'
-import uuid from 'uuid/v4'
+
 
 
 const CardList = (props) => {
-  
+
+  const [dropDisabled,setDropDisabled] = useState(false)
+
+  // const listOfPrices =  props.columns['list'].items.map((act)=>{
+  //   return act.price_cents/100
+  // })
+  // const maxPrice = Math.max(...listOfPrices)
+  // console.log(maxPrice)
+
   useEffect(()=>{
     if (props.column.name !== 'List of Activities'){
       const listOfCosts = props.column.items.map((act)=>{
         return act.price_cents/100
       })
-      // console.log("list of costs: ", props.column.name, listOfCosts)
-    
       const totalCosts = listOfCosts.reduce((a,b)=> a+b,0)
-      // console.log('total cost: ', totalCosts)
-      
       let newState = {...props.columns}
       newState[props.columnId].total=totalCosts
       props.setColumns(newState)
     }
-  },[props.column.items])
+  },[props.column.items.length])
+
+  useEffect(()=>{
+    if (props.columnId === 'list') return
+
+    console.log("column id: ",props.columnId)
+    console.log("budget: ",props.budget)
+    console.log("cost: ", props.totalCost)
+
+
+
+    if(props.budget <= 0) {
+      setDropDisabled(true)
+    } else {
+      setDropDisabled(false)
+    }
+
+  },[props.budget])
 
   return (
     <Droppable 
     droppableId={props.columnId}
     key={props.columnId}
-    isDropDisabled={props.columnId==='list'}
+    isDropDisabled={props.columnId==='list'|| dropDisabled}
     >
     {(provided, snapshot) => {
       return (
