@@ -14,7 +14,6 @@ import Trips from './screens/trips/components/Trips'
 
 
 export default function App() {
-  console.log("Running from app", process.env.REACT_APP_GMAPKey)
   return (
     <Router>
       <div className="main">

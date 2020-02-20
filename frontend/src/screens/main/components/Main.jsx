@@ -29,7 +29,7 @@ function Main(props) {
   //   let newState = {...columns};
   //   newState['list'].items = activities
   //   const delay = setTimeout(()=>{
-  //     setColumns(newState)
+  //     setolumns(newState)
   //   },500)
   //   return () => {                                                               // 
   //     clearTimeout(delay);

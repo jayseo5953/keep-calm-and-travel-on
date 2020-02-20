@@ -9,7 +9,7 @@ const Home = () => {
       <h1>Home</h1>
       <SearchBar />
 
-      <GMap />
+      {/* <GMap /> */}
     </div>
   );
 };

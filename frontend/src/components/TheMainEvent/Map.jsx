@@ -11,8 +11,8 @@ const Map = (props) => {
       defaultCenter={{lat: Number(activityData.activities[0].latitude), lng:  Number(activityData.activities[0].longtitude)}}
     >
       {activityData.activities.map(activity => {
-        console.log("Long==> ",activity.longtitude)
         console.log("Lat ==> ",activity.latitude)
+        console.log("Long==> ",activity.longtitude)
         return(
         <Marker
           key={activity.id}
