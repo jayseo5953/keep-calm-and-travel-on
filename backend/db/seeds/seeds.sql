@@ -19,7 +19,7 @@ INSERT INTO destinations(id, city, country, image_url) VALUES
 (10,'Barcelona', 'Spain', 'https://s27363.pcdn.co/wp-content/uploads/2019/03/Tibidabo-and-Sagrat-Cor.jpg.optimal.jpg');
 
 
-INSERT INTO activities(name, price_cents, time_operation, latitude, longtitude, image_url, destination_id) VALUES
+INSERT INTO activities(name, price_cents, time_operation, lat, long, image_url, destination_id) VALUES
 -- korea
 ('Fishing', 6000, '5AM-5PM', 33.2323525,126.5407906, 'https://c.badatime.com/data/editor/1708/thumb-20170807125058_ulwcwqqk_600x450.jpg', 7),
 ('Snorkeling', 4000, '10AM-6PM', 33.2383688,126.5459496, 'https://img.traveltriangle.com/blog/wp-content/uploads/2018/10/cover-for-snorkeling-in-new-zealand.jpg', 7),
@@ -42,7 +42,7 @@ INSERT INTO activities(name, price_cents, time_operation, latitude, longtitude, 
 ('National Aquarium', 7000, '7AM-6PM', 22.756033,120.0253376, 'https://i.ytimg.com/vi/uQTHDwP6d2k/maxresdefault.jpg', 9);
 
 
-INSERT INTO activities(name, price_cents, time_operation, latitude, longtitude, destination_id, image_url) VALUES
+INSERT INTO activities(name, price_cents, time_operation, lat, long, destination_id, image_url) VALUES
 --bali
 ('Snorkeling', 2000, '7AM-5PM', -8.6311346, 115.1904754, 3, 'https://p0.piqsels.com/preview/464/699/802/brown-and-grey-turtle-in-underwater-photography.jpg'),
 ('Scuba Diving', 10000, '7AM-5PM',8.6502089, 115.2246838, 3, 'https://s.iha.com/228100013484/Short-term-rentals-Nusa-lembongan-Scooby-Doo-Beach-Bungalow_13.jpeg'),

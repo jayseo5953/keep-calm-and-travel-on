@@ -4,55 +4,62 @@ import * as activityData from '../../mockData.json';
 require('dotenv').config();
 
 const Map = (props) => {
+  let activityData2 = props.activities;
   const [selectedActivity, setSelectedActivity] = useState(null);
-  return (
-    <GoogleMap
-      defaultZoom={10}
-      defaultCenter={{lat: Number(activityData.activities[0].latitude), lng:  Number(activityData.activities[0].longtitude)}}
-    >
-      {activityData.activities.map(activity => {
-        console.log("Lat ==> ",activity.latitude)
-        console.log("Long==> ",activity.longtitude)
-        return(
-        <Marker
-          key={activity.id}
-          position={{
-            lat: Number(activity.latitude),
-            lng: Number(activity.longtitude)
-          }}
-          onClick={() => {
-            setSelectedActivity(activity);
-          }}
-          icon={{
-            url: activity.image_url,
-            scaledSize: new window.google.maps.Size(20, 20)
-          }}
-        />)
-      })}
+  if (activityData2.length === 0) {
+    return (
+      'NOTHING TO SHOW'
+    )
+  } else {
+    console.log(activityData2[0])
+    return (
+      <GoogleMap
+        defaultZoom={12}
+        defaultCenter={{lat: Number(activityData2[0].lat), lng:  Number(activityData2[0].long)}}
+      >
+        {activityData2.map(activity => {
+          {/* console.log("Lat ==> ",activity.latitude) */}
+          {/* console.log("Long==> ",activity.longtitude) */}
+          return(
+          <Marker
+            key={activity.id}
+            position={{
+              lat: Number(activity.lat),
+              lng: Number(activity.long)
+            }}
+            onClick={() => {
+              setSelectedActivity(activity);
+            }}
+            
+          />)
+        })}
+  
+        {selectedActivity && (
+          <InfoWindow
+            onCloseClick={() => {
+              setSelectedActivity(null);
+            }}
+            position={{
+              lat: Number(selectedActivity.latitude),
+              lng: Number(selectedActivity.longtitude)
+            }}
+          >
+            <div>
+              <h2>{selectedActivity.name}</h2>
+              <p>{selectedActivity.destination_id}</p>
+            </div>
+          </InfoWindow>
+        )}
+      </GoogleMap>
+    );
 
-      {selectedActivity && (
-        <InfoWindow
-          onCloseClick={() => {
-            setSelectedActivity(null);
-          }}
-          position={{
-            lat: Number(selectedActivity.latitude),
-            lng: Number(selectedActivity.longtitude)
-          }}
-        >
-          <div>
-            <h2>{selectedActivity.name}</h2>
-            <p>{selectedActivity.destination_id}</p>
-          </div>
-        </InfoWindow>
-      )}
-    </GoogleMap>
-  );
+  }
 }
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 export default function GMap (props) {
   const mapApiKey = process.env.REACT_APP_GMAPKey;
+  
   return (
     <div style={{ width: "60vw", height: "60vh" }}>
       <MapWrapped
@@ -60,6 +67,7 @@ export default function GMap (props) {
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
+        activities={props.activities}
       />
     </div>
   )

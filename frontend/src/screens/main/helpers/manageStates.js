@@ -9,16 +9,16 @@ export default function manageStates (city,setActivities,setColumns,columnsFromB
     .then(res=> {
       // console.log(res)
       const activities = res.data.activities
-      // console.log("original: ", activities)
+      console.log("original: ", activities)
      
       const result = activities.map((act)=>{
         return {
           id: uuid(),
           activity_id: act.id,
           price_cents: act.price_cents,
-          time_operations: act.time_operations,
-          latitude: act.latitude,
-          longtitude: act.longitude,
+          time_operations: act.time_operation,
+          lat: act.lat,
+          long: act.long,
           image_url: act.image_url,
           destination_id: act.destination_id,
           name: act.name

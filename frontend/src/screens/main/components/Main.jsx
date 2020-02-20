@@ -5,6 +5,7 @@ import onDragEnd from '../helpers/onDragEnd'
 import './main.css';
 import DndContext from './DndContext'
 
+import GMap from '../../../components/TheMainEvent/Map';
 
 function Main(props) {
 
@@ -72,6 +73,9 @@ function Main(props) {
         setTotalCost={setTotalCost}
       />
     </div>
+
+      <GMap activities={activities} />
+
   </div>
   );
 }
