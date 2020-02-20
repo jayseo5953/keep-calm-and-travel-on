@@ -1,7 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 .container-1 {
   display: flex;
-  justify-content: center;
-  height: "100%" 
+  overflow-x: auto;
+  height: 100%; 
+  max-width: 70vw;
+  margin:20px;
 }
 
 .container-2 {
@@ -18,7 +26,7 @@
   padding: 4px;
   width: 350px;
   min-height: 500px;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 500px;
 }
 
@@ -34,4 +42,15 @@
   border-radius: 300px;
   height: 50px;
   width: 60px;
+}
+
+.add-list {
+  margin-top:290px;
+  border-radius:500px;
+  margin-left: 30px;
+  height:40px;
+  width:50px;
+  font-size: 40px;
+  line-height: 0px;
+  padding-bottom:7px;
 }

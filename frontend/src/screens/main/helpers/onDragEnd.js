@@ -1,17 +1,44 @@
-
+import uuid from 'uuid/v4'
 export default function onDragEnd (result, columns, setColumns){
-  if (!result.destination) return;
   const { source, destination } = result;
 
-  console.log("source:",source)
-  console.log("destinaiton: ", destination)
+  if (!result.destination && source.droppableId === 'list') {
+    return
+  } else if (!result.destination && source.droppableId !== 'list') {
+    let srcColumn = columns[source.droppableId];
+    let srcItems = [...srcColumn.items];
+    const [removed] = srcItems.splice(source.index, 1);
+    const list = columns[`list`];
+    const listItems = [...list.items]
+    // listItems.unshift(removed);
+
+    setColumns({
+      ...columns,
+      [source.droppableId]: {
+        ...srcColumn,
+        items: srcItems
+      },
+      ['list']: {
+        ...list,
+        items: listItems
+      }
+    });
+    return
+  }
+
+  // console.log("source:",source)
+  // console.log("destinaiton: ", destination)
 
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];
     const sourceItems = [...sourceColumn.items];
     const destItems = [...destColumn.items];
-    const [removed] = sourceItems.splice(source.index, 1);
+    // const [removed] = sourceItems.splice(source.index, 1);
+    let removed = {...sourceItems[source.index]};
+    // console.log("before: ",removed)
+    removed.id = uuid();
+    // console.log("after: ", removed)
     destItems.splice(destination.index, 0, removed);
     setColumns({
       ...columns,

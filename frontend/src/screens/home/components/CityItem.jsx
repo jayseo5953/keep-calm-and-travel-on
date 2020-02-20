@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 
 const CityItem = (props) => {
-  console.log('budget',props.value)
+  // console.log('budget',props.value)
 
   let budget = !isNaN(props.value)? props.value: 'budget_not_given'
   if (!isNaN(budget)){
