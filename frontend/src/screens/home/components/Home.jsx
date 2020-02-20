@@ -12,7 +12,7 @@ import GridItem from '../../../components/Grid/GridItem'
 
 import styles from "../../../assets/jss/material-kit-react/views/homePage.js";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles)
 
 const Home = () => {
   const classes = useStyles();
@@ -43,6 +43,10 @@ const Home = () => {
         </div>
       </Parallax>
       
+
+      <h1>Home</h1>
+      <SearchBar />
+
     </div>
   );
 };
