@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import getUserByEmail from './helpers/helper'
+import axios from 'axios';
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -107,7 +109,7 @@ const Login = () => {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button simple color="info" size="lg">
+                    <Button type = "submit" simple color="info" size="lg" onClick={ }>
                       Sign In
                     </Button>
                   </CardFooter>
