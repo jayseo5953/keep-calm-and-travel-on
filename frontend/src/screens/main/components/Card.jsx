@@ -25,9 +25,11 @@ const Card = (props) => {
             ...provided.draggableProps.style
           }}
         >
-          <img className='activity-image' 
-          src={`${props.item.image_url}`} alt="activty"/> {props.item.name} ${props.item.price_cents/100} 
-          {props.droppableId ==='list'?"": <button onClick={()=> deleteCard(props.index, props.droppableId, props.columns, props.setColumns)}>Delete</button>}
+          <div className='item-info'>
+            <img className='item-photo' 
+            src={`${props.item.image_url}`} alt="activty"/> <span className='item-name'>{props.item.name}</span>  <span className='item-price'>${props.item.price_cents/100}</span>  
+          </div>
+          {props.droppableId ==='list'?"": <button className='item-delete' onClick={()=> deleteCard(props.index, props.droppableId, props.columns, props.setColumns)}>Delete</button>}
         </div>
       );
     }}
