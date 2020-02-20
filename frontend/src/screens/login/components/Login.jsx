@@ -22,7 +22,7 @@ import CardFooter from '../../../components/Card/CardFooter'
 
 import styles from "../../../assets/jss/material-kit-react/views/loginPage.js"
 
-import image from "../../../assets/img/crater-lake-bg.jpg";
+import image from "../../../assets/img/sign.jpg";
 
 const useStyles = makeStyles(styles);
 
@@ -48,7 +48,7 @@ const Login = () => {
           backgroundPosition: "top center"
         }}
       >
-        <div className={classes.container}>
+        <div className={classes.container} style={{width: "500px"}}>
         <GridContainer>
           <GridItem>
             <Card className={classes[cardAnimaton]}>
