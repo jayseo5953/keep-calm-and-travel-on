@@ -3,11 +3,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* max-height:100vh; */
+  margin:0;
 }
 .container-1 {
   display: flex;
   height: 100%; 
-  /* max-width: 75vw; */
+  max-width: 70vw;
   margin:20px;
   flex-direction: column
 }
@@ -31,23 +33,31 @@
   margin:5px;
 }
 
-.days-container .container-4 {
+.container-4 {
+  border-radius:15px;
   padding: 4px;
-  width: 35vw;
-  min-height: 50vh;
   overflow-y: auto;
-  max-height: 500px;
+  width: 35vw;
+  font-size:20px;
+}
+
+.days-container .container-4 {
+  height:40vh;
+  max-height: 40vh;
+  width:30vw;
 }
 
 .list .container-4 {
-  padding: 4px;
-  width: 35vw;
-  min-height: 15vh;
-  overflow-y: auto;
-  max-height: 40vh;
+  position:fixed;
+  bottom:0;
+  right:60vh;
+  max-height: 30vh;
+  margin-bottom:0;
+  width:30vw;
 }
 
 .container-5 {
+  border-radius:10px;
   padding: 16px;
   margin: 0 0 8px 0;
   min-width: 250px;
@@ -76,10 +86,18 @@
   height: 50px;
   width: 60px;
 }
-/* .item-name {
+
+.item-name {
+  padding:2px 10px;
+  border-radius:12px;
+  background: linear-gradient(to left, #70adf2, #ff9472);
 }
+
 .item-price {
-} */
+  padding:2px 10px;
+  border-radius:12px;
+  background: linear-gradient(to left, #f2709c, #ff9472);
+}
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -90,11 +108,11 @@ body {
   border-radius: 10px;
   position: relative;
   margin: 15px 0;
-  height: 35px;
+  height: 6vh;
   width: 40vw;
 }
 
-.progress-done {
+.negative .progress-done {
   background: linear-gradient(to left, #f2709c, #ff9472);
   box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
   border-radius: 10px;
@@ -106,5 +124,21 @@ body {
   width: 0;
   opacity: 0;
   transition: 1s ease 0.3s;
-  font-size:22.5px;
+  font-size:25px;
 }
+
+.positive .progress-done {
+  background: linear-gradient(to left, #70adf2, #72d7ff);
+  box-shadow: 0 3px 3px -5px #70adf2, 0 2px 5px #70adf2;
+  border-radius: 10px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  transition: 1s ease 0.3s;
+  font-size:25px;
+}
+
