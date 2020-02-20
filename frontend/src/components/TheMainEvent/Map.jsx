@@ -5,21 +5,23 @@ require('dotenv').config();
 
 const Map = (props) => {
   let activityData2 = props.activities;
+  let initialCenter=props.initialCenter;
+  console.log(initialCenter)
+
   const [selectedActivity, setSelectedActivity] = useState(null);
-  if (activityData2.length === 0) {
+  if (initialCenter.length === 0) {
     return (
       'NOTHING TO SHOW'
     )
   } else {
-    console.log(activityData2[0])
+    // console.log(activityData2[0])
     return (
       <GoogleMap
-        defaultZoom={12}
-        defaultCenter={{lat: Number(activityData2[0].lat), lng:  Number(activityData2[0].long)}}
+        defaultZoom={11}
+        defaultCenter={{lat: Number(initialCenter[0].lat), lng:  Number(initialCenter[0].long)}}
       >
         {activityData2.map(activity => {
-          {/* console.log("Lat ==> ",activity.latitude) */}
-          {/* console.log("Long==> ",activity.longtitude) */}
+      
           return(
           <Marker
             key={activity.id}
@@ -40,8 +42,8 @@ const Map = (props) => {
               setSelectedActivity(null);
             }}
             position={{
-              lat: Number(selectedActivity.latitude),
-              lng: Number(selectedActivity.longtitude)
+              lat: Number(selectedActivity.lat),
+              lng: Number(selectedActivity.long)
             }}
           >
             <div>
@@ -59,7 +61,6 @@ const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 export default function GMap (props) {
   const mapApiKey = process.env.REACT_APP_GMAPKey;
-  
   return (
     <div style={{ width: "60vw", height: "60vh" }}>
       <MapWrapped
@@ -68,6 +69,8 @@ export default function GMap (props) {
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         activities={props.activities}
+        activityItem={props.columns}
+        initialCenter={props.initialCenter}
       />
     </div>
   )

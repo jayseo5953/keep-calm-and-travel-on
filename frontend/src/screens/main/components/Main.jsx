@@ -22,18 +22,27 @@ function Main(props) {
 
   const [budget, setBudget] = useState(mybudget-totalCost);
 
+  const [selectedActivity, setSelectedActivity] = useState(null);
+
 
   useEffect(()=>{
     manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
   },[city])
 
   useEffect(()=>{
+    let selectedActivities = [];
     let total = 0;
     for (let column in columns) {
-      if (column !== 'list')
-      total += columns[column].total
+      if (column !== 'list'){
+        total += columns[column].total
+        // console.log(columns[column])
+        selectedActivities = [...columns[column].items, ...selectedActivities]
+      }
     }
     setTotalCost(total)
+    setSelectedActivity(selectedActivities)
+
+
   },[columns])
 
   useEffect(()=>{
@@ -74,7 +83,7 @@ function Main(props) {
       />
     </div>
 
-      <GMap activities={activities} />
+      <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
 
   </div>
   );

@@ -9,7 +9,7 @@ export default function manageStates (city,setActivities,setColumns,columnsFromB
     .then(res=> {
       // console.log(res)
       const activities = res.data.activities
-      console.log("original: ", activities)
+      // console.log("original: ", activities)
      
       const result = activities.map((act)=>{
         return {
