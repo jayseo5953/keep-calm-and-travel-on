@@ -42,7 +42,12 @@ export default function SearchBar (props) {
         />
       </form>
 
-      <CityItemList cities={cities} setCity={setCity} value={city}/>
+      <CityItemList 
+        cities={cities} 
+        setCity={setCity} 
+        value={city}
+      />
+      
     </>
   )
 
