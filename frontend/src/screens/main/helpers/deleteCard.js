@@ -5,7 +5,7 @@ export default function deleteCard (card_index, cardList_id, columns, setColumns
   const [removed] = copiedItems.splice(card_index, 1);
   const list = columns[`list`];
   const listItems = [...list.items]
-  listItems.unshift(removed);
+  // listItems.unshift(removed);
   setColumns({
     ...columns,
     [cardList_id]: {

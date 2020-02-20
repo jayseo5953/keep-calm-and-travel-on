@@ -11,8 +11,7 @@ export default function SearchBar (props) {
       <form autoComplete="off" onSubmit={event=>event.preventDefault()}>
         <input 
           type='text'
-          onChange={(event)=>
-            {
+          onChange={(event)=>{
               setCity(event.target.value);
               getCities(event.target.value, setCities);
             }}

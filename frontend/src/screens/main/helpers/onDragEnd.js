@@ -1,6 +1,7 @@
-
+import uuid from 'uuid/v4'
 export default function onDragEnd (result, columns, setColumns){
   const { source, destination } = result;
+
   if (!result.destination && source.droppableId === 'list') {
     return
   } else if (!result.destination && source.droppableId !== 'list') {
@@ -9,7 +10,7 @@ export default function onDragEnd (result, columns, setColumns){
     const [removed] = srcItems.splice(source.index, 1);
     const list = columns[`list`];
     const listItems = [...list.items]
-    listItems.unshift(removed);
+    // listItems.unshift(removed);
 
     setColumns({
       ...columns,
@@ -24,7 +25,7 @@ export default function onDragEnd (result, columns, setColumns){
     });
     return
   }
- 
+
   // console.log("source:",source)
   // console.log("destinaiton: ", destination)
 
@@ -33,7 +34,11 @@ export default function onDragEnd (result, columns, setColumns){
     const destColumn = columns[destination.droppableId];
     const sourceItems = [...sourceColumn.items];
     const destItems = [...destColumn.items];
-    const [removed] = sourceItems.splice(source.index, 1);
+    // const [removed] = sourceItems.splice(source.index, 1);
+    let removed = {...sourceItems[source.index]};
+    // console.log("before: ",removed)
+    removed.id = uuid();
+    // console.log("after: ", removed)
     destItems.splice(destination.index, 0, removed);
     setColumns({
       ...columns,

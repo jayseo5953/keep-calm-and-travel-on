@@ -9,7 +9,8 @@ const DndContext = (props) => {
   return (
     <DragDropContext
       onDragEnd={props.onDragEnd}>
-      {Object.entries(props.columns).map(([columnId, column], index) => {
+
+      {Object.entries(props.columns).map(([columnId, column]) => {
         return (
           <div
           className='container-2'
