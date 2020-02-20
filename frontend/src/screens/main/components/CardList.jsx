@@ -33,7 +33,7 @@ const CardList = (props) => {
         <div
           {...provided.droppableProps}
           ref={provided.innerRef}
-          className='container-4'
+          className={props.columnId==='list'?'container-4 list':"container-4"}
           style={{
             background: snapshot.isDraggingOver
               ? "lightblue"

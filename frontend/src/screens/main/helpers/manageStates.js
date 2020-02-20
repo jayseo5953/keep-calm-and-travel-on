@@ -25,22 +25,25 @@ export default function manageStates (city,setActivities,setColumns,columnsFromB
         }
       })
       setActivities(result)
+
+      setColumns(columnsFromBackend(result))
    
-      let prices = activities.map((activity)=>{
-        return activity.price_cents
-      })
+      // let prices = activities.map((activity)=>{
+      //   return activity.price_cents
+      // })
 
-      let totalPrice = prices.reduce((accumulator, currentValue)=>{
-        return accumulator + currentValue
-      },0)/100
+      // let totalPrice = prices.reduce((accumulator, currentValue)=>{
+      //   return accumulator + currentValue
+      // },0)/100
 
-      let averagePrice = totalPrice/activities.length
-      let averageCostPerDay = averagePrice*3
-      let numberOfDays = Math.floor(budget/averageCostPerDay)
+      // let averagePrice = totalPrice/activities.length
+      // let averageCostPerDay = averagePrice*3
+      // let numberOfDays = Math.floor(budget/averageCostPerDay)
 
-      setDays(numberOfDays)
+      // setDays(numberOfDays)
 
-      setColumns(columnsFromBackend(result, numberOfDays))
+      // setColumns(columnsFromBackend(result, numberOfDays))
+
     })
     .catch((err) => {
       if (err.status === 404) {

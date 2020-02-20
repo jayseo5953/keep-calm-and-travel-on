@@ -13,13 +13,14 @@ function Main(props) {
 
   const [activities, setActivities] = useState([])
   const [columns, setColumns] = useState(columnsFromBackend(activities));
-  const [days,setDays] =useState(0)
   const [totalCost, setTotalCost] = useState(0);
   const [budget, setBudget] = useState(mybudget-totalCost);
 
+  // const [days,setDays] = useState(0)
 
   useEffect(()=>{
-    manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
+    // manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
+    manageStates(city, setActivities, setColumns, columnsFromBackend)
   },[city])
 
   useEffect(()=>{
@@ -49,11 +50,11 @@ function Main(props) {
 
   return (
   <div className="main">
-    <h1>Destination: {city}</h1>
+    {/* <h1>Destination: {city}</h1> */}
     {!isNaN(budget)?
       <div> 
       <h1>My Budget: ${budget}</h1>
-      <h1>Number of Days: {days}</h1>
+      {/* <h1>Number of Days: {days}</h1> */}
       </div>:
       ""}
     
