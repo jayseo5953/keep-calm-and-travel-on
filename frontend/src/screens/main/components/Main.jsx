@@ -6,6 +6,7 @@ import './main.css';
 import DndContext from './DndContext'
 import BudgetGuage from './BudgetGuage'
 
+import GMap from '../../../components/TheMainEvent/Map';
 
 function Main(props) {
 
@@ -17,12 +18,16 @@ function Main(props) {
   // const [totalCost, setTotalCost] = useState(0);
   // const [budget, setBudget] = useState(mybudget-totalCost);
 
+  const [selectedActivity, setSelectedActivity] = useState(null);
+
   // const [days,setDays] = useState(0)
+
 
   useEffect(()=>{
     // manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
     manageStates(city, setActivities, setColumns, columnsFromBackend)
   },[city])
+
 
   // useEffect(()=>{
   //   let total = 0;
@@ -38,6 +43,23 @@ function Main(props) {
     if (column !== 'list')
     totalCost += columns[column].total
   }
+
+  useEffect(()=>{
+    let selectedActivities = [];
+    let total = 0;
+    for (let column in columns) {
+      if (column !== 'list'){
+        total += columns[column].total
+        // console.log(columns[column])
+        selectedActivities = [...columns[column].items, ...selectedActivities]
+      }
+    }
+    setTotalCost(total)
+    setSelectedActivity(selectedActivities)
+
+
+  },[columns])
+
 
 
   
@@ -85,6 +107,9 @@ function Main(props) {
         // setTotalCost={setTotalCost}
       />
     </div>
+
+      <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
+
   </div>
   );
 }
