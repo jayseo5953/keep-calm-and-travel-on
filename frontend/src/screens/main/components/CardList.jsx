@@ -26,22 +26,15 @@ const CardList = (props) => {
     }
   },[props.column.items.length])
 
-  useEffect(()=>{
-    if (props.columnId === 'list') return
+  // useEffect(()=>{
+  //   if (props.columnId === 'list') return
+  //   if(props.budget <= 0) {
+  //     setDropDisabled(true)
+  //   } else {
+  //     setDropDisabled(false)
+  //   }
 
-    console.log("column id: ",props.columnId)
-    console.log("budget: ",props.budget)
-    console.log("cost: ", props.totalCost)
-
-
-
-    if(props.budget <= 0) {
-      setDropDisabled(true)
-    } else {
-      setDropDisabled(false)
-    }
-
-  },[props.budget])
+  // },[props.budget])
 
   return (
     <Droppable 

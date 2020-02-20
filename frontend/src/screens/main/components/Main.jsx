@@ -51,12 +51,17 @@ function Main(props) {
 
   return (
   <div className="main">
-    <h1>Destination: {city}</h1>
+    {/* <h3>Destination: {city}</h3> */}
+    {<h3>My Budget: {budget}</h3>}
     {!isNaN(budget)?
       <div> 
-       <BudgetGuage budget={budget} initialBudget={mybudget} />
-      </div>:
-      ""}
+       {
+        budget>0?<BudgetGuage className='positive' budget=
+        {budget} initialBudget={mybudget}> {budget>0?`+$${budget}`:""} </BudgetGuage>:""}
+        </div>:""
+       }
+
+       {budget<=0?<BudgetGuage className='negative' budget={budget} initialBudget={mybudget}>-${-budget}</BudgetGuage>:""}
     
     <div className='container-1'>
       <DndContext
