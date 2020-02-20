@@ -16,31 +16,34 @@ export default function manageStates (city,setActivities,setColumns,columnsFromB
           id: uuid(),
           activity_id: act.id,
           price_cents: act.price_cents,
-          time_operations: act.time_operations,
-          latitude: act.latitude,
-          longtitude: act.longitude,
+          time_operations: act.time_operation,
+          lat: act.lat,
+          long: act.long,
           image_url: act.image_url,
           destination_id: act.destination_id,
           name: act.name
         }
       })
       setActivities(result)
+
+      setColumns(columnsFromBackend(result))
    
-      let prices = activities.map((activity)=>{
-        return activity.price_cents
-      })
+      // let prices = activities.map((activity)=>{
+      //   return activity.price_cents
+      // })
 
-      let totalPrice = prices.reduce((accumulator, currentValue)=>{
-        return accumulator + currentValue
-      },0)/100
+      // let totalPrice = prices.reduce((accumulator, currentValue)=>{
+      //   return accumulator + currentValue
+      // },0)/100
 
-      let averagePrice = totalPrice/activities.length
-      let averageCostPerDay = averagePrice*3
-      let numberOfDays = Math.floor(budget/averageCostPerDay)
+      // let averagePrice = totalPrice/activities.length
+      // let averageCostPerDay = averagePrice*3
+      // let numberOfDays = Math.floor(budget/averageCostPerDay)
 
-      setDays(numberOfDays)
+      // setDays(numberOfDays)
 
-      setColumns(columnsFromBackend(result, numberOfDays))
+      // setColumns(columnsFromBackend(result, numberOfDays))
+
     })
     .catch((err) => {
       if (err.status === 404) {

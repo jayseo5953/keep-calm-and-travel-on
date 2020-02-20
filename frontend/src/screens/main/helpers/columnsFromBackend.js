@@ -8,18 +8,18 @@ export default function columnsFromBackend (arg, numOfDays) {
       total: 0
     },
     [uuid()]: {
-      name: 'Day1',
+      name: 'Day 1',
       items: [],
       total: 0
     }
   }
-  for (let i = 2; i<= numOfDays; i++) {
-    result[uuid()]={
-      name: `Day${i}`,
-      items: [],
-      total: 0
-    }
-  }
+  // for (let i = 2; i<= numOfDays; i++) {
+  //   result[uuid()]={
+  //     name: `Day${i}`,
+  //     items: [],
+  //     total: 0
+  //   }
+  // }
 
   return result
 };

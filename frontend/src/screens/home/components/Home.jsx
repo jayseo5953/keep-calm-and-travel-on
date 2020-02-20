@@ -12,7 +12,7 @@ import GridItem from '../../../components/Grid/GridItem'
 
 import styles from "../../../assets/jss/material-kit-react/views/homePage.js";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles)
 
 const Home = () => {
   const classes = useStyles();
@@ -22,19 +22,14 @@ const Home = () => {
        color="transparent" 
        brand="LIGHTHOUSE LABS"
        fixed
-      //  changeColorOnScroll={{
-      //    height: 400,
-      //    color: "white"
-      //  }}
       />
       <Parallax filter image={require("../../../assets/img/miami-bg.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
-            <h1 className={classes.title}>Plan your own unique itinerary.</h1>
+            <h1 className={classes.title}>Plan your own itinerary right here.</h1>
               <h4>
-                Choose your destination, budget or activity
-                and we will give you recommendations!
+                What is your destination, activity, or budget?
               </h4>
               <SearchBar/>
             </GridItem>
@@ -43,6 +38,10 @@ const Home = () => {
         </div>
       </Parallax>
       
+
+      <h1>Home</h1>
+      <SearchBar />
+
     </div>
   );
 };

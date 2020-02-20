@@ -9,7 +9,7 @@ const CityItem = (props) => {
   if (!isNaN(budget)){
     return (
       <div>
-        <Link to={`/main/${props.city}/${budget}`}>{props.city} [{props.numDays}days]</Link>
+        <Link to={`/main/${props.city}/${budget}`}>{props.city} (enjoy {props.numActs} activities!)</Link>
       </div>
     );
   }
