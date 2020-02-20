@@ -23,11 +23,15 @@ export default function SearchBar (props) {
   return(
     <>
       <form className={classes.root} noValidateautoComplete="off" onSubmit={event=>event.preventDefault()}>
-        <TextField input 
+        <TextField 
+          InputLabelProps={{
+            style: { color: '#fff' },
+          }}
+          input 
           id="standard-search" 
           label="Enter your destination, budget or activity" 
           type='text'
-          color="secondary"
+          color="info"
           onChange={(event)=>
             {
               setCity(event.target.value);
