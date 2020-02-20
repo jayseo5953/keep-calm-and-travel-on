@@ -1,11 +1,11 @@
 import axios from 'axios'
 import uuid from "uuid/v4";
-export default function manageStates (arg,cb,setColumns,columnsFromBackend, budget, setDays) {
-  if(!arg) {
-    cb([])
+export default function manageStates (city,setActivities,setColumns,columnsFromBackend, budget, setDays) {
+  if(!city) {
+    setActivities([])
     return
   }
-  return axios.get(`/api/activities/${arg}`)
+  axios.get(`/api/activities/${city}`)
     .then(res=> {
       // console.log(res)
       const activities = res.data.activities
@@ -24,7 +24,7 @@ export default function manageStates (arg,cb,setColumns,columnsFromBackend, budg
           name: act.name
         }
       })
-      // console.log("after: ",result)
+      setActivities(result)
    
       let prices = activities.map((activity)=>{
         return activity.price_cents
@@ -39,11 +39,6 @@ export default function manageStates (arg,cb,setColumns,columnsFromBackend, budg
       let numberOfDays = Math.floor(budget/averageCostPerDay)
 
       setDays(numberOfDays)
-      // console.log("total price:",totalPrice)
-      // console.log("num acts: ", activities.length)
-      // console.log("avg price: ",averagePrice)
-      
-      cb(result)
 
       setColumns(columnsFromBackend(result, numberOfDays))
     })
