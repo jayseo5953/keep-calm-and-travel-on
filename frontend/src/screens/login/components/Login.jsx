@@ -109,7 +109,7 @@ const Login = () => {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button type = "submit" simple color="info" size="lg" onClick={ }>
+                    <Button type = "submit" simple color="info" size="lg" >
                       Sign In
                     </Button>
                   </CardFooter>
