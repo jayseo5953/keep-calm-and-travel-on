@@ -1,5 +1,5 @@
 import uuid from 'uuid/v4'
-export default function onDragEnd (result, columns, setColumns, setTotalCost){
+export default function onDragEnd (result, columns, setColumns){
   const { source, destination } = result;
 
   if (!result.destination && source.droppableId === 'list') {
@@ -38,7 +38,7 @@ export default function onDragEnd (result, columns, setColumns, setTotalCost){
     removed.id = uuid();
     // console.log("after: ", removed)
     destItems.splice(destination.index, 0, removed);
-
+    
     setColumns({
       ...columns,
       [source.droppableId]: {

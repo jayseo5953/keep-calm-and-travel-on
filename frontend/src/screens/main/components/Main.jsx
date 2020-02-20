@@ -15,8 +15,8 @@ function Main(props) {
 
   const [activities, setActivities] = useState([])
   const [columns, setColumns] = useState(columnsFromBackend(activities));
-  const [totalCost, setTotalCost] = useState(0);
-  const [budget, setBudget] = useState(mybudget-totalCost);
+  // const [totalCost, setTotalCost] = useState(0);
+  // const [budget, setBudget] = useState(mybudget-totalCost);
 
   const [selectedActivity, setSelectedActivity] = useState(null);
 
@@ -27,6 +27,22 @@ function Main(props) {
     // manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
     manageStates(city, setActivities, setColumns, columnsFromBackend)
   },[city])
+
+
+  // useEffect(()=>{
+  //   let total = 0;
+  //   for (let column in columns) {
+  //     if (column !== 'list')
+  //     total += columns[column].total
+  //   }
+  //   setTotalCost(total)
+  // },[columns])
+
+  let totalCost = 0;
+  for (let column in columns) {
+    if (column !== 'list')
+    totalCost += columns[column].total
+  }
 
   useEffect(()=>{
     let selectedActivities = [];
@@ -44,9 +60,12 @@ function Main(props) {
 
   },[columns])
 
-  useEffect(()=>{
-    setBudget(mybudget-totalCost)
-  },[totalCost])
+
+
+  
+  // useEffect(()=>{
+  //   setBudget(mybudget-totalCost)
+  // },[totalCost])
 
   useEffect(()=>{
     let newColumns = {...columns}
@@ -60,25 +79,32 @@ function Main(props) {
     setColumns(newColumns)
   },[Object.keys(columns).length])
 
+
+  const budget = mybudget-totalCost
   return (
   <div className="main">
-    <h1>Destination: {city}</h1>
+    {/* <h3>Destination: {city}</h3> */}
+    {<h3>My Budget: {budget}</h3>}
     {!isNaN(budget)?
       <div> 
-       <BudgetGuage budget={budget} initialBudget={mybudget} />
-      </div>:
-      ""}
+       {
+        budget>0?<BudgetGuage className='positive' budget=
+        {budget} initialBudget={mybudget}> {budget>0?`+$${budget}`:""} </BudgetGuage>:""}
+        </div>:""
+       }
+
+       {budget<=0?<BudgetGuage className='negative' budget={budget} initialBudget={mybudget}>-${-budget}</BudgetGuage>:""}
     
     <div className='container-1'>
       <DndContext
         className='container-6'
         onBeforeCapture={console.log("aastarted")}
-        onDragEnd={result => onDragEnd(result, columns, setColumns, setTotalCost)}
+        onDragEnd={result => onDragEnd(result, columns, setColumns)}
         budget={budget}
         columns={columns} 
         setColumns={setColumns}
         totalCost={totalCost}
-        setTotalCost={setTotalCost}
+        // setTotalCost={setTotalCost}
       />
     </div>
 

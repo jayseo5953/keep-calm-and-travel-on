@@ -28,11 +28,11 @@ const DndContext = (props) => {
                 columns={props.columns}
                 setColumns={props.setColumns}
                 totalCost={props.totalCost}
-                setTotalCost={props.setTotalCost}
+                // setTotalCost={props.setTotalCost}
                 budget={props.budget}
                 />
               </div>
-              {columnId!=='list'? <button className='delete-list' onClick={()=>deleteList(columnId, props.columns, props.setColumns)}>X</button>:""}
+              {columnId!=='list' && column.name!=='Day 1'? <button className='delete-list' onClick={()=>deleteList(columnId, props.columns, props.setColumns)}>X</button>:""}
             </div>
           );
         }
@@ -53,7 +53,7 @@ const DndContext = (props) => {
             columns={props.columns}
             setColumns={props.setColumns}
             totalCost={props.totalCost}
-            setTotalCost={props.setTotalCost}
+            // setTotalCost={props.setTotalCost}
             budget={props.budget}
             />
           </div>
