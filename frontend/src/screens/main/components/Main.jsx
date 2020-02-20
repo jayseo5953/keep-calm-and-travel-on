@@ -54,7 +54,6 @@ function Main(props) {
         selectedActivities = [...columns[column].items, ...selectedActivities]
       }
     }
-    setTotalCost(total)
     setSelectedActivity(selectedActivities)
 
 
