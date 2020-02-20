@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 //components
@@ -17,7 +16,7 @@ import Login from './screens/login/components/Login'
 export default function App() {
   return (
     <Router>
-      <Link to="/">Home</Link>
+      
         <Switch>
           <Route path="/main/:city/:budget" component={Main} />
           <Route path="/trips/:user" component={Trips} />
