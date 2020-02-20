@@ -1,0 +1,74 @@
+{
+  "activities": [
+  {
+    "id": 15,
+    "name": "Snorkeling",
+    "price_cents": 3000,
+    "time_operation": "7AM-5PM",
+    "latitude": "-8.63113460",
+    "longtitude": "115.19047540",
+    "image_url": "https://p0.piqsels.com/preview/464/699/802/brown-and-grey-turtle-in-underwater-photography.jpg",
+    "destination_id": 3
+  },
+  {
+    "id": 16,
+    "name": "Scuba Diving",
+    "price_cents": 15000,
+    "time_operation": "7AM-5PM",
+    "latitude": "8.65020890",
+    "longtitude": "115.22468380",
+    "image_url": "https://s.iha.com/228100013484/Short-term-rentals-Nusa-lembongan-Scooby-Doo-Beach-Bungalow_13.jpeg",
+    "destination_id": 3
+  },
+  {
+    "id": 17,
+    "name": "Paragliding",
+    "price_cents": 5000,
+    "time_operation": "7AM-5PM",
+    "latitude": "-8.73306390",
+    "longtitude": "115.16811430",
+    "image_url": "https://df8r7aly9nid3.cloudfront.net/app/uploads/production/photo/photo/22298/large_73d9135398f21b27f00f5ac1e3398385.jpg",
+    "destination_id": 3
+  },
+  {
+    "id": 18,
+    "name": "Sunset Tour",
+    "price_cents": 10000,
+    "time_operation": "10AM-7PM",
+    "latitude": "-8.6633737",
+    "longtitude": "115.2115082",
+    "image_url": "https://storage.needpix.com/rsynced_images/bali-992566_1280.jpg",
+    "destination_id": 3
+  },
+  {
+    "id": 19,
+    "name": "Island Hopping",
+    "price_cents": 8000,
+    "time_operation": "7AM-5PM",
+    "latitude": "-8.7394861",
+    "longtitude": "115.1827169",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_beautiful_turquoise_water_surrounding_the_Gili_Islands_%2816975598051%29.jpg/800px-The_beautiful_turquoise_water_surrounding_the_Gili_Islands_%2816975598051%29.jpg",
+    "destination_id": 3
+  },
+  {
+    "id": 20,
+    "name": "Mount Batur Sunrise Trek",
+    "price_cents": 10000,
+    "time_operation": "2AM-7AM",
+    "latitude": "-8.68148560",
+    "longtitude": "115.23595660",
+    "image_url": "https://p0.piqsels.com/preview/1002/129/230/mountain-covered-by-clouds-during-sunset.jpg",
+    "destination_id": 3
+  },
+  {
+    "id": 21,
+    "name": "Dolphin Watching",
+    "price_cents": 10000,
+    "time_operation": "2AM-7PM",
+    "latitude": "-8.1668301",
+    "longtitude": "115.0609733",
+    "image_url": "https://i0.pickpik.com/photos/851/294/363/dolphins-aquarium-jumping-fish-thumb.jpg",
+    "destination_id": 3
+  }
+ ]
+}
