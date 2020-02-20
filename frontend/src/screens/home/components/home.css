@@ -1,0 +1,14 @@
+.cityItemList {
+  color: white;
+  border: 2px solid black;
+  background-color: transparent;
+  width: 500px;
+  font-weight: bold;
+}
+
+a,
+a:visited, 
+a:link {
+  text-decoration: none;
+  color: white;
+}
