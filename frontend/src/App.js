@@ -17,7 +17,6 @@ import Login from './screens/login/components/Login'
 export default function App() {
   return (
     <Router>
-      <div className="main">
       <Link to="/">Home</Link>
         <Switch>
           <Route path="/main/:city/:budget" component={Main} />
@@ -25,7 +24,6 @@ export default function App() {
           <Route path="/login" component={Login} />
           <Route path="/" component={Home} />
         </Switch>
-      </div>
     </Router>
   );
 }

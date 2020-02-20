@@ -21,5 +21,4 @@ export default function SearchBar (props) {
       <CityItemList cities={cities} setCity={setCity} value={city}/>
     </>
   )
-<<<<<< frontend/login
-}>>>>> master
+}

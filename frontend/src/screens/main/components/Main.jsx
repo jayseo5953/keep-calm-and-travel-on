@@ -52,7 +52,7 @@ function Main(props) {
   },[Object.keys(columns).length])
 
   return (
-  <>
+  <div className="main">
     <h1>Destination: {city}</h1>
     {!isNaN(budget)?
       <div> 
@@ -72,7 +72,7 @@ function Main(props) {
         setTotalCost={setTotalCost}
       />
     </div>
-  </>
+  </div>
   );
 }
 
