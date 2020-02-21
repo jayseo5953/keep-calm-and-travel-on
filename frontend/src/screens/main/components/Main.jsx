@@ -46,18 +46,12 @@ function Main(props) {
 
   useEffect(()=>{
     let selectedActivities = [];
-    let total = 0;
     for (let column in columns) {
       if (column !== 'list'){
-        total += columns[column].total
-        // console.log(columns[column])
         selectedActivities = [...columns[column].items, ...selectedActivities]
       }
     }
-    setTotalCost(total)
     setSelectedActivity(selectedActivities)
-
-
   },[columns])
 
 
@@ -108,7 +102,7 @@ function Main(props) {
       />
     </div>
 
-      <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
+      <GMap className='map' initialCenter={activities} activities={selectedActivity} columns={columns} />
 
   </div>
   );
