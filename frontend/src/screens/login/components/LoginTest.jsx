@@ -27,7 +27,8 @@ const myFunc = (event, email, password, setLoggedIn, setUserName) => {
 }
 
 const LoginTest = () => {
-
+  let user = Object.fromEntries(document.cookie.split('; ').map(x => x.split('=')))
+  // console.log(user)
   const [loggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
@@ -37,7 +38,7 @@ const LoginTest = () => {
     <div>
       
       <h1>Welcome to Login Test</h1>
-      {loggedIn && <div><h2>{userName} am Logged In</h2></div>}
+      {loggedIn && <div><h2>{userName} is Logged In</h2></div>}
       <form onSubmit={(e) => {myFunc(e, userEmail, userPassword, setLoggedIn, setUserName)}}>
         <input type='text' placeholder='Email' value={userEmail} onChange={(e) => setUserEmail(e.target.value)}></input>
         <br></br>
@@ -48,6 +49,10 @@ const LoginTest = () => {
         <button type='submit' onClick={() => 
           (loggedIn) ? <Route><Redirect to='/'></Redirect></Route> : <Route><Redirect to='/login'></Redirect></Route>
         }>{loggedIn ? 'Log Out' : 'Log In'}</button>
+
+        <br></br>
+        <br></br>
+        <button><Route><Link to='/'>Home</Link></Route></button>
       </form>
     </div>
   );

@@ -19,7 +19,7 @@ const useStyles = makeStyles(styles);
 
 export default function Header(props) {
   const classes = useStyles();
-
+  let user = Object.fromEntries(document.cookie.split('; ').map(x => x.split('=')))
   const { color, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -34,8 +34,10 @@ export default function Header(props) {
       <div className= {classes.flex}>
         <Button className={classes.title} component= { Link } to="/">{brand}</Button>
       </div>
+        {user && <h1>{user.name}</h1>}
         <h1>{props.city}</h1>
-        <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>
+        
+        {(user.name)?<Button className={classes.title} component= { Link } to="/logout">LOG OUT</Button>: <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>}
     </AppBar>
   )
 }
