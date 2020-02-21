@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 .cityItemList {
   color: white;
@@ -8,20 +8,23 @@
   /* font-weight: bold; */
   position: absolute;
   font-size: 20px;
-  font-family: 'Lobster';
+  font-family: 'Montserrat';
 }
 
-.action-call {
-  color: red;
+
+.intro-text {
+  font-size: 40px;
+  font-family: 'Montserrat';
+  margin: 0;
 }
 
-.intro {
-  color: lightgreen;
+.action-text {
+  font-family: 'Montserrat';
 }
 
 a,
 a:visited, 
 a:link {
   text-decoration: none;
-  color: white;
+  color: #FFF;
 }
