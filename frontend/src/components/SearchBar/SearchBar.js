@@ -27,8 +27,9 @@ export default function SearchBar (props) {
       <form className={classes.root} autoComplete="off" onSubmit={event=>event.preventDefault()}>
         <TextField 
           InputLabelProps={{
-            style: { color: '#fff'},
+            style: { color: '#fff', fontSize: "16px", fontFamily: 'Lobster'},
           }}
+          InputProps={{style: {color: '#fff', fontSize: '20px', fontFamily: 'Lobster' } }}
           input 
           id="standard-search" 
           label="Enter your destination, budget or activity" 
