@@ -15,11 +15,11 @@ const DndContext = (props) => {
         if(columnId !== 'list'){
           return (
             <div
-            className='container-2'
+            className='column-container'
               key={columnId}
             >
               <h2>{column.name}</h2>
-              <div className='container-3'>
+              <div className='outside-column'>
                 <CardList 
                 droppableId={columnId} 
                 key={columnId}
@@ -42,10 +42,10 @@ const DndContext = (props) => {
       })} >+</button>
       </div>
         <div
-        className='container-2 list'
+        className='column-container activity-list'
         >
           {/* <h2>{props.columns['list'].name}</h2> */}
-          <div className='container-3'>
+          <div className='outside-column'>
             <CardList 
             droppableId='list'
             columnId={'list'}

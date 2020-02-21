@@ -16,7 +16,7 @@ const Card = (props) => {
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
-          className='container-5'
+          className='card'
           style={{
             backgroundImage: `url(${props.item.image_url})`,
             // backgroundRepeat: 'no-repeat',
