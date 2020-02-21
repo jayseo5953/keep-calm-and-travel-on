@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import isLoggedIn from './helpers/helper';
-import setUser from './helpers/helper';
+import assignUserName from './helpers/helper';
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -41,8 +40,10 @@ const Login = () => {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
-  const tempUser = document.cookie;
+
+  const tempUser = (document.cookie).split(';');
   console.log(tempUser);
+  
   return (
     <div>
        <Header 
@@ -64,7 +65,7 @@ const Login = () => {
             <Card className={classes[cardAnimaton]}>
             <form className={classes.form} onSubmit={(e) => {
                 e.preventDefault();
-                let userName = setUser(userEmail, userPassword)
+                let userName = assignUserName(userEmail, userPassword)
                 {console.log(userName)}
               }}>
             <CardHeader color="info" className={classes.cardHeader}>

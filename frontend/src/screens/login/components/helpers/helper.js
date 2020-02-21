@@ -11,7 +11,6 @@ const isLoggedIn = function (email, password) {
   axios(req)
     .then((res) => {
       if (res.data.user) {
-        // console.log(document.cookie)
         userName = res.data.user.first_name
         console.log(userName)
         return userName;
@@ -24,9 +23,7 @@ const isLoggedIn = function (email, password) {
     .catch(e => console.error(e))
 }
 
-const setUser = (email, password) => {
+const assignUserName = (email, password) => {
   return isLoggedIn(email, password)
 }
-
-// export default isLoggedIn;
-export default setUser;
+export default assignUserName;
