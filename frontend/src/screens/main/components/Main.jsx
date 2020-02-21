@@ -10,6 +10,9 @@ import GMap from '../../../components/TheMainEvent/Map';
 
 function Main(props) {
 
+  const tempUser = document.cookie;
+  console.log(tempUser);
+
   const city = props.match.params.city
   let mybudget = props.match.params.budget
 

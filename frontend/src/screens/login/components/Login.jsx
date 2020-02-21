@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import isLoggedIn from './helpers/helper'
+import isLoggedIn from './helpers/helper';
+import setUser from './helpers/helper';
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -28,17 +29,20 @@ import image from "../../../assets/img/sign.jpg";
 
 const useStyles = makeStyles(styles);
 
+
 const Login = () => {
 
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-
+  // const [userName, setUserName] = useState('');
+  
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
   const classes = useStyles();
-  
+  const tempUser = document.cookie;
+  console.log(tempUser);
   return (
     <div>
        <Header 
@@ -58,7 +62,11 @@ const Login = () => {
         <GridContainer>
           <GridItem>
             <Card className={classes[cardAnimaton]}>
-            <form className={classes.form}>
+            <form className={classes.form} onSubmit={(e) => {
+                e.preventDefault();
+                let userName = setUser(userEmail, userPassword)
+                {console.log(userName)}
+              }}>
             <CardHeader color="info" className={classes.cardHeader}>
                     <h4>Login</h4>
             </CardHeader>
@@ -78,7 +86,7 @@ const Login = () => {
                           </InputAdornment>
                         ),
                         onChange: (e) => {
-                          console.log(e.target.value);
+                          // console.log(e.target.value);
                           setUserEmail(e.target.value)
                         }
                       }}
@@ -107,15 +115,7 @@ const Login = () => {
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button type = "submit" simple color="info" size="lg" onClick={
-                      ()=>{
-                        isLoggedIn(userEmail, userPassword)
-                        console.log('I was clicked and passed: ', userEmail, userPassword);
-                        // props.onSubmit(state.email, state.password);
-                      }
-                      }>
-                      Sign In
-                    </Button>
+                    <Button type = "submit" simple color="info" size="lg" >Sign In</Button>
                   </CardFooter>
              </form> 
             </Card>

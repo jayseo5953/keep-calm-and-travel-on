@@ -1,15 +1,32 @@
 import axios from 'axios';
 
 const isLoggedIn = function (email, password) {
-  
+  let userName = '';
+  const userInput = {email, password: password}
   const req = {
     url: "/users",
     method: "POST",
-    data: {email, password}
+    data: userInput
   }
   axios(req)
-    .then(res => console.log(res))
+    .then((res) => {
+      if (res.data.user) {
+        // console.log(document.cookie)
+        userName = res.data.user.first_name
+        console.log(userName)
+        return userName;
+      } else {
+        userName = '';
+        console.log(userName)
+        return userName
+      }
+    })
     .catch(e => console.error(e))
 }
 
-export default isLoggedIn;
+const setUser = (email, password) => {
+  return isLoggedIn(email, password)
+}
+
+// export default isLoggedIn;
+export default setUser;
