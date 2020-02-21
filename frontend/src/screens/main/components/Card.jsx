@@ -16,7 +16,7 @@ const Card = (props) => {
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
-          className='container-5'
+          className='card'
           style={{
             backgroundImage: `url(${props.item.image_url})`,
             // backgroundRepeat: 'no-repeat',
@@ -30,9 +30,19 @@ const Card = (props) => {
         >
           <div className='item-info'>
             {/* <img className='item-photo' src={`${props.item.image_url}`} alt="activty"/>  */}
-            <span className='item-name'>{props.item.name}</span>  <span className='item-price'>${props.item.price_cents/100}</span>  
+            <span className='item-name'>{props.item.name}</span>  
+            <div>
+              <span className='item-price'>${props.item.price_cents/100}</span> 
+
+              {props.droppableId ==='list'?"": <button className='item-delete btn btn-danger' onClick={()=> deleteCard(props.index, props.droppableId, props.columns, props.setColumns)}><i class="material-icons">
+              close
+              </i></button>} 
+            </div>
+
           </div>
-          {props.droppableId ==='list'?"": <button className='item-delete' onClick={()=> deleteCard(props.index, props.droppableId, props.columns, props.setColumns)}>Delete</button>}
+         
+
+       
         </div>
       );
     }}

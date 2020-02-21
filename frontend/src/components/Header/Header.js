@@ -29,10 +29,12 @@ export default function Header(props) {
   });
   // const brandComponent = <Button className={classes.title}>{brand}</Button>;
   return(
-    <AppBar className={appBarClasses}>
-      <div className={classes.flex}>
+    
+    <AppBar className={`nav-header ${appBarClasses}`}>
+      <div className= {classes.flex}>
         <Button className={classes.title} component= { Link } to="/">{brand}</Button>
       </div>
+        <h1>{props.city}</h1>
         <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>
     </AppBar>
   )

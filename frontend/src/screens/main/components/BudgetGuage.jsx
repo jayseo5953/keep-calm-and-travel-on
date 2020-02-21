@@ -3,17 +3,19 @@ import React, { useState } from "react";
 export default function BudgetGauge(props) {
   const [style, setStyle] = useState({});
 
-  if (props.budget>0) {
+  if (props.budget>=0) {
     setTimeout(() => {
       let newStyle = {
           opacity: 1,
-          width: props.budget>0? `${props.budget/props.initialBudget*100}%`:'0%'
+          minWidth:'10%',
+          maxWidth:'100%',
+          width: props.budget>=0? `${props.budget/props.initialBudget*100}%`:'0%'
         };
       setStyle(newStyle);
      
     }, 200);
     return (
-      <div className="positive progress">
+      <div className="positive progress shadow">
         <div className="progress-done" style={style}>
           {props.children}
         </div>
@@ -25,12 +27,12 @@ export default function BudgetGauge(props) {
           opacity: 1,
           minWidth:'20%',
           maxWidth:'100%',
-          width: props.budget<=0? `${-(props.budget/props.initialBudget*100)}%`:'0%'
+          width: props.budget<0? `${-(props.budget/props.initialBudget*100)}%`:'0%'
         };
       setStyle(newStyle);
     }, 200);
     return (
-      <div className="negative progress">
+      <div className="negative progress shadow">
         <div className="progress-done" style={style}>
           {props.children}
         </div>

@@ -11,6 +11,11 @@ export default function columnsFromBackend (arg, numOfDays) {
       name: 'Day 1',
       items: [],
       total: 0
+    },
+    [uuid()]: {
+      name: 'Day 2',
+      items: [],
+      total: 0
     }
   }
   // for (let i = 2; i<= numOfDays; i++) {

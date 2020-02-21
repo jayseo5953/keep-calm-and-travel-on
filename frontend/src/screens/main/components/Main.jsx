@@ -5,8 +5,11 @@ import onDragEnd from '../helpers/onDragEnd'
 import './main.css';
 import DndContext from './DndContext'
 import BudgetGuage from './BudgetGuage'
+import FormSection from './FormSection'
 
 import GMap from '../../../components/TheMainEvent/Map';
+import Header from '../../../components/Header/Header';
+
 
 function Main(props) {
 
@@ -14,7 +17,9 @@ function Main(props) {
   console.log(tempUser);
 
   const city = props.match.params.city
-  let mybudget = props.match.params.budget
+  let budgetParam = !isNaN(props.match.params.budget)? props.match.params.budget:0;
+
+  const [initialBudget, setInitialBudget] = useState(budgetParam)
 
   const [activities, setActivities] = useState([])
   const [columns, setColumns] = useState(columnsFromBackend(activities));
@@ -49,22 +54,14 @@ function Main(props) {
 
   useEffect(()=>{
     let selectedActivities = [];
-    let total = 0;
     for (let column in columns) {
       if (column !== 'list'){
-        total += columns[column].total
-        // console.log(columns[column])
         selectedActivities = [...columns[column].items, ...selectedActivities]
       }
     }
     setSelectedActivity(selectedActivities)
-
-
   },[columns])
 
-
-
-  
   // useEffect(()=>{
   //   setBudget(mybudget-totalCost)
   // },[totalCost])
@@ -82,24 +79,31 @@ function Main(props) {
   },[Object.keys(columns).length])
 
 
-  const budget = mybudget-totalCost
+  const budget = initialBudget-totalCost
   return (
+     
   <div className="main">
+    <div>
+     <Header 
+       brand="LIGHTHOUSE LABS"
+       fixed
+       city={city}
+      />
+    </div>
     {/* <h3>Destination: {city}</h3> */}
-    {<h3>My Budget: {budget}</h3>}
-    {!isNaN(budget)?
+        {/* {<h3>My Budget: {budget}</h3>} */}
+        {!isNaN(budget)?
       <div> 
        {
-        budget>0?<BudgetGuage className='positive' budget=
-        {budget} initialBudget={mybudget}> {budget>0?`+$${budget}`:""} </BudgetGuage>:""}
+        budget>=0?<BudgetGuage className='positive' budget=
+        {budget} initialBudget={initialBudget}> {budget>=0?`+$${budget}`:""} </BudgetGuage>:""}
         </div>:""
        }
 
-       {budget<=0?<BudgetGuage className='negative' budget={budget} initialBudget={mybudget}>-${-budget}</BudgetGuage>:""}
+       {budget<0?<BudgetGuage className='negative' budget={budget} initialBudget={initialBudget}>-${-budget}</BudgetGuage>:""}
     
-    <div className='container-1'>
+    <div className='dnd-context'>
       <DndContext
-        className='container-6'
         onBeforeCapture={console.log("aastarted")}
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
         budget={budget}
@@ -111,6 +115,8 @@ function Main(props) {
     </div>
 
       <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
+
+      <FormSection city={city} budget={initialBudget} setBudget={setInitialBudget} />
 
   </div>
   );

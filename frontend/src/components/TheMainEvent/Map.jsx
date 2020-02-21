@@ -57,7 +57,7 @@ export default function GMap (props) {
   const mapUrl = process.env.REACT_APP_GMAPURL;
   const mapApiKey = process.env.REACT_APP_GMAPKey;
   return (
-    <div style={{ width: "60vw", height: "60vh" }}>
+    <div className='g-map'>
       <MapWrapped
         googleMapURL={`${mapUrl}=${mapApiKey}`}
         loadingElement={<div style={{ height: `100%` }} />}
