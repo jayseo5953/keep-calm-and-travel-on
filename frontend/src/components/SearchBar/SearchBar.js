@@ -31,16 +31,14 @@ export default function SearchBar (props) {
           InputProps={{style: {color: '#fff', fontSize: '20px', fontFamily: 'Lobster' } }}
           input 
           id="standard-search" 
-          label="Enter your destination, budget or activity" 
+          label="Enter location or budget" 
           type='text'
-          color="info"
           onChange={(event)=>
             {
               setCity(event.target.value);
               getCities(event.target.value, setCities);
             }}
           placeholder='e.g Bali'
-          value={city}
         />
       </form>
       <div className="cityItemList">
