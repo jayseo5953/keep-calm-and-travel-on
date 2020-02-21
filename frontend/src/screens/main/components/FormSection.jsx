@@ -1,5 +1,7 @@
 import React from 'react';
 import Form from './Form'
+import SaveTrip from './SaveTrip'
+
 const FormSection = (props) => {
   return (
     <div className='form-section shadow ' >
@@ -9,6 +11,7 @@ const FormSection = (props) => {
       <h2>${props.budget}</h2>
       </div>
       <Form budget={props.budget} setBudget={props.setBudget} />
+      <SaveTrip />
     </div>
   );
 };

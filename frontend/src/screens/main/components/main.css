@@ -230,6 +230,7 @@ body {
 }
 
 .budget-button {
+  background-color: #3f51b5;
   width:8vw;
   height:4vh;
   display: block;
@@ -244,4 +245,10 @@ body {
   color:white !important;
   background-color: #476C9B !important;
   border-radius:0 !important;
+}
+
+
+.save-trip{
+  /* background-color: blue;
+  color: color; */
 }
