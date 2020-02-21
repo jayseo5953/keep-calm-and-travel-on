@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-const getUserByEmail = function (e) {
-  const formData = new FormData(this)
+const isLoggedIn = function (email, password) {
+  
   const req = {
     url: "/users",
     method: "POST",
-    data: formData
+    data: {email, password}
   }
   axios(req)
     .then(res => console.log(res))
     .catch(e => console.error(e))
 }
 
-export default getUserByEmail;
+export default isLoggedIn;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import getUserByEmail from './helpers/helper'
-import axios from 'axios';
+import isLoggedIn from './helpers/helper'
+
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import InputAdornment from "@material-ui/core/InputAdornment";
@@ -29,7 +29,11 @@ import image from "../../../assets/img/sign.jpg";
 const useStyles = makeStyles(styles);
 
 const Login = () => {
+
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
@@ -60,21 +64,6 @@ const Login = () => {
             </CardHeader>
             <CardBody>
                     <CustomInput
-                      labelText="First Name"
-                      id="first"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        type: "text",
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <People className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        )
-                      }}
-                    />
-                    <CustomInput
                       labelText="Email"
                       id="email"
                       formControlProps={{
@@ -82,11 +71,16 @@ const Login = () => {
                       }}
                       inputProps={{
                         type: "email",
+                        value: userEmail,
                         endAdornment: (
                           <InputAdornment position="end">
                             <Email className={classes.inputIconsColor} />
                           </InputAdornment>
-                        )
+                        ),
+                        onChange: (e) => {
+                          console.log(e.target.value);
+                          setUserEmail(e.target.value)
+                        }
                       }}
                     />
                     <CustomInput
@@ -97,6 +91,7 @@ const Login = () => {
                       }}
                       inputProps={{
                         type: "password",
+                        value: userPassword,
                         endAdornment: (
                           <InputAdornment position="end">
                             <Icon className={classes.inputIconsColor}>
@@ -104,12 +99,21 @@ const Login = () => {
                             </Icon>
                           </InputAdornment>
                         ),
-                        autoComplete: "off"
+                        autoComplete: "off",
+                        onChange: (e) => {
+                          setUserPassword(e.target.value)
+                        }
                       }}
                     />
                   </CardBody>
                   <CardFooter className={classes.cardFooter}>
-                    <Button type = "submit" simple color="info" size="lg" >
+                    <Button type = "submit" simple color="info" size="lg" onClick={
+                      ()=>{
+                        isLoggedIn(userEmail, userPassword)
+                        console.log('I was clicked and passed: ', userEmail, userPassword);
+                        // props.onSubmit(state.email, state.password);
+                      }
+                      }>
                       Sign In
                     </Button>
                   </CardFooter>
