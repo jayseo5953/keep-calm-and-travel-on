@@ -27,8 +27,8 @@ const Home = () => {
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
-            <h1 className={classes.title}>Plan your own itinerary right here.</h1>
-              <h4>
+            <h1 className="intro">Plan your own itinerary right here.</h1>
+              <h4 className="action-call">
                 What is your destination, activity, or budget?
               </h4>
               <SearchBar/>
