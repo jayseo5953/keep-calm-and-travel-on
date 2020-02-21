@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Link, Redirect } from 'react-router-dom';
+import {BrowserRouter as Router, Link, Redirect, useHistory } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import axios from 'axios';
 
@@ -27,8 +27,9 @@ const myFunc = (event, email, password, setLoggedIn, setUserName) => {
 }
 
 const LoginTest = () => {
-  let user = Object.fromEntries(document.cookie.split('; ').map(x => x.split('=')))
+  // let user = Object.fromEntries(document.cookie.split('; ').map(x => x.split('=')))
   // console.log(user)
+  const history = useHistory();
   const [loggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
@@ -39,16 +40,18 @@ const LoginTest = () => {
       
       <h1>Welcome to Login Test</h1>
       {loggedIn && <div><h2>{userName} is Logged In</h2></div>}
-      <form onSubmit={(e) => {myFunc(e, userEmail, userPassword, setLoggedIn, setUserName)}}>
+      <form onSubmit={(event) => {
+        myFunc(event, userEmail, userPassword, setLoggedIn, setUserName);
+        // history.push("/")
+      }}>
+        { loggedIn ? <Route><Redirect to='/'></Redirect></Route> : null }
         <input type='text' placeholder='Email' value={userEmail} onChange={(e) => setUserEmail(e.target.value)}></input>
         <br></br>
         <br></br>
         <input type='password' placeholder='password' value={userPassword} onChange={(e) => setUserPassword(e.target.value)}></input>
         <br></br>
         <br></br>
-        <button type='submit' onClick={() => 
-          (loggedIn) ? <Route><Redirect to='/'></Redirect></Route> : <Route><Redirect to='/login'></Redirect></Route>
-        }>{loggedIn ? 'Log Out' : 'Log In'}</button>
+        <button type='submit'>{loggedIn ? 'Log Out' : 'Log In'}</button>
 
         <br></br>
         <br></br>

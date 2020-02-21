@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { Link } from "react-router-dom"
 
@@ -10,16 +10,26 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
+import axios from 'axios';
 
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle";
 //assets/jss/material-kit-react/components/headerStyle.js
-
+const logout = (setUser) => {
+  axios.get("/logout")
+    .then(res => {console.log(res)
+      setUser("")
+    })
+    .catch(e => console.error(e))
+}
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
+  
   const classes = useStyles();
-  let user = Object.fromEntries(document.cookie.split('; ').map(x => x.split('=')))
+  let userCookie = Object.fromEntries(document.cookie.split('; ').map(x => x.split('='))) // <-- UserName from Cookie
+  console.log(document.cookie.length)
+  const [user, setUser] = useState(userCookie);
   const { color, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -37,7 +47,9 @@ export default function Header(props) {
         {user && <h1>{user.name}</h1>}
         <h1>{props.city}</h1>
         
-        {(user.name)?<Button className={classes.title} component= { Link } to="/logout">LOG OUT</Button>: <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>}
+        {(user)?
+        <Button className={classes.title} component= { Link } to="/" onClick={(e) => logout(setUser)}>LOG OUT</Button> : 
+        <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>}
     </AppBar>
   )
 }

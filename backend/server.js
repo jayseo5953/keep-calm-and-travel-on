@@ -77,7 +77,8 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 app.get("/logout", (req, res) => {
-  res.clearCookie()
+  res.clearCookie('name')
+  res.end()
 })
 
 app.listen(PORT, () => {

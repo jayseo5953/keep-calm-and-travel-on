@@ -14,6 +14,7 @@ import Login from './screens/login/components/LoginTest'
 
 
 export default function App() {
+  // const [user, setUser] = useState(null);
   return (
     <Router>
         <Switch>
