@@ -1,0 +1,56 @@
+import React, { useState } from 'react';
+import {BrowserRouter as Router, Link, Redirect } from 'react-router-dom';
+import Route from 'react-router-dom/Route';
+import axios from 'axios';
+
+const cookieSetter = function (email, password) {
+  const userInput = {email, password: password}
+  const req = {
+    url: "/users",
+    method: "POST",
+    data: userInput
+  }
+  return axios(req)
+}
+
+const myFunc = (event, email, password, setLoggedIn, setUserName) => {
+  event.preventDefault();
+  cookieSetter(email, password)
+    .then((res) => {
+      if (res.data) {
+        setUserName(res.data.user.first_name)
+        setLoggedIn(true);
+        console.log(res.data.user.first_name)
+      }
+    })
+    .catch(e => console.error(e))
+}
+
+const LoginTest = () => {
+
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
+
+  return (
+    <div>
+      
+      <h1>Welcome to Login Test</h1>
+      {loggedIn && <div><h2>{userName} am Logged In</h2></div>}
+      <form onSubmit={(e) => {myFunc(e, userEmail, userPassword, setLoggedIn, setUserName)}}>
+        <input type='text' placeholder='Email' value={userEmail} onChange={(e) => setUserEmail(e.target.value)}></input>
+        <br></br>
+        <br></br>
+        <input type='password' placeholder='password' value={userPassword} onChange={(e) => setUserPassword(e.target.value)}></input>
+        <br></br>
+        <br></br>
+        <button type='submit' onClick={() => 
+          (loggedIn) ? <Route><Redirect to='/'></Redirect></Route> : <Route><Redirect to='/login'></Redirect></Route>
+        }>{loggedIn ? 'Log Out' : 'Log In'}</button>
+      </form>
+    </div>
+  );
+};
+
+export default LoginTest;

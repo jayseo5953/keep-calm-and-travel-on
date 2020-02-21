@@ -10,7 +10,7 @@ import {
 import Home from './screens/home/components/Home'
 import Main from './screens/main/components/Main'
 import Trips from './screens/trips/components/Trips'
-import Login from './screens/login/components/Login'
+import Login from './screens/login/components/LoginTest'
 
 
 export default function App() {
