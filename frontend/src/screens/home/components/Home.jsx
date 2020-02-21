@@ -10,6 +10,9 @@ import Parallax from '../../../components/Parallax/Parallax'
 import GridContainer from '../../../components/Grid/GridContainer'
 import GridItem from '../../../components/Grid/GridItem'
 
+
+import SaveTrip from '../../../components/TripModal/TripModal'
+
 import styles from "../../../assets/jss/material-kit-react/views/homePage.js";
 
 const useStyles = makeStyles(styles)
@@ -33,15 +36,15 @@ const Home = () => {
                 What is your destination or budget?
               </h4>
               <SearchBar/>
+              <SaveTrip />
             </GridItem>
             
           </GridContainer>
         </div>
       </Parallax>
+    
       
 
-      <h1>Home</h1>
-      <SearchBar />
 
     </div>
   );

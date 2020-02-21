@@ -1,9 +1,11 @@
 import React from 'react';
 
 const Trips = () => {
+
   return (
     <div>
-      <h2>Trips</h2>
+      <h2>Find Me Trips</h2>
+      
     </div>
   );
 };
