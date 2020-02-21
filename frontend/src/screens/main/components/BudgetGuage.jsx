@@ -7,7 +7,7 @@ export default function BudgetGauge(props) {
     setTimeout(() => {
       let newStyle = {
           opacity: 1,
-          minWidth:'15%',
+          minWidth:'10%',
           maxWidth:'100%',
           width: props.budget>=0? `${props.budget/props.initialBudget*100}%`:'0%'
         };
@@ -15,7 +15,7 @@ export default function BudgetGauge(props) {
      
     }, 200);
     return (
-      <div className="positive progress">
+      <div className="positive progress shadow">
         <div className="progress-done" style={style}>
           {props.children}
         </div>
@@ -32,7 +32,7 @@ export default function BudgetGauge(props) {
       setStyle(newStyle);
     }, 200);
     return (
-      <div className="negative progress">
+      <div className="negative progress shadow">
         <div className="progress-done" style={style}>
           {props.children}
         </div>

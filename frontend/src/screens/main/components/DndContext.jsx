@@ -18,7 +18,7 @@ const DndContext = (props) => {
             className='column-container'
               key={columnId}
             >
-              <h2>{column.name}</h2>
+              <h3 className='column-name' >{column.name}</h3>
               <div className='outside-column'>
                 <CardList 
                 droppableId={columnId} 
@@ -32,14 +32,19 @@ const DndContext = (props) => {
                 budget={props.budget}
                 />
               </div>
-              {columnId!=='list' && column.name!=='Day 1'? <button className='delete-list' onClick={()=>deleteList(columnId, props.columns, props.setColumns)}>X</button>:""}
+              {columnId!=='list' && column.name!=='Day 1'? 
+              <button onClick={()=>deleteList(columnId, props.columns, props.setColumns)} type="button" className="delete-list btn btn-danger"><i class="material-icons">
+              delete
+              </i></button>:""}
             </div>
           );
         }
         return
       })}
-          <button className='add-list' onClick={(()=>{addCardList(props.columns, props.setColumns)
-      })} >+</button>
+          <button  type="button" className="btn btn-success add-list" onClick={(()=>{addCardList(props.columns, props.setColumns)
+      })} ><i class="material-icons">
+      add
+      </i></button>
       </div>
         <div
         className='column-container activity-list'

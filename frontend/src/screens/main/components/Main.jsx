@@ -8,7 +8,7 @@ import BudgetGuage from './BudgetGuage'
 import FormSection from './FormSection'
 
 import GMap from '../../../components/TheMainEvent/Map';
-import NavBar from '../../../components/General/NavBar';
+import Header from '../../../components/Header/Header';
 
 
 function Main(props) {
@@ -78,10 +78,18 @@ function Main(props) {
 
   const budget = initialBudget-totalCost
   return (
+     
   <div className="main">
+    <div>
+     <Header 
+       brand="LIGHTHOUSE LABS"
+       fixed
+       city={city}
+      />
+    </div>
     {/* <h3>Destination: {city}</h3> */}
-    {<h3>My Budget: {budget}</h3>}
-    {!isNaN(budget)?
+        {/* {<h3>My Budget: {budget}</h3>} */}
+        {!isNaN(budget)?
       <div> 
        {
         budget>=0?<BudgetGuage className='positive' budget=
@@ -105,7 +113,7 @@ function Main(props) {
 
       <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
 
-       <FormSection city={city} budget={initialBudget} setBudget={setInitialBudget} />
+      <FormSection city={city} budget={initialBudget} setBudget={setInitialBudget} />
 
   </div>
   );

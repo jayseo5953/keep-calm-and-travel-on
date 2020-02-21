@@ -4,9 +4,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* max-height:100vh; */
+  height:100vh;
   margin:0;
+  font-family: 'Permanent Marker' ;
+/* font-family: 'Knewave'; */
 }
+
+.header {
+  background-color: #D1495B;
+}
+
 .dnd-context {
   display: flex;
   height: 100%; 
@@ -15,15 +22,24 @@
 }
 
 .days-container {
-  background: linear-gradient(to left, #70adf2, #ff9472);
-  border-top-left-radius: 15px;
+  /* background: linear-gradient(to left, #70adf2, #ff9472); */
+  /* border-top-left-radius: 15px; */
+  background-color: #f8f8ff ;
+  color:black;
+  height: 53vh;
   position:fixed;
   right:0;
-  bottom:31vh;
+  bottom:30vh;
   display: flex;
   flex-direction: row;
   width: 80vw;
+  overflow-y: hidden;
   overflow-x: auto;
+}
+
+.column-name {
+  margin:0;
+  margin-top:10px;
 }
 
 .column-container {
@@ -32,13 +48,14 @@
   align-Items: center;
 }
 .column-container h2 {
+  font-family: 'Permanent Marker';
+  /* font-family: 'Knewave' ; */
   margin:0;
-  padding:5px;
 }
 
 .outside-column {
-  margin:5px;
-  padding:10px;
+  margin:2px;
+  padding:5px 20px;
 }
 
 .inside-column{
@@ -50,9 +67,11 @@
 }
 
 .days-container .inside-column{
+  border-radius:10px;
   height:40vh;
   max-height: 40vh;
   width:30vw;
+  padding:0
 }
 
 .activity-list .inside-column{
@@ -60,15 +79,16 @@
   position:fixed;
   bottom:0;
   left:20vw;
-  max-height: 30vh;
+  height: 30vh;
   margin-bottom:0;
   width:30vw;
+  padding:0
 }
 
 .card {
-  border-radius:10px;
+  border-radius:0px;
   padding: 16px;
-  margin: 0 0 8px 0;
+  margin: 0;
   min-width: 250px;
   min-height: 50px;
   color: white;
@@ -79,16 +99,36 @@
   display: flex;
   justify-content: space-between
 }
+.item-delete {
+  width:20px;
+  height:20px;
+  font-size:5px;
+  margin-left:10px;
+  padding:0;
+}
+
+.item-delete  i {
+  font-size:15px;
+}
 
 .add-list {
   border-radius:500px;
-  margin-left: 30px;
-  margin-top:200px;
-  height:40px;
+  margin:auto 20px;
+  height:50px;
   width:50px;
-  font-size: 40px;
-  line-height: 0px;
-  padding-bottom:7px;
+  padding:0;
+}
+
+.add-list i {
+  font-size: 35px;
+  line-height: 45px;
+}
+
+
+
+.delete-list  {
+  height:38px;
+ 
 }
 .item-photo {
   border-radius: 300px;
@@ -98,14 +138,14 @@
 
 .item-name {
   padding:2px 10px;
-  border-radius:12px;
+  border-radius:8px;
   background: linear-gradient(to left, #70adf2, #ff9472);
   /* background-color: */
 }
 
 .item-price {
   padding:2px 10px;
-  border-radius:12px;
+  border-radius:8px;
   background: linear-gradient(to left, #f2709c, #ff9472);
 }
 
@@ -114,18 +154,20 @@ body {
 }
 
 .progress {
-  background-color: #d8d8d8;
-  border-radius: 10px;
-  position: relative;
-  margin: 15px 0;
-  height: 6vh;
-  width: 40vw;
+  background-color: #44413a;
+  border-radius: 0;
+  position: fixed;
+  margin: 0;
+  top:66px;
+  right:0;
+  height: 9vh;
+  width: 80vw;
 }
 
 .negative .progress-done {
   background: linear-gradient(to left, #f2709c, #ff9472);
   box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
-  border-radius: 10px;
+  border-radius: 0;
   color: #fff;
   display: flex;
   align-items: center;
@@ -140,7 +182,7 @@ body {
 .positive .progress-done {
   background: linear-gradient(to left, #70adf2, #72d7ff);
   box-shadow: 0 3px 3px -5px #70adf2, 0 2px 5px #70adf2;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   color: #fff;
   display: flex;
   align-items: center;
@@ -157,21 +199,29 @@ body {
   position: fixed;
   right:0;
   bottom:0;
-  width: 50.5vw;
-  height: 31vh;
+  width: 50vw;
+  height: 30vh;
   border-radius:15px;
 }
 
 .form-section {
   padding:30px;
-  background-color:#F0EFF4;
+  padding-top:90px;
+  background-color:#5F1A37 ;
+  color:white;
 
   height: 100vh;
   width: 20vw;
   position: fixed;
   bottom:0;
   left:0;
-  text-align: center
+  text-align: center;
+  
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  
 }
 
 .input-budget {
@@ -185,4 +235,13 @@ body {
   display: block;
   margin: auto;
   margin-top:20px;
+}
+
+.nav-header{
+  /* background-color: black !important; */
+  /* background-image: url("https://cache.marriott.com/marriottassets/marriott/DPSXR/dpsxr-regis-beach-4547-hor-wide.jpg?interpolation=progressive-bilinear&downsize=2880px:*") !important;
+  background-size: cover;*/
+  color:white !important;
+  background-color: #476C9B !important;
+  border-radius:0 !important;
 }
