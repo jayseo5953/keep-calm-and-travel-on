@@ -20,7 +20,7 @@ import CardFooter from '../../../components/Card/CardFooter'
 // core components
 import styles from "../../../assets/jss/material-kit-react/views/tripItineraryPage"
 import TripList from './TripList';
-import image from "../../../assets/img/maldives-island.jpg"
+import image from "../../../assets/img/wooden-houses-on-body-of-water.jpg"
 
 const useStyles = makeStyles(styles);
 

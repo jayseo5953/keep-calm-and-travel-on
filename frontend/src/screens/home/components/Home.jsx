@@ -28,7 +28,7 @@ const Home = (props) => {
        user={props.user}
        setUser={props.setUser}
       />
-      <Parallax filter image={require("../../../assets/img/miami-bg.jpg")}>
+      <Parallax filter image={require("../../../assets/img/airplane-landing.jpg")}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>

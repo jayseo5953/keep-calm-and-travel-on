@@ -28,7 +28,7 @@ import CardFooter from '../../../components/Card/CardFooter'
 
 import styles from "../../../assets/jss/material-kit-react/views/loginPage.js"
 
-import image from "../../../assets/img/sign.jpg";
+import image from "../../../assets/img/temple-trees.jpg";
 
 const useStyles = makeStyles(styles);
 
