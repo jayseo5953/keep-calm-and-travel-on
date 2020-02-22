@@ -1,12 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-module.exports = () => {
+module.exports = (tripService) => {
 
   router.get("/", (req, res) => {
     console.log('You are in the trips route')
+    res.send('hellow')
+  })
+
+  router.post("/", (req, res) => {
+    console.log("Post trip route activated")
     const tripSummary = req.body;
-    res.send('HELLO FROM THE TRIPS ROUTE', tripSummary)
+    tripService.postTrips(tripSummary)
   })
 
   return router;

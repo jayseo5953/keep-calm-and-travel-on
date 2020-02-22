@@ -47,7 +47,7 @@ const userRepositoryFactory = require("./repository/users_repository");
 const activityRepositoryFactory = require("./repository/activities_repository");
 const userServiceFactory = require("./service/users_service");
 const activityServiceFactory = require("./service/activities_service");
-const tripsRepositoryFactory = require("./repository/trips_repository");
+const tripRepositoryFactory = require("./repository/trips_repository");
 const tripsServiceFactory = require("./service/trips_service");
 
 const cityServiceFactory = require('./service/cities_service');
@@ -63,8 +63,8 @@ const activityService = activityServiceFactory(activtiesRepository);
 const citiesRepository = cityRepositoryFactory(db);
 const cityService = cityServiceFactory(citiesRepository);
 
-const tripsRepository = tripsRepositoryFactory(db);
-const tripsService = tripsServiceFactory(tripsRepository);
+const tripsRepository = tripRepositoryFactory(db);
+const tripService = tripsServiceFactory(tripsRepository);
 
 
 
@@ -72,7 +72,7 @@ const tripsService = tripsServiceFactory(tripsRepository);
 // Note: Feel free to replace the example routes below with your own
 app.use("/users", usersRoutes(userService));
 app.use("/api", apiRoutes(activityService,cityService));
-app.use("/trips", tripRoutes(tripsService));
+app.use("/trips", tripRoutes(tripService));
 // Note: mount other resources here, using the same pattern above
 
 

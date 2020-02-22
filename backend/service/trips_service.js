@@ -1,13 +1,14 @@
-module.exports = () => {
+module.exports = (tripsRepository) => {
   return {
 
-    postTrips: () => {
+    postTrips: (tripSummary) => {
       console.log('Using postTrips from Trips Service')
-      return tripsRepository.postTripss()
+      console.log(tripSummary)
+      return tripsRepository.postTrips(tripSummary)
     },
 
-    getTrips: () => {
-      console.log('Using getTrips from Trips Service')
+    getTrips: (arg) => {
+      console.log('Using getTrips from Trips Service', arg)
       return tripsRepository.getTrips()
     }
 

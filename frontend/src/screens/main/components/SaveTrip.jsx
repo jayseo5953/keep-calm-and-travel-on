@@ -21,10 +21,9 @@ const handleClose = (setOpen) => {
 const postToBackEnd = (tripName,userid,columns)=> {
 
   return axios.post('/trips', {
-    [tripName]:{
       userid,
-      columns
-    }
+      columns,
+      trip: tripName
   })
 
 }

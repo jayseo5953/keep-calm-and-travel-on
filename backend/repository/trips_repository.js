@@ -1,7 +1,7 @@
 module.exports = (db) => {
   return {
 
-    postTrips: () => {
+    postTrips: (tripsSummary) => {
       console.log('Inside the trips repository')
     },
 
