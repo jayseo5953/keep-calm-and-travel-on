@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Link, Redirect, useHistory } from 'react-router-dom';
-import Route from 'react-router-dom/Route';
+import {Route, Link, Redirect, useHistory } from 'react-router-dom'
 import axios from 'axios';
-import { checkPropTypes } from 'prop-types';
 
 const cookieSetter = function (email, password) {
   const userInput = {email, password: password}

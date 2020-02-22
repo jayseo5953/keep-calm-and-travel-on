@@ -65,6 +65,8 @@ function Main(props) {
   //   setBudget(mybudget-totalCost)
   // },[totalCost])
 
+  let numOfColumns = Object.keys(columns).length;
+
   useEffect(()=>{
 
     let newColumns = {...columns}
@@ -76,7 +78,7 @@ function Main(props) {
       }
     }
     setColumns(newColumns)
-  },[Object.keys(columns).length])
+  },[numOfColumns])
 
 
   const budget = initialBudget-totalCost
@@ -93,17 +95,15 @@ function Main(props) {
        setUser={props.setUser}
       />
     </div>
-    {/* <h3>Destination: {city}</h3> */}
-        {/* {<h3>My Budget: {budget}</h3>} */}
-        {!isNaN(budget)?
-      <div> 
-       {
-        budget>=0?<BudgetGuage className='positive' budget=
-        {budget} initialBudget={initialBudget}> {budget>=0?`+$${budget}`:""} </BudgetGuage>:""}
-        </div>:""
+        {
+          !isNaN(budget)?
+          <div> {budget>=0?<BudgetGuage className='positive' budget={budget} initialBudget={initialBudget}> {`+$${budget}`}</BudgetGuage>:
+          <BudgetGuage className='negative' budget={budget} initialBudget={initialBudget}>{`-${-budget}`}</BudgetGuage>
+        }</div> : ""
        }
+      
 
-       {budget<0?<BudgetGuage className='negative' budget={budget} initialBudget={initialBudget}>-${-budget}</BudgetGuage>:""}
+          
     
     <div className='dnd-context'>
       <DndContext

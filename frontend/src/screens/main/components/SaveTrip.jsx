@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import { useHistory } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -51,6 +52,7 @@ const postToBackEnd = (tripName,userId,columns, total)=> {
 
  const SaveTrip = (props)=> {
 
+  let history = useHistory()
   
   const [open, setOpen] = useState(false);
   const [tripName, setTripName] = useState('')
@@ -88,7 +90,8 @@ const postToBackEnd = (tripName,userId,columns, total)=> {
               postToBackEnd(tripName, props.user.id ,props.columns, props.total)
               .then((res)=>{
                 console.log("here")
-                handleClose(setOpen)
+                handleClose(setOpen);
+                history.push(`/trips/${props.user.name}`)
               })
               .catch((err)=>{
                 alert("Saving was unsuccessful")

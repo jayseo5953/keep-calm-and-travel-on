@@ -7,7 +7,8 @@ export default function onDragEnd (result, columns, setColumns){
   } else if (!result.destination && source.droppableId !== 'list') {
     let srcColumn = columns[source.droppableId];
     let srcItems = [...srcColumn.items];
-    const [removed] = srcItems.splice(source.index, 1);
+    // const [removed] = srcItems.splice(source.index, 1);
+    srcItems.splice(source.index, 1);
     const list = columns[`list`];
     const listItems = [...list.items]
     // listItems.unshift(removed);
@@ -18,7 +19,7 @@ export default function onDragEnd (result, columns, setColumns){
         ...srcColumn,
         items: srcItems
       },
-      ['list']: {
+      'list': {
         ...list,
         items: listItems
       }
@@ -27,7 +28,7 @@ export default function onDragEnd (result, columns, setColumns){
   }
 
 
-  if (source.droppableId =='list' && source.droppableId !== destination.droppableId) {
+  if (source.droppableId ==='list' && source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];
     const sourceItems = [...sourceColumn.items];

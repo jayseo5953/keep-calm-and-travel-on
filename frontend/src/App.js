@@ -1,5 +1,5 @@
 /* Nested Routing */
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +15,7 @@ import Login from './screens/login/components/Login'
 
 export default function App() {
 
+  console.log('cookie: ', document.cookie)
   // Parsing the cookie to be used as the user //
   let cookieAsObject = Object.fromEntries(
     document.cookie.split('; ')

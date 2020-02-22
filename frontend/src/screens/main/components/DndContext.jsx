@@ -33,7 +33,7 @@ const DndContext = (props) => {
                 />
               </div>
               {columnId!=='list' && column.name!=='Day 1'? 
-              <button onClick={()=>deleteList(columnId, props.columns, props.setColumns)} type="button" className="delete-list btn btn-danger"><i class="material-icons">
+              <button onClick={()=>deleteList(columnId, props.columns, props.setColumns)} type="button" className="delete-list btn btn-danger"><i className="material-icons">
               delete
               </i></button>:""}
             </div>
@@ -41,8 +41,9 @@ const DndContext = (props) => {
         }
         return
       })}
-          <button  type="button" className="btn btn-success add-list" onClick={(()=>{addCardList(props.columns, props.setColumns)
-      })} ><i class="material-icons">
+          <button  type="button" className="btn btn-success add-list" onClick={(()=>{
+            addCardList(props.columns, props.setColumns)
+            })} ><i className="material-icons">
       add
       </i></button>
       </div>

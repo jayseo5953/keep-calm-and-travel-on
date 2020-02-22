@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import {BrowserRouter as Router, Link, Redirect, useHistory } from 'react-router-dom';
+import {Redirect
+  // , useHistory 
+} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import axios from 'axios';
-
-import assignUserName from './helpers/helper';
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,7 +12,7 @@ import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
-import People from "@material-ui/icons/People";
+// import People from "@material-ui/icons/People";
 
 // core components
 import Header from '../../../components/Header/Header'
@@ -60,8 +60,8 @@ const Login = (props) => {
 
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
 
-  const history = useHistory();
-  const [loggedIn, setLoggedIn] = useState(false);
+  // const history = useHistory();
+  // const [loggedIn, setLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   

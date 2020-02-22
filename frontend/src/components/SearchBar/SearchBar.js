@@ -1,4 +1,4 @@
-import React, {useState,useEffect,Link} from 'react';
+import React, {useState} from 'react';
 import getCities from '../../screens/home/helpers/getCities'
 import CityItemList from '../../screens/home/components/CityItemList'
 

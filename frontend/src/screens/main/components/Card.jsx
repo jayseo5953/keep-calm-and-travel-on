@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react';
+import React from 'react';
 import { Draggable } from 'react-beautiful-dnd'
 import deleteCard from '../helpers/deleteCard'
 
@@ -34,7 +34,7 @@ const Card = (props) => {
             <div>
               <span className='item-price'>${props.item.price_cents/100}</span> 
 
-              {props.droppableId ==='list'?"": <button className='item-delete btn btn-danger' onClick={()=> deleteCard(props.index, props.droppableId, props.columns, props.setColumns)}><i class="material-icons">
+              {props.droppableId ==='list'?"": <button className='item-delete btn btn-danger' onClick={()=> deleteCard(props.index, props.droppableId, props.columns, props.setColumns)}><i className="material-icons">
               close
               </i></button>} 
             </div>

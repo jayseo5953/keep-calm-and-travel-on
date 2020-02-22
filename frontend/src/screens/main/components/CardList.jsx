@@ -1,4 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {
+  // useState, 
+  useEffect} from 'react';
 import { Droppable } from 'react-beautiful-dnd'
 import Card from './Card'
 
@@ -6,7 +8,7 @@ import Card from './Card'
 
 const CardList = (props) => {
 
-  const [dropDisabled,setDropDisabled] = useState(false)
+  // const [dropDisabled,setDropDisabled] = useState(false)
 
   // const listOfPrices =  props.columns['list'].items.map((act)=>{
   //   return act.price_cents/100
@@ -40,7 +42,9 @@ const CardList = (props) => {
     <Droppable 
     droppableId={props.columnId}
     key={props.columnId}
-    isDropDisabled={props.columnId==='list'|| dropDisabled}
+    isDropDisabled={props.columnId==='list'
+    // || dropDisabled
+  }
     >
     {(provided, snapshot) => {
       return (

@@ -41,6 +41,7 @@ module.exports = (userService) => {
           // res.cookie('name', `${user.first_name}`)
           res.cookie('user', JSON.stringify({
             name: user.first_name,
+            id: user.id
           }))
           res.send({ user })
         } else {
