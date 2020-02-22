@@ -12,7 +12,6 @@ import Header from '../../../components/Header/Header';
 
 
 function Main(props) {
-
   // console.log("I am re-rendered!")
   const params = props.match.params;
   const city = params.city
@@ -120,7 +119,7 @@ function Main(props) {
 
       <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
 
-      <FormSection city={city} budget={initialBudget} setBudget={setInitialBudget} columns={columns} />
+      <FormSection user={props.user} city={city} budget={initialBudget} setBudget={setInitialBudget} columns={columns} />
 
   </div>
   );

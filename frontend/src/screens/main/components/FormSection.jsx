@@ -10,7 +10,7 @@ const FormSection = (props) => {
         <h2> {props.budget>=0?`$${props.budget}`:`-$${-props.budget}`}  </h2>
       </div>
       <Form budget={props.budget} setBudget={props.setBudget} />
-      <SaveTrip columns={props.columns} />
+      <SaveTrip columns={props.columns} user={props.user} />
     </div>
   );
 };
