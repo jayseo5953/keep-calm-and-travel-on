@@ -35,7 +35,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} color="primary" onClick >
             Save Itinerary
           </Button>
         </DialogActions>
