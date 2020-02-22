@@ -52,7 +52,10 @@ module.exports = (userService) => {
       console.log(password)
       if (user) {
         if (user.password === password) {
-          res.cookie('name', `${user.first_name}`)
+          // res.cookie('name', `${user.first_name}`)
+          res.cookie('user', JSON.stringify({
+            name: user.first_name,
+          }))
           res.send({ user })
         } else {
           res.cookie(null)

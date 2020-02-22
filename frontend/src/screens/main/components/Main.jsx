@@ -13,6 +13,8 @@ import Header from '../../../components/Header/Header';
 
 function Main(props) {
 
+  console.log("main props", props);
+
   const tempUser = document.cookie;
   console.log(tempUser);
 
@@ -88,6 +90,8 @@ function Main(props) {
        brand="LIGHTHOUSE LABS"
        fixed
        city={city}
+       user={props.user}
+       setUser={props.setUser}
       />
     </div>
     {/* <h3>Destination: {city}</h3> */}

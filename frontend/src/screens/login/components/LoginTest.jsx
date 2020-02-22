@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {BrowserRouter as Router, Link, Redirect, useHistory } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import axios from 'axios';
+import { checkPropTypes } from 'prop-types';
 
 const cookieSetter = function (email, password) {
   const userInput = {email, password: password}
@@ -13,27 +14,29 @@ const cookieSetter = function (email, password) {
   return axios(req)
 }
 
-const myFunc = (event, email, password, setLoggedIn, setUserName) => {
-  event.preventDefault();
-  cookieSetter(email, password)
-    .then((res) => {
-      if (res.data) {
-        setUserName(res.data.user.first_name)
-        setLoggedIn(true);
-        console.log(res.data.user.first_name)
-      }
-    })
-    .catch(e => console.error(e))
-}
 
-const LoginTest = () => {
+
+const LoginTest = (props) => {
   // let user = Object.fromEntries(document.cookie.split('; ').map(x => x.split('=')))
   // console.log(user)
   const history = useHistory();
   const [loggedIn, setLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
-  const [userEmail, setUserEmail] = useState('');
+  const [userEmail, setUserEmail] = useState('tausif@gmail.com');
   const [userPassword, setUserPassword] = useState('');
+
+
+  const attemptLogin = (event, email, password) => {
+    event.preventDefault();
+    cookieSetter(email, password)
+      .then((res) => {
+        if (res.data) {
+          console.log(res.data.user.first_name)
+          props.setUser({name: res.data.user.first_name});
+        }
+      })
+      .catch(e => console.error(e))
+  }
 
   return (
     <div>
@@ -41,10 +44,10 @@ const LoginTest = () => {
       <h1>Welcome to Login Test</h1>
       {loggedIn && <div><h2>{userName} is Logged In</h2></div>}
       <form onSubmit={(event) => {
-        myFunc(event, userEmail, userPassword, setLoggedIn, setUserName);
+        attemptLogin(event, userEmail, userPassword);
         // history.push("/")
       }}>
-        { loggedIn ? <Route><Redirect to='/'></Redirect></Route> : null }
+        { props.user ? <Route><Redirect to='/'></Redirect></Route> : null }
         <input type='text' placeholder='Email' value={userEmail} onChange={(e) => setUserEmail(e.target.value)}></input>
         <br></br>
         <br></br>

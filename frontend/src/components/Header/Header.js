@@ -15,21 +15,25 @@ import axios from 'axios';
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle";
 //assets/jss/material-kit-react/components/headerStyle.js
-const logout = (setUser) => {
-  axios.get("/logout")
-    .then(res => {console.log(res)
-      setUser("")
-    })
-    .catch(e => console.error(e))
-}
+
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
   
   const classes = useStyles();
-  let userCookie = Object.fromEntries(document.cookie.split('; ').map(x => x.split('='))) // <-- UserName from Cookie
-  console.log(document.cookie.length)
-  const [user, setUser] = useState(userCookie);
+
+  const logout = () => {
+    axios.get("/logout")
+    .then(res => {
+      props.setUser(null);
+    })
+    .catch(e => console.error(e))
+  }
+
+  const user = props.user;
+
+  console.log("Header user?!?!?!?!", user)
+
   const { color, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,
@@ -48,7 +52,7 @@ export default function Header(props) {
         <h1>{props.city}</h1>
         
         {(user)?
-        <Button className={classes.title} component= { Link } to="/" onClick={(e) => logout(setUser)}>LOG OUT</Button> : 
+        <Button className={classes.title} onClick={logout}>LOG OUT</Button> : 
         <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>}
     </AppBar>
   )
