@@ -1,0 +1,23 @@
+.grid-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-container{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
+  outline: none !important;
+}
+
+.edit-button:focus {
+  outline: none !important;
+}
+
+.grid-itinerary {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+

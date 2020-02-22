@@ -1,27 +1,14 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import { makeStyles } from '@material-ui/core/styles';
 import DeleteIcon from '@material-ui/icons/Delete';
-
-const useStyles = makeStyles(theme => ({
-  button: {
-    margin: theme.spacing(1),
-  },
-}));
+import Fab from '@material-ui/core/Fab';
 
 export default function Delete() {
-  const classes = useStyles()
+
 
   return (
-    <div>
-    <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button}
-        startIcon={<DeleteIcon />}
-      >
-        Delete
-      </Button>
-    </div>
+    <Fab color="secondary" aria-label="edit" id="delete-button">
+        <DeleteIcon 
+        />
+      </Fab>
   )
 }
