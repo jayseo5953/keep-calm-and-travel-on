@@ -119,7 +119,15 @@ function Main(props) {
 
       <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
 
-      <FormSection user={props.user} city={city} budget={initialBudget} setBudget={setInitialBudget} columns={columns} />
+      <FormSection 
+        user={props.user} 
+        city={city} 
+        budget={initialBudget} 
+        setBudget={setInitialBudget} 
+        columns={columns} 
+        total={totalCost}
+          
+        />
 
   </div>
   );

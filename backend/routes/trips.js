@@ -12,6 +12,8 @@ module.exports = (tripService) => {
     console.log("Post trip route activated")
     const tripSummary = req.body;
     tripService.postTrips(tripSummary)
+    res.send('success')
+    // res.status(200).send({ test: "yay" });
   })
 
   return router;

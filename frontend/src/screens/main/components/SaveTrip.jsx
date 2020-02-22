@@ -18,12 +18,13 @@ const handleClose = (setOpen) => {
 };
 
 
-const postToBackEnd = (tripName,userid,columns)=> {
+const postToBackEnd = (tripName,userid,columns, total)=> {
 
   return axios.post('/trips', {
       userid,
       columns,
-      trip: tripName
+      trip: tripName,
+      total: total
   })
 
 }
@@ -31,6 +32,7 @@ const postToBackEnd = (tripName,userid,columns)=> {
 
 
  const SaveTrip = (props)=> {
+
   
   const [open, setOpen] = useState(false);
   const [tripName, setTripName] = useState('')
@@ -65,9 +67,10 @@ const postToBackEnd = (tripName,userid,columns)=> {
                 alert('Trip name is required!')
                 return
               }
-              postToBackEnd(tripName, props.user.id ,props.columns)
+              postToBackEnd(tripName, props.user.id ,props.columns, props.total)
               .then((res)=>{
-                handleClose()
+                console.log("here")
+                handleClose(setOpen)
               })
               .catch((err)=>{
                 alert("Saving was unsuccessful")
