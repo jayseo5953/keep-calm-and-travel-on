@@ -32,8 +32,6 @@ export default function Header(props) {
 
   const user = props.user;
 
-  console.log("Header user?!?!?!?!", user)
-
   const { color, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
     [classes.appBar]: true,

@@ -24,7 +24,7 @@ export default function App() {
   let userObject = JSON.parse(cookieAsObject.user || 'null'); // get user object from parsed cookie
 
   const [user, setUser] = useState(userObject);
-
+  console.log("user is ==> ", user)
   return (
     <Router>
         <Switch>
