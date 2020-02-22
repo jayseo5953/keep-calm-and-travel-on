@@ -87,7 +87,7 @@ function Main(props) {
   <div className="main">
     <div>
      <Header 
-       brand="LIGHTHOUSE LABS"
+       brand="TRIPPER"
        fixed
        city={city}
        user={props.user}

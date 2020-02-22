@@ -10,11 +10,12 @@ import {
 import Home from './screens/home/components/Home'
 import Main from './screens/main/components/Main'
 import Trips from './screens/trips/components/Trips'
-import Login from './screens/login/components/LoginTest'
+import Login from './screens/login/components/Login'
 
 
 export default function App() {
 
+  // Parsing the cookie to be used as the user //
   let cookieAsObject = Object.fromEntries(
     document.cookie.split('; ')
       .map(x => x.split('='))
@@ -22,19 +23,18 @@ export default function App() {
   ); // parse cookie
   let userObject = JSON.parse(cookieAsObject.user || 'null'); // get user object from parsed cookie
 
-  console.log("cAO", cookieAsObject);
   console.log("user", userObject);
-  console.log(document.cookie.length)
 
   const [user, setUser] = useState(userObject);
-  // const [user, setUser] = useState(null);
+
   return (
     <Router>
         <Switch>
           <Route path="/main/:city/:budget" render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/trips/:user" component={Trips} />
           <Route path="/login" render={(routeProps) => <Login {...routeProps} user={user} setUser={setUser} />} />
-          <Route path="/" component={Home} />
+          {/* <Route path="/" component={Home} /> */}
+          <Route path="/" render={(routeProps) => <Home {...routeProps} user={user} setUser={setUser} />} />
         </Switch>
     </Router>
   );

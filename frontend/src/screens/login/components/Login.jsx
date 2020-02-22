@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import {BrowserRouter as Router, Link, Redirect, useHistory } from 'react-router-dom';
+import Route from 'react-router-dom/Route';
+import axios from 'axios';
+
 import assignUserName from './helpers/helper';
 
 // @material-ui/core components
@@ -28,28 +32,52 @@ import image from "../../../assets/img/sign.jpg";
 
 const useStyles = makeStyles(styles);
 
+const cookieSetter = function (email, password) {
+  const userInput = {email, password: password}
+  const req = {
+    url: "/users",
+    method: "POST",
+    data: userInput
+  }
+  return axios(req)
+};
 
-const Login = () => {
+const attemptLogin = (event, email, password, setUser) => {
+  event.preventDefault();
+  cookieSetter(email, password)
+    .then((res) => {
+      if (res.data) {
+        console.log(res.data.user.first_name)
+        setUser({name: res.data.user.first_name});
+      }
+    })
+    .catch(e => console.error(e))
+}
+
+
+
+const Login = (props) => {
 
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
+
+  const history = useHistory();
+  const [loggedIn, setLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
-  // const [userName, setUserName] = useState('');
   
   setTimeout(function() {
     setCardAnimation("");
-  }, 700);
+  }, 400);
   const classes = useStyles();
-
-  const tempUser = (document.cookie).split(';');
-  console.log(tempUser);
   
   return (
     <div>
        <Header 
        color="transparent" 
-       brand="LIGHTHOUSE LABS"
+       brand="TRIPPER"
        fixed
+       user={props.user}
+       setUser={props.setUser}
       />
        <div
         className={classes.pageHeader}
@@ -63,11 +91,9 @@ const Login = () => {
         <GridContainer>
           <GridItem>
             <Card className={classes[cardAnimaton]}>
-            <form className={classes.form} onSubmit={(e) => {
-                e.preventDefault();
-                let userName = assignUserName(userEmail, userPassword)
-                {console.log(userName)}
-              }}>
+            <form className={classes.form} onSubmit={(event) => {attemptLogin(event, userEmail, userPassword, props.setUser);}}>
+            { props.user ? <Route><Redirect to='/'></Redirect></Route> : null }
+
             <CardHeader color="info" className={classes.cardHeader}>
                     <h4>Login</h4>
             </CardHeader>

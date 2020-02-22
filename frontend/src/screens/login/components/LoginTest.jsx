@@ -19,9 +19,8 @@ const cookieSetter = function (email, password) {
 const LoginTest = (props) => {
   // let user = Object.fromEntries(document.cookie.split('; ').map(x => x.split('=')))
   // console.log(user)
-  const history = useHistory();
+  const history = useHistory(); // <--- CAN BE USED LATER
   const [loggedIn, setLoggedIn] = useState(false);
-  const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('tausif@gmail.com');
   const [userPassword, setUserPassword] = useState('');
 
@@ -42,7 +41,7 @@ const LoginTest = (props) => {
     <div>
       
       <h1>Welcome to Login Test</h1>
-      {loggedIn && <div><h2>{userName} is Logged In</h2></div>}
+      {/* {loggedIn && <div><h2>{userName} is Logged In</h2></div>} */}
       <form onSubmit={(event) => {
         attemptLogin(event, userEmail, userPassword);
         // history.push("/")
@@ -54,7 +53,7 @@ const LoginTest = (props) => {
         <input type='password' placeholder='password' value={userPassword} onChange={(e) => setUserPassword(e.target.value)}></input>
         <br></br>
         <br></br>
-        <button type='submit'>{loggedIn ? 'Log Out' : 'Log In'}</button>
+        {/* <button type='submit'>{loggedIn ? 'Log Out' : 'Log In'}</button> */}
 
         <br></br>
         <br></br>
