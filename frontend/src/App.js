@@ -23,8 +23,6 @@ export default function App() {
   ); // parse cookie
   let userObject = JSON.parse(cookieAsObject.user || 'null'); // get user object from parsed cookie
 
-  console.log("user", userObject);
-
   const [user, setUser] = useState(userObject);
 
   return (
