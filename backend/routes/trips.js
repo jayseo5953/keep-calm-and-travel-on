@@ -8,11 +8,19 @@ module.exports = (tripService) => {
     res.send('hellow')
   })
 
-  router.post("/", (req, res) => {
+  router.post("/", async (req, res) => {
     console.log("Post trip route activated")
     const tripSummary = req.body;
-    tripService.postTrips(tripSummary)
-    res.send('success')
+    try {
+      await tripService.postTrips(tripSummary)
+      res.send('success')
+    } catch (err) {
+
+      console.error("err from posting columns:", err);
+      res.status(400).send('Not Found');
+    }
+
+
     // res.status(200).send({ test: "yay" });
   })
 

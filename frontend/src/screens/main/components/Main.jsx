@@ -28,7 +28,6 @@ function Main(props) {
 
   // const [days,setDays] = useState(0)
 
-
   useEffect(()=>{
     // manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
     manageStates(city, setActivities, setColumns, columnsFromBackend)

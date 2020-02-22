@@ -5,8 +5,9 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import CustomInput from '../../../components/CustomInput/CustomInput'
 import axios from 'axios';
+import uuid from 'uuid/v4'
+
 
 
 
@@ -18,18 +19,35 @@ const handleClose = (setOpen) => {
 };
 
 
-const postToBackEnd = (tripName,userid,columns, total)=> {
+const postToBackEnd = (tripName,userId,columns, total)=> {
 
+  const columnCopy = {...columns};
+
+  delete columnCopy['list'];
+  
+  console.log('before ', columnCopy)
+
+
+  for(let key in columnCopy) {
+    if (!columnCopy[key].items.length) {
+      delete columnCopy[key]
+    }
+  }
+
+  console.log('after ', columnCopy)
+ 
+
+
+  console.log("userid: ", userId)
   return axios.post('/trips', {
-      userid,
-      columns,
+    [uuid()]:{
+      userId,
+      columns: columnCopy,
       trip: tripName,
       total: total
+    }
   })
-
 }
-
-
 
  const SaveTrip = (props)=> {
 

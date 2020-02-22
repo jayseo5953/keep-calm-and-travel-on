@@ -31,7 +31,10 @@ const LoginTest = (props) => {
       .then((res) => {
         if (res.data) {
           console.log(res.data.user.first_name)
-          props.setUser({name: res.data.user.first_name});
+          props.setUser({
+            name: res.data.user.first_name, 
+            id: res.data.user.id
+          });
         }
       })
       .catch(e => console.error(e))
