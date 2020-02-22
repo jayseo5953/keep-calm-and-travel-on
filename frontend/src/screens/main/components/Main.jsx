@@ -18,7 +18,6 @@ function Main(props) {
   const city = params.city
   let budgetParam = !isNaN(params.budget)? params.budget:0;
 
-
   const [initialBudget, setInitialBudget] = useState(budgetParam)
 
   const [activities, setActivities] = useState([])
@@ -89,9 +88,11 @@ function Main(props) {
   <div className="main">
     <div>
      <Header 
-       brand="LIGHTHOUSE LABS"
+       brand="TRIPPER"
        fixed
        city={city}
+       user={props.user}
+       setUser={props.setUser}
       />
     </div>
     {/* <h3>Destination: {city}</h3> */}

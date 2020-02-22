@@ -29,10 +29,13 @@ module.exports = (userService) => {
 
   router.get("/", async (req, res) => {
     try {
+
+      console.log(req.body.data)
       const [users] = await Promise.all([
         await userService.getUser()
       ]);
-      console.log(users);
+      // console.log(users);
+
       res.send({ users });
       // res.render("users")
     } catch (err) {
@@ -40,5 +43,33 @@ module.exports = (userService) => {
     }
   });
 
+
+  router.post("/", async (req, res) => {
+    const userInput=req.body;
+    const password = userInput.password;
+    try {
+      res.clearCookie()
+      const [user] = await Promise.all([
+        await userService.getUserByEmail(userInput)
+      ]);
+      console.log(password)
+      if (user) {
+        if (user.password === password) {
+          // res.cookie('name', `${user.first_name}`)
+          res.cookie('user', JSON.stringify({
+            name: user.first_name,
+          }))
+          res.send({ user })
+        } else {
+          res.cookie(null)
+          res.end()
+        }
+      } else {
+        res.end()
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  })
   return router;
 };

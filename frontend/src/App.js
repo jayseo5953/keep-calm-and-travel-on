@@ -1,5 +1,5 @@
 /* Nested Routing */
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,13 +14,27 @@ import Login from './screens/login/components/Login'
 
 
 export default function App() {
+
+  // Parsing the cookie to be used as the user //
+  let cookieAsObject = Object.fromEntries(
+    document.cookie.split('; ')
+      .map(x => x.split('='))
+      .map(([k, v]) => [k, decodeURIComponent(v)])
+  ); // parse cookie
+  let userObject = JSON.parse(cookieAsObject.user || 'null'); // get user object from parsed cookie
+
+  console.log("user", userObject);
+
+  const [user, setUser] = useState(userObject);
+
   return (
     <Router>
         <Switch>
-          <Route path="/main/:city/:budget" component={Main} />
+          <Route path="/main/:city/:budget" render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/trips/:user" component={Trips} />
-          <Route path="/login" component={Login} />
-          <Route path="/" component={Home} />
+          <Route path="/login" render={(routeProps) => <Login {...routeProps} user={user} setUser={setUser} />} />
+          {/* <Route path="/" component={Home} /> */}
+          <Route path="/" render={(routeProps) => <Home {...routeProps} user={user} setUser={setUser} />} />
         </Switch>
     </Router>
   );

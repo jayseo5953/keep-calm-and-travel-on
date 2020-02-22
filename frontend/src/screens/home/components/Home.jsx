@@ -14,14 +14,16 @@ import styles from "../../../assets/jss/material-kit-react/views/homePage.js";
 
 const useStyles = makeStyles(styles)
 
-const Home = () => {
+const Home = (props) => {
   const classes = useStyles();
   return (
     <div>
       <Header 
        color="transparent" 
-       brand="LIGHTHOUSE LABS"
+       brand="TRIPPER"
        fixed
+       user={props.user}
+       setUser={props.setUser}
       />
       <Parallax filter image={require("../../../assets/img/miami-bg.jpg")}>
         <div className={classes.container}>

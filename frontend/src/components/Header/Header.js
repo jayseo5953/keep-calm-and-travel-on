@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { Link } from "react-router-dom"
 
@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
+import axios from 'axios';
 
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle";
@@ -18,7 +19,20 @@ import styles from "../../assets/jss/material-kit-react/components/headerStyle";
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
+  
   const classes = useStyles();
+
+  const logout = () => {
+    axios.get("/logout")
+    .then(res => {
+      props.setUser(null);
+    })
+    .catch(e => console.error(e))
+  }
+
+  const user = props.user;
+
+  console.log("Header user?!?!?!?!", user)
 
   const { color, brand, fixed, absolute } = props;
   const appBarClasses = classNames({
@@ -34,8 +48,12 @@ export default function Header(props) {
       <div className= {classes.flex}>
         <Button className={classes.title} component= { Link } to="/">{brand}</Button>
       </div>
+        {user && <h1>{user.name}</h1>}
         <h1>{props.city}</h1>
-        <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>
+        
+        {(user)?
+        <Button className={classes.title} onClick={logout}>LOG OUT</Button> : 
+        <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>}
     </AppBar>
   )
 }
