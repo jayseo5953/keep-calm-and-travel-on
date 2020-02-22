@@ -38,8 +38,8 @@ const TripListItem = (props) => {
       </div>
       <div>
       <h1>Bali</h1>
-      </div>
     </div>
+  </div>
   )
 }
 

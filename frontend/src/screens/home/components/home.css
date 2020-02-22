@@ -28,3 +28,7 @@ a:link {
   text-decoration: none;
   color: #FFF;
 }
+
+*:focus {
+  outline: none !important;
+}
