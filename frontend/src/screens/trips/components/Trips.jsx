@@ -13,6 +13,10 @@ import CardBody from '../../../components/Card/CardBody'
 import CardContent from '@material-ui/core/CardContent';
 import CardFooter from '../../../components/Card/CardFooter'
 
+
+
+
+
 // core components
 import styles from "../../../assets/jss/material-kit-react/views/tripItineraryPage"
 import TripList from './TripList';
@@ -22,32 +26,32 @@ const useStyles = makeStyles(styles);
 
 
 
-const itineraryTrips = {
-  trip1: {
-    id: 'trip_id',
-    img_url: 'https://specials-images.forbesimg.com/imageserve/675172642/960x0.jpg?fit=scale',
-    name: "Bali! <3",
-    day: '3 Days',
-  },
-  trip2: {
-    id: 'trip_id',
-    img_url: 'https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg',
-    name: "Bay areaaaaa!",
-    day: '4 Days'
-  },
-  trip3: {
-    id: 'trip_id',
-    img_url: 'https://i.ytimg.com/vi/m6QeLoX3pT4/maxresdefault.jpg',
-    name: "koreaaaa koreaaaa koreaaa",
-    day: '2 Days'
-  },
-  trip4: {
-    id: 'trip_id',
-    img_url: 'https://cdn-image.departures.com/sites/default/files/styles/responsive_900x600/public/1539722614/duomo-church-architecture-sunset-florence-italy-FLORENCEITALY1018.jpg?itok=p9ytJcSJ',
-    name: "Pretty in Florence",
-    day: '6 Days'
-  }
-}
+// const itineraryTrips = {
+//   trip1: {
+//     id: 'trip_id',
+//     img_url: 'https://specials-images.forbesimg.com/imageserve/675172642/960x0.jpg?fit=scale',
+//     name: "Bali! <3",
+//     day: '3 Days',
+//   },
+//   trip2: {
+//     id: 'trip_id',
+//     img_url: 'https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg',
+//     name: "Bay areaaaaa!",
+//     day: '4 Days'
+//   },
+//   trip3: {
+//     id: 'trip_id',
+//     img_url: 'https://i.ytimg.com/vi/m6QeLoX3pT4/maxresdefault.jpg',
+//     name: "koreaaaa koreaaaa koreaaa",
+//     day: '2 Days'
+//   },
+//   trip4: {
+//     id: 'trip_id',
+//     img_url: 'https://cdn-image.departures.com/sites/default/files/styles/responsive_900x600/public/1539722614/duomo-church-architecture-sunset-florence-italy-FLORENCEITALY1018.jpg?itok=p9ytJcSJ',
+//     name: "Pretty in Florence",
+//     day: '6 Days'
+//   }
+// }
 
 const Trips = () => {
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
@@ -73,7 +77,9 @@ const Trips = () => {
             </CardHeader>
             <CardBody>
               <CardContent>
+                
                 <TripList />
+                                
               </CardContent>
                   
               </CardBody>

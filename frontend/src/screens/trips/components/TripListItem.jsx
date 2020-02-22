@@ -31,13 +31,14 @@ const itineraryTrips = {
 const TripListItem = (props) => {
   let itineraries = props.itineraries
   return (
-    <div>
-      {/* <p>{itineraries.schedule_id}</p>
-      <p>{itineraries.activity_id}</p>
-      <p>{itineraries.time_schedule}</p> */}
-      <p>schedule_id</p>
-      <p>activity_id</p>
-      <p>time_schedule</p>
+  
+    <div className="grid-itinerary">
+      <div>
+      <img src="https://specials-images.forbesimg.com/imageserve/675172642/960x0.jpg" height="150px" width="150px"/>
+      </div>
+      <div>
+      <h1>Bali</h1>
+      </div>
     </div>
   )
 }
