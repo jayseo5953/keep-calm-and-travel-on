@@ -20,7 +20,7 @@ import CardFooter from '../../../components/Card/CardFooter'
 // core components
 import styles from "../../../assets/jss/material-kit-react/views/tripItineraryPage"
 import TripList from './TripList';
-// import image from "../../../assets/img/landing-bg"
+import image from "../../../assets/img/maldives-island.jpg"
 
 const useStyles = makeStyles(styles);
 
@@ -61,12 +61,19 @@ const Trips = () => {
   const classes = useStyles();
   return (
     <div>
-
       <Header 
-       color="dark" 
-       brand="LIGHTHOUSE LABS"
+       color="transparent"
+       brand="TRIPPER"
        fixed
       />
+       <div
+        className={classes.pageHeader}
+        style={{
+          backgroundImage: "url(" + image + ")",
+          backgroundSize: "cover",
+          backgroundPosition: "top center"
+        }}
+      >
 
        <div className={classes.container} style={{width: "700px"}}>
        <GridContainer>
@@ -91,7 +98,7 @@ const Trips = () => {
           </GridItem>
         </GridContainer>
       </div>
-      
+      </div>
 
     </div>
   );
