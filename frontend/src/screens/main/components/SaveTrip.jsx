@@ -5,7 +5,11 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
- const SaveTrip = function FormDialog() {
+import CustomInput from '../../../components/CustomInput/CustomInput'
+
+
+ const SaveTrip = (props)=> {
+  
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -13,6 +17,13 @@ import DialogTitle from '@material-ui/core/DialogTitle';
   const handleClose = () => {
     setOpen(false);
   };
+
+  const postToBackEnd = (columns)=> {
+    // return Promise.resolve()
+    console.log("aaaa",columns)
+    return Promise.reject()
+  }
+
   return (
     <div className='save-trip'>
       <Button variant="contained" color="primary" onClick={handleClickOpen}>
@@ -21,21 +32,33 @@ import DialogTitle from '@material-ui/core/DialogTitle';
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">
           <h3>
-          Total Trip Cost:
+          Your Trip
           </h3>
         </DialogTitle>
         <DialogContent>
           <TextField
             autoFocus
             margin="dense"
-            id="name"
+            id="tripname"
             label="Enter Trip Name"
             type="text"
             fullWidth
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={
+            ()=>{
+              postToBackEnd("My Trip" ,props.columns)
+              .then((res)=>{
+                handleClose()
+              })
+              .catch((err)=>{
+                alert("aa")
+              })
+            
+            }
+            
+            } color="primary"  >
             Save Itinerary
           </Button>
         </DialogActions>

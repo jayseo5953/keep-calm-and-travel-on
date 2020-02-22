@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.cityItemList {
+  color: white;
+  /* border: 2px solid black; */
+  background-color: transparent;
+  width: 500px;
+  /* font-weight: bold; */
+  position: absolute;
+  font-size: 20px;
+  font-family: 'Montserrat';
+}
+
+
+.intro-text {
+  font-size: 40px;
+  font-family: 'Montserrat';
+  margin: 0;
+}
+
+.action-text {
+  font-family: 'Montserrat';
+}
+
+a,
+a:visited, 
+a:link {
+  text-decoration: none;
+  color: #FFF;
+}

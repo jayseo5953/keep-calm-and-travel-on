@@ -13,13 +13,10 @@ import Header from '../../../components/Header/Header';
 
 function Main(props) {
 
-  console.log("main props", props);
-
-  const tempUser = document.cookie;
-  console.log(tempUser);
-
-  const city = props.match.params.city
-  let budgetParam = !isNaN(props.match.params.budget)? props.match.params.budget:0;
+  // console.log("I am re-rendered!")
+  const params = props.match.params;
+  const city = params.city
+  let budgetParam = !isNaN(params.budget)? params.budget:0;
 
   const [initialBudget, setInitialBudget] = useState(budgetParam)
 
@@ -50,8 +47,10 @@ function Main(props) {
 
   let totalCost = 0;
   for (let column in columns) {
-    if (column !== 'list')
-    totalCost += columns[column].total
+    if (column !== 'list'){
+    
+      totalCost += columns[column].total
+    }
   }
 
   useEffect(()=>{
@@ -69,6 +68,7 @@ function Main(props) {
   // },[totalCost])
 
   useEffect(()=>{
+
     let newColumns = {...columns}
     const keyArrays = Object.keys(newColumns)
     for (let column in newColumns) {
@@ -82,6 +82,7 @@ function Main(props) {
 
 
   const budget = initialBudget-totalCost
+  // console.log(budget)
   return (
      
   <div className="main">
@@ -108,7 +109,6 @@ function Main(props) {
     
     <div className='dnd-context'>
       <DndContext
-        onBeforeCapture={console.log("aastarted")}
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
         budget={budget}
         columns={columns} 
@@ -120,7 +120,7 @@ function Main(props) {
 
       <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
 
-      <FormSection city={city} budget={initialBudget} setBudget={setInitialBudget} />
+      <FormSection city={city} budget={initialBudget} setBudget={setInitialBudget} columns={columns} />
 
   </div>
   );

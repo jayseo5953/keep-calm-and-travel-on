@@ -29,9 +29,10 @@ const Home = (props) => {
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
-            <h1 className={classes.title}>Plan your own itinerary right here.</h1>
-              <h4>
-                What is your destination, activity, or budget?
+            <h1 className="intro-text">Plan your own itinerary right here.</h1>
+            <br />
+              <h4 className="action-text">
+                What is your destination or budget?
               </h4>
               <SearchBar/>
             </GridItem>

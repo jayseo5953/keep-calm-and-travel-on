@@ -1,26 +1,53 @@
 import React, {useState} from 'react';
 import Button from '@material-ui/core/Button';
+let addOrSubtract='';
 
 const Form = (props) => {
 
-  const [inputValue, setInputValue] = useState(props.budget || 0);
-
+  const [inputValue, setInputValue] = useState(props.budget);
 
   return (
-    <form className='budget-input-form' onSubmit={(e)=>{
+    <form  autoComplete='off' className='budget-input-form' onSubmit={(e)=>{
       e.preventDefault();
-      props.setBudget(inputValue);
+      if(isNaN(inputValue)) return;
+      // console.log("flag: ", addOrSubtract)
+      if (addOrSubtract==='add'){
+        console.log( "add ran")
+        props.setBudget(Number(props.budget) + Number(inputValue||0));
+        return
+      }
+      if (addOrSubtract==='subtract') {
+        console.log( "subtract ran")
+        props.setBudget(Number(props.budget) - Number(inputValue||0));
+        return
+      }
       }} >
-      <label htmlFor="budget-input">Enter Your Budget</label>
-      <input className='input-budget' type="text" name='input-budget' value={inputValue} id='budget-input'onChange={(e)=>{setInputValue(e.target.value)}}/>
-
-      <Button variant="contained" color="primary" type='submit' >
+      <label htmlFor="budget-input"> {!addOrSubtract?'Enter Your Budget':'Increase or Decrease Your Budget'} </label>
+      <input className='input-budget' type="text" name='input-budget' 
+        value={inputValue}
+        id='budget-input'onChange={(e)=>{
+          setInputValue(e.target.value)
+        }}/>
+      {!addOrSubtract? 
+        <Button variant="contained" color="primary" type='submit' onClick={()=>{
+          if(isNaN(inputValue)) return;
+          props.setBudget(inputValue||0);
+          addOrSubtract='submitted';
+         }} >
         Submit
-      </Button>
-
-      {/* <button className='budget-button btn btn-primary' type="submit" >Submit</button> */}
-    
-    
+        </Button>
+        :
+        <div>
+          <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='add' }} >
+          +
+          </Button>
+          <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='subtract' }} >
+          -
+          </Button>
+        </div>
+      }
+     
+  
     </form>
   );
 };
