@@ -14,15 +14,18 @@ const Form = (props) => {
       if (addOrSubtract==='add'){
         console.log( "add ran")
         props.setBudget(Number(props.budget) + Number(inputValue||0));
+        setInputValue(0)
         return
       }
       if (addOrSubtract==='subtract') {
         console.log( "subtract ran")
         props.setBudget(Number(props.budget) - Number(inputValue||0));
+        setInputValue(0)
         return
       }
       }} >
-      <label htmlFor="budget-input"> {!addOrSubtract?'Enter Your Budget':'Increase or Decrease Your Budget'} </label>
+      <label htmlFor="budget-input"> {!addOrSubtract?'Enter Your Budget':'Increase or Decrease Your Budget'}></label>
+
       <input className='input-budget' type="text" name='input-budget' 
         value={inputValue}
         id='budget-input'onChange={(e)=>{
@@ -32,6 +35,7 @@ const Form = (props) => {
         <Button variant="contained" color="primary" type='submit' onClick={()=>{
           if(isNaN(inputValue)) return;
           props.setBudget(inputValue||0);
+          setInputValue(0)
           addOrSubtract='submitted';
          }} >
         Submit
