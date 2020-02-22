@@ -36,16 +36,11 @@ const Home = () => {
                 What is your destination or budget?
               </h4>
               <SearchBar/>
-              <SaveTrip />
             </GridItem>
             
           </GridContainer>
         </div>
       </Parallax>
-    
-      
-
-
     </div>
   );
 };
