@@ -19,8 +19,6 @@ import styles from "../../assets/jss/material-kit-react/components/headerStyle";
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
-
-  const history = useHistory();
   
   const history = useHistory();
   const classes = useStyles();
