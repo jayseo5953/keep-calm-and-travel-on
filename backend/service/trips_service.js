@@ -1,6 +1,11 @@
 module.exports = (tripsRepository) => {
   return {
 
+    getTrips: (userId) => {
+
+      return tripsRepository.getTrips(userId)
+    },
+
     postTrips: (tripSummary) => {
       console.log('Using postTrips from Trips Service')
       console.log(tripSummary)
@@ -8,10 +13,9 @@ module.exports = (tripsRepository) => {
       return tripsRepository.postTrips(tripSummary)
     },
 
-    getTrips: (arg) => {
-      console.log('Using getTrips from Trips Service', arg)
+    deleteTrip: (tripId) => {
 
-      return tripsRepository.getTrips()
+      return tripsRepository.deleteTrip(tripId)
     }
 
   }

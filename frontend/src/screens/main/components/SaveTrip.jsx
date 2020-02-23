@@ -20,14 +20,11 @@ const handleClose = (setOpen) => {
 };
 
 
-const postToBackEnd = (tripName,userId,columns, total)=> {
+const postToBackEnd = (tripName,userId,columns,total, budget)=> {
 
   const columnCopy = {...columns};
 
   delete columnCopy['list'];
-  
-  console.log('before ', columnCopy)
-
 
   for(let key in columnCopy) {
     if (!columnCopy[key].items.length) {
@@ -35,17 +32,14 @@ const postToBackEnd = (tripName,userId,columns, total)=> {
     }
   }
 
-  console.log('after ', columnCopy)
- 
-
-
   console.log("userid: ", userId)
   return axios.post('/trips', {
     [uuid()]:{
       userId,
       columns: columnCopy,
       trip: tripName,
-      total: total
+      total,
+      budget
     }
   })
 }
@@ -56,29 +50,65 @@ const postToBackEnd = (tripName,userId,columns, total)=> {
   
   const [open, setOpen] = useState(false);
   const [tripName, setTripName] = useState('')
+  const [error, setError] = useState('');
+
+  const modalStlye = {
+    // color: 'red',
+    height: '14vh',
+    width: '25vw',
+    // padding: '40px 50px'
+    margin: '20px',
+    marginBottom: '0px'
+  }
+
+  const textFieldStyle = {
+    margin: '0 20px'
+  }
 
   return (
     <div className='save-trip'>
       <Button variant="contained" color="primary" onClick={()=>handleClickOpen(setOpen)}>
         Save Trip
       </Button>
-      <Dialog open={open} onClose={()=>handleClose(setOpen)} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">
-          <h3>
-          Your Trip
-          </h3>
+      <Dialog open={open} onClose={()=>handleClose(setOpen)} 
+      aria-labelledby="form-dialog-title"
+      >
+        <DialogTitle id="form-dialog-title"
+         style={modalStlye}>
+          <h2>
+          {props.city}
+          </h2>
+          <h4>
+            Total: ${props.total}
+          </h4>
+          <p className='length-error'>{error}</p>
         </DialogTitle>
-        <DialogContent>
+        <DialogContent
+        style={textFieldStyle}
+          >
           <TextField
             autoFocus
+          
             margin="dense"
             id="tripname"
             label="Enter Trip Name"
             type="text"
             fullWidth
             value={tripName}
-            onChange={e=>setTripName(e.target.value)}
+            onChange={e=>{
+              if (e.target.value.length<=15){
+
+                setTripName(e.target.value)
+
+                return
+              } else {
+                setError('Trip name is too long!')
+              }
+              return
+            }
+              }
           />
+         
         </DialogContent>
         <DialogActions>
           <Button onClick={
@@ -87,7 +117,7 @@ const postToBackEnd = (tripName,userId,columns, total)=> {
                 alert('Trip name is required!')
                 return
               }
-              postToBackEnd(tripName, props.user.id ,props.columns, props.total)
+              postToBackEnd(tripName, props.user.id ,props.columns, props.total, props.budget)
               .then((res)=>{
                 console.log("here")
                 handleClose(setOpen);
@@ -104,7 +134,7 @@ const postToBackEnd = (tripName,userId,columns, total)=> {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+      </div>
   );
 }
 export default SaveTrip
