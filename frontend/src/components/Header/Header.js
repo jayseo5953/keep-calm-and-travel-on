@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -19,6 +19,8 @@ import styles from "../../assets/jss/material-kit-react/components/headerStyle";
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
+
+  const history = useHistory();
   
   const classes = useStyles();
 
@@ -46,11 +48,12 @@ export default function Header(props) {
       <div className= {classes.flex}>
         <Button className={classes.title} component= { Link } to="/">{brand}</Button>
       </div>
-        {user && <h1>{user.name}</h1>}
-        <h1>{props.city}</h1>
-        
         {(user)?
-        <Button className={classes.title} onClick={logout}>LOG OUT</Button> : 
+        <div>
+          <Button className={classes.title} onClick={()=>{history.push(`/trips/${user.name}`)}}>{user.name}</Button>
+          <Button className={classes.title} onClick={logout}>LOG OUT</Button> 
+        </div>
+          :  
         <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>}
     </AppBar>
   )

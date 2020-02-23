@@ -13,6 +13,7 @@ import Header from '../../../components/Header/Header';
 
 function Main(props) {
   // console.log("I am re-rendered!")
+
   const params = props.match.params; console.log(params)
   
   const city = params.city;
