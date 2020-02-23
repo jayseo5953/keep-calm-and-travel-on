@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import {Redirect
-  // , useHistory 
-} from 'react-router-dom';
+import {Redirect , useHistory } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import axios from 'axios';
 
@@ -63,7 +61,7 @@ const Login = (props) => {
 
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
 
-  // const history = useHistory();
+  const history = useHistory();
   // const [loggedIn, setLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
@@ -97,7 +95,8 @@ const Login = (props) => {
           <GridItem>
             <Card className={classes[cardAnimaton]}>
               <form className={classes.form} onSubmit={(event) => {attemptLogin(event, userEmail, userPassword, setError, props.setUser);}}>
-              { props.user ? <Route><Redirect to='/'></Redirect></Route> : null }
+              {/* { props.user ? <Route><Redirect to='/'></Redirect></Route> : null } */}
+              { props.user ? history.goBack() : null }
 
                 <CardHeader color="info" className={classes.cardHeader}>
                         <h4>Login</h4>

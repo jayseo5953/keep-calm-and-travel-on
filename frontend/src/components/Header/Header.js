@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -20,11 +20,13 @@ const useStyles = makeStyles(styles);
 
 export default function Header(props) {
   
+  const history = useHistory();
   const classes = useStyles();
 
   const logout = () => {
     axios.get("/logout")
     .then(res => {
+      history.push("/")
       props.setUser(null);
     })
     .catch(e => console.error(e))
