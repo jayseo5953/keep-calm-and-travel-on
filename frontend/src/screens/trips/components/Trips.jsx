@@ -11,7 +11,7 @@ import Card from '../../../components/Card/Card'
 import CardHeader from '../../../components/Card/CardHeader'
 import CardBody from '../../../components/Card/CardBody'
 import CardContent from '@material-ui/core/CardContent';
-import CardFooter from '../../../components/Card/CardFooter'
+// import CardFooter from '../../../components/Card/CardFooter'
 
 // core components
 import styles from "../../../assets/jss/material-kit-react/views/tripItineraryPage"
@@ -38,7 +38,7 @@ const Trips = (props) => {
    getTrips(userId)
     .then(res=> setTrips(res.data))
     .catch(err=> console.error(err.data))
-  },[]);
+  },[userId]);
 
   return (
     <div>

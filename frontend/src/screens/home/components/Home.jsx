@@ -11,7 +11,7 @@ import GridContainer from '../../../components/Grid/GridContainer'
 import GridItem from '../../../components/Grid/GridItem'
 
 
-import SaveTrip from '../../../components/TripModal/TripModal'
+// import SaveTrip from '../../../components/TripModal/TripModal'
 
 import styles from "../../../assets/jss/material-kit-react/views/homePage.js";
 
