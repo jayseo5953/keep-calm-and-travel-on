@@ -35,11 +35,39 @@ export default function manageStates (
         setColumns(columnsFromBackend(result))
       } else {
 
-        axios.get(`/trips/${tripId}`)
+        axios.get(`/trips/edit/${tripId}`)
         .then (res => {
           // let newstate = {...listOfColumns}
           // setColumns(listOfColumns);
-          console.log(res)
+          console.log("CONSOLE LOGGING FROM MANAGESTATE",res.data)
+
+          let list = listOfColumns['list'];
+          let newState={list};
+
+          res.data.forEach((obj) => {
+            newState[obj.schedule_id] = {
+              name: obj.schedule_name,
+              items:[],
+              total:0
+            } 
+          })
+
+          res.data.forEach((obj)=>{
+            const item = {
+              id: obj.itinerary_id,
+              activity_id: obj.itinerary_id,
+              price_cents: obj.price_cents,
+              // time_operations: obj.time_operation,
+              lat: obj.lat,
+              long: obj.long,
+              image_url: obj.image_url,
+              // destination_id: obj.destination_id,
+              name: obj.name
+            }
+            newState[obj.schedule_id].items.push(item);
+          })
+            setColumns(newState)
+  
         })
 
       }

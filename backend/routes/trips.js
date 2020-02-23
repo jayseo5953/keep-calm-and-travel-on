@@ -19,6 +19,22 @@ module.exports = (tripService) => {
 
   })
 
+  router.get("/edit/:tripId", async (req, res) => {
+    console.log('You are in the trips route')
+    let tripId = req.params.tripId
+    console.log("user id: ", tripId)
+    try {
+      const trips = await tripService.getTripById(tripId);
+      console.log(trips.rows)
+      if(!trips) throw "Trips Not Found"
+      res.send(trips.rows);
+
+    } catch (err) {
+      console.error("err from cities search API:", err);
+    }
+
+  })
+
   router.post("/", async (req, res) => {
     console.log("Post trip route activated")
     const tripSummary = req.body;

@@ -6,6 +6,10 @@ module.exports = (tripsRepository) => {
       return tripsRepository.getTrips(userId)
     },
 
+    getTripById: (tripId) => {
+      return tripsRepository.getTripById(tripId)
+    },
+
     postTrips: (tripSummary) => {
       console.log('Using postTrips from Trips Service')
       console.log(tripSummary)

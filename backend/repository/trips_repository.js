@@ -16,6 +16,21 @@ module.exports = (db) => {
       return db.query(qs,[userId])
     },
 
+    getTripById: (tripId) => {
+      const qs = `
+      SELECT trip_id, schedule_id, schedule_name, activity_id, name, price_cents, lat, long, activities.image_url, itineraries.id as itinerary_id
+      FROM trips
+      JOIN users ON user_id = users.id
+      JOIN schedules ON trips.id = trip_id
+      JOIN itineraries ON schedules.id = schedule_id
+      JOIN activities ON activities.id = activity_id
+      JOIN destinations ON destinations.id = destination_id
+      WHERE trip_id = '${tripId}';
+      `;
+
+      return db.query(qs)
+    },
+
     postTrips: (tripSummary) => {
       console.log('Inside the trips repository')
 
