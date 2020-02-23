@@ -1,24 +1,40 @@
 module.exports = (db) => {
   return {
 
+    getTrips: (userId) => {
+      console.log('Inside the trips repository')
+      const qs = `
+      SELECT DISTINCT (trips.id), users.first_name, trips.trip_name, destinations.city, destinations.country, country, trips.total_cost, trips.trip_budget
+      FROM trips
+      JOIN users ON user_id = users.id
+      JOIN schedules ON trips.id = trip_id
+      JOIN itineraries ON schedules.id = schedule_id
+      JOIN activities ON activities.id = activity_id
+      JOIN destinations ON destinations.id = destination_id
+      WHERE user_id = $1
+      `
+      return db.query(qs,[userId])
+    },
+
     postTrips: (tripSummary) => {
       console.log('Inside the trips repository')
-
 
       const trip_id = Object.keys(tripSummary)[0];
       const frontEndInput = tripSummary[trip_id];
       const user_id = frontEndInput.userId
       const trip_name = frontEndInput.trip;
       const trip_total = frontEndInput.total;
-      const trip_columns = frontEndInput.columns
+      const trip_columns = frontEndInput.columns;
+      const trip_budget = frontEndInput.budget;
 
       console.log("userid: ", user_id)
       console.log("trip_id: ", trip_id);
       console.log("trip_name: ", trip_name);
       console.log("trip_total: ", trip_total);
       console.log("schedule_id: ", trip_columns);
+      console.log("trip_budget: ", trip_budget);
 
-      let query_for_trips =`INSERT INTO trips (id, user_id, trip_name, total_cost) VALUES ('${trip_id}', ${user_id}, '${trip_name}', ${trip_total});
+      let query_for_trips =`INSERT INTO trips (id, user_id, trip_name, total_cost, trip_budget) VALUES ('${trip_id}', ${user_id}, '${trip_name}', ${trip_total}, ${trip_budget});
       `;
 
       let query_for_schedules ='';
@@ -42,20 +58,22 @@ module.exports = (db) => {
       console.log(qs)
 
       return db.query(qs)
-        .then(res => res)
     },
 
-    getTrips: () => {
-      console.log('Inside the trips repository')
+    deleteTrip: (tripId) => {
 
-      const qs = `
-      SELECT * FROM trips
-        JOIN users ON user_id = users.id
-        JOIN schedules ON trips.id = trip_id
-        JOIN itineraries ON schedules.id = schedule_id
-        JOIN activities ON activities.id = activity_id
-        JOIN destinations ON destinations.id = destination_id
-      `
+      const qs = "DELETE FROM trips WHERE trips.id = $1"
+      return db.query(qs,[tripId])
     }
+
+
+
   }
 }
+
+// SELECT * FROM trips
+// JOIN users ON user_id = users.id
+// JOIN schedules ON trips.id = trip_id
+// JOIN itineraries ON schedules.id = schedule_id
+// JOIN activities ON activities.id = activity_id
+// JOIN destinations ON destinations.id = destination_id

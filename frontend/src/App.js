@@ -30,9 +30,8 @@ export default function App() {
     <Router>
         <Switch>
           <Route path="/main/:city/:budget" render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser} />} />
-          <Route path="/trips/:user" component={Trips} />
+          <Route path="/trips/:userName" render={(routeProps) => <Trips {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/login" render={(routeProps) => <Login {...routeProps} user={user} setUser={setUser} />} />
-          {/* <Route path="/" component={Home} /> */}
           <Route path="/" render={(routeProps) => <Home {...routeProps} user={user} setUser={setUser} />} />
         </Switch>
     </Router>

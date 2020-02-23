@@ -26,6 +26,7 @@ CREATE TABLE trips (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
 
   trip_name VARCHAR(255) NOT NULL,
+  trip_budget INTEGER,
   total_cost INTEGER NOT NULL
 );
 

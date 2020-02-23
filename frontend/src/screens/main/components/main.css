@@ -247,8 +247,12 @@ body {
   border-radius:0 !important;
 }
 
+.modal {
+  height: 30vh;
+  width: 50vw;
+}
 
-.save-trip{
-  /* background-color: blue;
-  color: color; */
+.length-error {
+  color:red;
+  font-size:12px;
 }
