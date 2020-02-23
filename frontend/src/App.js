@@ -11,11 +11,11 @@ import Home from './screens/home/components/Home'
 import Main from './screens/main/components/Main'
 import Trips from './screens/trips/components/Trips'
 import Login from './screens/login/components/Login'
+import EditTrip from './screens/editTrip/components/EditTrip'
 
 
 export default function App() {
 
-  console.log('cookie: ', document.cookie)
   // Parsing the cookie to be used as the user //
   let cookieAsObject = Object.fromEntries(
     document.cookie.split('; ')
@@ -25,11 +25,12 @@ export default function App() {
   let userObject = JSON.parse(cookieAsObject.user || 'null'); // get user object from parsed cookie
 
   const [user, setUser] = useState(userObject);
-  console.log("user is ==> ", user)
+
   return (
     <Router>
         <Switch>
           <Route path="/main/:city/:budget" render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser} />} />
+          <Route path="/edit/:city/:budget/:tripId" exact render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/trips/:user" component={Trips} />
           <Route path="/login" render={(routeProps) => <Login {...routeProps} user={user} setUser={setUser} />} />
           {/* <Route path="/" component={Home} /> */}
