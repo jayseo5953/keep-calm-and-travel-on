@@ -23,7 +23,6 @@ const handleClose = (setOpen) => {
 const postToBackEnd = (tripName,userId,columns,total, budget)=> {
 
   const columnCopy = {...columns};
-
   delete columnCopy['list'];
 
   for(let key in columnCopy) {
@@ -32,7 +31,6 @@ const postToBackEnd = (tripName,userId,columns,total, budget)=> {
     }
   }
 
-  console.log("userid: ", userId)
   return axios.post('/trips', {
     [uuid()]:{
       userId,

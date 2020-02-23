@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+import { useHistory } from "react-router-dom"
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -24,6 +25,11 @@ import getTrips from '../helpers/getTrips'
 const useStyles = makeStyles(styles);
 
 const Trips = (props) => {
+
+  const history = useHistory();
+  if (!props.user) {
+    history.goBack()
+  }
   const userId = props.user.id
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
 
