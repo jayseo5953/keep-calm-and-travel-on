@@ -1,0 +1,12 @@
+.itinerary-grid {
+  color: red;
+}
+
+.city-name {
+  color: black;
+}
+
+.itinerary-info {
+ display: flex; 
+ flex-direction: column;
+}
