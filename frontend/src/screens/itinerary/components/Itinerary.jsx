@@ -56,7 +56,7 @@ const classes = useStyles();
         <GridItem>
             <Card className={classes[cardAnimaton]}>
             <CardHeader color="info" className={classes.cardHeader}>
-              <h4>Bali</h4>
+              <h4>Bayyyy areaaa</h4>
             </CardHeader>
             <CardBody>
               <CardContent>

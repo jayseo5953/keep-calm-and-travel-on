@@ -7,15 +7,19 @@ const ItineraryListItem = (props) => {
   return (
     <div className="itinerary-grid">
       <div className="city-name">
-      <h1>{props.city}</h1>
+       <img src={props.imageUrl} width="200px" height ="200px"/>
+       <div>
+        <h3>{props.city} , {props.country}</h3>
+       </div>
       </div>
       <div className="itinerary-info">
-        <p>Full Name: {props.firstName} {props.lastName}</p>
-        <p>Schedule: {props.scheduleName}</p>
-        <p>Activity: {props.name}</p>
-        <p>Cost: {props.priceCent}</p>
-        <p>Time of Operation: {props.timeOperation}</p>
-        <p>{props.imageUrl}</p>
+        <h2>{props.scheduleName}</h2>
+        <p><strong>Activity: </strong>{props.name}</p>
+        <p><strong>Price: </strong>{props.priceCent}</p>
+        <p><strong>Time of Operation: </strong>{props.timeOperation}</p>
+      </div>
+      <div className="itinerary-total-cost">
+        <h3>Total cost of your trip: ${props.totalCost}</h3>
       </div>
     </div>
   )
