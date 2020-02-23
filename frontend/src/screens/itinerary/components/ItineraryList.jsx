@@ -14,18 +14,6 @@ const dayColumns = [
     "image_url": "https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg",
     "total_cost": "180",
   },
-  // {
-  //   "trip_name" : "Baaaali",
-  //   "city": "Bali",
-  //   "country": "Indoensia",
-  //   "schedule_name": "Day 1",
-  //   "activity_id": "3",
-  //   "name": "Sunset Tour",
-  //   "price_cents": "$70",
-  //   "time_operation": "5am-5pm",
-  //   "image_url": "https://storage.needpix.com/rsynced_images/bali-992566_1280.jpg",
-  //   "total_cost" : "180",
-  // }
 ]
 
 
