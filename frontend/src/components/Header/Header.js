@@ -22,11 +22,13 @@ export default function Header(props) {
 
   const history = useHistory();
   
+  const history = useHistory();
   const classes = useStyles();
 
   const logout = () => {
     axios.get("/logout")
     .then(res => {
+      history.push("/")
       props.setUser(null);
     })
     .catch(e => console.error(e))

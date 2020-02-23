@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import {Redirect
-  // , useHistory 
-} from 'react-router-dom';
+import {Redirect , useHistory } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import axios from 'axios';
 
@@ -42,13 +40,16 @@ const cookieSetter = function (email, password) {
   return axios(req)
 };
 
-const attemptLogin = (event, email, password, setUser) => {
+const attemptLogin = (event, email, password, setError, setUser) => {
   event.preventDefault();
   cookieSetter(email, password)
     .then((res) => {
       if (res.data) {
         console.log(res.data.user.first_name)
         setUser({name: res.data.user.first_name, id: res.data.user.id});
+      } else {
+        console.log('User not found')
+        setError('User not found')
       }
     })
     .catch(e => console.error(e))
@@ -60,10 +61,12 @@ const Login = (props) => {
 
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
 
-  // const history = useHistory();
+  const history = useHistory();
   // const [loggedIn, setLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
+  const [error, setError] = useState('');
+
   
   setTimeout(function() {
     setCardAnimation("");
@@ -91,63 +94,65 @@ const Login = (props) => {
         <GridContainer>
           <GridItem>
             <Card className={classes[cardAnimaton]}>
-            <form className={classes.form} onSubmit={(event) => {attemptLogin(event, userEmail, userPassword, props.setUser);}}>
-            { props.user ? <Route><Redirect to='/'></Redirect></Route> : null }
+              <form className={classes.form} onSubmit={(event) => {attemptLogin(event, userEmail, userPassword, setError, props.setUser);}}>
+              {/* { props.user ? <Route><Redirect to='/'></Redirect></Route> : null } */}
+              { props.user ? history.goBack() : null }
 
-            <CardHeader color="info" className={classes.cardHeader}>
-                    <h4>Login</h4>
-            </CardHeader>
-            <CardBody>
-                    <CustomInput
-                      labelText="Email"
-                      id="email"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        type: "email",
-                        value: userEmail,
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <Email className={classes.inputIconsColor} />
-                          </InputAdornment>
-                        ),
-                        onChange: (e) => {
-                          // console.log(e.target.value);
-                          setUserEmail(e.target.value)
-                        }
-                      }}
-                    />
-                    <CustomInput
-                      labelText="Password"
-                      id="pass"
-                      formControlProps={{
-                        fullWidth: true
-                      }}
-                      inputProps={{
-                        type: "password",
-                        value: userPassword,
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <Icon className={classes.inputIconsColor}>
-                              lock_outline
-                            </Icon>
-                          </InputAdornment>
-                        ),
-                        autoComplete: "off",
-                        onChange: (e) => {
-                          setUserPassword(e.target.value)
-                        }
-                      }}
-                    />
-                  </CardBody>
-                  <CardFooter className={classes.cardFooter}>
-                    <Button type = "submit" simple color="info" size="lg" >Sign In</Button>
-                  </CardFooter>
-             </form> 
-            </Card>
-          </GridItem>
-        </GridContainer>
+                <CardHeader color="info" className={classes.cardHeader}>
+                        <h4>Login</h4>
+                </CardHeader>
+                <CardBody>
+                  <p className='length-error'>{error}</p>
+                  <CustomInput
+                    labelText="Email"
+                    id="email"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      type: "email",
+                      value: userEmail,
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <Email className={classes.inputIconsColor} />
+                        </InputAdornment>
+                      ),
+                      onChange: (e) => {
+                        // console.log(e.target.value);
+                        setUserEmail(e.target.value)
+                      }
+                    }}
+                  />
+                  <CustomInput
+                    labelText="Password"
+                    id="pass"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      type: "password",
+                      value: userPassword,
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <Icon className={classes.inputIconsColor}>
+                            lock_outline
+                          </Icon>
+                        </InputAdornment>
+                      ),
+                      autoComplete: "off",
+                      onChange: (e) => {
+                        setUserPassword(e.target.value)
+                      }
+                    }}
+                  />
+              </CardBody>
+              <CardFooter className={classes.cardFooter}>
+                <Button type = "submit" simple color="info" size="lg" >Sign In</Button>
+              </CardFooter>
+            </form> 
+          </Card>
+        </GridItem>
+      </GridContainer>
     </div>
     </div>
   </div> 
