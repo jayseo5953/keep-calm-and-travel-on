@@ -46,6 +46,7 @@ export default function SearchBar (props) {
         cities={cities} 
         setCity={setCity} 
         value={city}
+        setBackGround={props.setBackGround}
       />
       </div>
       

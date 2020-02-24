@@ -8,7 +8,7 @@ module.exports = (db) => {
         .catch(e => console.error(e))
     },
     getCityByCity: (arg) => {
-      const qs = `SELECT id, city FROM destinations WHERE lower(city) LIKE '%'|| $1 || '%';`;
+      const qs = `SELECT id, city, image_url FROM destinations WHERE lower(city) LIKE '%'|| $1 || '%';`;
       return db.query(qs, [arg])
         .then((res) => res.rows)
         .catch(e => console.error(e))

@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 
 
 const CityItem = (props) => {
-  // console.log('budget',props.value)
 
   let budget = !isNaN(props.value)? props.value: 'budget_not_given'
   if (!isNaN(budget)){
@@ -15,7 +14,10 @@ const CityItem = (props) => {
   }
   return (
     <div>
-      <Link to={`/main/${props.city}/${budget}`}>{props.city}</Link>
+      <Link 
+        to={`/main/${props.city}/${budget}`} 
+        onMouseOver={()=> { props.setBackGround(props.image_url) }}>{props.city}
+      </Link>
     </div>
   );
 };
