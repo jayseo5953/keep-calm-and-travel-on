@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-module.export = (itineraryService) => {
+module.exports = (itineraryService) => {
+
   router.get('/', (req, res) => {
-    console.log("yo")
+    console.log('Inside the routes')
   })
 
   return router;
