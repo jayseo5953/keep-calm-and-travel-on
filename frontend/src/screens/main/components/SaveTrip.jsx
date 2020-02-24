@@ -20,7 +20,7 @@ const handleClose = (setOpen) => {
 };
 
 
-const postToBackEnd = (tripName,userId,columns,total, budget)=> {
+const postToBackEnd = (tripName,tripId, userId,columns,total, budget)=> {
 
   const columnCopy = {...columns};
   delete columnCopy['list'];
@@ -31,8 +31,10 @@ const postToBackEnd = (tripName,userId,columns,total, budget)=> {
     }
   }
 
+  const trip_id = tripId || uuid();
+
   return axios.post('/trips', {
-    [uuid()]:{
+    [trip_id]:{
       userId,
       columns: columnCopy,
       trip: tripName,
@@ -47,7 +49,7 @@ const postToBackEnd = (tripName,userId,columns,total, budget)=> {
   let history = useHistory()
   
   const [open, setOpen] = useState(false);
-  const [tripName, setTripName] = useState('')
+  const [tripName, setTripName] = useState(props.tripName||'')
   const [error, setError] = useState('');
 
   const modalStlye = {
@@ -115,7 +117,7 @@ const postToBackEnd = (tripName,userId,columns,total, budget)=> {
                 alert('Trip name is required!')
                 return
               }
-              postToBackEnd(tripName, props.user.id ,props.columns, props.total, props.budget)
+              postToBackEnd(tripName, props.tripId, props.user.id ,props.columns, props.total, props.budget)
               .then((res)=>{
                 console.log("here")
                 handleClose(setOpen);

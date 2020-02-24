@@ -32,6 +32,7 @@ module.exports = (db) => {
     },
 
     postTrips: (tripSummary) => {
+
       console.log('Inside the trips repository')
 
       const trip_id = Object.keys(tripSummary)[0];
@@ -48,6 +49,12 @@ module.exports = (db) => {
       console.log("trip_total: ", trip_total);
       console.log("schedule_id: ", trip_columns);
       console.log("trip_budget: ", trip_budget);
+
+
+      let query_for_editing = `
+      DELETE FROM trips WHERE trips.id = '${trip_id}';
+      `
+
 
       let query_for_trips =`INSERT INTO trips (id, user_id, trip_name, total_cost, trip_budget) VALUES ('${trip_id}', ${user_id}, '${trip_name}', ${trip_total}, ${trip_budget});
       `;
@@ -69,7 +76,7 @@ module.exports = (db) => {
       // console.log("scheduels: ", query_for_schdules);
       // console.log("itineraries: ", query_for_itineraries)
 
-      let qs = query_for_trips + query_for_schedules + query_for_itineraries;
+      let qs = query_for_editing+ query_for_trips + query_for_schedules + query_for_itineraries;
       console.log(qs)
 
       return db.query(qs)

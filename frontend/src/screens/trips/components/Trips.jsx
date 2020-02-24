@@ -25,12 +25,13 @@ import getTrips from '../helpers/getTrips'
 const useStyles = makeStyles(styles);
 
 const Trips = (props) => {
-
   const history = useHistory();
+
   if (!props.user) {
-    history.goBack()
-  }
-  const userId = props.user.id
+    history.push('/')
+   }
+
+  const userId = props.user? props.user.id:0;
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
 
   const [trips, setTrips] = useState([]);
@@ -69,7 +70,7 @@ const Trips = (props) => {
           <GridItem>
             <Card className={classes[cardAnimaton]}>
             <CardHeader color="info" className={classes.cardHeader}>
-              <h4>Trips for {props.user.name}</h4>
+              <h4>{props.user? `Trips for ${props.user.name}`: 'U WILL NEVER SEE THIS'}</h4>
             </CardHeader>
             <CardBody>
               <CardContent>
