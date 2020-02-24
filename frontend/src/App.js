@@ -32,7 +32,7 @@ export default function App() {
   // }
 
   const [user, setUser] = useState(userObject);
-  const [background, setBackGround] = useState('https://upload.wikimedia.org/wikipedia/commons/9/97/Pura_Ulun_Dhanu_Bratan_Bali_Indonesia_%28243329693%29.jpeg');
+  const [background, setBackGround] = useState('https://media2.giphy.com/media/yTwbZGqO360Mw/source.gif');
 
   return (
     <Router>
