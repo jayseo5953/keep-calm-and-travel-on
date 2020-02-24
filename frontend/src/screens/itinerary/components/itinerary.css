@@ -17,7 +17,15 @@
  flex-direction: column;
  padding: 10px; 
  margin: 5px; 
+ align-items: center; 
 }
 
-.itinerary-total-cost {
+.activity-info {
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  justify-content: space-between; 
+  width: 300px; 
+  padding: 10px; 
+  
 }
