@@ -8,7 +8,9 @@ const CityItem = (props) => {
   if (!isNaN(budget)){
     return (
       <div>
-        <Link to={`/main/${props.city}/${budget}`}>{props.city} (enjoy {props.numActs} activities!)</Link>
+        <Link 
+          to={`/main/${props.city}/${budget}`} onMouseOver={()=> { props.setBackGround(props.image_url) }} >{props.city} (enjoy {props.numActs} activities!)
+        </Link>
       </div>
     );
   }
