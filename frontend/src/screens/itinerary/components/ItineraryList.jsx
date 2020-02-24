@@ -25,7 +25,13 @@ const ItineraryList = (props) => {
   
     return (
       <div>
-        {props.column.name}
+        <div className="grid-headlines">
+        <span><strong>{props.column.name}</strong></span>
+        <span><strong>Activity</strong></span>
+        <span><strong>Price</strong></span>
+        <span><strong>Time of Operation</strong></span>
+        </div>
+
 
         {props.column.items.map((activity)=>{
           return(
@@ -33,6 +39,7 @@ const ItineraryList = (props) => {
               name={activity.name}
               price={activity.price_cents}
               time={activity.time_operations}
+              activityImage={activity.image_url}
               />
           )
         })}

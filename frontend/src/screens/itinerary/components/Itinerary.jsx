@@ -26,7 +26,7 @@ const useStyles = makeStyles(styles);
 
 
 
-function Itinerary() {
+function Itinerary(props) {
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(function() {
     setCardAnimation("");
@@ -45,11 +45,6 @@ function Itinerary() {
   },[]);
 
 const classes = useStyles();
-
-
-//  console.log(itineraries)
-
-// const [background, setBackground ] = useState([image_url]);
 
   return (
     <div>
@@ -74,6 +69,7 @@ const classes = useStyles();
               <h4>Bayyyy areaaa</h4>
             </CardHeader>
             <CardBody>
+              <h1>San Francisco, USA</h1>
               <CardContent 
               //  firstName={value.first_name}
                // lastName={value.last_name}
@@ -90,18 +86,29 @@ const classes = useStyles();
                   return <ItineraryList column={column} itineraries={itineraries} />
                 }
                 )}
+
+              {/* <div className="city-name">
+                    <img src={props.imageUrl} width="200px" height ="200px"/>
+                      <div>
+                        <h2>{props.city} , {props.country}</h2>
+                      </div>
+                    </div> */}
                                 
               </CardContent>
                   
               </CardBody>
                 <CardFooter className={classes.cardFooter}>
-                <h6>Enjoy your trip!</h6>
+                <div className="itinerary-total-cost">
+                  <h4>Total cost of your trip: $500{props.totalCost}</h4>
+                </div>
                 
                 </CardFooter>
             </Card>
           </GridItem>
         </GridContainer>
           
+
+       
 
         </div>
       </div>

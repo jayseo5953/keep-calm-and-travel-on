@@ -6,25 +6,20 @@ const ItineraryListItem = (props) => {
 
   return (
     <div className="itinerary-grid">
-      <div className="city-name">
-       <img src={props.imageUrl} width="200px" height ="200px"/>
-        <div>
-          <h2>{props.city} , {props.country}</h2>
-        </div>
-      </div>
-      <div class="profile">
-        <h3>Trip for: {props.firstName} {props.lastName}</h3>
-      </div>
       <div className="itinerary-info">
-        <h2>{props.scheduleName}</h2>
-        <div className="activity-info">
-          <p><strong>Activity: </strong>{props.name}</p>
-          <p><strong>Price: </strong> ${props.price/100}</p>
-          <p><strong>Time of Operation: </strong>{props.time}</p>
+        {/* <h2>{props.scheduleName}</h2> */}
+        {/* <div className="activity-info">
+          <img src={props.activityImage} width="100px" height ="100px" />
+          <p><strong>Activity: </strong>{props.name} </p>
+          <p><strong>Price: </strong> ${props.price/100} </p>
+          <p><strong>Time of Operation: </strong>{props.time} </p>
+        </div> */}
+        <div className="grid-activities">
+          <span><img src={props.activityImage} width="100px" height ="100px" /></span>
+          <span>{props.name}</span>
+          <span>${props.price/100}</span>
+          <span>{props.time}</span>
         </div>
-      </div>
-      <div className="itinerary-total-cost">
-        <h4>Total cost of your trip: ${props.totalCost}</h4>
       </div>
     </div>
   )
