@@ -1,9 +1,8 @@
 import axios from 'axios'
 
-const getItinerary = (userTripId) => {
-  // return axios.get(`/itinerary/${userTripId}`);
-  // return Promise.resolve(dayColumns)
+const getItinerary = (itineraryId) => {
+  return axios.get(`/itinerary/${itineraryId}`);
 }
-// console.log("is there object of trips ->", getItinerary)
+
 
 export default getItinerary;
