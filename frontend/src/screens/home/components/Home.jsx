@@ -28,7 +28,7 @@ const Home = (props) => {
        user={props.user}
        setUser={props.setUser}
       />
-      <Parallax filter image={props.background}>
+      <Parallax className='test' filter image={props.background}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>

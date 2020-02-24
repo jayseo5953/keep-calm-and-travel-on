@@ -32,3 +32,6 @@ a:link {
 *:focus {
   outline: none !important;
 }
+.test {
+  transition: background-image 0.3s ease;
+}
