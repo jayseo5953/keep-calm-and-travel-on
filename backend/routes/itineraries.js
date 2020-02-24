@@ -3,10 +3,10 @@ const router = express.Router();
 
 module.exports = (itineraryService) => {
 
-  router.get('/:tripId', (req, res) => {
+  router.get('/:itineraryId', (req, res) => {
     console.log('IM INSIDE THE ROUTES WOOOO!')
-    const tripId = req.params.tripId
-    itineraryService.getItineraryId(tripId)
+    const itineraryId = req.params.tripId
+    itineraryService.getItineraryId(itineraryId
     .then(resolve => {
       res.send(resolve.rows)
     })

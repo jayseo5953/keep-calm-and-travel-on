@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ItineraryListItem = (props) => {
-  let trip = props.trip
+  let trip = props.trips
   
 
   return (

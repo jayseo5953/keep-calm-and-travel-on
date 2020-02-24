@@ -1,6 +1,8 @@
 import React from 'react';
 import ItineraryListItem from './ItineraryListItem'
 
+
+
 const dayColumns = [
   {
     "trip_name" : "Bay areaaaaaa",

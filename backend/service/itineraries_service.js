@@ -1,8 +1,8 @@
 module.exports = (itinerariesRepository) => {
-  console.log("inside intineraries_service.js")
+  console.log("inside intineraries_services")
   return {
-    getItineraryId: (tripId) => {
-      return itinerariesRepository.getItineraryId(tripId)
+    getItineraryId: (itineraryId) => {
+      return itinerariesRepository.getItineraryId(itineraryId)
     }
 
   }
