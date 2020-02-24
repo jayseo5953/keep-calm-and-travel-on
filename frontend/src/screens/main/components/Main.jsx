@@ -86,6 +86,7 @@ function Main(props) {
     <div className="main">
       <div>
         <Header 
+          color="transparent"
           brand="TRIPPER"
           fixed
           city={city}
@@ -99,7 +100,7 @@ function Main(props) {
           {
             !isNaN(budget)?
             <div> {budget>=0?<BudgetGuage className='positive' budget={budget} initialBudget={initialBudget}> {`+$${budget}`}</BudgetGuage>:
-            <BudgetGuage className='negative' budget={budget} initialBudget={initialBudget}>{`-${-budget}`}</BudgetGuage>
+            <BudgetGuage className='negative' budget={budget} initialBudget={initialBudget}>{`-$${-budget}`}</BudgetGuage>
           }</div> : ""
           }
         

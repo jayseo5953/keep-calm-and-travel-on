@@ -7,7 +7,7 @@ import { Router, Link } from 'react-router-dom';
 
 const FormSection = (props) => {
   return (
-    <div className='form-section shadow ' >
+    <div className='form-section ' >
       <div>
         <h1> <strong>{props.city}</strong></h1>
         <h2> {props.budget>=0?`$${props.budget}`:`-$${-props.budget}`}  </h2>

@@ -1,5 +1,7 @@
 .main {
-  background-color: #F0EFF4;
+  /* background-color: #F0EFF4; */
+  background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/bg7.jpg?raw=true");
+  background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +26,18 @@
 .days-container {
   /* background: linear-gradient(to left, #70adf2, #ff9472); */
   /* border-top-left-radius: 15px; */
-  /* background-color: #f8f8ff ; */
-  color:black;
-  height: 51.5vh;
+  /* background-color: #a0a0a0 ; */
+  background:transparent;
+  color:white;
+  font-weight: bold;
+  height: 46vh;
   position:fixed;
-  right:0;
-  bottom:30vh;
+  right:2vw;
+  top:19vh;
   display: flex;
   flex-direction: row;
-  width: 80vw;
+  width: 78vw;
+  max-width: 78vw;
   overflow-y: hidden;
   overflow-x: auto;
 }
@@ -54,13 +59,13 @@
 }
 
 .outside-column {
-  margin:2px;
-  padding:5px 20px;
+  margin-right:4vw;
+  padding:5px, 0;
 }
 
 .inside-column{
   /* border-radius:15px; */
-  padding: 4px;
+  padding: 0px;
   overflow-y: auto;
   width: 35vw;
   font-size:20px;
@@ -68,29 +73,30 @@
 
 .days-container .inside-column{
   border-radius:10px;
-  height:38vh;
+  height:37vh;
   max-height: 40vh;
-  width:30vw;
+  width:37vw;
   padding:0
 }
 
 .activity-list .inside-column{
   /* background: linear-gradient(to left, #70adf2, #ff9472); */
+  border-radius:10px;
   position:fixed;
   bottom:0;
   left:20vw;
-  height: 30vh;
+  height: 34vh;
   margin-bottom:0;
-  width:30vw;
+  width:37vw;
   padding:0
 }
 
 .card {
-  border-radius:0px;
+  border-radius:5px;
   padding: 16px;
   margin: 0;
   min-width: 250px;
-  min-height: 50px;
+  height:13vh;
   color: white;
   text-align: end
 }
@@ -114,6 +120,7 @@
 .add-list {
   border-radius:500px;
   margin:auto 60px;
+  margin-right:0;
   height:50px;
   width:50px;
   padding:0;
@@ -147,8 +154,9 @@
 .item-name {
   padding:2px 10px;
   border-radius:8px;
-  background: linear-gradient(to left, #70adf2, #ff9472);
-  /* background-color: */
+  /* background: linear-gradient(to left, #70adf2, #ff9472); */
+  background-color: #e0796b;
+  background: linear-gradient(to left, #f2709c, #ff9472);
 }
 
 .item-price {
@@ -163,13 +171,13 @@ body {
 
 .progress {
   /* background-color: #44413a; */
-  border-radius: 0;
+  border-radius: 10px;
   position: fixed;
   margin: 0;
   top:66px;
-  right:0;
+  right: 2vw;
   height: 9vh;
-  width: 80vw;
+  width:78vw;
 }
 
 .negative .progress-done {
@@ -177,11 +185,11 @@ body {
   box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  color: #fff;
+  color: red;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90%;
+  height: 100%;
   width: 0;
   opacity: 0;
   transition: 1s ease 0.3s;
@@ -197,27 +205,32 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90%;
+  height: 100%;
   width: 0;
   opacity: 0;
   transition: 1s ease 0.3s;
   font-size:25px;
 }
 
-
 .g-map {
   position: fixed;
-  right:0;
+  right:2vw;
   bottom:0;
-  width: 50vw;
-  height: 30vh;
-  border-radius:15px;
+  width: 37vw;
+  height: 34vh;
+  border-radius:25px;
 }
 
 .form-section {
+  /* background-color:#5F1A37 ; */
+  /* background-image: url("https://www.biztrip.co.uk/wp-content/uploads/2017/05/Business-Travel-Header-Image.jpg");
+  background-size: cover; */
+  background: transparent;
+ 
+
   padding:30px;
   padding-top:90px;
-  background-color:#5F1A37 ;
+ 
   color:white;
 
   height: 100vh;
@@ -250,8 +263,11 @@ body {
 
 .nav-header{
   /* background-color: black !important; */
-  background-image: url("file:///Users/jayseo/Desktop/42161.png") !important;
-  background-size: auto;
+  /* background-image: url("https://www.biztrip.co.uk/wp-content/uploads/2017/05/Business-Travel-Header-Image.jpg") !important;
+  background-size: cover; */
+  padding:0 !important;
+  margin: auto;
+  background: transparent !important;
   color:white !important;
   background-color: #476C9B !important;
   border-radius:0 !important;

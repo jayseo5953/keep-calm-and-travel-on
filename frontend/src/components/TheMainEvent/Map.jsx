@@ -59,6 +59,7 @@ export default function GMap (props) {
   return (
     <div className='g-map'>
       <MapWrapped
+        
         googleMapURL={`${mapUrl}=${mapApiKey}`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}

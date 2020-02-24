@@ -18,13 +18,14 @@ const Card = (props) => {
           {...provided.dragHandleProps}
           className='card'
           style={{
-            backgroundImage: `url(${props.item.image_url})`,
+            // backgroundImage: `url(${props.item.image_url})`,
             // backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
+            backgroundSize: 'contain',
+            // backgroundRepeat: 'no-repeat',
             userSelect: "none",
-            // backgroundColor: snapshot.isDragging
-            //   ? "#263B4A"
-            //   : "#456C86",
+            backgroundColor: snapshot.isDragging
+              ? "#263B4A"
+              : "#456C86",
             ...provided.draggableProps.style
           }}
         >
