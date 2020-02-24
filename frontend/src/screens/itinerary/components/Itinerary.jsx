@@ -67,7 +67,7 @@ const classes = useStyles();
                   
               </CardBody>
                 <CardFooter className={classes.cardFooter}>
-                <h1>Enjoy your trip!</h1>
+                <h6>Enjoy your trip!</h6>
                 
                 </CardFooter>
             </Card>

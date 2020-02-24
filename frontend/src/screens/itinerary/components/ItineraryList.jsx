@@ -4,6 +4,8 @@ import ItineraryListItem from './ItineraryListItem'
 const dayColumns = [
   {
     "trip_name" : "Bay areaaaaaa",
+    "first_name" : "Porson",
+    "last_name" : "Lee",
     "city": "San Francisco",
     "country": "USA",
     "schedule_name": "Day 1",
@@ -24,6 +26,8 @@ const ItineraryList = (props) => {
       <div>
         <ItineraryListItem
           imageUrl={value.image_url}
+          firstName={value.first_name}
+          lastName={value.last_name}
           city={value.city}
           country={value.country}
           scheduleName={value.schedule_name}

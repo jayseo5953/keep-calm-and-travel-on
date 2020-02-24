@@ -9,8 +9,11 @@ const ItineraryListItem = (props) => {
       <div className="city-name">
        <img src={props.imageUrl} width="200px" height ="200px"/>
        <div>
-        <h3>{props.city} , {props.country}</h3>
+        <h2>{props.city} , {props.country}</h2>
        </div>
+      </div>
+      <div class="profile">
+        <h3>Trip for: {props.firstName} {props.lastName}</h3>
       </div>
       <div className="itinerary-info">
         <h2>{props.scheduleName}</h2>
@@ -19,7 +22,7 @@ const ItineraryListItem = (props) => {
         <p><strong>Time of Operation: </strong>{props.timeOperation}</p>
       </div>
       <div className="itinerary-total-cost">
-        <h3>Total cost of your trip: ${props.totalCost}</h3>
+        <h4>Total cost of your trip: ${props.totalCost}</h4>
       </div>
     </div>
   )
