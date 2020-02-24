@@ -72,8 +72,6 @@ const cityService = cityServiceFactory(citiesRepository);
 const tripsRepository = tripRepositoryFactory(db);
 const tripService = tripsServiceFactory(tripsRepository);
 
-
-
 const itinerariesRepository = itineraryRepositoryFactory(db);
 const itineraryService = itineraryServiceFactory(itinerariesRepository);
 

@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-module.export = (itineraryService) => {
-  console.log("porson")
+module.exports = (itineraryService) => {
 
-  router.get()
+  router.get('/', (req, res) => {
+    console.log('Inside the routes')
+  })
 
   return router;
 }
