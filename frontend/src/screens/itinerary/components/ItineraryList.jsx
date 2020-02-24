@@ -2,7 +2,6 @@ import React from 'react';
 import ItineraryListItem from './ItineraryListItem'
 
 const ItineraryList = (props) => {
-
   
     return (
       <div>
@@ -15,6 +14,7 @@ const ItineraryList = (props) => {
 
 
         {props.column.items.map((activity)=>{
+          console.log("activity object -->", activity)
           return(
             <ItineraryListItem
               name={activity.name}

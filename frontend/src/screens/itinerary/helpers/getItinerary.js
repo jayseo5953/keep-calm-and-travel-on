@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export default function getItinerary (arg) {
-  console.log("helo")
+  console.log("henlo")
   return axios.get(`/trips/edit/${arg}`)
     .then(res=> {
       const result = res.data

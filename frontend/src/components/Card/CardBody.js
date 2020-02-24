@@ -13,6 +13,7 @@ import styles from "../../assets/jss/material-kit-react/components/cardBodyStyle
 const useStyles = makeStyles(styles);
 
 export default function CardBody(props) {
+
   const classes = useStyles();
   const { className, children, ...rest } = props;
   const cardBodyClasses = classNames({

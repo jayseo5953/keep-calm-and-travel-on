@@ -27,16 +27,17 @@ const useStyles = makeStyles(styles);
 
 
 function Itinerary(props) {
+  
+
+
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(function() {
     setCardAnimation("");
   }, 700)
 
 
-  let itineraryId='1d53aa14-7340-40cd-b747-5bc6402b25ab'
+  let itineraryId='c4c0f750-98ac-48a5-b7a9-a4cc94d41471'
   const [itineraries, setItineraries] = useState({});
-
-  console.log("why is this sometimes undefined? ", itineraries)
 
   useEffect(()=> {
     getItinerary(itineraryId)
@@ -99,7 +100,7 @@ const classes = useStyles();
               </CardBody>
                 <CardFooter className={classes.cardFooter}>
                     <div>
-                      <h2>Total cost: </h2>
+                      <h2>Total cost: ${props.total}</h2>
                     </div>
                 
                 </CardFooter>
