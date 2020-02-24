@@ -31,16 +31,16 @@ const Home = (props) => {
        user={props.user}
        setUser={props.setUser}
       />
-      <Parallax filter image={require("../../../assets/img/airplane-landing.jpg")}>
+      <Parallax className='test' filter image={props.background}>
         <div className={classes.container}>
           <GridContainer>
             <GridItem>
             <h1 className="intro-text">Plan your own itinerary right here.</h1>
             <br />
-              <h4 className="action-text">
+              <h4 className="action-text" >
                 What is your destination or budget?
               </h4>
-              <SearchBar/>
+              <SearchBar setBackGround={props.setBackGround} />
             </GridItem>
             
           </GridContainer>

@@ -32,7 +32,7 @@ export default function App() {
   // }
 
   const [user, setUser] = useState(userObject);
- 
+  const [background, setBackGround] = useState('https://upload.wikimedia.org/wikipedia/commons/9/97/Pura_Ulun_Dhanu_Bratan_Bali_Indonesia_%28243329693%29.jpeg');
 
   return (
     <Router>
@@ -41,7 +41,7 @@ export default function App() {
           <Route path="/edit/:city/:budget/:tripName/:tripId" exact render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/trips/:userName" render={(routeProps) => <Trips {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/login" render={(routeProps) => <Login {...routeProps} user={user} setUser={setUser} />} />
-          <Route path="/" render={(routeProps) => <Home {...routeProps} user={user} setUser={setUser} />} />
+          <Route path="/" render={(routeProps) => <Home {...routeProps} user={user} setUser={setUser} background={background} setBackGround={setBackGround} />} />
         </Switch>
     </Router>
   );

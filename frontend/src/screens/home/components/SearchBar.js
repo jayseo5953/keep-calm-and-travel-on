@@ -10,6 +10,7 @@ export default function SearchBar (props) {
   
   return(
     <>
+      <h1>SearchBar</h1>
       <form autoComplete="off" onSubmit={event=>event.preventDefault()}>
         <input 
           type='text'
@@ -21,7 +22,7 @@ export default function SearchBar (props) {
           value={city}
         />
       </form>
-      <CityItemList cities={cities} setCity={setCity} value={city}/>
+      <CityItemList cities={cities} setCity={setCity} value={city} setBackGround={props.setBackGround}/>
     </>
   )
 }
