@@ -4,7 +4,7 @@ let addOrSubtract='';
 
 const Form = (props) => {
 
-  const [inputValue, setInputValue] = useState(props.budget);
+  const [inputValue, setInputValue] = useState(props.budget||"");
 
   return (
     <form  autoComplete='off' className='budget-input-form' onSubmit={(e)=>{

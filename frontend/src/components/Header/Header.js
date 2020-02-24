@@ -27,8 +27,10 @@ export default function Header(props) {
   const logout = () => {
     axios.get("/logout")
     .then(res => {
-      // history.push("/")
       props.setUser(null);
+      if (props.tripName) {
+        history.push("/")
+      }
     })
     .catch(e => console.error(e))
   }

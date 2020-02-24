@@ -92,7 +92,8 @@ function Main(props) {
           user={props.user}
           setUser={props.setUser}
           saveToLocal={saveToLocal}
-          columns = {columns}
+          columns={columns}
+          tripName={tripName}
         />
       </div>
           {

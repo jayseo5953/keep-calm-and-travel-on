@@ -127,13 +127,17 @@
 
 
 .delete-list  {
-  height:30px;
-  width: 40px;
+  height:26px;
+  width: 34px;
   text-align: center;
   line-height: 10px;
   padding:0
- 
 }
+
+.delete-list .material-icons {
+  font-size:21px;
+}
+
 .item-photo {
   border-radius: 300px;
   height: 50px;
@@ -244,8 +248,8 @@ body {
 
 .nav-header{
   /* background-color: black !important; */
-  /* background-image: url("https://cache.marriott.com/marriottassets/marriott/DPSXR/dpsxr-regis-beach-4547-hor-wide.jpg?interpolation=progressive-bilinear&downsize=2880px:*") !important;
-  background-size: cover;*/
+  background-image: url("https://www.biztrip.co.uk/wp-content/uploads/2017/05/Business-Travel-Header-Image.jpg") !important;
+  background-size: auto;
   color:white !important;
   background-color: #476C9B !important;
   border-radius:0 !important;
