@@ -5,7 +5,7 @@ const ItineraryListItem = (props) => {
   
 
   return (
-    <div className="itinerary-grid">
+    <div>
       <div className="itinerary-info">
         {/* <h2>{props.scheduleName}</h2> */}
         {/* <div className="activity-info">

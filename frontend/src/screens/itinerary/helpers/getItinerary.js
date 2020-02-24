@@ -1,11 +1,6 @@
 import axios from 'axios';
 
 export default function getItinerary (arg) {
-  // if(!arg) {
-  //   cb([])
-  //   return
-  // }
-
   console.log("helo")
   return axios.get(`/trips/edit/${arg}`)
     .then(res=> {
