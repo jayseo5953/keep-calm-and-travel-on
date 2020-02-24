@@ -8,13 +8,13 @@ INSERT INTO destinations(id, city, country, image_url) VALUES
 (1,'San Francisco', 'USA', 'https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg'),
 (2,'Florence', 'Italy', 'https://cdn-image.departures.com/sites/default/files/styles/responsive_900x600/public/1539722614/duomo-church-architecture-sunset-florence-italy-FLORENCEITALY1018.jpg?itok=p9ytJcSJ'),
 
-(3, 'Bali', 'Indonesia', 'https://specials-images.forbesimg.com/imageserve/675172642/960x0.jpg?fit=scale'),
-(4, 'Cebu', 'Philippines', 'https://i.ytimg.com/vi/4jzph6P38l8/maxresdefault.jpg'),
-(5, 'Halong Bay', 'Vietnam', 'https://d10vk5dg0puvhi.cloudfront.net/images/destinations/origin/559c8135b9cc5.jpg'),
-(6, 'Dubai', 'Dubai', 'https://www.wingbuddy.com//images/package/28/magical-dubai.jpg'),
+(3, 'Bali', 'Indonesia', 'https://media.giphy.com/media/gVevFiq0p4ewo/giphy.gif'),
+(4, 'Cebu', 'Philippines', 'https://media.giphy.com/media/SX0tnMyfWaZ4zjvbxO/giphy.gif'),
+(5, 'Halong Bay', 'Vietnam', 'https://media.giphy.com/media/gBxL0G0DqZd84/giphy.gif'),
+(6, 'Dubai', 'Dubai', 'https://media.giphy.com/media/3o7TKUIvq0GWg9rzpK/giphy.gif'),
 
-(7, 'Jeju', 'South Korea', 'https://i.ytimg.com/vi/m6QeLoX3pT4/maxresdefault.jpg'),
-(8, 'Okinawa', 'Japan', 'https://d20aeo683mqd6t.cloudfront.net/articles/title_images/000/037/919/original/pixta_23484329_s_S.jpg?2019&d=750x400'),
+(7, 'Jeju', 'South Korea', 'https://media1.giphy.com/media/vB7WSUfplJahO/source.gif'),
+(8, 'Okinawa', 'Japan', 'https://media.giphy.com/media/13GU4FcPocoXT2/giphy.gif'),
 (9, 'Taipei', 'Taiwan', 'https://lp-cms-production.imgix.net/2019-06/f15f7b57ab31c217f471c6712a2654e0-taipei-101.jpg'),
 (10,'Barcelona', 'Spain', 'https://s27363.pcdn.co/wp-content/uploads/2019/03/Tibidabo-and-Sagrat-Cor.jpg.optimal.jpg');
 
