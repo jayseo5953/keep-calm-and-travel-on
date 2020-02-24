@@ -30,7 +30,7 @@ function Main(props) {
   const [activities, setActivities] = useState([])
   const [columns, setColumns] = useState(columnsFromBackend(activities));
   
-  console.log("columns :", columns)
+
   const [selectedActivity, setSelectedActivity] = useState(null);
 
   useEffect(()=>{
