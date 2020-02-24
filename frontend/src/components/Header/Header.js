@@ -12,6 +12,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Button from "@material-ui/core/Button";
 import axios from 'axios';
 
+import saveToLocal from  '../../screens/main/helpers/saveToLocal'
 // core components
 import styles from "../../assets/jss/material-kit-react/components/headerStyle";
 //assets/jss/material-kit-react/components/headerStyle.js
@@ -19,14 +20,14 @@ import styles from "../../assets/jss/material-kit-react/components/headerStyle";
 const useStyles = makeStyles(styles);
 
 export default function Header(props) {
-  
+
   const history = useHistory();
   const classes = useStyles();
 
   const logout = () => {
     axios.get("/logout")
     .then(res => {
-      history.push("/")
+      // history.push("/")
       props.setUser(null);
     })
     .catch(e => console.error(e))
@@ -54,7 +55,11 @@ export default function Header(props) {
           <Button className={classes.title} onClick={logout}>LOG OUT</Button> 
         </div>
           :  
-        <Button className={classes.title} component= { Link } to="/login">LOGIN</Button>}
+        <Button className={classes.title} onClick={()=>{
+          console.log("props.columns",props.columns)
+          saveToLocal(props.columns
+          
+          )}} component= { Link } to="/login">LOGIN</Button>}
     </AppBar>
   )
 }

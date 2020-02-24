@@ -39,7 +39,7 @@ const DndContext = (props) => {
             </div>
           );
         }
-        return
+        return null;
       })}
           <button  type="button" className="btn btn-success add-list" onClick={(()=>{
             addCardList(props.columns, props.setColumns)

@@ -18,6 +18,9 @@ import styles from "../../../assets/jss/material-kit-react/views/homePage.js";
 const useStyles = makeStyles(styles)
 
 const Home = (props) => {
+  //clears localStorage in case user land home again
+  localStorage.removeItem('columns')
+  console.log("local storage", localStorage.getItem('columns'))
   const classes = useStyles();
   return (
     <div>

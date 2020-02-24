@@ -30,9 +30,15 @@ export default function manageStates (
         }
       })
       setActivities(result)
-      let listOfColumns = columnsFromBackend(result);
+
+      let columnsFromLocal = JSON.parse(localStorage.getItem('columns')); 
+
+      let listOfColumns = columnsFromLocal || columnsFromBackend(result)
+
+      localStorage.removeItem("columns");
+
       if (!tripId) {
-        setColumns(columnsFromBackend(result))
+        setColumns(listOfColumns)
       } else {
 
         axios.get(`/trips/edit/${tripId}`)
@@ -55,7 +61,7 @@ export default function manageStates (
           res.data.forEach((obj)=>{
             const item = {
               id: obj.itinerary_id,
-              activity_id: obj.itinerary_id,
+              activity_id: obj.activity_id,
               price_cents: obj.price_cents,
               // time_operations: obj.time_operation,
               lat: obj.lat,

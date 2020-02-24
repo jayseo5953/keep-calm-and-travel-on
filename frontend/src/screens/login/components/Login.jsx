@@ -58,7 +58,6 @@ const attemptLogin = (event, email, password, setError, setUser) => {
 
 
 const Login = (props) => {
-
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
 
   const history = useHistory();
