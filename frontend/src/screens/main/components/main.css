@@ -6,7 +6,7 @@
   justify-content: center;
   height:100vh;
   margin:0;
-  font-family: 'Permanent Marker' ;
+  /* font-family: 'Permanent Marker' ; */
 /* font-family: 'Knewave'; */
 }
 
@@ -127,7 +127,11 @@
 
 
 .delete-list  {
-  height:38px;
+  height:30px;
+  width: 40px;
+  text-align: center;
+  line-height: 10px;
+  padding:0
  
 }
 .item-photo {

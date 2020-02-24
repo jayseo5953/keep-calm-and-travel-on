@@ -55,7 +55,6 @@ module.exports = (db) => {
       DELETE FROM trips WHERE trips.id = '${trip_id}';
       `
 
-
       let query_for_trips =`INSERT INTO trips (id, user_id, trip_name, total_cost, trip_budget) VALUES ('${trip_id}', ${user_id}, '${trip_name}', ${trip_total}, ${trip_budget});
       `;
 
