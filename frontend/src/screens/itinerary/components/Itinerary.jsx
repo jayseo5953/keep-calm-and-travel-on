@@ -36,7 +36,7 @@ function Itinerary(props) {
   let itineraryId='7e15884f-01f9-4e5c-ad1d-724c11c62c37'
   const [itineraries, setItineraries] = useState({});
 
-  console.log("WHY ARE YOU UNDEFINED? ", itineraries)
+  console.log("why is this sometimes undefined? ", itineraries)
 
   useEffect(()=> {
     getItinerary(itineraryId)
@@ -69,6 +69,7 @@ const classes = useStyles();
               <h4>Bayyyy areaaa</h4>
             </CardHeader>
             <CardBody>
+              <h1>San Francisco, USA</h1>
               <CardContent 
               //  firstName={value.first_name}
                // lastName={value.last_name}
