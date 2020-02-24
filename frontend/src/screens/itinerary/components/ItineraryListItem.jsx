@@ -19,8 +19,8 @@ const ItineraryListItem = (props) => {
         <h2>{props.scheduleName}</h2>
         <div className="activity-info">
           <p><strong>Activity: </strong>{props.name}</p>
-          <p><strong>Price: </strong>{props.priceCent}</p>
-          <p><strong>Time of Operation: </strong>{props.timeOperation}</p>
+          <p><strong>Price: </strong> ${props.price/100}</p>
+          <p><strong>Time of Operation: </strong>{props.time}</p>
         </div>
       </div>
       <div className="itinerary-total-cost">

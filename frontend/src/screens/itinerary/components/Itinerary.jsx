@@ -1,4 +1,4 @@
-import React, { useState } from 'react' 
+import React, { useState, useEffect } from 'react' 
 
 // @material-ui/core/components
 import { makeStyles } from "@material-ui/core/styles"
@@ -32,7 +32,22 @@ function Itinerary() {
     setCardAnimation("");
   }, 700)
 
+
+  let itineraryId='7e15884f-01f9-4e5c-ad1d-724c11c62c37'
+  const [itineraries, setItineraries] = useState({});
+
+  console.log("itineraries: ", itineraries)
+
+  useEffect(()=> {
+    getItinerary(itineraryId)
+    .then(res=> setItineraries(res))
+    .catch(err=> console.error(err.data))
+  },[]);
+
 const classes = useStyles();
+
+
+//  console.log(itineraries)
 
 // const [background, setBackground ] = useState([image_url]);
 
@@ -59,9 +74,22 @@ const classes = useStyles();
               <h4>Bayyyy areaaa</h4>
             </CardHeader>
             <CardBody>
-              <CardContent>
-                
-                <ItineraryList />
+              <CardContent 
+              //  firstName={value.first_name}
+               // lastName={value.last_name}
+               // city={value.city}
+               // country={value.country}
+               // scheduleName={value.schedule_name}
+               // activityId={value.activity_id}
+               // name={value.name}
+               // priceCent={value.price_cents}
+               // timeOperation={value.time_operation}
+               // totalCost={value.total_cost}
+              >
+                {Object.entries(itineraries).map(([columnId,column]) => {
+                  return <ItineraryList column={column} itineraries={itineraries} />
+                }
+                )}
                                 
               </CardContent>
                   

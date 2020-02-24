@@ -6,7 +6,7 @@ module.exports = (itineraryService) => {
   router.get('/:itineraryId', (req, res) => {
     console.log('IM INSIDE THE ROUTES WOOOO!')
     const itineraryId = req.params.tripId
-    itineraryService.getItineraryId(itineraryId
+    itineraryService.getItineraryId(itineraryId)
     .then(resolve => {
       res.send(resolve.rows)
     })
@@ -15,3 +15,4 @@ module.exports = (itineraryService) => {
 
   return router;
 }
+
