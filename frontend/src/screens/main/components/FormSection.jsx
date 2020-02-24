@@ -1,9 +1,9 @@
 import React from 'react';
 import Form from './Form'
 import SaveTrip from './SaveTrip'
-import {Link} from "react-router-dom";
 import saveToLocal from '../helpers/saveToLocal';
 
+import { Router, Link } from 'react-router-dom';
 
 const FormSection = (props) => {
   return (
