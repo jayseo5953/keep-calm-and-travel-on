@@ -26,6 +26,42 @@ module.exports = (userService) => {
     }
   });
 
+  router.get("/:userId/friends/:city", async (req, res) => {
+    try {
+      const userId = req.params.userId
+      const city = req.params.city.toLowerCase();
+      const friends = await userService.getFriends(userId,city)
+
+      console.log("userid", userId);
+      console.log("city ", city)
+
+      console.log("result of friends: ", friends);
+
+      res.send(friends);
+    } catch (err) {
+      console.error(err);
+    }
+  });
+
+
+  router.get("/:userId/friends/:friendId/:city/activities", async (req, res) => {
+    try {
+      const userId = req.params.userId;
+      const friendId = req.params.friendId;
+      const city = req.params.city.toLowerCase();
+      const activities = await userService.getFriendsActivities(userId,friendId,city)
+
+      console.log("userid", userId);
+      console.log("city ", city)
+
+      console.log("result of friends: ", activities);
+
+      res.send(activities);
+    } catch (err) {
+      console.error(err);
+    }
+  });
+
 
   router.post("/", async (req, res) => {
     const userInput=req.body;

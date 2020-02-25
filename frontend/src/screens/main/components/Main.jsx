@@ -11,14 +11,17 @@ import GMap from '../../../components/TheMainEvent/Map';
 import Header from '../../../components/Header/Header';
 import saveToLocal from '../helpers/saveToLocal';
 
+import axios from 'axios';
+
 
 function Main(props) {
-  // console.log("I am re-rendered!")
+  console.log("I am re-rendered!")
   // console.log("local storage", localStorage.getItem('columns'))
   const params = props.match.params;
   const city = params.city;
   const tripName = params.tripName;
   const tripId = params.tripId;
+
 
   // let columns = props.columns
   // let setColumns = props.setColumns
@@ -29,22 +32,27 @@ function Main(props) {
 
   const [activities, setActivities] = useState([])
   const [columns, setColumns] = useState(columnsFromBackend(activities));
-  
-
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [hoverActivity, setHoverActivity] = useState(null);
   const [latestActivity, setLatestActivity] = useState(null);
 
-  useEffect(()=>{
-    // manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
-    manageStates(city, tripId, setActivities, setColumns, columnsFromBackend)
+  const [friends, setFriends] = useState([])
+  const [friendsActivities, setFriendsActivities] = useState([])
 
-  },[city])
+  useEffect(()=>{
+   
+    manageStates(city, tripId, setActivities, setColumns, columnsFromBackend);
+    if(props.user) {
+      axios.get(`/users/${props.user.id}/friends/${city}`)
+      .then(res=>{
+        setFriends(res.data.rows);
+      })
+    }
+  },[])
 
   let totalCost = 0;
   for (let column in columns) {
     if (column !== 'list'){
-    
       totalCost += columns[column].total
     }
   }
@@ -139,6 +147,8 @@ function Main(props) {
           total={totalCost}
           tripId={tripId}
           tripName={tripName}
+          friends={friends}
+          setFriendsActivities={setFriendsActivities}
           />
     </div>
     )

@@ -2,8 +2,8 @@ import React from 'react';
 import Form from './Form'
 import SaveTrip from './SaveTrip'
 import saveToLocal from '../helpers/saveToLocal';
-
-import { Router, Link } from 'react-router-dom';
+import FriendsList from './FriendsList'
+import { Link } from 'react-router-dom';
 
 const FormSection = (props) => {
   return (
@@ -14,6 +14,7 @@ const FormSection = (props) => {
       </div>
       <Form budget={props.budget} setBudget={props.setBudget} />
       {props.user? <SaveTrip columns={props.columns} user={props.user} total={props.total} city={props.city} budget={props.budget} tripId={props.tripId} tripName={props.tripName} />:<Link onClick={()=> saveToLocal(props.columns)} to='/login'>Login to Save</Link> }
+      <FriendsList friends={props.friends} city={props.city} userId={props.user.id}setFriendsActivities={props.setFriendsActivities}/>
     </div>
   );
 };
