@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ItineraryListItem = (props) => {
-console.log("hxbhsbhbhsbhcsh", props)
   return (
     <div>
       <div className="itinerary-info">
