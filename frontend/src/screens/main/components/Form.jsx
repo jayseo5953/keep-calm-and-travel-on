@@ -32,7 +32,7 @@ const Form = (props) => {
           setInputValue(e.target.value)
         }}/>
       {!addOrSubtract&&!props.budget? 
-        <Button style={{width:"50%"}} variant="contained" color="primary" type='submit' onClick={()=>{
+        <Button style={{width:"5vw"}} variant="contained" color="primary" type='submit' onClick={()=>{
           if(isNaN(inputValue)) return;
           props.setBudget(inputValue||0);
           setInputValue("")
@@ -42,7 +42,7 @@ const Form = (props) => {
         </Button>
         :
         <div className='plus-minus'>
-          <Button style={{width:'5px'}} variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='add' }}> 
+          <Button style={{width:'1vw'}} variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='add' }}> 
           +
           </Button>
           <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='subtract' }} >
