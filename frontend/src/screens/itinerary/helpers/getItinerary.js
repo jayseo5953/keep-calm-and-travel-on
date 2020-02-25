@@ -29,6 +29,7 @@ export default function getItinerary (arg) {
               // destination_id: obj.destination_id,
               name: obj.name
             }
+            
             newState[obj.schedule_id].items.push(item);
           })
         

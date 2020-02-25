@@ -13,7 +13,8 @@ import CardBody from '../../../components/Card/CardBody'
 import CardContent from '@material-ui/core/CardContent';
 import CardFooter from '../../../components/Card/CardFooter'
 import ItineraryList from './ItineraryList';
-import Destination from './Destination'
+import DestinationName from './DestinationName'
+import Total from './Total'
 
 import styles from "../../../assets/jss/material-kit-react/views/itineraryPage"
 
@@ -83,19 +84,16 @@ const classes = useStyles();
             </CardHeader>
             <CardBody>
               <CardContent>
-              <Destination destination={destination} />
-                {Object.entries(itineraries).map(([columnId,column]) => {
-                  return <ItineraryList column={column} itineraries={itineraries} />
-                })}
+                <DestinationName destination={destination} />
+                  {Object.entries(itineraries).map(([columnId,column]) => {
+                    return <ItineraryList column={column} itineraries={itineraries} />
+                  })}
                </CardContent>
 
-              </CardBody>
-                <CardFooter className={classes.cardFooter}>
-                    <div>
-                      <h2>Total cost: ${props.total}</h2>
-                    </div>
-                
-                </CardFooter>
+            </CardBody>
+              <CardFooter className={classes.cardFooter}>
+                <Total />
+              </CardFooter>
             </Card>
           </GridItem>
         </GridContainer>

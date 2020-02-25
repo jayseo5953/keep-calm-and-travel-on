@@ -1,34 +1,32 @@
 import axios from 'axios';
 
+        
+
 export default function getDestination (arg) {
   console.log("herrrro")
-  return axios.get(`/itinerary/${arg}`)
+  return axios.get(`/trips/edit/${arg}`)
     .then(res=> {
-      console.log("CONSOLE LOGGING FROM GETDESTINATION.JS",res.data)
+
       const result = res.data
+      console.log("CONSOLE LOGGING FROM GETDESTINATION.JS" , result)
+      
       let newState={};
 
           res.data.forEach((obj) => {
             newState[obj.destination_id] = {
-              name: obj.schedule_name,
+              name: obj.destination_name,
               items:[],
               total:0
             } 
           })
 
           res.data.forEach((obj)=>{
-            const item = {
+            const destinationItem = {
               id: obj.destination_id,
-              // activity_id: obj.itinerary_id,
-              // price_cents: obj.price_cents,
-              // time_operations: obj.time_operation,
-              // lat: obj.lat,
-              // long: obj.long,
-              // image_url: obj.image_url,
-              // destination_id: obj.destination_id,
-              // name: obj.name
+              city: obj.city,
+              country: obj.country
             }
-            newState[obj.schedule_id].items.push(item);
+            newState[obj.destination_id].items.push(destinationItem);
           })
         
       return newState
