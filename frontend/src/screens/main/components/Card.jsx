@@ -24,8 +24,8 @@ const Card = (props) => {
             // backgroundRepeat: 'no-repeat',
             userSelect: "none",
             backgroundColor: snapshot.isDragging
-            ? "#263B4A"
-            : "#456C86",
+            ? "rgba(58, 59, 74, 1)"
+            : "rgba(72, 90, 134, 0.8)",
             ...provided.draggableProps.style
           }}
         >
@@ -37,7 +37,7 @@ const Card = (props) => {
             </div>
 
             <div className='item-cont2'>
-              <span>{props.item.time_operation} </span>
+              <span className='item-time'>{props.item.time_operation} </span>
               <strong className='item-price'>$
               {props.item.price_cents/100}</strong> 
         

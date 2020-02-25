@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .main {
   /* background-color: #F0EFF4; */
   background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/bg7.jpg?raw=true");
@@ -13,7 +16,7 @@
 }
 
 .header {
-  background-color: #D1495B;
+  background-color: #ebdfe0;
 }
 
 .dnd-context {
@@ -32,7 +35,6 @@
   /* background-color: #a0a0a0 ; */
   background:transparent;
   color:white;
-  font-weight: bold;
   height: 49vh;
   position:fixed;
   right:2vw;
@@ -48,6 +50,8 @@
 .column-name {
   margin:0;
   margin-top:10px;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .column-container {
@@ -70,8 +74,14 @@
   /* border-radius:15px; */
   padding: 0px;
   overflow-y: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
   width: 35vw;
   font-size:20px;
+}
+
+.inside-column::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 .days-container .inside-column{
@@ -126,12 +136,15 @@
 .item-time {
   text-align:center;
   margin:0;
+  margin-right:15px;
+  font-size:22px;
 
 }
 
 .item-price {
   /* position: absolute;;
   right:60px; */
+  font-size:23px;
 }
 
 .item-delete {
@@ -152,6 +165,8 @@
 }
 
 .add-list {
+  background-color: rgba(72, 90, 134, 0.8);
+  border:0;
   border-radius:500px;
   margin:auto 0;
   margin-right:4vw;
@@ -168,7 +183,7 @@
 
 .delete-list  {
   height:26px;
-  width: 34px;
+  width: 40px;
   text-align: center;
   line-height: 10px;
   padding:0
@@ -204,7 +219,7 @@ body {
 }
 
 .progress {
-  /* background-color: #44413a; */
+  background-color: rgba(240, 239, 239,0.3);
   border-radius: 10px;
   position: fixed;
   margin: 0;

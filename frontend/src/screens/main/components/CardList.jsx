@@ -54,7 +54,7 @@ const CardList = (props) => {
           className={"inside-column"}
           style={{
             background: snapshot.isDraggingOver
-              ? "lightblue"
+              ? "rgba(211,211,211,0.5)"
               : "rgba(211,211,211,0.3)"
           }}
         >

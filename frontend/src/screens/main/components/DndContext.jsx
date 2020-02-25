@@ -41,7 +41,7 @@ const DndContext = (props) => {
         }
         return null;
       })}
-          <button  type="button" className="btn btn-success add-list" onClick={(()=>{
+          <button  type="button" className="btn btn-primary add-list" onClick={(()=>{
             addCardList(props.columns, props.setColumns)
             })} ><i className="material-icons">
       add
@@ -63,7 +63,10 @@ const DndContext = (props) => {
             budget={props.budget}
             />
           </div>
+    
         </div>
+
+       
 
    </DragDropContext>
   );
