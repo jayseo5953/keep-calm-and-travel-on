@@ -4,8 +4,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'reac
 require('dotenv').config();
 
 const Map = (props) => {
-  console.log("latest Activity", props.latestActivity)
-  console.log("hover activity", props.hoverActivity)
+  // console.log("latest Activity", props.latestActivity)
+  // console.log("hover activity", props.hoverActivity)
   let activityData = props.activities;
   let initialCenter=props.initialCenter;
 

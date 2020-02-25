@@ -30,7 +30,7 @@ const Card = (props) => {
           <div className='item-info'
             onMouseOver={()=> {
               if (props.droppableId !== 'list' ) {
-                console.log(props.item.id)
+                // console.log(props.item.id)
                 props.setHoverActivity(props.item.id)
               }
               else {
@@ -39,7 +39,7 @@ const Card = (props) => {
             }}
             onMouseLeave={()=> {
               if (props.droppableId !== 'list' ) {
-                console.log(props.item.id)
+                // console.log(props.item.id)
                 props.setHoverActivity(null)
               }
               else {
