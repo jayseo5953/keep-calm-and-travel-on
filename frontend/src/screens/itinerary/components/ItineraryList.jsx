@@ -10,16 +10,18 @@ const ItineraryList = (props) => {
         <span><strong>Price</strong></span>
         <span><strong>Time of Operation</strong></span>
         </div>
-        {props.column.items.map((activity)=>{
-          return(
-            <ItineraryListItem
-              name={activity.name}
-              price={activity.price_cents}
-              time={activity.time_operations}
-              activityImage={activity.image_url}
-              />
-          )
-        })}
+        <div>
+          {props.column.items.map((activity)=>{
+            return(
+              <ItineraryListItem
+                name={activity.name}
+                price={activity.price_cents}
+                time={activity.time_operations}
+                activityImage={activity.image_url}
+                />
+            )
+          })}
+        </div>
       </div>
     )
   }
