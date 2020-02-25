@@ -24,8 +24,8 @@ const Card = (props) => {
             backgroundColor: snapshot.isDragging
             // ? "rgba(58, 59, 74, 1)"
             // : "rgba(72, 90, 134, 0.8)",
-            ? "rgba(58, 59, 54, 1)"
-            : "rgba(50, 50, 50, 0.8)",
+            ? "rgba(50, 50, 54, 1)"
+            : "rgba(50, 50, 50, 0.9)",
             ...provided.draggableProps.style
           }}
         >
