@@ -24,21 +24,32 @@ const Card = (props) => {
             // backgroundRepeat: 'no-repeat',
             userSelect: "none",
             backgroundColor: snapshot.isDragging
-              ? "#263B4A"
-              : "#456C86",
+            ? "#263B4A"
+            : "#456C86",
             ...provided.draggableProps.style
           }}
         >
           <div className='item-info'>
-            {/* <img className='item-photo' src={`${props.item.image_url}`} alt="activty"/>  */}
-            <span className='item-name'>{props.item.name}</span>  
-            <div>
-              <span className='item-price'>${props.item.price_cents/100}</span> 
 
+            <div className='item-cont'>
+                <img className='item-photo' src={`${props.item.image_url}`} alt="activty"/> 
+                <strong className='item-name'>{props.item.name}</strong>
+            </div>
+
+            <div className='item-cont2'>
+              <span>{props.item.time_operation} </span>
+              <strong className='item-price'>$
+              {props.item.price_cents/100}</strong> 
+        
+        
               {props.droppableId ==='list'?"": <button className='item-delete btn btn-danger' onClick={()=> deleteCard(props.index, props.droppableId, props.columns, props.setColumns)}><i className="material-icons">
               close
               </i></button>} 
+
             </div>
+              
+             
+         
 
           </div>
          

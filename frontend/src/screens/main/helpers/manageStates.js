@@ -21,7 +21,7 @@ export default function manageStates (
           id: uuid(),
           activity_id: act.id,
           price_cents: act.price_cents,
-          time_operations: act.time_operation,
+          time_operation: act.time_operation,
           lat: act.lat,
           long: act.long,
           image_url: act.image_url,
@@ -63,11 +63,11 @@ export default function manageStates (
               id: obj.itinerary_id,
               activity_id: obj.activity_id,
               price_cents: obj.price_cents,
-              // time_operations: obj.time_operation,
+              time_operations: obj.time_operation,
               lat: obj.lat,
               long: obj.long,
               image_url: obj.image_url,
-              // destination_id: obj.destination_id,
+              destination_id: obj.destination_id,
               name: obj.name
             }
             newState[obj.schedule_id].items.push(item);
