@@ -15,7 +15,7 @@ export default function BudgetGauge(props) {
      
     }, 200);
     return (
-      <div className="positive progress shadow-sm">
+      <div className="positive progress">
         <div className="progress-done" style={style}>
           {props.children}
         </div>
