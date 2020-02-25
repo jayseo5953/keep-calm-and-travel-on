@@ -48,7 +48,7 @@ const TripList = (props) => {
           </div>
           <div className="buttons-container">
             <EditButton trip={trip} />
-            <DeleteButton  deleteTrip={deleteTrip} trip={trip} trips={props.trips} setTrips={props.setTrips} />
+            <DeleteButton deleteTrip={deleteTrip} trip={trip} trips={props.trips} setTrips={props.setTrips} />
           </div>
          </div>
          ) 

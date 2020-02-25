@@ -1,30 +1,15 @@
 import React from 'react'
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
 
-const postToBackEnd = (tripName,tripId, userId,columns,total, budget)=> {
+import axios from 'axios';
 
-  // const columnCopy = {...columns};
-  // delete columnCopy['list'];
+postToItineraryPage = () => {
+  console.log("gone to the wormhole")
 
-  // for(let key in columnCopy) {
-  //   if (!columnCopy[key].items.length) {
-  //     delete columnCopy[key]
-  //   }
-  // }
-
-  // const trip_id = tripId || uuid();
-
-  // return axios.post('/itinerary', {
-  //   [trip_id]:{
-  //     userId,
-  //     columns: columnCopy,
-  //     trip: tripName,
-  //     total,
-  //     budget
-  //   }
-  // })
+  return axios.post('/itinerary', {
+    
+  })
 }
-
 
 const TripListItem = (props) => {
   return (
@@ -35,17 +20,16 @@ const TripListItem = (props) => {
       </div> */}
       <div>
         <Button onClick={()=>{
-          postToBackEnd(tripName, props.tripId, props.user.id ,props.columns, props.total, props.budget)
-          .then((res)=>{
-            console.log("here")
-            handleClose(setOpen);
-            history.push(`/trips/${props.user.name}`)
-          })
-          .catch((err)=>{
-            alert("Saving was unsuccessful")
-          })
-        }} 
-        ><span className='trip-name'><strong>{props.trip.trip_name}</strong></span></Button>
+          console.log("cliiiiicked")
+          // postToItineraryPage()
+          // .then((res) => {
+          //   console.log("to the itinerarypage")
+          // })
+          // .catch((err)=>{
+          //   console.err("Failed to go to Itinerary page")
+          // })
+        }}>
+          <span className='trip-name'><strong>{props.trip.trip_name}</strong></span></Button>
         <h5 className='trip-destination'>
           <span className='trip-city'>Total: ${props.trip.total_cost} ({props.trip.city}, {props.trip.country}) </span>
         </h5>

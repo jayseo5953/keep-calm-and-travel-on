@@ -50,13 +50,13 @@ function Itinerary(props) {
     .catch(err=> console.error(err.data))
   },[]);
 
-  let destinationId='0caa1c9b-9370-4059-b6b6-4817b95b3fe0'
-  const [destination, setDestination] = useState ({});
-  useEffect(()=> {
-    getDestination(destinationId)
-    .then(res=> setDestination(res))
-    .catch(err=> console.error(err.data))
-  },[]);
+  // let destinationId='0caa1c9b-9370-4059-b6b6-4817b95b3fe0'
+  // const [destination, setDestination] = useState ({});
+  // useEffect(()=> {
+  //   getDestination(destinationId)
+  //   .then(res=> setDestination(res))
+  //   .catch(err=> console.error(err.data))
+  // },[]);
 
 const classes = useStyles();
 
@@ -84,7 +84,7 @@ const classes = useStyles();
             </CardHeader>
             <CardBody>
               <CardContent>
-                <DestinationName destination={destination} />
+                <DestinationName />
                   {Object.entries(itineraries).map(([columnId,column]) => {
                     return <ItineraryList column={column} itineraries={itineraries} />
                   })}
