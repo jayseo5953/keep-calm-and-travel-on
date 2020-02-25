@@ -1,3 +1,8 @@
+.trip-main {
+  background-image: url('https://raw.githubusercontent.com/sjs5953/keep-calm-and-travel-on/master/frontend/src/assets/img/wooden-houses-on-body-of-water.jpg');
+  background-size: cover; 
+}
+
 .grid-container {
   background-color:#EAEBED;
   min-height: 30vh;

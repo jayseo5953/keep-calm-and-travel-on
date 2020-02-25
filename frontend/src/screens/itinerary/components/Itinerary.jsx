@@ -11,7 +11,7 @@ import GridItem from '../../../components/Grid/GridItem'
 import Card from '../../../components/Card/Card'
 import CardHeader from '../../../components/Card/CardHeader'
 import CardBody from '../../../components/Card/CardBody'
-import CardContent from '@material-ui/core/CardContent';
+// import CardContent from '@material-ui/core/CardContent';
 import CardFooter from '../../../components/Card/CardFooter'
 import ItineraryList from './ItineraryList';
 import styles from "../../../assets/jss/material-kit-react/views/itineraryPage"
@@ -28,8 +28,6 @@ const useStyles = makeStyles(styles);
 const Itinerary = (props) => {
 
   console.log("show me props -->", props)
-
-  const componentRef = useRef();
 
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(function() {
@@ -63,22 +61,22 @@ const classes = useStyles(props);
 
 
   return (
-    <div>
+    <div className="itinerary-main">
       <Header
-      color="transparent"
+      // color="transparent"
       brand="TRIPPER"
       fixed
       user={props.user}
       setUser={props.setUser}
       />
-      <div 
+      {/* <div 
         className={classes.pageHeader}
         style={{
           backgroundImage: "url(" + image + ")",
           backgroundSize: "cover",
           backgroundPosition: "top center"
         }}
-      >
+      > */}
         <div className={classes.container} style={{width: "800px"}}>
         <GridContainer>
         <GridItem>
@@ -90,12 +88,11 @@ const classes = useStyles(props);
               <div className="destination">
               <h1>{citytravelling}, {countrytravelling}</h1>
               </div>
-              <CardContent>
+              <div>
                   {Object.entries(itineraries).map(([columnId,column]) => {
-                    return <ItineraryList column={column} itineraries={itineraries} ref={el => (componentRef = el)}/>
+                    return <ItineraryList column={column} itineraries={itineraries}/>
                   })}
-               </CardContent>
-
+              </div>
             </CardBody>
               <CardFooter className={classes.cardFooter}>
               <Total total={total}/>
@@ -106,7 +103,7 @@ const classes = useStyles(props);
         </GridContainer>
 
         </div>
-      </div>
+      {/* </div> */}
     
     </div>
   )

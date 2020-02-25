@@ -3,7 +3,7 @@ import ItineraryListItem from './ItineraryListItem'
 
 const ItineraryList = (props) => {
     return (
-      <div>
+      <div className="itinerary-container">
         <div className="grid-headlines">
         <span><strong>{props.column.name}</strong></span>
         <span><strong>Activity</strong></span>

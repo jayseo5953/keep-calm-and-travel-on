@@ -50,22 +50,22 @@ const Trips = (props) => {
   },[userId]);
 
   return (
-    <div>
+    <div className="trip-main">
       <Header 
-       color="transparent"
+      //  color="transparent"
        brand="TRIPPER"
        fixed
        user={props.user}
        setUser={props.setUser}
       />
-       <div
+       {/* <div
         className={classes.pageHeader}
         style={{
           backgroundImage: "url(" + image + ")",
           backgroundSize: "cover",
           backgroundPosition: "top center"
         }}
-      >
+      > */}
 
        <div className={classes.container} style={{width: "700px"}}>
        <GridContainer>
@@ -90,7 +90,7 @@ const Trips = (props) => {
           </GridItem>
         </GridContainer>
       </div>
-      </div>
+      {/* </div> */}
 
     </div>
   );
