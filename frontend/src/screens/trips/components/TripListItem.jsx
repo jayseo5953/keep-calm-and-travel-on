@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '@material-ui/core/Button';
 
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 // import axios from 'axios';
 
@@ -14,6 +14,8 @@ import { Link } from "react-router-dom"
 // }
 
 const TripListItem = (props) => {
+  let history = useHistory(); 
+
   return (
   
     <div className="grid-itinerary">
@@ -21,10 +23,10 @@ const TripListItem = (props) => {
        <img src={props.trip.image_url} height="150px" width="150px"/>
       </div> */}
       <div>
-        <Link to='/itinerary/:itineraryId'>
+
         <Button onClick={()=>{
-          console.log("i am cliiiiicked")
-        
+          console.log("i am cliiiiicked", props)
+          history.push(`/itinerary/${props.trip.id}`)
           // history.push('/itineraries/')
           // postToItineraryPage()
           // .then((res) => {
@@ -35,7 +37,7 @@ const TripListItem = (props) => {
           //   console.err("Failed to go to Itinerary page")
           // })
         }}>
-          <span className='trip-name'><strong>{props.trip.trip_name}</strong></span></Button></Link>
+          <span className='trip-name'><strong>{props.trip.trip_name}</strong></span></Button>
         <h5 className='trip-destination'>
           <span className='trip-city'>Total: ${props.trip.total_cost} ({props.trip.city}, {props.trip.country}) </span>
         </h5>

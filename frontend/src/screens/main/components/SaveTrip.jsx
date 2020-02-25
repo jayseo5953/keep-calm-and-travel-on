@@ -21,19 +21,14 @@ const handleClose = (setOpen) => {
 
 
 const postToBackEnd = (tripName,tripId, userId,columns,total, budget)=> {
-
   const columnCopy = {...columns};
-
   delete columnCopy['list'];
-
   for(let key in columnCopy) {
     if (!columnCopy[key].items.length) {
       delete columnCopy[key]
     }
   }
-
   const trip_id = tripId || uuid();
-
   return axios.post('/trips', {
     [trip_id]:{
       userId,
@@ -45,7 +40,6 @@ const postToBackEnd = (tripName,tripId, userId,columns,total, budget)=> {
   })
 }
 
-console.log("show backend -->", postToBackEnd)
 
  const SaveTrip = (props)=> {
 
@@ -116,6 +110,7 @@ console.log("show backend -->", postToBackEnd)
         <DialogActions>
           <Button onClick={
             ()=>{
+              console.log("save trip clicked")
               if (!tripName) {
                 alert('Trip name is required!')
                 return

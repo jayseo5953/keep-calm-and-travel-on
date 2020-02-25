@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react' 
+import { useHistory } from "react-router-dom"
 
 // @material-ui/core/components
 import { makeStyles } from "@material-ui/core/styles"
@@ -15,32 +16,34 @@ import CardFooter from '../../../components/Card/CardFooter'
 import ItineraryList from './ItineraryList';
 import DestinationName from './DestinationName'
 import Total from './Total'
-
 import styles from "../../../assets/jss/material-kit-react/views/itineraryPage"
-
 import image from "../../../assets/img/temple-trees.jpg"
 import './itinerary.css'
 
 // helpers
 import getItinerary from '../helpers/getItinerary'
-import getDestination from '../helpers/getDestination'
+// import getDestination from '../helpers/getDestination'
 
 const useStyles = makeStyles(styles);
 
-
-
-function Itinerary(props) {
-
+const Itinerary = (props) => {
   
+  // const history = useHistory();
 
+  // if(!props.user) {
+  //   history.push('/')
+  // }
+  // const userId = props.user? props.user.id:0;
 
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(function() {
     setCardAnimation("");
   }, 700)
 
+  console.log('props in intenary', props.match.params.itineraryId);
 
-  let itineraryId='8cdb518a-de45-4657-ae27-8605f6660943'
+  // let itineraryId='770f061a-9c1e-4979-8bcb-71e0c16a38ea'
+  let itineraryId = props.match.params.itineraryId
   const [itineraries, setItineraries] = useState({});
 
 

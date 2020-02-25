@@ -6,6 +6,7 @@ module.exports = (itineraryService) => {
   router.get('/:itineraryId', (req, res) => {
     console.log('inside route')
     const itineraryId = req.params.tripId
+
     itineraryService.getItineraryId(itineraryId)
     .then(resolve => {
       res.send(resolve.rows)

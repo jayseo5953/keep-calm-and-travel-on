@@ -22,10 +22,12 @@ import image from "../../../assets/img/wooden-houses-on-body-of-water.jpg"
 //helpers
 import getTrips from '../helpers/getTrips'
 
+
 const useStyles = makeStyles(styles);
 
 const Trips = (props) => {
   const history = useHistory();
+  const classes = useStyles();
 
   if (!props.user) {
     history.push('/')
@@ -39,7 +41,6 @@ const Trips = (props) => {
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
-  const classes = useStyles();
   
   useEffect(()=>{
    getTrips(userId)
