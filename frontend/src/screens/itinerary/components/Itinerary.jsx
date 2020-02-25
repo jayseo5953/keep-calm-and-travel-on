@@ -71,6 +71,8 @@ const classes = useStyles(props);
       color="transparent"
       brand="TRIPPER"
       fixed
+      user={props.user}
+       setUser={props.setUser}
       />
       <div 
         className={classes.pageHeader}
