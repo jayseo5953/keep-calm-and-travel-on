@@ -41,8 +41,8 @@ const Form = (props) => {
         Submit
         </Button>
         :
-        <div>
-          <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='add' }} >
+        <div className='plus-minus'>
+          <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='add' }}> 
           +
           </Button>
           <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='subtract' }} >
