@@ -11,6 +11,11 @@ import Home from './screens/home/components/Home'
 import Main from './screens/main/components/Main'
 import Trips from './screens/trips/components/Trips'
 import Login from './screens/login/components/Login'
+<<<<<<< HEAD
+=======
+import Itinerary from './screens/itinerary/components/Itinerary'
+import EditTrip from './screens/editTrip/components/EditTrip'
+>>>>>>> frontend/itinerarypage
 
 
 export default function App() {
@@ -40,6 +45,7 @@ export default function App() {
           <Route path="/main/:city/:budget" render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser}  />} />
           <Route path="/edit/:city/:budget/:tripName/:tripId" exact render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/trips/:userName" render={(routeProps) => <Trips {...routeProps} user={user} setUser={setUser} />} />
+          <Route path="/itinerary/:itineraryId" render={(routeProps) => <Itinerary {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/login" render={(routeProps) => <Login {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/" render={(routeProps) => <Home {...routeProps} user={user} setUser={setUser} background={background} setBackGround={setBackGround} />} />
         </Switch>
