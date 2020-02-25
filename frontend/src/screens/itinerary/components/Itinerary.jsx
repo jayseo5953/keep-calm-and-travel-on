@@ -14,26 +14,17 @@ import CardBody from '../../../components/Card/CardBody'
 import CardContent from '@material-ui/core/CardContent';
 import CardFooter from '../../../components/Card/CardFooter'
 import ItineraryList from './ItineraryList';
-import DestinationName from './DestinationName'
-import Total from './Total'
 import styles from "../../../assets/jss/material-kit-react/views/itineraryPage"
 import image from "../../../assets/img/temple-trees.jpg"
 import './itinerary.css'
 
 // helpers
 import getItinerary from '../helpers/getItinerary'
-// import getDestination from '../helpers/getDestination'
 
 const useStyles = makeStyles(styles);
 
 const Itinerary = (props) => {
-  
-  const history = useHistory();
 
-  // if(!props.user) {
-  //   history.push('/')
-  // }
-  // const userId = props.user? props.user.id:0;
 
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(function() {
@@ -52,14 +43,6 @@ const Itinerary = (props) => {
     .then(res=> setItineraries(res))
     .catch(err=> console.error(err.data))
   },[]);
-
-  // let destinationId='0caa1c9b-9370-4059-b6b6-4817b95b3fe0'
-  // const [destination, setDestination] = useState ({});
-  // useEffect(()=> {
-  //   getDestination(destinationId)
-  //   .then(res=> setDestination(res))
-  //   .catch(err=> console.error(err.data))
-  // },[]);
 
 const classes = useStyles(props);
   console.log("itenaryyyyyyyyy", props.match.params.country)
@@ -90,9 +73,10 @@ const classes = useStyles(props);
               <h4>Your Itinerary</h4>
             </CardHeader>
             <CardBody>
+              <div className="destination">
               <h1>{citytravelling}, {countrytravelling}</h1>
+              </div>
               <CardContent>
-                {/* <DestinationName /> */}
                   {Object.entries(itineraries).map(([columnId,column]) => {
                     return <ItineraryList column={column} itineraries={itineraries} />
                   })}
