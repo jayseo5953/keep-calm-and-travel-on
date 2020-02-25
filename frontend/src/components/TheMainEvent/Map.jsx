@@ -63,7 +63,7 @@ export default function GMap (props) {
         googleMapURL={`${mapUrl}=${mapApiKey}`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}
-        mapElement={<div style={{ height: `100%` }} />}
+        mapElement={<div style={{ height: `100%`, borderRadius: '10px'}} />}
         activities={props.activities}
         activityItem={props.columns}
         initialCenter={props.initialCenter}
