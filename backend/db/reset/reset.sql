@@ -67,6 +67,8 @@ INSERT INTO users (first_name, last_name, email, password) VALUES
 ('Porson', 'Lee', 'porson@gmail.com', '123'),
 ('Jay', 'Seo', 'jay@gmail.com', '123');
 
+INSERT INTO friends (user_id, friend_id) VALUES (1,2), (2,1), (1,3), (3,1),(2,3),(3,2);
+
 INSERT INTO destinations(id, city, country, image_url) VALUES
 (1,'San Francisco', 'USA', 'https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg'),
 (2,'Florence', 'Italy', 'https://cdn-image.departures.com/sites/default/files/styles/responsive_900x600/public/1539722614/duomo-church-architecture-sunset-florence-italy-FLORENCEITALY1018.jpg?itok=p9ytJcSJ'),

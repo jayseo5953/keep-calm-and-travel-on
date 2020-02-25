@@ -98,3 +98,13 @@ module.exports = (db) => {
 // JOIN itineraries ON schedules.id = schedule_id
 // JOIN activities ON activities.id = activity_id
 // JOIN destinations ON destinations.id = destination_id
+
+// SELECT users.id, friend_id, destinations.id from users
+// JOIN friends ON users.id = friend_id
+// JOIN users ON user_id = users.id
+// JOIN schedules ON trips.id = trip_id
+// JOIN itineraries ON schedules.id = schedule_id
+// JOIN activities ON activities.id = activity_id
+// JOIN destinations ON destinations.id = destination_id
+// WHERE user_id = 3 && destinations.city = 'Bali'
+
