@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react' 
+import React, { useState, useEffect, useRef } from 'react' 
 import { useHistory } from "react-router-dom"
 
 // @material-ui/core/components
@@ -16,7 +16,9 @@ import CardFooter from '../../../components/Card/CardFooter'
 import ItineraryList from './ItineraryList';
 import styles from "../../../assets/jss/material-kit-react/views/itineraryPage"
 import image from "../../../assets/img/temple-trees.jpg"
+import Total from './Total'
 import './itinerary.css'
+
 
 // helpers
 import getItinerary from '../helpers/getItinerary'
@@ -24,6 +26,11 @@ import getItinerary from '../helpers/getItinerary'
 const useStyles = makeStyles(styles);
 
 const Itinerary = (props) => {
+
+  console.log("show me props -->", props)
+
+  const componentRef = useRef();
+
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(function() {
     setCardAnimation("");
@@ -43,6 +50,18 @@ const classes = useStyles(props);
   let countrytravelling = props.match.params.country;
   let citytravelling = props.match.params.city;
 
+  const allActivitiesForTheTrip = Object.entries(itineraries).map(([columnId,column]) => {
+    return column 
+  })
+
+  let total = 0;                
+  allActivitiesForTheTrip.forEach(day => {
+    day.items.forEach(activity => {
+      total += (activity.price_cents)/100
+    })
+  })
+
+
   return (
     <div>
       <Header
@@ -50,7 +69,7 @@ const classes = useStyles(props);
       brand="TRIPPER"
       fixed
       user={props.user}
-       setUser={props.setUser}
+      setUser={props.setUser}
       />
       <div 
         className={classes.pageHeader}
@@ -73,13 +92,14 @@ const classes = useStyles(props);
               </div>
               <CardContent>
                   {Object.entries(itineraries).map(([columnId,column]) => {
-                    return <ItineraryList column={column} itineraries={itineraries} />
+                    return <ItineraryList column={column} itineraries={itineraries} ref={el => (componentRef = el)}/>
                   })}
                </CardContent>
 
             </CardBody>
               <CardFooter className={classes.cardFooter}>
-                <h1>Total cost:</h1>
+              <Total total={total}/>
+
               </CardFooter>
             </Card>
           </GridItem>
