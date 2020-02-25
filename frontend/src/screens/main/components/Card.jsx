@@ -22,8 +22,10 @@ const Card = (props) => {
             // backgroundRepeat: 'no-repeat',
             userSelect: "none",
             backgroundColor: snapshot.isDragging
-            ? "rgba(58, 59, 80, 1)"
-            : "rgba(80, 90, 110, 0.9)",
+            // ? "rgba(58, 59, 74, 1)"
+            // : "rgba(72, 90, 134, 0.8)",
+            ? "rgba(58, 59, 54, 1)"
+            : "rgba(50, 50, 50, 0.8)",
             ...provided.draggableProps.style
           }}
         >

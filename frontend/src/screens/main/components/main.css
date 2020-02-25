@@ -3,8 +3,12 @@ html {
 }
 .main {
   /* background-color: #F0EFF4; */
-  background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/bg7.jpg?raw=true");
+  /* background-image: url("https://images.pexels.com/photos/221387/pexels-photo-221387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); */
+  /* background-image: url("https://images.pexels.com/photos/163185/old-retro-antique-vintage-163185.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"); */
+  background-image: url("https://images.pexels.com/photos/54278/pexels-photo-54278.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+ 
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -204,7 +208,7 @@ html {
   margin:auto;
 }
 .add-list {
-  background-color: rgba(72, 90, 134, 0.3);
+  background-color: rgba(35, 37, 51, 0.6);
   border:0;
   border-radius:500px;
   margin:auto 0;
@@ -250,7 +254,7 @@ body {
 }
 
 .progress {
-  background-color: rgba(240, 239, 239,0.3);
+  background-color: rgba(240, 239, 239,0.5);
   border-radius: 10px;
   position: fixed;
   margin: 0;
