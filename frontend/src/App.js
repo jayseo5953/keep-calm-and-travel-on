@@ -11,11 +11,8 @@ import Home from './screens/home/components/Home'
 import Main from './screens/main/components/Main'
 import Trips from './screens/trips/components/Trips'
 import Login from './screens/login/components/Login'
-<<<<<<< HEAD
-=======
 import Itinerary from './screens/itinerary/components/Itinerary'
-import EditTrip from './screens/editTrip/components/EditTrip'
->>>>>>> frontend/itinerarypage
+// import EditTrip from './screens/editTrip/components/EditTrip'
 
 
 export default function App() {
