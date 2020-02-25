@@ -26,6 +26,7 @@ import getTrips from '../helpers/getTrips'
 const useStyles = makeStyles(styles);
 
 const Trips = (props) => {
+  
   const history = useHistory();
   const classes = useStyles();
 

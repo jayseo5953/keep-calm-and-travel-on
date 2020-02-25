@@ -24,16 +24,11 @@ import getItinerary from '../helpers/getItinerary'
 const useStyles = makeStyles(styles);
 
 const Itinerary = (props) => {
-
-
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(function() {
     setCardAnimation("");
   }, 700)
 
-  console.log('props in intenary', props);
-
-  // let itineraryId='770f061a-9c1e-4979-8bcb-71e0c16a38ea'
   let itineraryId = props.match.params.itineraryId
   const [itineraries, setItineraries] = useState({});
 
@@ -45,9 +40,9 @@ const Itinerary = (props) => {
   },[]);
 
 const classes = useStyles(props);
-  console.log("itenaryyyyyyyyy", props.match.params.country)
   let countrytravelling = props.match.params.country;
   let citytravelling = props.match.params.city;
+
   return (
     <div>
       <Header
@@ -89,9 +84,6 @@ const classes = useStyles(props);
             </Card>
           </GridItem>
         </GridContainer>
-          
-
-       
 
         </div>
       </div>
