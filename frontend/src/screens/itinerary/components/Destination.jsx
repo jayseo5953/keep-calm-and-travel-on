@@ -4,7 +4,7 @@ const Destination = (props) => {
 
   return (
     <div>
-      <span><h1>San Francisco, USA</h1></span>
+      <span><h3>{props.destination.city}San Francisco, {props.destination.country}USA</h3></span>
     </div>
   )
 }

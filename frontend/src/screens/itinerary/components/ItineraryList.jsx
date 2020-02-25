@@ -14,13 +14,15 @@ const ItineraryList = (props) => {
 
 
         {props.column.items.map((activity)=>{
-          console.log("activity object -->", activity)
+          // console.log("activity object -->", activity)
           return(
             <ItineraryListItem
               name={activity.name}
               price={activity.price_cents}
               time={activity.time_operations}
               activityImage={activity.image_url}
+
+
               />
           )
         })}

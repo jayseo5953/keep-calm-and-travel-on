@@ -22,6 +22,7 @@ import './itinerary.css'
 
 // helpers
 import getItinerary from '../helpers/getItinerary'
+import getDestination from '../helpers/getDestination'
 
 const useStyles = makeStyles(styles);
 
@@ -45,6 +46,14 @@ function Itinerary(props) {
   useEffect(()=> {
     getItinerary(itineraryId)
     .then(res=> setItineraries(res))
+    .catch(err=> console.error(err.data))
+  },[]);
+
+  let destinationId='0caa1c9b-9370-4059-b6b6-4817b95b3fe0'
+  const [destination, setDestination] = useState ({});
+  useEffect(()=> {
+    getDestination(destinationId)
+    .then(res=> setDestination(res))
     .catch(err=> console.error(err.data))
   },[]);
 
@@ -74,7 +83,7 @@ const classes = useStyles();
             </CardHeader>
             <CardBody>
               <CardContent>
-              <Destination />
+              <Destination destination={destination} />
                 {Object.entries(itineraries).map(([columnId,column]) => {
                   return <ItineraryList column={column} itineraries={itineraries} />
                 })}
