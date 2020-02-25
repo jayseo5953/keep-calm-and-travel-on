@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+// import Marker from './MarkerTest';
 require('dotenv').config();
 
 const Map = (props) => {
+  console.log("latest Activity", props.latestActivity)
+  console.log("hover activity", props.hoverActivity)
   let activityData = props.activities;
   let initialCenter=props.initialCenter;
 
   const [selectedActivity, setSelectedActivity] = useState(null);
-  console.log(props.hoverActivity)
   if (initialCenter.length === 0) {
     return ('NO MAP FOUND')
   } else {
@@ -17,17 +19,24 @@ const Map = (props) => {
         defaultCenter={{lat: Number(initialCenter[0].lat), lng:  Number(initialCenter[0].long)}}
       >
         {activityData.map(activity => {
+          let animation = null;
+          if (props.hoverActivity === activity.id) {
+            animation = window.google.maps.Animation.BOUNCE
+          } else if (props.latestActivity === activity.id) {
+            animation = window.google.maps.Animation.DROP
+          }
           return(
-            <Marker
+            <Marker 
+              animation={animation}
               key={activity.id}
               position={{
                 lat: Number(activity.lat),
                 lng: Number(activity.long)
               }}
+              
               onClick={() => {
                 setSelectedActivity(activity);
               }}
-              
             />)
           })}
   
@@ -68,6 +77,7 @@ export default function GMap (props) {
         activityItem={props.columns}
         initialCenter={props.initialCenter}
         hoverActivity={props.hoverActivity}
+        latestActivity={props.latestActivity}
       />
     </div>
   )

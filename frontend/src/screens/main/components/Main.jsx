@@ -32,7 +32,8 @@ function Main(props) {
   
 
   const [selectedActivity, setSelectedActivity] = useState(null);
-  const [hoverActivity, setHoverActivity] = useState(false);
+  const [hoverActivity, setHoverActivity] = useState(null);
+  const [latestActivity, setLatestActivity] = useState(null);
 
   useEffect(()=>{
     // manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
@@ -52,12 +53,14 @@ function Main(props) {
     let selectedActivities = [];
     for (let column in columns) {
       if (column !== 'list'){
+        if(columns[column].items.length) {
+          setLatestActivity(columns[column].items[0].id);
+          setTimeout(() => setLatestActivity((prev) => prev === columns[column].items[0].id ? null : prev), 300);
+        }
         selectedActivities = [...columns[column].items, ...selectedActivities]
       }
     }
-    setSelectedActivity(selectedActivities)
-
-    //localstorage
+    setSelectedActivity(selectedActivities);
     
   },[columns])
 
@@ -123,7 +126,8 @@ function Main(props) {
           initialCenter={activities} 
           activities={selectedActivity} 
           columns={columns}
-          hoverActivity={hoverActivity} 
+          hoverActivity={hoverActivity}
+          latestActivity={latestActivity}
         />
   
         <FormSection 

@@ -29,14 +29,11 @@ const Card = (props) => {
             ...provided.draggableProps.style
           }}
         >
-          <div className='item-info'>
-            {/* <img className='item-photo' src={`${props.item.image_url}`} alt="activty"/>  */}
-            <span 
-              className='item-name' 
-              onMouseOver={()=> {
+          <div className='item-info'
+            onMouseOver={()=> {
                 if (props.droppableId !== 'list' ) {
                   console.log(props.item.id)
-                  props.setHoverActivity(true)
+                  props.setHoverActivity(props.item.id)
                 }
                 else {
                   return null;
@@ -45,12 +42,17 @@ const Card = (props) => {
               onMouseLeave={()=> {
                 if (props.droppableId !== 'list' ) {
                   console.log(props.item.id)
-                  props.setHoverActivity(false)
+                  props.setHoverActivity(null)
                 }
                 else {
                   return null;
                 }
               }}
+            >
+            {/* <img className='item-photo' src={`${props.item.image_url}`} alt="activty"/>  */}
+            <span 
+              className='item-name' 
+              
               >
               {props.item.name}
             </span>  
