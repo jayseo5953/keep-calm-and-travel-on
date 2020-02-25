@@ -24,7 +24,7 @@ const Form = (props) => {
         return
       }
       }} >
-      <label htmlFor="budget-input"> {!addOrSubtract&&!props.budget?'Enter Your Budget':'Increase or Decrease Your Budget'}></label>
+      <label htmlFor="budget-input"> {!addOrSubtract&&!props.budget?'Enter Your Budget':'Adjust Your Budget'}</label>
 
       <input className='input-budget' type="text" name='input-budget' 
         value={inputValue}
@@ -32,7 +32,7 @@ const Form = (props) => {
           setInputValue(e.target.value)
         }}/>
       {!addOrSubtract&&!props.budget? 
-        <Button variant="contained" color="primary" type='submit' onClick={()=>{
+        <Button style={{width:"50%"}} variant="contained" color="primary" type='submit' onClick={()=>{
           if(isNaN(inputValue)) return;
           props.setBudget(inputValue||0);
           setInputValue("")
@@ -41,8 +41,8 @@ const Form = (props) => {
         Submit
         </Button>
         :
-        <div>
-          <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='add' }} >
+        <div className='plus-minus'>
+          <Button style={{width:'5px'}} variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='add' }}> 
           +
           </Button>
           <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='subtract' }} >

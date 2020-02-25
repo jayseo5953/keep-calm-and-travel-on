@@ -18,7 +18,13 @@ const DndContext = (props) => {
             className='column-container'
               key={columnId}
             >
-              <h3 className='column-name' >{column.name}</h3>
+              <div className='column-name-container'>
+                <h3 className='column-name' >{column.name}</h3>
+                {columnId!=='list' && column.name!=='Day 1'? 
+                <button onClick={()=>deleteList(columnId, props.columns, props.setColumns)} type="button" className="delete-list btn btn-danger"><i className="material-icons">
+                delete
+                </i></button>:""}
+              </div>
               <div className='outside-column'>
                 <CardList 
                 droppableId={columnId} 
@@ -33,20 +39,17 @@ const DndContext = (props) => {
                 setHoverActivity={props.setHoverActivity}
                 />
               </div>
-              {columnId!=='list' && column.name!=='Day 1'? 
-              <button onClick={()=>deleteList(columnId, props.columns, props.setColumns)} type="button" className="delete-list btn btn-danger"><i className="material-icons">
-              delete
-              </i></button>:""}
             </div>
           );
         }
         return null;
       })}
-          <button  type="button" className="btn btn-success add-list" onClick={(()=>{
-            addCardList(props.columns, props.setColumns)
-            })} ><i className="material-icons">
-      add
-      </i></button>
+      <div className='add-list-container'>
+        <button type="button" className="btn btn-primary add-list" onClick={(()=>{
+        addCardList(props.columns, props.setColumns)
+        })} ><i className="material-icons"> add</i>
+        </button>
+      </div>
       </div>
         <div
         className='column-container activity-list'
@@ -65,7 +68,10 @@ const DndContext = (props) => {
             setHoverActivity={props.setHoverActivity}
             />
           </div>
+    
         </div>
+
+       
 
    </DragDropContext>
   );

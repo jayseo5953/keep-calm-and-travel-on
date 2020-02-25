@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .main {
   /* background-color: #F0EFF4; */
   background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/bg7.jpg?raw=true");
@@ -13,13 +16,16 @@
 }
 
 .header {
-  background-color: #D1495B;
+  background-color: #ebdfe0;
 }
 
 .dnd-context {
+  position:fixed;
+  right:2vw;
+  width:78vw;
   display: flex;
   height: 100%; 
-  margin:10px;
+
   flex-direction: column
 }
 
@@ -29,22 +35,56 @@
   /* background-color: #a0a0a0 ; */
   background:transparent;
   color:white;
-  font-weight: bold;
-  height: 46vh;
+  height: 48vh;
   position:fixed;
   right:2vw;
-  top:19vh;
+  top:16vh;
   display: flex;
   flex-direction: row;
   width: 78vw;
   max-width: 78vw;
   overflow-y: hidden;
-  overflow-x: auto;
+  overflow-x: hidden auto;
+}
+::-webkit-scrollbar { 
+  /* display: none; */
+}
+
+/* width */
+.days-container::-webkit-scrollbar {
+  width: 10px;
+ 
+}
+/* Track */
+.days-container::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius:5px;
+}
+/* Handle */
+.days-container::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136,0.4);
+  border-radius:5px;
+}
+/* Handle on hover */
+.days-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(85, 85, 85,0.8);
+  width:10px;
+}
+
+.column-name-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .column-name {
-  margin:0;
-  margin-top:10px;
+  margin:12px;
+  font-weight: bold;
+}
+
+.delete-list {
+  background-color: rgb(225, 0,0,0.3);
+  border: 0;
 }
 
 .column-container {
@@ -67,13 +107,19 @@
   /* border-radius:15px; */
   padding: 0px;
   overflow-y: auto;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
   width: 35vw;
   font-size:20px;
 }
 
+.inside-column::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
 .days-container .inside-column{
   border-radius:10px;
-  height:37vh;
+  height:39vh;
   max-height: 40vh;
   width:37vw;
   padding:0
@@ -93,37 +139,83 @@
 
 .card {
   border-radius:5px;
-  padding: 16px;
+  padding: 30px;
   margin: 0;
   min-width: 250px;
   height:13vh;
   color: white;
-  text-align: end
+  text-align: center;
+}
+.item-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .item-info {
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  align-items: center;
+  height:100%;
 }
+.item-name {
+  text-align: center;
+  line-height: 200%;
+  max-height:100%;
+  width:11vw;
+  margin:0 40px;
+  font-size: 20px;
+  padding:0px 10px;
+  border-radius:8px;
+  background-color: #e0796b;
+  background: linear-gradient(to left, #f2709c, #ff9472);
+}
+
+
+.item-time {
+  text-align:center;
+  margin:0;
+  margin-right:15px;
+  font-size:22px;
+
+}
+
+.item-price {
+  /* position: absolute;;
+  right:60px; */
+  font-size:23px;
+}
+
 .item-delete {
-  width:20px;
-  height:20px;
-  font-size:5px;
-  margin-left:10px;
+  margin-left:20px;
+  width:25px;
+  height:25px;
   padding:0;
+  text-align: center;
 }
 
 .item-delete  i {
-  font-size:15px;
+  font-size:20px;
+  width: 25px;
+  text-align: center;
+  font-weight: bold;
+  padding-right:3px;
+  padding-top:2px;
 }
-
+.add-list-container {
+  width:60px;
+  margin:auto;
+}
 .add-list {
+  background-color: rgba(72, 90, 134, 0.3);
+  border:0;
   border-radius:500px;
-  margin:auto 60px;
-  margin-right:0;
+  margin:auto 0;
+  margin-right:2vw;
   height:50px;
   width:50px;
   padding:0;
+  min-width: 50px;
 }
 
 .add-list i {
@@ -131,11 +223,9 @@
   line-height: 45px;
 }
 
-
-
 .delete-list  {
   height:26px;
-  width: 34px;
+  width: 40px;
   text-align: center;
   line-height: 10px;
   padding:0
@@ -146,23 +236,16 @@
 }
 
 .item-photo {
-  border-radius: 300px;
-  height: 50px;
-  width: 60px;
+  border-radius: 5px;
+  height: 8vh;
+  width: 10vh;
 }
 
-.item-name {
-  padding:2px 10px;
-  border-radius:8px;
-  /* background: linear-gradient(to left, #70adf2, #ff9472); */
-  background-color: #e0796b;
-  background: linear-gradient(to left, #f2709c, #ff9472);
-}
 
 .item-price {
   padding:2px 10px;
   border-radius:8px;
-  background: linear-gradient(to left, #f2709c, #ff9472);
+  /* background: linear-gradient(to left, #f2709c, #ff9472); */
 }
 
 body {
@@ -170,13 +253,13 @@ body {
 }
 
 .progress {
-  /* background-color: #44413a; */
+  background-color: rgba(240, 239, 239,0.3);
   border-radius: 10px;
   position: fixed;
   margin: 0;
-  top:66px;
+  top:7.5vh;
   right: 2vw;
-  height: 9vh;
+  height: 8vh;
   width:78vw;
 }
 
@@ -193,12 +276,12 @@ body {
   width: 0;
   opacity: 0;
   transition: 1s ease 0.3s;
-  font-size:25px;
+  font-size:4.5vh;
 }
 
 .positive .progress-done {
   background: linear-gradient(to left, #70adf2, #72d7ff);
-  box-shadow: 0 3px 3px -5px #70adf2, 0 2px 5px #70adf2;
+  box-shadow: 0 3px 3px -5px #70adf2, 0 2px 5px #72d7ff;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   color: #fff;
@@ -209,7 +292,7 @@ body {
   width: 0;
   opacity: 0;
   transition: 1s ease 0.3s;
-  font-size:25px;
+  font-size:4.5vh;
 }
 
 .g-map {
@@ -239,7 +322,6 @@ body {
   bottom:0;
   left:0;
   text-align: center;
-  
   display:flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -247,9 +329,17 @@ body {
   
 }
 
+.budget-input-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width:20vw;
+}
+
 .input-budget {
-  width:15vw;
-  height: 5vh;
+  width:8vw;
+  height: 4vh;
+  margin-bottom: 13px;
 }
 
 .budget-button {
@@ -281,4 +371,10 @@ body {
 .length-error {
   color:red;
   font-size:12px;
+}
+
+.plus-minus {
+  display: flex;
+  justify-content: space-evenly;
+  width:50%;
 }
