@@ -32,6 +32,8 @@ function Main(props) {
   
 
   const [selectedActivity, setSelectedActivity] = useState(null);
+  const [hoverActivity, setHoverActivity] = useState(null);
+  const [latestActivity, setLatestActivity] = useState(null);
 
   useEffect(()=>{
     // manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
@@ -51,12 +53,14 @@ function Main(props) {
     let selectedActivities = [];
     for (let column in columns) {
       if (column !== 'list'){
+        if(columns[column].items.length) {
+          setLatestActivity(columns[column].items[0].id);
+          setTimeout(() => setLatestActivity((prev) => prev === columns[column].items[0].id ? null : prev), 300);
+        }
         selectedActivities = [...columns[column].items, ...selectedActivities]
       }
     }
-    setSelectedActivity(selectedActivities)
-
-    //localstorage
+    setSelectedActivity(selectedActivities);
     
   },[columns])
 
@@ -78,7 +82,6 @@ function Main(props) {
     }
     setColumns(newColumns)
   },[numOfColumns])
-
   const budget = initialBudget-totalCost
   // console.log(budget)
   return (
@@ -115,10 +118,17 @@ function Main(props) {
           setColumns={setColumns}
           totalCost={totalCost}
           // setTotalCost={setTotalCost}
+          setHoverActivity={setHoverActivity}
         />
       </div>
   
-        <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
+        <GMap 
+          initialCenter={activities} 
+          activities={selectedActivity} 
+          columns={columns}
+          hoverActivity={hoverActivity}
+          latestActivity={latestActivity}
+        />
   
         <FormSection 
           user={props.user} 

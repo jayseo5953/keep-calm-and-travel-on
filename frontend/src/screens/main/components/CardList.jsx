@@ -44,7 +44,7 @@ const CardList = (props) => {
     key={props.columnId}
     isDropDisabled={props.columnId==='list'
     // || dropDisabled
-  }
+    }
     >
     {(provided, snapshot) => {
       return (
@@ -69,6 +69,7 @@ const CardList = (props) => {
                 item={item}
                 setColumns={props.setColumns}
                 columns={props.columns}
+                setHoverActivity={props.setHoverActivity}
               />
             );
           })}

@@ -36,6 +36,7 @@ const DndContext = (props) => {
                 totalCost={props.totalCost}
                 // setTotalCost={props.setTotalCost}
                 budget={props.budget}
+                setHoverActivity={props.setHoverActivity}
                 />
               </div>
             </div>
@@ -64,6 +65,7 @@ const DndContext = (props) => {
             totalCost={props.totalCost}
             // setTotalCost={props.setTotalCost}
             budget={props.budget}
+            setHoverActivity={props.setHoverActivity}
             />
           </div>
     
