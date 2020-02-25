@@ -257,7 +257,7 @@ body {
   border-radius: 10px;
   position: fixed;
   margin: 0;
-  top:7vh;
+  top:7.5vh;
   right: 2vw;
   height: 8vh;
   width:78vw;
@@ -332,7 +332,8 @@ body {
 .budget-input-form {
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
+  width:20vw;
 }
 
 .input-budget {
@@ -374,6 +375,6 @@ body {
 
 .plus-minus {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width:50%;
 }

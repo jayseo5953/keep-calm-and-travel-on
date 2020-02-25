@@ -24,7 +24,7 @@ const Form = (props) => {
         return
       }
       }} >
-      <label htmlFor="budget-input"> {!addOrSubtract&&!props.budget?'Enter Your Budget':'Increase or Decrease Your Budget'}</label>
+      <label htmlFor="budget-input"> {!addOrSubtract&&!props.budget?'Enter Your Budget':'Adjust Your Budget'}</label>
 
       <input className='input-budget' type="text" name='input-budget' 
         value={inputValue}
@@ -42,7 +42,7 @@ const Form = (props) => {
         </Button>
         :
         <div className='plus-minus'>
-          <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='add' }}> 
+          <Button style={{width:'5px'}} variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='add' }}> 
           +
           </Button>
           <Button variant="contained" color="primary" type='submit' onClick={()=>{addOrSubtract='subtract' }} >
