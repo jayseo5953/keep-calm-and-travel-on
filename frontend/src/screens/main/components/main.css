@@ -25,7 +25,6 @@ html {
   width:78vw;
   display: flex;
   height: 100%; 
-
   flex-direction: column
 }
 
@@ -45,9 +44,6 @@ html {
   max-width: 78vw;
   overflow-y: hidden;
   overflow-x: hidden auto;
-}
-::-webkit-scrollbar { 
-  /* display: none; */
 }
 
 /* width */
