@@ -32,6 +32,7 @@ function Main(props) {
   
 
   const [selectedActivity, setSelectedActivity] = useState(null);
+  const [hoverActivity, setHoverActivity] = useState(false);
 
   useEffect(()=>{
     // manageStates(city, setActivities, setColumns, columnsFromBackend, budget, setDays)
@@ -78,7 +79,6 @@ function Main(props) {
     }
     setColumns(newColumns)
   },[numOfColumns])
-
   const budget = initialBudget-totalCost
   // console.log(budget)
   return (
@@ -115,10 +115,16 @@ function Main(props) {
           setColumns={setColumns}
           totalCost={totalCost}
           // setTotalCost={setTotalCost}
+          setHoverActivity={setHoverActivity}
         />
       </div>
   
-        <GMap initialCenter={activities} activities={selectedActivity} columns={columns} />
+        <GMap 
+          initialCenter={activities} 
+          activities={selectedActivity} 
+          columns={columns}
+          hoverActivity={hoverActivity} 
+        />
   
         <FormSection 
           user={props.user} 

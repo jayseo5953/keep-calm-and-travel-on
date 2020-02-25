@@ -7,7 +7,7 @@ const Map = (props) => {
   let initialCenter=props.initialCenter;
 
   const [selectedActivity, setSelectedActivity] = useState(null);
-  
+  console.log(props.hoverActivity)
   if (initialCenter.length === 0) {
     return ('NO MAP FOUND')
   } else {
@@ -67,6 +67,7 @@ export default function GMap (props) {
         activities={props.activities}
         activityItem={props.columns}
         initialCenter={props.initialCenter}
+        hoverActivity={props.hoverActivity}
       />
     </div>
   )

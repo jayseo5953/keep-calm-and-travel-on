@@ -31,7 +31,29 @@ const Card = (props) => {
         >
           <div className='item-info'>
             {/* <img className='item-photo' src={`${props.item.image_url}`} alt="activty"/>  */}
-            <span className='item-name'>{props.item.name}</span>  
+            <span 
+              className='item-name' 
+              onMouseOver={()=> {
+                if (props.droppableId !== 'list' ) {
+                  console.log(props.item.id)
+                  props.setHoverActivity(true)
+                }
+                else {
+                  return null;
+                }
+              }}
+              onMouseLeave={()=> {
+                if (props.droppableId !== 'list' ) {
+                  console.log(props.item.id)
+                  props.setHoverActivity(false)
+                }
+                else {
+                  return null;
+                }
+              }}
+              >
+              {props.item.name}
+            </span>  
             <div>
               <span className='item-price'>${props.item.price_cents/100}</span> 
 

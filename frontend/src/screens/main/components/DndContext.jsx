@@ -30,6 +30,7 @@ const DndContext = (props) => {
                 totalCost={props.totalCost}
                 // setTotalCost={props.setTotalCost}
                 budget={props.budget}
+                setHoverActivity={props.setHoverActivity}
                 />
               </div>
               {columnId!=='list' && column.name!=='Day 1'? 
@@ -61,6 +62,7 @@ const DndContext = (props) => {
             totalCost={props.totalCost}
             // setTotalCost={props.setTotalCost}
             budget={props.budget}
+            setHoverActivity={props.setHoverActivity}
             />
           </div>
         </div>
