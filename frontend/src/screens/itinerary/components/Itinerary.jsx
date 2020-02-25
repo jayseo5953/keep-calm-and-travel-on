@@ -13,6 +13,7 @@ import CardBody from '../../../components/Card/CardBody'
 import CardContent from '@material-ui/core/CardContent';
 import CardFooter from '../../../components/Card/CardFooter'
 import ItineraryList from './ItineraryList';
+import Destination from './Destination'
 
 import styles from "../../../assets/jss/material-kit-react/views/itineraryPage"
 
@@ -27,6 +28,7 @@ const useStyles = makeStyles(styles);
 
 
 function Itinerary(props) {
+
   
 
 
@@ -38,6 +40,7 @@ function Itinerary(props) {
 
   let itineraryId='8cdb518a-de45-4657-ae27-8605f6660943'
   const [itineraries, setItineraries] = useState({});
+
 
   useEffect(()=> {
     getItinerary(itineraryId)
@@ -67,36 +70,16 @@ const classes = useStyles();
         <GridItem>
             <Card className={classes[cardAnimaton]}>
             <CardHeader color="info" className={classes.cardHeader}>
-              <h4>Bayyyy areaaa</h4>
+              <h4>Your Itinerary</h4>
             </CardHeader>
             <CardBody>
-              <h1>San Francisco, USA</h1>
-              <CardContent 
-              //  firstName={value.first_name}
-               // lastName={value.last_name}
-               // city={value.city}
-               // country={value.country}
-               // scheduleName={value.schedule_name}
-               // activityId={value.activity_id}
-               // name={value.name}
-               // priceCent={value.price_cents}
-               // timeOperation={value.time_operation}
-               // totalCost={value.total_cost}
-              >
+              <CardContent>
+              <Destination />
                 {Object.entries(itineraries).map(([columnId,column]) => {
                   return <ItineraryList column={column} itineraries={itineraries} />
-                }
-                )}
+                })}
+               </CardContent>
 
-              {/* <div className="city-name">
-                    <img src={props.imageUrl} width="200px" height ="200px"/>
-                      <div>
-                        <h2>{props.city} , {props.country}</h2>
-                      </div>
-                    </div> */}
-                                
-              </CardContent>
-                  
               </CardBody>
                 <CardFooter className={classes.cardFooter}>
                     <div>
