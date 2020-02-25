@@ -2,7 +2,7 @@ import React from 'react';
 import ItineraryListItem from './ItineraryListItem'
 
 const ItineraryList = (props) => {
-  
+  console.log("intinerarylist props -->", props)
     return (
       <div>
         <div className="grid-headlines">
@@ -14,7 +14,7 @@ const ItineraryList = (props) => {
 
 
         {props.column.items.map((activity)=>{
-          // console.log("activity object -->", activity)
+          console.log("activity object -->", activity)
           return(
             <ItineraryListItem
               name={activity.name}

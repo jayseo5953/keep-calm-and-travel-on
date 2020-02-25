@@ -1,7 +1,7 @@
 module.exports = (db) => {
   return {
     getItineraryId: (itineraryId) => {
-      console.log('inside intineraries repository')
+      console.log('inside intineraries repository', itineraryId)
       const qs = `
       SELECT user_id, trip_id, itineraries.id as itinerary_id, destinations.city, destinations.country, destinations.image_url, schedule_name as day, users.first_name, users.last_name, activities.name, activities.price_cents, activities.time_operation
       FROM trips
@@ -12,7 +12,7 @@ module.exports = (db) => {
       JOIN destinations ON destinations.id = destination_id
       WHERE itineraries.id = '${itineraryId}';
       `
-      return db.query(qs)
+      return db.query(qs,[itineraryId])
     }
   }
 }

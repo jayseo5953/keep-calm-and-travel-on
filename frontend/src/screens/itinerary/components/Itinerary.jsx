@@ -28,7 +28,7 @@ const useStyles = makeStyles(styles);
 
 const Itinerary = (props) => {
   
-  // const history = useHistory();
+  const history = useHistory();
 
   // if(!props.user) {
   //   history.push('/')
@@ -40,7 +40,7 @@ const Itinerary = (props) => {
     setCardAnimation("");
   }, 700)
 
-  console.log('props in intenary', props.match.params.itineraryId);
+  console.log('props in intenary', props);
 
   // let itineraryId='770f061a-9c1e-4979-8bcb-71e0c16a38ea'
   let itineraryId = props.match.params.itineraryId
@@ -61,8 +61,10 @@ const Itinerary = (props) => {
   //   .catch(err=> console.error(err.data))
   // },[]);
 
-const classes = useStyles();
-
+const classes = useStyles(props);
+  console.log("itenaryyyyyyyyy", props.match.params.country)
+  let countrytravelling = props.match.params.country;
+  let citytravelling = props.match.params.city;
   return (
     <div>
       <Header
@@ -86,8 +88,9 @@ const classes = useStyles();
               <h4>Your Itinerary</h4>
             </CardHeader>
             <CardBody>
+              <h1>{citytravelling}, {countrytravelling}</h1>
               <CardContent>
-                <DestinationName />
+                {/* <DestinationName /> */}
                   {Object.entries(itineraries).map(([columnId,column]) => {
                     return <ItineraryList column={column} itineraries={itineraries} />
                   })}
@@ -95,7 +98,7 @@ const classes = useStyles();
 
             </CardBody>
               <CardFooter className={classes.cardFooter}>
-                <Total />
+                <h1>Total cost:</h1>
               </CardFooter>
             </Card>
           </GridItem>

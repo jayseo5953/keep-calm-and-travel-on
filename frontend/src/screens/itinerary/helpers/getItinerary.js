@@ -18,6 +18,7 @@ const getItinerary = (arg) => {
           })
 
           result.forEach((obj)=>{
+            console.log('object --->>>>>', obj);
             const item = {
               id: obj.itinerary_id,
               activity_id: obj.itinerary_id,
@@ -26,7 +27,7 @@ const getItinerary = (arg) => {
               lat: obj.lat,
               long: obj.long,
               image_url: obj.image_url,
-              // destination_id: obj.destination_id,
+              destination_id: obj.destination_id,
               name: obj.name
             }
             

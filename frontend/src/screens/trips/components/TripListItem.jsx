@@ -3,39 +3,18 @@ import Button from '@material-ui/core/Button';
 
 import { Link, useHistory } from "react-router-dom"
 
-// import axios from 'axios';
-
-// postToItineraryPage = () => {
-//   console.log("gone to the wormhole")
-
-//   return axios.post('/itineraries', {
-    
-//   })
-// }
 
 const TripListItem = (props) => {
+  console.log('trip props------->', props.trip)
   let history = useHistory(); 
 
   return (
   
     <div className="grid-itinerary">
-      {/* <div>
-       <img src={props.trip.image_url} height="150px" width="150px"/>
-      </div> */}
       <div>
 
         <Button onClick={()=>{
-          console.log("i am cliiiiicked", props)
-          history.push(`/itinerary/${props.trip.id}`)
-          // history.push('/itineraries/')
-          // postToItineraryPage()
-          // .then((res) => {
-          //   console.log("to the itinerarypage")
-          //   history.push('/itineraries/`${props.user.name}`)
-          // })
-          // .catch((err)=>{
-          //   console.err("Failed to go to Itinerary page")
-          // })
+          history.push(`/itinerary/${props.trip.id}/${props.trip.country}/${props.trip.city}`)
         }}>
           <span className='trip-name'><strong>{props.trip.trip_name}</strong></span></Button>
         <h5 className='trip-destination'>

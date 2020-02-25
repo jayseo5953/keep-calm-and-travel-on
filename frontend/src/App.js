@@ -42,7 +42,7 @@ export default function App() {
           <Route path="/main/:city/:budget" render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser}  />} />
           <Route path="/edit/:city/:budget/:tripName/:tripId" exact render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/trips/:userName" render={(routeProps) => <Trips {...routeProps} user={user} setUser={setUser} />} />
-          <Route path="/itinerary/:itineraryId" render={(routeProps) => <Itinerary {...routeProps} user={user} setUser={setUser} />} />
+          <Route path="/itinerary/:itineraryId/:country/:city" render={(routeProps) => <Itinerary {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/login" render={(routeProps) => <Login {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/" render={(routeProps) => <Home {...routeProps} user={user} setUser={setUser} background={background} setBackGround={setBackGround} />} />
         </Switch>
