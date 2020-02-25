@@ -23,6 +23,7 @@ const handleClose = (setOpen) => {
 const postToBackEnd = (tripName,tripId, userId,columns,total, budget)=> {
 
   const columnCopy = {...columns};
+
   delete columnCopy['list'];
 
   for(let key in columnCopy) {
@@ -43,6 +44,8 @@ const postToBackEnd = (tripName,tripId, userId,columns,total, budget)=> {
     }
   })
 }
+
+console.log("show backend -->", postToBackEnd)
 
  const SaveTrip = (props)=> {
 
