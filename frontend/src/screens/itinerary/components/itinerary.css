@@ -1,17 +1,12 @@
 .grid-activities {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: transparent;
-  border-right: transparent;
 }
 
 .grid-activities > span {
   display: flex;
   width: auto;
-  padding: 8px 4px; 
-  font-size: 16px;
-  border-left: transparent;
-  border-bottom: transparent;
+  font-size: 20px;
   justify-content: center;
   align-items: center; 
 }
@@ -19,19 +14,15 @@
 .grid-headlines {
   display: grid; 
   grid-template-columns: repeat(4, 1fr);
-  border-top: transparent;
-  border-right: transparent;
   overflow-y: hidden;
   overflow-x: auto;
+  padding: 15px;
 }
 
 .grid-headlines > span {
   display: flex;
   width: auto;
-  font-size: 17px;
-  padding: 8px 4px;
-  border-left: transparent;
-  border-bottom: transparent;
+  font-size: 21px;
   justify-content: center;
   align-items: center;
 }
@@ -48,3 +39,6 @@
   overflow: auto;
 }
 
+#image {
+  border: 1px solid black;
+}
