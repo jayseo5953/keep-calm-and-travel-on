@@ -7,6 +7,8 @@ const Map = (props) => {
   // console.log("latest Activity", props.latestActivity)
   // console.log("hover activity", props.hoverActivity)
   let activityData = props.activities;
+  let friendActivityData = props.friendAct;
+  console.log('FRIEND ACTIVITY ===>>')
   let initialCenter=props.initialCenter;
 
   const [selectedActivity, setSelectedActivity] = useState(null);
@@ -39,7 +41,15 @@ const Map = (props) => {
               }}
             />)
           })}
-  
+        {friendActivityData && friendActivityData.map(activity => {
+          return (
+            <Marker 
+              key={activity.id}
+              position={{lat: Number(activity.lat), lng: Number(activity.long)}}
+              icon={ { url: 'https://thumbs.gfycat.com/InexperiencedGlossyAsiaticgreaterfreshwaterclam-max-1mb.gif', scaledSize: { width: 32, height: 32 } } }
+            />
+          )
+        })}
         {selectedActivity && (
           <InfoWindow
             onCloseClick={() => {
@@ -72,13 +82,13 @@ export default function GMap (props) {
         googleMapURL={`${mapUrl}=${mapApiKey}`}
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}
-        mapElement={<div style={{ height: `100%`, 
-        borderTopRightRadius: '10px', borderTopLeftRadius:'10px'}} />}
+        mapElement={<div style={{ height: `100%`, borderRadius: '10px'}} />}
         activities={props.activities}
         activityItem={props.columns}
         initialCenter={props.initialCenter}
         hoverActivity={props.hoverActivity}
         latestActivity={props.latestActivity}
+        friendAct={props.friendActivities}
       />
     </div>
   )
