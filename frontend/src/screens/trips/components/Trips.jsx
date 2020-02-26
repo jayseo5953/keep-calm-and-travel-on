@@ -74,11 +74,15 @@ const Trips = props => {
                       : "U WILL NEVER SEE THIS"}
                   </h4>
                 </CardHeader>
-                <CardBody>
+                <CardBody style={{
+                   padding:'10px 30px', 
+                   paddingBottom:'30px', 
+                   height:'55vh'}}>
                   <div>
                     <TripList trips={trips} setTrips={setTrips} />
                   </div>
                 </CardBody>
+
                 {/* <CardFooter className={classes.cardFooter}>
                 <h1>Enjoy your trip!</h1>
                 

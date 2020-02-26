@@ -24,7 +24,9 @@ import getItinerary from "../helpers/getItinerary";
 
 const useStyles = makeStyles(styles);
 
-const Itinerary = props => {
+
+const Itinerary = (props) => {
+  
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   setTimeout(function() {
     setCardAnimation("");
@@ -33,13 +35,14 @@ const Itinerary = props => {
   let itineraryId = props.match.params.itineraryId;
   const [itineraries, setItineraries] = useState({});
 
-  useEffect(() => {
+  useEffect(()=> {
     getItinerary(itineraryId)
       .then(res => setItineraries(res))
       .catch(err => console.error(err.data));
   }, []);
 
   const classes = useStyles(props);
+  
   let countrytravelling = props.match.params.country;
   let citytravelling = props.match.params.city;
 
@@ -55,7 +58,7 @@ const Itinerary = props => {
       total += activity.price_cents / 100;
     });
   });
-
+  
   return (
     <div className="itinerary-main">
       <Header
@@ -65,6 +68,7 @@ const Itinerary = props => {
         user={props.user}
         setUser={props.setUser}
       />
+      
       <div
         className={classes.pageHeader}
         style={{
