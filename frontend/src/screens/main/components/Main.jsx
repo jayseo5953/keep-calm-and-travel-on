@@ -10,12 +10,12 @@ import FormSection from './FormSection'
 import GMap from '../../../components/TheMainEvent/Map';
 import Header from '../../../components/Header/Header';
 import saveToLocal from '../helpers/saveToLocal';
-
+import addCardList from '../helpers/addCardList'
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 
 function Main(props) {
-  console.log("I am re-rendered!")
   // console.log("local storage", localStorage.getItem('columns'))
   const params = props.match.params;
   const city = params.city;
@@ -39,9 +39,7 @@ function Main(props) {
   const [activities, setActivities] = useState([])
   const [friends, setFriends] = useState([])
   const [friendsActivities, setFriendsActivities] = useState(null)
-
-  console.log(friends)
-
+  const [index, setIndex] = useState(2)
 
   useEffect(()=>{
     let selectedActivities = [];
@@ -59,6 +57,7 @@ function Main(props) {
   },[columns])
 
   let numOfColumns = Object.keys(columns).length;
+  let lastItem = numOfColumns-1
 
   useEffect(()=>{
 
@@ -71,6 +70,11 @@ function Main(props) {
       }
     }
     setColumns(newColumns)
+
+    if(keyArrays.length-1<index) {
+      setIndex(keyArrays.length-1)
+    }
+
   },[numOfColumns])
 
 
@@ -96,9 +100,7 @@ function Main(props) {
   //   setBudget(mybudget-totalCost)
   // },[totalCost])
 
- 
-
-
+  console.log(lastItem)
   const budget = initialBudget-totalCost
   // console.log(budget)
   return (
@@ -124,9 +126,6 @@ function Main(props) {
           }</div> : ""
           }
         
-  
-            
-      
       <div className='dnd-context'>
         <DndContext
           onDragEnd={result => onDragEnd(result, columns, setColumns)}
@@ -137,7 +136,70 @@ function Main(props) {
           // setTotalCost={setTotalCost}
           setHoverActivity={setHoverActivity}
         />
+    
       </div>
+      <nav className='navi'>
+        {numOfColumns>3?  <div className='slider'>
+        <a href={
+          // index-1>1?`#${index}`:'#1'
+          // index===lastItem?`#${index-1}`:`#${index}`
+          `#${index}`
+        } 
+          onClick={(e)=>{
+          if(index===lastItem) {
+            setIndex(index-2)
+            return
+          } 
+          if (index>1){
+            setIndex(index-1)
+            console.log(index)
+          }
+          }}> 
+          <Button style={{color:'white',padding:0}} variant="contained"  color='primary'>
+          <i class="material-icons">
+          arrow_back_ios
+          </i>
+          </Button>
+        
+        </a>
+        <a href={
+          // index+1<lastItem?`#${index}`:`#${lastItem}`
+          // index===1?`#${index+1}`:`#${index}`
+          `#${index}`
+        } 
+          onClick={(e)=>{
+          if (index===1) {
+            setIndex(index+2)
+            return
+          }
+          if (index<lastItem){
+            setIndex(index+1)
+            console.log(index)
+          }
+          }}> <Button style={{color:'white',padding:0}} variant="contained"
+          color='primary' >
+          <i class="material-icons">
+          arrow_forward_ios
+          </i>
+          </Button></a>
+        </div>:""}
+       
+
+  
+        <a  style={numOfColumns<=3?{right:'39vw'}:{}} className='add-list' href={`#${lastItem}`} onClick={(()=>{
+        addCardList(columns, setColumns)
+        setIndex(lastItem)
+        })}> 
+        
+        <Button style={{color:'white',padding:0}} variant="contained"  color='secondary'>
+         
+        <i class="material-icons">
+        post_add
+        </i>
+          </Button>
+        </a>
+
+      </nav>
   
         <GMap 
           initialCenter={activities} 
