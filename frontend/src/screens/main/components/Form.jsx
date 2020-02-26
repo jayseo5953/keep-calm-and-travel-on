@@ -24,7 +24,7 @@ const Form = (props) => {
         return
       }
       }} >
-      <label htmlFor="budget-input"> {!addOrSubtract&&!props.budget?'Enter Your Budget':'Adjust Your Budget'}</label>
+      <label htmlFor="budget-input"> {!addOrSubtract&&!props.budget?'Enter Budget':'Adjust Budget'}</label>
 
       <input className='input-budget' type="text" name='input-budget' 
         value={inputValue}

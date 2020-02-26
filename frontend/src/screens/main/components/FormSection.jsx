@@ -13,14 +13,12 @@ const FormSection = (props) => {
         <h2> {props.budget>=0?`$${props.budget}`:`-$${-props.budget}`}  </h2>
       </div>
       <Form budget={props.budget} setBudget={props.setBudget} />
-      {props.user? <div>
-        <SaveTrip columns={props.columns} user={props.user} total={props.total} city={props.city} budget={props.budget} tripId={props.tripId} tripName={props.tripName} /> 
-      <FriendsList friends={props.friends} city={props.city} userId={props.user.id}setFriendsActivities={props.setFriendsActivities}/>
-        </div>
+      {props.user? 
+      <div className='savetrip-friendslist-container'>
+        <SaveTrip columns={props.columns} user={props.user} total={props.total} city={props.city} budget={props.budget} tripId={props.tripId} tripName={props.tripName} /><FriendsList friendsActivities={props.friendsActivities} friends={props.friends} city={props.city} userId={props.user.id}setFriendsActivities={props.setFriendsActivities}/>
+      </div>
       :<Link onClick={()=> saveToLocal(props.columns)} to='/login'>Login to Save</Link> 
-      
-    }
-      
+    }    
     </div>
   );
 };

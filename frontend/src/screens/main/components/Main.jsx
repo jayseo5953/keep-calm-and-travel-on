@@ -38,7 +38,7 @@ function Main(props) {
   const [latestActivity, setLatestActivity] = useState(null);
   const [activities, setActivities] = useState([])
   const [friends, setFriends] = useState([])
-  const [friendsActivities, setFriendsActivities] = useState([])
+  const [friendsActivities, setFriendsActivities] = useState(null)
 
   console.log(friends)
 
@@ -145,7 +145,7 @@ function Main(props) {
           columns={columns}
           hoverActivity={hoverActivity}
           latestActivity={latestActivity}
-          friendActivities={friendActivities}
+          friendActivities={friendsActivities}
         />
   
         <FormSection 
@@ -159,6 +159,7 @@ function Main(props) {
           tripName={tripName}
           friends={friends}
           setFriendsActivities={setFriendsActivities}
+          friendsActivities={friendsActivities}
           />
     </div>
     )

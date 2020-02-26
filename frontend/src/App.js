@@ -23,21 +23,13 @@ export default function App() {
   ); // parse cookie
   let userObject = JSON.parse(cookieAsObject.user || 'null'); // get user object from parsed cookie
 
-  // let result = {
-  //   'list': {
-  //     name: 'List of Activities',
-  //     items: [],
-  //     total: 0
-  //   }
-  // }
-
   const [user, setUser] = useState(userObject);
   const [background, setBackGround] = useState('https://media2.giphy.com/media/yTwbZGqO360Mw/source.gif');
 
   return (
     <Router>
         <Switch>
-          <Route path="/main/:city/:budget" render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser}  />} />
+          <Route path="/main/:city/:budget" render={(routeProps) => <Main {...routeProps}   user={user} setUser={setUser}  />} />
           <Route path="/edit/:city/:budget/:tripName/:tripId" exact render={(routeProps) => <Main {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/trips/:userName" render={(routeProps) => <Trips {...routeProps} user={user} setUser={setUser} />} />
           <Route path="/login" render={(routeProps) => <Login {...routeProps} user={user} setUser={setUser} />} />

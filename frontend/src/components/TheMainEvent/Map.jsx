@@ -46,7 +46,10 @@ const Map = (props) => {
             <Marker 
               key={activity.id}
               position={{lat: Number(activity.lat), lng: Number(activity.long)}}
-              icon={ { url: 'https://thumbs.gfycat.com/InexperiencedGlossyAsiaticgreaterfreshwaterclam-max-1mb.gif', scaledSize: { width: 32, height: 32 } } }
+              icon={ { 
+                // url: 'https://thumbs.gfycat.com/InexperiencedGlossyAsiaticgreaterfreshwaterclam-max-1mb.gif', 
+                url: 'https://media2.giphy.com/media/QONXjFYXGcOgOAWFeb/source.gif', 
+                scaledSize: { width: 40, height: 40 } } }
             />
           )
         })}
