@@ -1,6 +1,4 @@
-html {
-  scroll-behavior: smooth;
-}
+
 .main {
   /* background-color: #F0EFF4; */
   background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/beach-birds-calm-clouds-219998.jpg?raw=true");
@@ -41,17 +39,19 @@ html {
   height: 48vh;
   position:fixed;
   right:2vw;
-  top:16vh;
+  top:14vh;
   display: flex;
   flex-direction: row;
   width: 78vw;
   max-width: 78vw;
   overflow-y: hidden;
-  overflow-x: hidden auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 /* width */
 .days-container::-webkit-scrollbar {
+  display:none;
   width: 10px;
   height:20px;
  
@@ -207,26 +207,7 @@ html {
   font-weight: bold;
   padding-right:3px;
   padding-top:2px;
-}
-.add-list-container {
-  width:60px;
-  margin:auto;
-}
-.add-list {
-  background-color: rgba(35, 37, 51, 0.6);
-  border:0;
-  border-radius:500px;
-  margin:auto 0;
-  margin-right:2vw;
-  height:50px;
-  width:50px;
-  padding:0;
-  min-width: 50px;
-}
 
-.add-list i {
-  font-size: 35px;
-  line-height: 45px;
 }
 
 .delete-list  {
@@ -263,9 +244,9 @@ body {
   border-radius: 10px;
   position: fixed;
   margin: 0;
-  top:7.5vh;
+  top:6vh;
   right: 2vw;
-  height: 8vh;
+  height: 7vh;
   width:78vw;
 }
 
@@ -416,4 +397,32 @@ body {
 .friend-name {
   margin:10px;
   font-size:18px;
+}
+
+.navi {
+  display: flex;
+  /* justify-content: center; */
+  position:fixed;
+  z-index: 100;
+  right:27vw;
+  bottom: 35vh;
+  width:20vw;
+}
+.navi .material-icons{
+  font-size: 35px !important;
+ 
+  
+}
+.slider {
+  border-radius: 10px;
+  /* background-color:rgba(211, 211, 211,0.5); */
+  width:60%;
+  display: flex;
+  justify-content: space-between;
+  height:35px;
+}
+.add-list {
+  position: fixed;
+  bottom:35vh;
+  right: 25vw
 }

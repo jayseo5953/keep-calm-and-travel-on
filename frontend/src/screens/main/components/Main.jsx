@@ -8,14 +8,18 @@ import DndContext from "./DndContext";
 import BudgetGuage from "./BudgetGuage";
 import FormSection from "./FormSection";
 
-import GMap from "../../../components/TheMainEvent/Map";
-import Header from "../../../components/Header/Header";
-import saveToLocal from "../helpers/saveToLocal";
+
+import GMap from '../../../components/TheMainEvent/Map';
+import Header from '../../../components/Header/Header';
+import saveToLocal from '../helpers/saveToLocal';
+import addCardList from '../helpers/addCardList'
+import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 
 function Main(props) {
+  // console.log("local storage", localStorage.getItem('columns'))
 
-// ---------- URL PARAMETERS --------------------------------------- // 
   const params = props.match.params;
   const city = params.city;
   const tripName = params.tripName;
@@ -29,9 +33,12 @@ function Main(props) {
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [hoverActivity, setHoverActivity] = useState(null);
   const [latestActivity, setLatestActivity] = useState(null);
-  const [activities, setActivities] = useState([]);
-  const [friends, setFriends] = useState([]);
-  const [friendsActivities, setFriendsActivities] = useState(null);
+
+  const [activities, setActivities] = useState([])
+  const [friends, setFriends] = useState([])
+  const [friendsActivities, setFriendsActivities] = useState(null)
+  const [index, setIndex] = useState(2)
+
 
 // ---------- USEEFFECT SECTION ----------------------------------- //
   useEffect(() => {
@@ -55,6 +62,7 @@ function Main(props) {
   }, [columns]);
 
   let numOfColumns = Object.keys(columns).length;
+  let lastItem = numOfColumns-1
 
   useEffect(() => {
     let newColumns = { ...columns };
@@ -65,20 +73,29 @@ function Main(props) {
         newColumns[column].name = `Day ${index}`;
       }
     }
-    setColumns(newColumns);
-  }, [numOfColumns]);
 
-  useEffect(() => {
+    setColumns(newColumns)
+
+    if(keyArrays.length-1<index) {
+      setIndex(keyArrays.length-1)
+    }
+
+  },[numOfColumns])
+
+
+  useEffect(()=>{
+   
     manageStates(
-      city,
-      tripId,
-      setColumns,
-      columnsFromBackend,
+      city, 
+      tripId, 
+      setColumns, 
+      columnsFromBackend, 
       activities,
-      setActivities
-    );
-    if (props.user) {
-      axios.get(`/users/${props.user.id}/friends/${city}`).then(res => {
+      setActivities);
+    if(props.user) {
+      axios.get(`/users/${props.user.id}/friends/${city}`)
+      .then(res=>{
+
         setFriends(res.data.rows);
       });
     }
@@ -91,7 +108,14 @@ function Main(props) {
     }
   }
 
-  const budget = initialBudget - totalCost;
+
+  // useEffect(()=>{
+  //   setBudget(mybudget-totalCost)
+  // },[totalCost])
+
+  console.log(lastItem)
+  const budget = initialBudget-totalCost
+  // console.log(budget)
 
   return (
     <div className="main">
@@ -108,6 +132,7 @@ function Main(props) {
           tripName={tripName}
         />
       </div>
+
       {!isNaN(budget) ? (
         <div>
           {" "}
@@ -137,6 +162,7 @@ function Main(props) {
       )}
 
       <div className="dnd-context">
+
         <DndContext
           onDragEnd={result => onDragEnd(result, columns, setColumns)}
           budget={budget}
@@ -145,7 +171,97 @@ function Main(props) {
           totalCost={totalCost}
           setHoverActivity={setHoverActivity}
         />
+    
       </div>
+
+      <nav className='navi'>
+        {numOfColumns>3?  <div className='slider'>
+        <a href={
+          // index-1>1?`#${index}`:'#1'
+          // index===lastItem?`#${index-1}`:`#${index}`
+          `#${index}`
+        } 
+          onClick={(e)=>{
+          if(index===lastItem) {
+            setIndex(index-2)
+            return
+          } 
+          if (index>1){
+            setIndex(index-1)
+            console.log(index)
+          }
+          }}> 
+          <Button style={{color:'white',padding:0}} variant="contained"  color='primary'>
+          <i class="material-icons">
+          arrow_back_ios
+          </i>
+          </Button>
+        
+        </a>
+        <a href={
+          // index+1<lastItem?`#${index}`:`#${lastItem}`
+          // index===1?`#${index+1}`:`#${index}`
+          `#${index}`
+        } 
+          onClick={(e)=>{
+          if (index===1) {
+            setIndex(index+2)
+            return
+          }
+          if (index<lastItem){
+            setIndex(index+1)
+            console.log(index)
+          }
+          }}> <Button style={{color:'white',padding:0}} variant="contained"
+          color='primary' >
+          <i class="material-icons">
+          arrow_forward_ios
+          </i>
+          </Button></a>
+        </div>:""}
+       
+
+  
+        <a  style={numOfColumns<=3?{right:'39vw'}:{}} className='add-list' href={`#${lastItem}`} onClick={(()=>{
+        addCardList(columns, setColumns)
+        setIndex(lastItem)
+        })}> 
+        
+        <Button style={{color:'white',padding:0}} variant="contained"  color='secondary'>
+         
+        <i class="material-icons">
+        post_add
+        </i>
+          </Button>
+        </a>
+
+      </nav>
+  
+        <GMap 
+          initialCenter={activities} 
+          activities={selectedActivity} 
+          columns={columns}
+          hoverActivity={hoverActivity}
+          latestActivity={latestActivity}
+          friendActivities={friendsActivities}
+        />
+  
+        <FormSection 
+          user={props.user} 
+          city={city} 
+          budget={initialBudget} 
+          setBudget={setInitialBudget} 
+          columns={columns} 
+          total={totalCost}
+          tripId={tripId}
+          tripName={tripName}
+          friends={friends}
+          setFriendsActivities={setFriendsActivities}
+          friendsActivities={friendsActivities}
+          />
+    </div>
+    )
+
 
       <GMap
         initialCenter={activities}
