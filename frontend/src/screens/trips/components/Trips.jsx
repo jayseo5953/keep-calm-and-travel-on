@@ -52,20 +52,20 @@ const Trips = (props) => {
   return (
     <div className="trip-main">
       <Header 
-      //  color="transparent"
+       color="transparent"
        brand="TRIPPER"
        fixed
        user={props.user}
        setUser={props.setUser}
       />
-       {/* <div
+       <div
         className={classes.pageHeader}
         style={{
           backgroundImage: "url(" + image + ")",
           backgroundSize: "cover",
           backgroundPosition: "top center"
         }}
-      > */}
+      >
 
        <div className={classes.container} style={{width: "700px"}}>
        <GridContainer>
@@ -75,11 +75,12 @@ const Trips = (props) => {
               <h4>{props.user? `Trips for ${props.user.name}`: 'U WILL NEVER SEE THIS'}</h4>
             </CardHeader>
             <CardBody>
-              <CardContent>
-                
-                <TripList trips={trips} setTrips={setTrips}/>
+              {/* <CardContent> */}
+                <div>
+                  <TripList trips={trips} setTrips={setTrips}/>
+                </div>
                                 
-              </CardContent>
+              {/* </CardContent> */}
                   
               </CardBody>
                 {/* <CardFooter className={classes.cardFooter}>
@@ -90,7 +91,7 @@ const Trips = (props) => {
           </GridItem>
         </GridContainer>
       </div>
-      {/* </div> */}
+      </div>
 
     </div>
   );

@@ -63,21 +63,21 @@ const classes = useStyles(props);
   return (
     <div className="itinerary-main">
       <Header
-      // color="transparent"
+      color="transparent"
       brand="TRIPPER"
       fixed
       user={props.user}
       setUser={props.setUser}
       />
-      {/* <div 
+      <div 
         className={classes.pageHeader}
         style={{
           backgroundImage: "url(" + image + ")",
           backgroundSize: "cover",
           backgroundPosition: "top center"
         }}
-      > */}
-        <div className={classes.container} style={{width: "800px"}}>
+      >
+        <div className={classes.container} style={{width: "800px", height: "0px"}}>
         <GridContainer>
         <GridItem>
             <Card className={classes[cardAnimaton]}>
@@ -88,7 +88,7 @@ const classes = useStyles(props);
               <div className="destination">
               <h1>{citytravelling}, {countrytravelling}</h1>
               </div>
-              <div>
+              <div className="activities-container">
                   {Object.entries(itineraries).map(([columnId,column]) => {
                     return <ItineraryList column={column} itineraries={itineraries}/>
                   })}
@@ -103,7 +103,7 @@ const classes = useStyles(props);
         </GridContainer>
 
         </div>
-      {/* </div> */}
+      </div>
     
     </div>
   )
