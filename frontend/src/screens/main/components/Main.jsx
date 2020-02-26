@@ -30,32 +30,18 @@ function Main(props) {
 
   const [initialBudget, setInitialBudget] = useState(budgetParam)
 
-  const [activities, setActivities] = useState([])
-  const [columns, setColumns] = useState(columnsFromBackend(activities));
+  // const [activities, setActivities] = useState([])
+
+  const [columns, setColumns] = useState(columnsFromBackend([]));
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [hoverActivity, setHoverActivity] = useState(null);
   const [latestActivity, setLatestActivity] = useState(null);
-
+  const [activities, setActivities] = useState([])
   const [friends, setFriends] = useState([])
   const [friendsActivities, setFriendsActivities] = useState([])
 
-  useEffect(()=>{
-   
-    manageStates(city, tripId, setActivities, setColumns, columnsFromBackend);
-    if(props.user) {
-      axios.get(`/users/${props.user.id}/friends/${city}`)
-      .then(res=>{
-        setFriends(res.data.rows);
-      })
-    }
-  },[])
+  console.log(friends)
 
-  let totalCost = 0;
-  for (let column in columns) {
-    if (column !== 'list'){
-      totalCost += columns[column].total
-    }
-  }
 
   useEffect(()=>{
     let selectedActivities = [];
@@ -72,10 +58,6 @@ function Main(props) {
     
   },[columns])
 
-  // useEffect(()=>{
-  //   setBudget(mybudget-totalCost)
-  // },[totalCost])
-
   let numOfColumns = Object.keys(columns).length;
 
   useEffect(()=>{
@@ -90,6 +72,33 @@ function Main(props) {
     }
     setColumns(newColumns)
   },[numOfColumns])
+
+
+  useEffect(()=>{
+   
+    manageStates(city, tripId, setColumns, columnsFromBackend, activities,setActivities);
+    if(props.user) {
+      axios.get(`/users/${props.user.id}/friends/${city}`)
+      .then(res=>{
+        setFriends(res.data.rows);
+      })
+    }
+  },[])
+
+  let totalCost = 0;
+  for (let column in columns) {
+    if (column !== 'list'){
+      totalCost += columns[column].total
+    }
+  }
+
+  // useEffect(()=>{
+  //   setBudget(mybudget-totalCost)
+  // },[totalCost])
+
+ 
+
+
   const budget = initialBudget-totalCost
   // console.log(budget)
   return (
