@@ -145,6 +145,7 @@ function Main(props) {
           columns={columns}
           hoverActivity={hoverActivity}
           latestActivity={latestActivity}
+          friendActivities={friendActivities}
         />
   
         <FormSection 
