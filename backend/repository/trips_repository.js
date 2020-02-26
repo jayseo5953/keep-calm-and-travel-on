@@ -18,7 +18,7 @@ module.exports = (db) => {
 
     getTripById: (tripId) => {
       const qs = `
-      SELECT trip_id, schedule_id, schedule_name, activity_id, name, price_cents, lat, long, activities.image_url, itineraries.id as itinerary_id
+      SELECT trip_id, schedule_id, schedule_name, activity_id, name, price_cents, time_operation, lat, long, activities.image_url, itineraries.id as itinerary_id
       FROM trips
       JOIN users ON user_id = users.id
       JOIN schedules ON trips.id = trip_id

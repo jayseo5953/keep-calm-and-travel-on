@@ -22,10 +22,13 @@ import image from "../../../assets/img/wooden-houses-on-body-of-water.jpg"
 //helpers
 import getTrips from '../helpers/getTrips'
 
+
 const useStyles = makeStyles(styles);
 
 const Trips = (props) => {
+  
   const history = useHistory();
+  const classes = useStyles();
 
   if (!props.user) {
     history.push('/')
@@ -39,7 +42,6 @@ const Trips = (props) => {
   setTimeout(function() {
     setCardAnimation("");
   }, 700);
-  const classes = useStyles();
   
   useEffect(()=>{
    getTrips(userId)
@@ -48,7 +50,7 @@ const Trips = (props) => {
   },[userId]);
 
   return (
-    <div>
+    <div className="trip-main">
       <Header 
        color="transparent"
        brand="TRIPPER"
@@ -73,11 +75,12 @@ const Trips = (props) => {
               <h4>{props.user? `Trips for ${props.user.name}`: 'U WILL NEVER SEE THIS'}</h4>
             </CardHeader>
             <CardBody>
-              <CardContent>
-                
-                <TripList trips={trips} setTrips={setTrips}/>
+              {/* <CardContent> */}
+                <div>
+                  <TripList trips={trips} setTrips={setTrips}/>
+                </div>
                                 
-              </CardContent>
+              {/* </CardContent> */}
                   
               </CardBody>
                 {/* <CardFooter className={classes.cardFooter}>
