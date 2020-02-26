@@ -63,7 +63,10 @@ const Map = (props) => {
           >
             <div>
               <h5>{selectedActivity.name}</h5>
-              <p>{selectedActivity.destination_id}</p>
+              {/* <p>{selectedActivity.destination_id}</p> */}
+              <img height='80px' width='100px' src={selectedActivity.image_url}/>
+              <p>🌟🌟🌟🌟🌟</p>
+              <p style={{wordWrap: 'break-word', maxWidth: '100px'}}>Hello. This is going to be the review.</p>
             </div>
           </InfoWindow>
         )}
