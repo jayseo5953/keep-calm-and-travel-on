@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { DragDropContext } from 'react-beautiful-dnd'
 import CardList from './CardList'
@@ -6,7 +7,10 @@ import deleteList from '../helpers/deleteList'
 
 const DndContext = (props) => {
 
+
+const DndContext = props => {
   return (
+
     <DragDropContext
       onDragEnd={props.onDragEnd}>
 
@@ -45,22 +49,21 @@ const DndContext = (props) => {
         }
         return null;
       })}
+
       </div>
-        <div
-        className='column-container activity-list'
-        >
-          {/* <h2>{props.columns['list'].name}</h2> */}
-          <div className='outside-column'>
-            <CardList 
-            droppableId='list'
-            columnId={'list'}
-            column={props.columns['list']}
+      <div className="column-container activity-list">
+        {/* <h2>{props.columns['list'].name}</h2> */}
+        <div className="outside-column">
+          <CardList
+            droppableId="list"
+            columnId={"list"}
+            column={props.columns["list"]}
             columns={props.columns}
             setColumns={props.setColumns}
             totalCost={props.totalCost}
-            // setTotalCost={props.setTotalCost}
             budget={props.budget}
             setHoverActivity={props.setHoverActivity}
+
             />
           </div>
          
@@ -68,6 +71,7 @@ const DndContext = (props) => {
         </div>
       
    </DragDropContext>
+
   );
 };
 
