@@ -3,11 +3,11 @@ import uuid from "uuid/v4";
 export default function manageStates (
   city, 
   tripId, 
-  setActivities,
   setColumns,
   columnsFromBackend, 
-  budget, 
-  setDays
+  acitivities,
+  setActivities
+
   ) {
   if(!city) {
     setActivities([])
