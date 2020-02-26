@@ -33,7 +33,7 @@ const TripList = (props) => {
       {!props.trips.length? 
       <div className='no-trips'>
         <h2 style={{textAlign:"center", fontWeight:"bold", marginBottom:"50px"}}> You have no saved Trips!</h2>
-        <Button variant="contained" color="primary" >
+        <Button style={{height:'40px'}} variant="contained" color="primary" >
           <h4 style={{ fontWeight:"bold"}}>
             <Link to='/'>Start Tripper</Link>
           </h4> 

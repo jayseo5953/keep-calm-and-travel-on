@@ -68,13 +68,16 @@ const Trips = (props) => {
       >
 
        <div className={classes.container} style={{width: "700px"}}>
-       <GridContainer>
+       <GridContainer >
           <GridItem>
             <Card className={classes[cardAnimaton]}>
             <CardHeader color="info" className={classes.cardHeader}>
               <h4>{props.user? `Trips for ${props.user.name}`: 'U WILL NEVER SEE THIS'}</h4>
             </CardHeader>
-            <CardBody>
+            <CardBody style={{
+            padding:'10px 30px', 
+            paddingBottom:'30px', 
+            height:'55vh'}}>
               {/* <CardContent> */}
                 <div>
                   <TripList trips={trips} setTrips={setTrips}/>

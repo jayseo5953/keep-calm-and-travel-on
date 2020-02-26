@@ -1,18 +1,31 @@
+html {
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+.trips-main::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
 .grid-container {
-  background-color:#EAEBED;
+  background-color:rgba(208, 209, 211, 0.8);
   min-height: 30vh;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
-  padding:5px;
+  /* justify-content: space-around; */
+  align-items: space-evenly;
+  padding:0 50px;
+  padding-top:20px;
   margin: 2px;
-  border: 1px solid black;
-  height: 350px;
+  /* border: 1px solid black; */
+  height: 51vh;
   overflow: auto;
 }
 
+
+
 .no-trips{
+  margin:auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,25 +57,32 @@
   outline: none !important;
 }
 
-.grid-itinerary {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
 .trip-name {
-  font-size: 30px;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-.trip-city {
-  font-size: 20px;
-}
+
 
 .trip-country {
-  font-size: 20px;
+  font-size: 25x;
 }
 
 .trip-info {
   width: 266px;
   max-width: 266px;
+}
+
+.trip-destination {
+  margin:0;
+}
+
+.itinerary-item {
+  /* border: 1px solid grey; */
+  /* border-radius:12px; */
+  margin:20px 0;
+  width:200%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
