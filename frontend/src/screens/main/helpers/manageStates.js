@@ -32,6 +32,7 @@ export default function manageStates (
       setActivities(result)
 
       let columnsFromLocal = JSON.parse(localStorage.getItem('columns')); 
+      let budgetFromLocal = JSON.parse(localStorage.getItem('budget'))
 
       let listOfColumns = columnsFromLocal || columnsFromBackend(result)
 

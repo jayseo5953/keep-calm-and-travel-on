@@ -129,6 +129,7 @@ function Main(props) {
           saveToLocal={saveToLocal}
           columns={columns}
           tripName={tripName}
+          budget={budget}
         />
       </div>
 
