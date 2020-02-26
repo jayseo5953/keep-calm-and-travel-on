@@ -74,10 +74,10 @@ const classes = useStyles(props);
         style={{
           backgroundImage: "url(" + image + ")",
           backgroundSize: "cover",
-          backgroundPosition: "top center"
+          backgroundPosition: "top center",
         }}
       >
-        <div className={classes.container} style={{width: "800px"}}>
+        <div className={classes.container} style={{width: "900px", height: "0px"}}>
         <GridContainer>
         <GridItem>
             <Card className={classes[cardAnimaton]}>

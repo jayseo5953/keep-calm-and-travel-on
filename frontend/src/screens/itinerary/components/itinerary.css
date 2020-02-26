@@ -9,6 +9,7 @@
   display: flex;
   width: auto;
   padding: 8px 4px; 
+  font-size: 16px;
   border-left: transparent;
   border-bottom: transparent;
   justify-content: center;
@@ -27,7 +28,7 @@
 .grid-headlines > span {
   display: flex;
   width: auto;
-  font-size: 16px;
+  font-size: 17px;
   padding: 8px 4px;
   border-left: transparent;
   border-bottom: transparent;
@@ -46,3 +47,4 @@
   height: 350px;
   overflow: auto;
 }
+
