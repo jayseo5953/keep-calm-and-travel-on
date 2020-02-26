@@ -4,11 +4,8 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'reac
 require('dotenv').config();
 
 const Map = (props) => {
-  // console.log("latest Activity", props.latestActivity)
-  // console.log("hover activity", props.hoverActivity)
   let activityData = props.activities;
   let friendActivityData = props.friendAct;
-  console.log('FRIEND ACTIVITY ===>>')
   let initialCenter=props.initialCenter;
 
   const [selectedActivity, setSelectedActivity] = useState(null);
@@ -46,10 +43,11 @@ const Map = (props) => {
             <Marker 
               key={activity.id}
               position={{lat: Number(activity.lat), lng: Number(activity.long)}}
-              icon={ { 
-                // url: 'https://thumbs.gfycat.com/InexperiencedGlossyAsiaticgreaterfreshwaterclam-max-1mb.gif', 
+              icon={ {  
                 url: 'https://media2.giphy.com/media/QONXjFYXGcOgOAWFeb/source.gif', 
-                scaledSize: { width: 40, height: 40 } } }
+                scaledSize: { width: 40, height: 40 } 
+                } }
+              onClick={()=>{setSelectedActivity(activity)}}
             />
           )
         })}
