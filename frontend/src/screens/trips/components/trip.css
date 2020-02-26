@@ -3,10 +3,13 @@
   min-height: 30vh;
   border-radius: 12px;
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-items: space-between;
-  padding:20px 50px;
+  padding:5px;
+  margin: 2px;
+  border: 1px solid black;
+  height: 350px;
+  overflow: auto;
 }
 
 .no-trips{
@@ -33,7 +36,8 @@
 .trip-item {
   display: flex;
   justify-content: space-between;
-  margin: 25px 0;
+  /* margin: 25px 0; */
+  padding: 5px;
 }
 
 .edit-button:focus {

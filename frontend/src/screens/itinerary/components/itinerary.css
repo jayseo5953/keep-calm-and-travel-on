@@ -1,15 +1,8 @@
-/* .itinerary-main {
-  background-image: url("https://raw.githubusercontent.com/sjs5953/keep-calm-and-travel-on/master/frontend/src/assets/img/temple-trees.jpg");
-  background-size: cover;
-} */
-
 .grid-activities {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: transparent;
   border-right: transparent;
-  
-
 }
 
 .grid-activities > span {
@@ -50,6 +43,6 @@
 }
 
 .activities-container {
-  height: 340px;
+  height: 350px;
   overflow: auto;
 }
