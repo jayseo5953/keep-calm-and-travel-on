@@ -5,9 +5,6 @@ import CardList from './CardList'
 
 import deleteList from '../helpers/deleteList'
 
-const DndContext = (props) => {
-
-
 const DndContext = props => {
   return (
 
@@ -19,7 +16,6 @@ const DndContext = props => {
         if(columnId !== 'list'){
           return (
             <div
-           
             className='column-container'
             key={columnId}
             >

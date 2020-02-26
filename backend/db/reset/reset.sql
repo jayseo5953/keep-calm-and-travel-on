@@ -115,7 +115,7 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 ('Sunset Tour', 5000, '10AM-7PM', -8.6633737,115.2115082, 3, 'https://storage.needpix.com/rsynced_images/bali-992566_1280.jpg'),
 ('Island Hopping', 1500, '7AM-5PM', -8.7394861,115.1827169, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-8gX8KH0tTeDMR3YUTEbT6m8USkWfXRDyIALbcs4iBpuXfm85'),
 ('Mount Batur', 9500, '2AM-7AM', -8.6814856,115.2359566, 3, 'https://p0.piqsels.com/preview/1002/129/230/mountain-covered-by-clouds-during-sunset.jpg'),
-('Dolphin Watching', 55000, '11AM-4PM', -8.1668301,115.0609733, 3, 'https://i0.pickpik.com/photos/851/294/363/dolphins-aquarium-jumping-fish-thumb.jpg'),
+('Dolphin Watching', 5500, '11AM-4PM', -8.1668301,115.0609733, 3, 'https://i0.pickpik.com/photos/851/294/363/dolphins-aquarium-jumping-fish-thumb.jpg'),
 
 -- cebu
 ('Snorkeling', 7500, '7AM-5PM', 10.2937683,123.8996013, 4, 'https://www.gannett-cdn.com/presto/2019/01/11/USAT/5ae184a1-75d3-454e-9201-0f4624ea530a-Curacao_snorkeling_is_popular_with_guests_staying_at_the_Santa_Barbara_Beach_and_Golf_Resort_SBRCuracao.jpg?crop=2047,1151,x0,y224&width=660&height=372&format=pjpg&auto=webp'),
@@ -143,7 +143,7 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 --san
 ('The Escape Game', 8000, '8AM-9PM', 37.7902349, -122.4191579, 1, 'https://lh5.googleusercontent.com/p/AF1QipOje5cjJkY6YoLJIwRdPXfIS6Cnm9miobnwSMqr=w408-h272-k-no'),
 ('Aquarium of the Bay', 8500, '10AM-9PM', 37.8086121,-122.4095662, 1, 'https://lh5.googleusercontent.com/p/AF1QipNKMYC4XBDUdTGeNGGy2tpPchRTz4gYanHl820c=w432-h240-k-no'),
-('San Francisco Museum', 85000, '10AM-8PM', 37.7905071, -122.4140478, 1, 'https://lh5.googleusercontent.com/p/AF1QipNmsJYSIkJjo1RZRIdcY6q8Hh85ROJzv0bjhzkx=w408-h306-k-no'),
+('San Francisco Museum', 8500, '10AM-8PM', 37.7905071, -122.4140478, 1, 'https://lh5.googleusercontent.com/p/AF1QipNmsJYSIkJjo1RZRIdcY6q8Hh85ROJzv0bjhzkx=w408-h306-k-no'),
 ('Exploratorium', 12000, '10AM-7PM', 37.7992793, -122.4032841, 1, 'https://lh5.googleusercontent.com/p/AF1QipPV4cHGKkrKN4_0uCEqpt3S3FLdSh6VHRxRco1E=w408-h306-k-no'),
 ('Academy of Sciences', 9000, '9:30AM-9PM', 37.7698688,-122.4682834, 1, 'https://lh5.googleusercontent.com/p/AF1QipMM56l8VgD7GAg2TDppckaDT2rOCO_ROIgVAhcb=w408-h301-k-no'),
 ('Twin Peaks Hike',6500, '8AM-9PM', 37.754336, -122.446953, 1, 'https://c1.sfdcstatic.com/content/dam/blogs/us/thumbnails/top-running-and-hiking-routes-during-dreamforce-and-win-a-free-fitbit-to-track/TwinPeaks.jpg'),

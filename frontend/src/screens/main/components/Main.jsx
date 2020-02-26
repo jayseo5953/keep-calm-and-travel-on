@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import manageStates from "../helpers/manageStates";
 import columnsFromBackend from "../helpers/columnsFromBackend";
 import onDragEnd from "../helpers/onDragEnd";
@@ -259,32 +258,6 @@ function Main(props) {
           setFriendsActivities={setFriendsActivities}
           friendsActivities={friendsActivities}
           />
-    </div>
-    )
-
-
-      <GMap
-        initialCenter={activities}
-        activities={selectedActivity}
-        columns={columns}
-        hoverActivity={hoverActivity}
-        latestActivity={latestActivity}
-        friendActivities={friendsActivities}
-      />
-
-      <FormSection
-        user={props.user}
-        city={city}
-        budget={initialBudget}
-        setBudget={setInitialBudget}
-        columns={columns}
-        total={totalCost}
-        tripId={tripId}
-        tripName={tripName}
-        friends={friends}
-        setFriendsActivities={setFriendsActivities}
-        friendsActivities={friendsActivities}
-      />
     </div>
   );
 }
