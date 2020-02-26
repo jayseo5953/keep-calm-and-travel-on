@@ -44,8 +44,7 @@ export default function manageStates (
         axios.get(`/trips/edit/${tripId}`)
         .then (res => {
           // let newstate = {...listOfColumns}
-          // setColumns(listOfColumns);
-          console.log("CONSOLE LOGGING FROM MANAGESTATE",res.data)
+          // setColumns(listOfColumns);  <==== MAY BE USED LATER
 
           let list = listOfColumns['list'];
           let newState={list};
