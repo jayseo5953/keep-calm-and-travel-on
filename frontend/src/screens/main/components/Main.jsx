@@ -89,8 +89,9 @@ function Main(props) {
       tripId, 
       setColumns, 
       columnsFromBackend, 
-      activities,
-      setActivities);
+      setActivities
+      // setBudget
+      );
     if(props.user) {
       axios.get(`/users/${props.user.id}/friends/${city}`)
       .then(res=>{

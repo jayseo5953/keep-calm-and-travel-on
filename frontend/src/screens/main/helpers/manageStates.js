@@ -4,10 +4,9 @@ export default function manageStates (
   city, 
   tripId, 
   setColumns,
-  columnsFromBackend, 
-  acitivities,
-  setActivities
-
+  columnsFromBackend,
+  setActivities,
+  setBudget
   ) {
   if(!city) {
     setActivities([])
