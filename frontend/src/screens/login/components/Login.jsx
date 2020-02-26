@@ -8,7 +8,6 @@ import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
 import Email from "@material-ui/icons/Email";
-// import People from "@material-ui/icons/People";
 
 // core components
 import Header from "../../../components/Header/Header";
@@ -28,6 +27,7 @@ import image from "../../../assets/img/temple-trees.jpg";
 import attemptLogin from "../helpers/helper";
 
 const Login = props => {
+  
   // --------- DECLARING STATE --------------------------- //
   const [cardAnimaton, setCardAnimation] = useState("cardHidden");
   const [userEmail, setUserEmail] = useState("");
@@ -141,5 +141,4 @@ const Login = props => {
     </div>
   );
 };
-
 export default Login;
