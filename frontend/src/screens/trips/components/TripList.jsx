@@ -36,7 +36,7 @@ const TripList = props => {
       )}
       {props.trips.map(trip => {
         return (
-          <div className="trip-item">
+          <div className="trip-item" key={trip.id}>
             <div className="trip-info">
               <TripListItem trip={trip} />
             </div>
