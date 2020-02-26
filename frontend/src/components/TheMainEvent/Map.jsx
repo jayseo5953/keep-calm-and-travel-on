@@ -62,7 +62,7 @@ const Map = (props) => {
             }}
           >
             <div>
-              <h2>{selectedActivity.name}</h2>
+              <h5>{selectedActivity.name}</h5>
               <p>{selectedActivity.destination_id}</p>
             </div>
           </InfoWindow>

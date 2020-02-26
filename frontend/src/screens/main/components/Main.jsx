@@ -15,22 +15,15 @@ import axios from 'axios';
 
 
 function Main(props) {
-  console.log("I am re-rendered!")
-  // console.log("local storage", localStorage.getItem('columns'))
   const params = props.match.params;
   const city = params.city;
   const tripName = params.tripName;
   const tripId = params.tripId;
 
-
-  // let columns = props.columns
-  // let setColumns = props.setColumns
-
   let budgetParam = !isNaN(params.budget)? params.budget:0;
 
   const [initialBudget, setInitialBudget] = useState(budgetParam)
 
-  // const [activities, setActivities] = useState([])
 
   const [columns, setColumns] = useState(columnsFromBackend([]));
   const [selectedActivity, setSelectedActivity] = useState(null);
@@ -39,8 +32,6 @@ function Main(props) {
   const [activities, setActivities] = useState([])
   const [friends, setFriends] = useState([])
   const [friendsActivities, setFriendsActivities] = useState(null)
-
-  console.log(friends)
 
 
   useEffect(()=>{
