@@ -33,7 +33,9 @@ export default function manageStates (
       let columnsFromLocal = JSON.parse(localStorage.getItem('columns')); 
       let listOfColumns = columnsFromLocal || columnsFromBackend(result);
 
-      if(!isNaN(localStorage.getItem('budget'))) {
+      if(localStorage.getItem('budget') && !isNaN(localStorage.getItem('budget'))) {
+        console.log(localStorage.getItem('budget'))
+        console.log("called")
         let budgetFromLocal = Number(localStorage.getItem('budget'))
         setInitialBudget(budgetFromLocal)
       }
