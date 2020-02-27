@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 
 const Form = props => {
   let addOrSubtract = "";
-  const [inputValue, setInputValue] = useState(props.budget || "");
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <form
