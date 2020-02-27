@@ -177,8 +177,8 @@
   border-radius:8px;
 
   /* background: linear-gradient(to left, #3627d8, #082259); */
-  background: linear-gradient(to left, #f2709c, #ff9472);
-  /* background: linear-gradient(to left, #ec9523, #e9a961); */
+  /* background: linear-gradient(to left, #f2709c, #ff9472); */
+  background: linear-gradient(to left, #ec9523, #a75900);
   /* background: linear-gradient(to left, #1a36a3, #27144e); */
 
 }
@@ -421,7 +421,7 @@ body {
 }
 .slider {
   border-radius: 10px;
-  /* background-color:rgba(211, 211, 211,0.5); */
+  background-color:rgba(230, 0, 0, 0.5);
   width:60%;
   display: flex;
   justify-content: space-between;
@@ -430,5 +430,5 @@ body {
 .add-list {
   position: fixed;
   bottom:35vh;
-  right: 25vw
+  right: 25vw;
 }

@@ -33,7 +33,7 @@ const Home = props => {
           <GridContainer>
             <GridItem>
               <h1 className="intro-text">
-                Plan your activies with yur friends!
+                Plan your act right here.
               </h1>
               <br />
               <h4 className="action-text">
