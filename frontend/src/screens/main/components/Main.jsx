@@ -17,7 +17,6 @@ import Button from '@material-ui/core/Button';
 
 
 function Main(props) {
-  // console.log("local storage", localStorage.getItem('columns'))
 
   const params = props.match.params;
   const city = params.city;
