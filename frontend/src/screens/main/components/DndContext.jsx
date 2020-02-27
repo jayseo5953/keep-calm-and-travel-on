@@ -48,7 +48,7 @@ const DndContext = props => {
 
       </div>
       <div className="column-container activity-list">
-        {/* <h2>{props.columns['list'].name}</h2> */}
+        <h4 className='list-name' >Available Activities</h4>
         <div className="outside-column">
           <CardList
             droppableId="list"

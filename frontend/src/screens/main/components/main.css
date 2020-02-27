@@ -426,3 +426,11 @@ body {
   bottom:35vh;
   right: 25vw
 }
+
+.list-name {
+  position:fixed;
+  bottom:34.5vh;
+  left:30.5vw;
+  color:white;
+  font-weight: bold;
+}
