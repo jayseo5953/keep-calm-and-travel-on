@@ -7,17 +7,14 @@ import DndContext from "./DndContext";
 import BudgetGuage from "./BudgetGuage";
 import FormSection from "./FormSection";
 
-
-import GMap from '../../../components/TheMainEvent/Map';
-import Header from '../../../components/Header/Header';
-import saveToLocal from '../helpers/saveToLocal';
-import addCardList from '../helpers/addCardList'
-import axios from 'axios';
-import Button from '@material-ui/core/Button';
-
+import GMap from "../../../components/TheMainEvent/Map";
+import Header from "../../../components/Header/Header";
+import saveToLocal from "../helpers/saveToLocal";
+import addCardList from "../helpers/addCardList";
+import axios from "axios";
+import Button from "@material-ui/core/Button";
 
 function Main(props) {
-
   const params = props.match.params;
   const city = params.city;
   const tripName = params.tripName;
@@ -25,20 +22,19 @@ function Main(props) {
 
   let budgetParam = !isNaN(params.budget) ? params.budget : 0;
 
-// ---------- INITIALIZING THE STATE ------------------------------- //
+  // ---------- INITIALIZING THE STATE ------------------------------- //
   const [initialBudget, setInitialBudget] = useState(budgetParam);
   const [columns, setColumns] = useState(columnsFromBackend([]));
   const [selectedActivity, setSelectedActivity] = useState(null);
   const [hoverActivity, setHoverActivity] = useState(null);
   const [latestActivity, setLatestActivity] = useState(null);
 
-  const [activities, setActivities] = useState([])
-  const [friends, setFriends] = useState([])
-  const [friendsActivities, setFriendsActivities] = useState(null)
-  const [index, setIndex] = useState(2)
+  const [activities, setActivities] = useState([]);
+  const [friends, setFriends] = useState([]);
+  const [friendsActivities, setFriendsActivities] = useState(null);
+  const [index, setIndex] = useState(2);
 
-
-// ---------- USEEFFECT SECTION ----------------------------------- //
+  // ---------- USEEFFECT SECTION ----------------------------------- //
   useEffect(() => {
     let selectedActivities = [];
     for (let column in columns) {
@@ -60,7 +56,7 @@ function Main(props) {
   }, [columns]);
 
   let numOfColumns = Object.keys(columns).length;
-  let lastItem = numOfColumns-1
+  let lastItem = numOfColumns - 1;
 
   useEffect(() => {
     let newColumns = { ...columns };
@@ -72,29 +68,24 @@ function Main(props) {
       }
     }
 
-    setColumns(newColumns)
+    setColumns(newColumns);
 
-    if(keyArrays.length-1<index) {
-      setIndex(keyArrays.length-1)
+    if (keyArrays.length - 1 < index) {
+      setIndex(keyArrays.length - 1);
     }
+  }, [numOfColumns]);
 
-  },[numOfColumns])
-
-
-  useEffect(()=>{
-   
+  useEffect(() => {
     manageStates(
-      city, 
-      tripId, 
-      setColumns, 
-      columnsFromBackend, 
+      city,
+      tripId,
+      setColumns,
+      columnsFromBackend,
       setActivities,
       setInitialBudget
-      );
-    if(props.user) {
-      axios.get(`/users/${props.user.id}/friends/${city}`)
-      .then(res=>{
-
+    );
+    if (props.user) {
+      axios.get(`/users/${props.user.id}/friends/${city}`).then(res => {
         setFriends(res.data.rows);
       });
     }
@@ -107,12 +98,7 @@ function Main(props) {
     }
   }
 
-  // useEffect(()=>{
-  //   setBudget(mybudget-totalCost)
-  // },[totalCost])
-
-  const budget = initialBudget-totalCost
-  // console.log(budget)
+  const budget = initialBudget - totalCost;
 
   return (
     <div className="main">
@@ -133,25 +119,21 @@ function Main(props) {
 
       {!isNaN(budget) ? (
         <div>
-          {" "}
-          {budget >= 0 ? 
-          (
+          {budget >= 0 ? (
             <BudgetGuage
               className="positive"
               budget={budget}
               initialBudget={initialBudget}
             >
-              {" "}
               {`+$${budget}`}
             </BudgetGuage>
-          ) : 
-          (
+          ) : (
             <BudgetGuage
               className="negative"
               budget={budget}
               initialBudget={initialBudget}
             >
-            {`-$${-budget}`}
+              {`-$${-budget}`}
             </BudgetGuage>
           )}
         </div>
@@ -160,7 +142,6 @@ function Main(props) {
       )}
 
       <div className="dnd-context">
-
         <DndContext
           onDragEnd={result => onDragEnd(result, columns, setColumns)}
           budget={budget}
@@ -169,94 +150,98 @@ function Main(props) {
           totalCost={totalCost}
           setHoverActivity={setHoverActivity}
         />
-    
       </div>
 
-      <nav className='navi'>
-        {numOfColumns>3?  <div className='slider'>
-        <a href={
-          // index-1>1?`#${index}`:'#1'
-          // index===lastItem?`#${index-1}`:`#${index}`
-          `#${index}`
-        } 
-          onClick={(e)=>{
-          if(index===lastItem) {
-            setIndex(index-2)
-            return
-          } 
-          if (index>1){
-            setIndex(index-1)
-            console.log(index)
-          }
-          }}> 
-          <Button style={{color:'white',padding:0}} variant="contained"  color='primary'>
-          <i class="material-icons">
-          arrow_back_ios
-          </i>
-          </Button>
-        
-        </a>
-        <a href={
-          // index+1<lastItem?`#${index}`:`#${lastItem}`
-          // index===1?`#${index+1}`:`#${index}`
-          `#${index}`
-        } 
-          onClick={(e)=>{
-          if (index===1) {
-            setIndex(index+2)
-            return
-          }
-          if (index<lastItem){
-            setIndex(index+1)
-            console.log(index)
-          }
-          }}> <Button style={{color:'white',padding:0}} variant="contained"
-          color='primary' >
-          <i class="material-icons">
-          arrow_forward_ios
-          </i>
-          </Button></a>
-        </div>:""}
-       
+      <nav className="navi">
+        {numOfColumns > 3 ? (
+          <div className="slider">
+            <a
+              href={`#${index}`}
+              onClick={e => {
+                if (index === lastItem) {
+                  setIndex(index - 2);
+                  return;
+                }
+                if (index > 1) {
+                  setIndex(index - 1);
+                }
+              }}
+            >
+              <Button
+                style={{ color: "white", padding: 0 }}
+                variant="contained"
+                color="primary"
+              >
+                <i class="material-icons">arrow_back_ios</i>
+              </Button>
+            </a>
+            <a
+              href={`#${index}`}
+              onClick={e => {
+                if (index === 1) {
+                  setIndex(index + 2);
+                  return;
+                }
+                if (index < lastItem) {
+                  setIndex(index + 1);
+                }
+              }}
+            >
+              {" "}
+              <Button
+                style={{ color: "white", padding: 0 }}
+                variant="contained"
+                color="primary"
+              >
+                <i class="material-icons">arrow_forward_ios</i>
+              </Button>
+            </a>
+          </div>
+        ) : (
+          ""
+        )}
 
-  
-        <a  style={numOfColumns<=2?{right:'34vw',top:'55vh'}:{}} className='add-list' href={`#${lastItem}`} onClick={(()=>{
-        addCardList(columns, setColumns)
-        setIndex(lastItem)
-        })}> 
-        
-        <Button style={{color:'white',padding:0}} variant="contained"  color='secondary'>
-         
-        <i className="material-icons">
-        post_add
-        </i>
+        <a
+          style={numOfColumns <= 2 ? { right: "34vw", top: "55vh" } : {}}
+          className="add-list"
+          href={`#${lastItem}`}
+          onClick={() => {
+            addCardList(columns, setColumns);
+            setIndex(lastItem);
+          }}
+        >
+          <Button
+            style={{ color: "white", padding: 0 }}
+            variant="contained"
+            color="secondary"
+          >
+            <i className="material-icons">post_add</i>
           </Button>
         </a>
-
       </nav>
-  
-        <GMap 
-          initialCenter={activities} 
-          activities={selectedActivity} 
-          columns={columns}
-          hoverActivity={hoverActivity}
-          latestActivity={latestActivity}
-          friendActivities={friendsActivities}
-        />
-  
-        <FormSection 
-          user={props.user} 
-          city={city} 
-          budget={initialBudget} 
-          setBudget={setInitialBudget} 
-          columns={columns} 
-          total={totalCost}
-          tripId={tripId}
-          tripName={tripName}
-          friends={friends}
-          setFriendsActivities={setFriendsActivities}
-          friendsActivities={friendsActivities}
-          />
+
+      <GMap
+        initialCenter={activities}
+        activities={selectedActivity}
+        columns={columns}
+        hoverActivity={hoverActivity}
+        latestActivity={latestActivity}
+        friendActivities={friendsActivities}
+      />
+
+      <FormSection
+        user={props.user}
+        city={city}
+        budget={initialBudget}
+        setBudget={setInitialBudget}
+        columns={columns}
+        total={totalCost}
+        tripId={tripId}
+        tripName={tripName}
+        friends={friends}
+        setFriendsActivities={setFriendsActivities}
+        friendsActivities={friendsActivities}
+      />
     </div>
   );
 }
