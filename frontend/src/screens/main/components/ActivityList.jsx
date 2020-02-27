@@ -1,13 +1,12 @@
-import React from 'react';
-import ActivityListItem from './ActivityListItem'
+import React from "react";
+import ActivityListItem from "./ActivityListItem";
 
-const ActivityList = (props) => {
-  let activities = props.activities
-  console.log("acts", activities)
+const ActivityList = props => {
+  let activities = props.activities;
 
-  return activities.map(activity=>{ 
-      return <ActivityListItem activity={activity}/>
-    })
+  return activities.map(activity => {
+    return <ActivityListItem key={activity.id} activity={activity} />;
+  });
 };
 
 export default ActivityList;

@@ -1,9 +1,15 @@
-html {
-  scroll-behavior: smooth;
-}
+
 .main {
   /* background-color: #F0EFF4; */
-  background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/beach-birds-calm-clouds-219998.jpg?raw=true");
+  /* background-image: url("https://raw.githubusercontent.com/sjs5953/keep-calm-and-travel-on/master/frontend/src/assets/img/bg7.jpg"); */
+
+  background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/silhouette-of-airplane-during-evening-935884.jpg?raw=true");
+  
+/* https://images.pexels.com/photos/613826/pexels-photo-613826.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 */
+  /* https://images.pexels.com/photos/286758/pexels-photo-286758.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 */
+  background-color: #202020;
+
+  /* https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/beach-birds-calm-clouds-219998.jpg?raw=true */
   /* background-image: url("https://images.pexels.com/photos/163185/old-retro-antique-vintage-163185.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"); */
   /* background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/bokeh-hd-wallpaper-54278.jpg?raw=true"); */
  
@@ -41,17 +47,19 @@ html {
   height: 48vh;
   position:fixed;
   right:2vw;
-  top:16vh;
+  top:14vh;
   display: flex;
   flex-direction: row;
   width: 78vw;
   max-width: 78vw;
   overflow-y: hidden;
-  overflow-x: hidden auto;
+  overflow-x: auto;
+  scroll-behavior: smooth;
 }
 
 /* width */
 .days-container::-webkit-scrollbar {
+  display:none;
   width: 10px;
   height:20px;
  
@@ -63,7 +71,7 @@ html {
 }
 /* Handle */
 .days-container::-webkit-scrollbar-thumb {
-  background: rgba(136, 136, 136,0.5);
+  /* background: rgba(136, 136, 136,0.5); */
   border-radius:5px;
 }
 /* Handle on hover */
@@ -76,15 +84,17 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right:3vw;
 }
 
 .column-name {
   margin:12px;
+  margin-left:0;
   font-weight: bold;
 }
 
 .delete-list {
-  background-color: rgb(225, 0,0,0.3);
+  background-color: rgb(225, 0,0,0.5);
   border: 0;
 }
 
@@ -143,11 +153,17 @@ html {
 .card {
   border-radius:5px;
   padding: 30px;
+  padding-left:10px;
   margin: 0;
   min-width: 250px;
   height:13vh;
   color: white;
   text-align: center;
+}
+.drag .material-icons{
+  margin-left:5px;
+  margin-right:15px;
+  font-size:30px;
 }
 .item-cont {
   display: flex;
@@ -170,10 +186,10 @@ html {
   font-size: 20px;
   padding:0px 10px;
   border-radius:8px;
-
-  background: linear-gradient(to left, #f2709c, #ff9472);
-  /* background: linear-gradient(to left, #ec9523, #e9a961); */
-  /* background: linear-gradient(to left, #1a36a3, #27144e); */
+  /* background: linear-gradient(to left, #5f9fee, #7d9de4); */
+  background: linear-gradient(to left, #f2709c, #f77c5e);
+  /* background: linear-gradient(to left, #ec9523, #a75900); */
+  /* background: linear-gradient(to left, #1a36a3, #d6cfe2); */
 
 }
 
@@ -193,7 +209,7 @@ html {
 }
 
 .item-delete {
-  margin-left:20px;
+  margin-left:2px;
   width:25px;
   height:25px;
   padding:0;
@@ -206,27 +222,8 @@ html {
   text-align: center;
   font-weight: bold;
   padding-right:3px;
-  padding-top:2px;
-}
-.add-list-container {
-  width:60px;
-  margin:auto;
-}
-.add-list {
-  background-color: rgba(35, 37, 51, 0.6);
-  border:0;
-  border-radius:500px;
-  margin:auto 0;
-  margin-right:2vw;
-  height:50px;
-  width:50px;
-  padding:0;
-  min-width: 50px;
-}
-
-.add-list i {
-  font-size: 35px;
-  line-height: 45px;
+  padding-top:1.1px;
+  margin-left:.5px;
 }
 
 .delete-list  {
@@ -259,13 +256,13 @@ body {
 }
 
 .progress {
-  background-color: rgba(240, 239, 239,0.5);
+  background-color: rgba(240, 239, 239,0.2);
   border-radius: 10px;
   position: fixed;
   margin: 0;
-  top:7.5vh;
+  top:6vh;
   right: 2vw;
-  height: 8vh;
+  height: 7vh;
   width:78vw;
 }
 
@@ -416,4 +413,40 @@ body {
 .friend-name {
   margin:10px;
   font-size:18px;
+}
+
+.navi {
+  display: flex;
+  /* justify-content: center; */
+  position:fixed;
+  z-index: 100;
+  right:27vw;
+  bottom: 35vh;
+  width:20vw;
+}
+.navi .material-icons{
+  font-size: 35px !important;
+ 
+  
+}
+.slider {
+  border-radius: 10px;
+  /* background-color:rgba(237, 237, 237, 0.5); */
+  width:60%;
+  display: flex;
+  justify-content: space-between;
+  height:35px;
+}
+.add-list {
+  position: fixed;
+  bottom:35vh;
+  right: 25vw
+}
+
+.list-name {
+  position:fixed;
+  bottom:34.5vh;
+  left:31vw;
+  color:white;
+  font-weight: bold;
 }

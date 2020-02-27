@@ -4,10 +4,9 @@ export default function manageStates (
   city, 
   tripId, 
   setColumns,
-  columnsFromBackend, 
-  acitivities,
-  setActivities
-
+  columnsFromBackend,
+  setActivities,
+  setInitialBudget
   ) {
   if(!city) {
     setActivities([])
@@ -32,9 +31,16 @@ export default function manageStates (
       setActivities(result)
 
       let columnsFromLocal = JSON.parse(localStorage.getItem('columns')); 
+      let listOfColumns = columnsFromLocal || columnsFromBackend(result);
 
-      let listOfColumns = columnsFromLocal || columnsFromBackend(result)
-
+      if(localStorage.getItem('budget')) {
+       
+        let budgetFromLocal = Number(localStorage.getItem('budget'))
+        console.log("bb",budgetFromLocal)
+        setInitialBudget(budgetFromLocal)
+        
+      }
+      localStorage.removeItem("budget");
       localStorage.removeItem("columns");
 
       if (!tripId) {
@@ -44,8 +50,7 @@ export default function manageStates (
         axios.get(`/trips/edit/${tripId}`)
         .then (res => {
           // let newstate = {...listOfColumns}
-          // setColumns(listOfColumns);
-          console.log("CONSOLE LOGGING FROM MANAGESTATE",res.data)
+          // setColumns(listOfColumns);  <==== MAY BE USED LATER
 
           let list = listOfColumns['list'];
           let newState={list};

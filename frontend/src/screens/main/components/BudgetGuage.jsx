@@ -7,7 +7,7 @@ export default function BudgetGauge(props) {
     setTimeout(() => {
       let newStyle = {
           opacity: 1,
-          minWidth:'10%',
+          minWidth:'9%',
           maxWidth:'100%',
           width: props.budget>=0? `${props.budget/props.initialBudget*100}%`:'0%'
         };
@@ -25,7 +25,7 @@ export default function BudgetGauge(props) {
     setTimeout(() => {
       let newStyle = {
           opacity: 1,
-          minWidth:'10%',
+          minWidth:'9%',
           maxWidth:'100%',
           width: props.budget<0? `${-(props.budget/props.initialBudget*100)}%`:'0%'
         };

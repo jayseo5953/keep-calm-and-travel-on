@@ -1,20 +1,21 @@
-import axios from 'axios';
-export default function getCities (arg,cb) {
-  if(!arg) {
-    cb([])
-    return
+import axios from "axios";
+
+export default function getCities(arg, cb) {
+  if (!arg) {
+    cb([]);
+    return;
   }
-  axios.get(`/api/cities/${arg}`)
-    .then(res=> {
-      const result = res.data
-      console.log('resulrt on fertching get city', result)
-      cb(result.cities)
+  axios
+    .get(`/api/cities/${arg}`)
+    .then(res => {
+      const result = res.data;
+      cb(result.cities);
     })
-    .catch((err) => {
+    .catch(err => {
       if (err.status === 404) {
-        console.log("yupnsole 404")
+        console.log("ERROR ==>> 404");
       } else {
         console.error(err);
       }
-    })
+    });
 }

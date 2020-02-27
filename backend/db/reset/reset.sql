@@ -70,18 +70,16 @@ INSERT INTO users (first_name, last_name, email, password) VALUES
 INSERT INTO friends (user_id, friend_id) VALUES (1,2), (2,1), (1,3), (3,1),(2,3),(3,2);
 
 INSERT INTO destinations(id, city, country, image_url) VALUES
-(1,'San Francisco', 'USA', 'https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg'),
-(2,'Florence', 'Italy', 'https://cdn-image.departures.com/sites/default/files/styles/responsive_900x600/public/1539722614/duomo-church-architecture-sunset-florence-italy-FLORENCEITALY1018.jpg?itok=p9ytJcSJ'),
-
-(3, 'Bali', 'Indonesia', 'https://specials-images.forbesimg.com/imageserve/675172642/960x0.jpg?fit=scale'),
-(4, 'Cebu', 'Philippines', 'https://i.ytimg.com/vi/4jzph6P38l8/maxresdefault.jpg'),
-(5, 'Halong Bay', 'Vietnam', 'https://d10vk5dg0puvhi.cloudfront.net/images/destinations/origin/559c8135b9cc5.jpg'),
-(6, 'Dubai', 'Dubai', 'https://www.wingbuddy.com//images/package/28/magical-dubai.jpg'),
-
-(7, 'Jeju', 'South Korea', 'https://i.ytimg.com/vi/m6QeLoX3pT4/maxresdefault.jpg'),
-(8, 'Okinawa', 'Japan', 'https://d20aeo683mqd6t.cloudfront.net/articles/title_images/000/037/919/original/pixta_23484329_s_S.jpg?2019&d=750x400'),
-(9, 'Taipei', 'Taiwan', 'https://lp-cms-production.imgix.net/2019-06/f15f7b57ab31c217f471c6712a2654e0-taipei-101.jpg'),
-(10,'Barcelona', 'Spain', 'https://s27363.pcdn.co/wp-content/uploads/2019/03/Tibidabo-and-Sagrat-Cor.jpg.optimal.jpg');
+(1,'San Francisco', 'USA', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/SanFran.jpg?raw=true'),
+(2,'Florence', 'Italy', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Florence.jpg?raw=true'),
+(3, 'Bali', 'Indonesia', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Bali.jpg?raw=true'),
+(4, 'Cebu', 'Philippines', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Cebu.jpg?raw=true'),
+(5, 'Ha Long Bay', 'Vietnam', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Ha%20Long%20Bay.jpg?raw=true'),
+(6, 'Dubai', 'Dubai', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Dubai.jpg?raw=true'),
+(7, 'Jeju', 'South Korea', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Jeju.jpg?raw=true'),
+(8, 'Okinawa', 'Japan', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Okinawa.jpg?raw=true'),
+(9, 'Taipei', 'Taiwan', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Taipai.jpg?raw=true'),
+(10,'Barcelona', 'Spain', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Barcelona.jpg?raw=true');
 
 
 INSERT INTO activities(name, price_cents, time_operation, lat, long, image_url, destination_id) VALUES
@@ -113,9 +111,9 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 ('Scuba Diving', 8500, '9AM-6PM',-8.669589, 115.256625, 3, 'https://www.deeperblue.com/wp-content/uploads/2017/04/AdobeStock_62687098.jpeg'),
 ('Paragliding', 7500, '11AM-5PM',-8.7330639, 115.1681143, 3, 'https://breakawayexperiences.com/content/images/thumbs/0008873_drayton-valley-tandem-paragliding-flight.jpeg'),
 ('Sunset Tour', 5000, '10AM-7PM', -8.6633737,115.2115082, 3, 'https://storage.needpix.com/rsynced_images/bali-992566_1280.jpg'),
-('Island Hopping', 1500, '7AM-5PM', -8.7394861,115.1827169, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-8gX8KH0tTeDMR3YUTEbT6m8USkWfXRDyIALbcs4iBpuXfm85'),
+('Island Hopping', 15000, '7AM-5PM', -8.7394861,115.1827169, 3, 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR-8gX8KH0tTeDMR3YUTEbT6m8USkWfXRDyIALbcs4iBpuXfm85'),
 ('Mount Batur', 9500, '2AM-7AM', -8.6814856,115.2359566, 3, 'https://p0.piqsels.com/preview/1002/129/230/mountain-covered-by-clouds-during-sunset.jpg'),
-('Dolphin Watching', 55000, '11AM-4PM', -8.1668301,115.0609733, 3, 'https://i0.pickpik.com/photos/851/294/363/dolphins-aquarium-jumping-fish-thumb.jpg'),
+('Dolphin Watching', 5500, '11AM-4PM', -8.1668301,115.0609733, 3, 'https://i0.pickpik.com/photos/851/294/363/dolphins-aquarium-jumping-fish-thumb.jpg'),
 
 -- cebu
 ('Snorkeling', 7500, '7AM-5PM', 10.2937683,123.8996013, 4, 'https://www.gannett-cdn.com/presto/2019/01/11/USAT/5ae184a1-75d3-454e-9201-0f4624ea530a-Curacao_snorkeling_is_popular_with_guests_staying_at_the_Santa_Barbara_Beach_and_Golf_Resort_SBRCuracao.jpg?crop=2047,1151,x0,y224&width=660&height=372&format=pjpg&auto=webp'),
@@ -128,8 +126,8 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 ('City Tour', 4500, '10AM',20.9538501,107.0040515, 5, 'https://static.asiawebdirect.com/m/bangkok/portals/vietnam/homepage/ha-long-bay/pagePropertiesImage/ha-long-bay.jpg.jpg'),
 ('Imperidal Classic Cruise', 7000, '10AM-6PM', 20.9598812,107.0252152, 5, 'https://pix10.agoda.net/hotelImages/302/302687/302687_16040710090041367196.jpg?s=1024x768'),
 ('Night Cruise', 11000, '10AM-10AM', 20.9276962,106.9719274, 5, 'https://d10vk5dg0puvhi.cloudfront.net/images/guides/origin/5d66419771ba2.jpg'),
-('Bike Tour', 6500, '10AM-10PM', 20.9577249,107.0108494, 5, 'https://d10vk5dg0puvhi.cloudfront.net/images/guides/origin/5d66419771ba2.jpg'),
-('Bay Cruise', 9500, '10AM-5PM', 20.9225186,106.9834352, 5, 'https://d10vk5dg0puvhi.cloudfront.net/images/guides/origin/5d66419771ba2.jpg'),
+('Bike Tour', 6500, '10AM-10PM', 20.9577249,107.0108494, 5, 'https://d3hne3c382ip58.cloudfront.net/resized/750x420/cycle-northern-vietnam-tour-2-449267_1553148005.JPG'),
+('Bay Cruise', 9500, '10AM-5PM', 20.9225186,106.9834352, 5, 'https://d3h30waly5w5yx.cloudfront.net/images/tour/pictures/halong-bay-cruise-2d1n-3d2n-1.jpg'),
 
 -- dub
 ('City Tour', 8000, '9AM-5PM', 25.1947853,55.2568795, 6, 'https://www.ubltravels.com/admin/assets/images/packages/large/Dubai_sights.jpg'),
@@ -143,7 +141,7 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 --san
 ('The Escape Game', 8000, '8AM-9PM', 37.7902349, -122.4191579, 1, 'https://lh5.googleusercontent.com/p/AF1QipOje5cjJkY6YoLJIwRdPXfIS6Cnm9miobnwSMqr=w408-h272-k-no'),
 ('Aquarium of the Bay', 8500, '10AM-9PM', 37.8086121,-122.4095662, 1, 'https://lh5.googleusercontent.com/p/AF1QipNKMYC4XBDUdTGeNGGy2tpPchRTz4gYanHl820c=w432-h240-k-no'),
-('San Francisco Museum', 85000, '10AM-8PM', 37.7905071, -122.4140478, 1, 'https://lh5.googleusercontent.com/p/AF1QipNmsJYSIkJjo1RZRIdcY6q8Hh85ROJzv0bjhzkx=w408-h306-k-no'),
+('San Francisco Museum', 8500, '10AM-8PM', 37.7905071, -122.4140478, 1, 'https://lh5.googleusercontent.com/p/AF1QipNmsJYSIkJjo1RZRIdcY6q8Hh85ROJzv0bjhzkx=w408-h306-k-no'),
 ('Exploratorium', 12000, '10AM-7PM', 37.7992793, -122.4032841, 1, 'https://lh5.googleusercontent.com/p/AF1QipPV4cHGKkrKN4_0uCEqpt3S3FLdSh6VHRxRco1E=w408-h306-k-no'),
 ('Academy of Sciences', 9000, '9:30AM-9PM', 37.7698688,-122.4682834, 1, 'https://lh5.googleusercontent.com/p/AF1QipMM56l8VgD7GAg2TDppckaDT2rOCO_ROIgVAhcb=w408-h301-k-no'),
 ('Twin Peaks Hike',6500, '8AM-9PM', 37.754336, -122.446953, 1, 'https://c1.sfdcstatic.com/content/dam/blogs/us/thumbnails/top-running-and-hiking-routes-during-dreamforce-and-win-a-free-fitbit-to-track/TwinPeaks.jpg'),
@@ -151,7 +149,7 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 
 -- flor
  ('Grape Tours ', 9000, '9:30AM-8PM', 43.7691584, 11.2515191, 2, 'https://cdn3.gttwl.net/attachments/global/1395076798_original.jpeg?w=original&h=&fit=crop&crop=entropy&auto=format,enhance&q=60'),
- ('Galleria dell', 6000, '8:15AM-7PM', 43.7761899, 11.2530771, 2, 'https://lh3.googleusercontent.com/proxy/VyKe7c2nIs1mntcGEtjY4PmQJOOAmZ3Cgvu5O7UJ4Y8L9PsLRTgEei_sGV1Ee4uLlr_8FBC6UbPWZkGMtb-q4aKISsSjqoh1F04oDsBOTL26mZjqEytYC7oNDoMyXqYrLYuynfCIKJ4UzBqzX2cZYolxepgUI1RLpbiwSBy6Q6xOshv0idWqP-dRMUna'),
+ ('Galleria dell', 6000, '8:15AM-7PM', 43.7761899, 11.2530771, 2, 'https://flashmomentcontinued.files.wordpress.com/2015/03/florence-2014-1054.jpg?w=1280&h=1706'),
  ('Bargello Museum', 4500 , '8:15AM-2PM', 43.7692821, 11.2509416, 2, 'https://lh5.googleusercontent.com/p/AF1QipPWkloB5_sypgPwM7HtqwOeUxjLmU-dQ1sKT21G=w408-h306-k-no'),
  ('Museo Galileo', 1500, '9:30AM-6PM', 43.7677337, 11.2537145, 2, 'https://lh5.googleusercontent.com/p/AF1QipNonfCRZReiPVpfOg5OJU-OI_QnQLeP0GIBdZrh=w921-h240-k-no'),
  ('Leonardo Museum', 10000, '10AM-6PM', 43.766711, 11.2492942, 2, 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/73/f8/11.jpg'),

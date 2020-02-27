@@ -1,11 +1,12 @@
-import React from 'react';
+import React from "react";
 
-
-const ActivityListItem = (props) => {
-  let activity = props.activity
+const ActivityListItem = props => {
+  let activity = props.activity;
   return (
     <div>
-      <p>{activity.name} ${activity.price_cents/100}</p>
+      <p>
+        {activity.name} ${activity.price_cents / 100}
+      </p>
     </div>
   );
 };
