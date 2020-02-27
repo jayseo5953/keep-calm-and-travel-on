@@ -84,7 +84,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right:4vw;
+  margin-right:3vw;
 }
 
 .column-name {
@@ -446,7 +446,7 @@ body {
 .list-name {
   position:fixed;
   bottom:34.5vh;
-  left:33vw;
+  left:31vw;
   color:white;
   font-weight: bold;
 }

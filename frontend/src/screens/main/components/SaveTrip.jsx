@@ -58,6 +58,7 @@ const SaveTrip = props => {
         <DialogContent style={textFieldStyle}>
           <TextField
             autoFocus
+            autoComplete="off"
             margin="dense"
             id="tripname"
             label="Enter Trip Name"

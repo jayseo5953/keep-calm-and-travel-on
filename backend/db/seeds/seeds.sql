@@ -5,18 +5,16 @@ INSERT INTO users (first_name, last_name, email, password) VALUES
 ('Jay', 'Seo', 'jay@gmail.com', '123');
 
 INSERT INTO destinations(id, city, country, image_url) VALUES
-(1,'San Francisco', 'USA', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/SanFran.jpg'),
-(2,'Florence', 'Italy', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Florence.jpg'),
-
-(3, 'Bali', 'Indonesia', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Bali.jpg'),
-(4, 'Cebu', 'Philippines', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Cebu.jpg'),
-(5, 'Ha Long Bay', 'Vietnam', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Ha%20Long%20Bay.jpg'),
-(6, 'Dubai', 'Dubai', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Dubai.jpg'),
-
-(7, 'Jeju', 'South Korea', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Jeju.jpg'),
-(8, 'Okinawa', 'Japan', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Okinawa.jpg'),
-(9, 'Taipei', 'Taiwan', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Taipai.jpg'),
-(10,'Barcelona', 'Spain', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Barcelona.jpg');
+(1,'San Francisco', 'USA', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/SanFran.jpg?raw=true'),
+(2,'Florence', 'Italy', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Florence.jpg?raw=true'),
+(3, 'Bali', 'Indonesia', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Bali.jpg?raw=true'),
+(4, 'Cebu', 'Philippines', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Cebu.jpg?raw=true'),
+(5, 'Ha Long Bay', 'Vietnam', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Ha%20Long%20Bay.jpg?raw=true'),
+(6, 'Dubai', 'Dubai', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Dubai.jpg?raw=true'),
+(7, 'Jeju', 'South Korea', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Jeju.jpg?raw=true'),
+(8, 'Okinawa', 'Japan', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Okinawa.jpg?raw=true'),
+(9, 'Taipei', 'Taiwan', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Taipai.jpg?raw=true'),
+(10,'Barcelona', 'Spain', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Barcelona.jpg?raw=true');
 
 
 INSERT INTO activities(name, price_cents, time_operation, lat, long, image_url, destination_id) VALUES
@@ -76,27 +74,27 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 ('Sky Tour', 30000, '10AM-6PM', 25.2397743,55.2661226, 6, 'https://i.ytimg.com/vi/0BXGh0EYJtE/maxresdefault.jpg'),
 
 --san
-('The Escape Game', 8000, '8AM-9PM', 37.7902349, -122.4191579, 1, 'https://lh5.googleusercontent.com/p/AF1QipOje5cjJkY6YoLJIwRdPXfIS6Cnm9miobnwSMqr=w408-h272-k-no'), 
-('Aquarium of the Bay', 12000, '10AM-9PM', 37.8086121,-122.4095662, 1, 'https://lh5.googleusercontent.com/p/AF1QipNKMYC4XBDUdTGeNGGy2tpPchRTz4gYanHl820c=w432-h240-k-no'), 
-('San Francisco Museum', 10000, '10AM-8PM', 37.7905071, -122.4140478, 1, 'https://lh5.googleusercontent.com/p/AF1QipNmsJYSIkJjo1RZRIdcY6q8Hh85ROJzv0bjhzkx=w408-h306-k-no'), 
-('Exploratorium', 30000, '10AM-7PM', 37.7992793, -122.4032841, 1, 'https://lh5.googleusercontent.com/p/AF1QipPV4cHGKkrKN4_0uCEqpt3S3FLdSh6VHRxRco1E=w408-h306-k-no'), 
+('The Escape Game', 8000, '8AM-9PM', 37.7902349, -122.4191579, 1, 'https://lh5.googleusercontent.com/p/AF1QipOje5cjJkY6YoLJIwRdPXfIS6Cnm9miobnwSMqr=w408-h272-k-no'),
+('Aquarium of the Bay', 12000, '10AM-9PM', 37.8086121,-122.4095662, 1, 'https://lh5.googleusercontent.com/p/AF1QipNKMYC4XBDUdTGeNGGy2tpPchRTz4gYanHl820c=w432-h240-k-no'),
+('San Francisco Museum', 10000, '10AM-8PM', 37.7905071, -122.4140478, 1, 'https://lh5.googleusercontent.com/p/AF1QipNmsJYSIkJjo1RZRIdcY6q8Hh85ROJzv0bjhzkx=w408-h306-k-no'),
+('Exploratorium', 30000, '10AM-7PM', 37.7992793, -122.4032841, 1, 'https://lh5.googleusercontent.com/p/AF1QipPV4cHGKkrKN4_0uCEqpt3S3FLdSh6VHRxRco1E=w408-h306-k-no'),
 ('California Academy of Sciences', 32000, '9:30AM-9PM', 37.7698688,-122.4682834, 1, 'https://lh5.googleusercontent.com/p/AF1QipMM56l8VgD7GAg2TDppckaDT2rOCO_ROIgVAhcb=w408-h301-k-no'),
-('Twin Peaks Hike', 5000, '8AM-9PM', 37.754336, -122.446953, 1, 'https://c1.sfdcstatic.com/content/dam/blogs/us/thumbnails/top-running-and-hiking-routes-during-dreamforce-and-win-a-free-fitbit-to-track/TwinPeaks.jpg'), 
-('Golden Gate Overlook', 10000, '8AM-9PM', 37.803942, -122.476590, 1, 'https://live.staticflickr.com/4636/38734794314_04e5d5028d_b.jpg'), 
+('Twin Peaks Hike', 5000, '8AM-9PM', 37.754336, -122.446953, 1, 'https://c1.sfdcstatic.com/content/dam/blogs/us/thumbnails/top-running-and-hiking-routes-during-dreamforce-and-win-a-free-fitbit-to-track/TwinPeaks.jpg'),
+('Golden Gate Overlook', 10000, '8AM-9PM', 37.803942, -122.476590, 1, 'https://live.staticflickr.com/4636/38734794314_04e5d5028d_b.jpg'),
 
 -- flor
- ('Winery Tours ', 17500, '9:30AM-8PM', 43.7691584, 11.2515191, 2, 'https://lh5.googleusercontent.com/p/AF1QipNwpHnBdgSsMwOdWh03MkeAGlFBW82raoKJ3KiF=w426-h240-k-no'), 
- ('Galleria dell Accademia', 5000, '8:15AM-7PM', 43.7761899, 11.2530771, 2, 'https://lh5.googleusercontent.com/p/AF1QipPsg0cgyIiaQEkSMISZ54K9-ZabJySOowQJr8Au=w408-h306-k-no'), 
- ('Bargello National Museum', 1500 , '8:15AM-2PM', 43.7692821, 11.2509416, 2, 'https://lh5.googleusercontent.com/p/AF1QipPWkloB5_sypgPwM7HtqwOeUxjLmU-dQ1sKT21G=w408-h306-k-no'), 
- ('Museo Galileo', 1500, '9:30AM-6PM', 43.7677337, 11.2537145, 2, 'https://lh5.googleusercontent.com/p/AF1QipNonfCRZReiPVpfOg5OJU-OI_QnQLeP0GIBdZrh=w921-h240-k-no'), 
+ ('Winery Tours ', 17500, '9:30AM-8PM', 43.7691584, 11.2515191, 2, 'https://lh5.googleusercontent.com/p/AF1QipNwpHnBdgSsMwOdWh03MkeAGlFBW82raoKJ3KiF=w426-h240-k-no'),
+ ('Galleria dell Accademia', 5000, '8:15AM-7PM', 43.7761899, 11.2530771, 2, 'https://lh5.googleusercontent.com/p/AF1QipPsg0cgyIiaQEkSMISZ54K9-ZabJySOowQJr8Au=w408-h306-k-no'),
+ ('Bargello National Museum', 1500 , '8:15AM-2PM', 43.7692821, 11.2509416, 2, 'https://lh5.googleusercontent.com/p/AF1QipPWkloB5_sypgPwM7HtqwOeUxjLmU-dQ1sKT21G=w408-h306-k-no'),
+ ('Museo Galileo', 1500, '9:30AM-6PM', 43.7677337, 11.2537145, 2, 'https://lh5.googleusercontent.com/p/AF1QipNonfCRZReiPVpfOg5OJU-OI_QnQLeP0GIBdZrh=w921-h240-k-no'),
  ('Leonardo Interactive Museum', 10000, '10AM-6PM', 43.766711, 11.2492942, 2, 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/73/f8/11.jpg'),
- ('Basilica di San Lorenzo', 8000, '10AM-5PM', 43.7660269, 11.2486197, 2, 'https://lh5.googleusercontent.com/p/AF1QipMhlcWLnNP2fr6Wuf7d90kjcAdh9BWU2xv_xFkh=w426-h240-k-no'), 
+ ('Basilica di San Lorenzo', 8000, '10AM-5PM', 43.7660269, 11.2486197, 2, 'https://lh5.googleusercontent.com/p/AF1QipMhlcWLnNP2fr6Wuf7d90kjcAdh9BWU2xv_xFkh=w426-h240-k-no'),
  ('La Pedera - Casa Milà', 4000, '9AM-9PM', 41.38354, 2.1607643, 10, 'https://www.lapedrera.com/sites/default/files/2019-11/home-la-pedrera-terrat-azotea-rooftop.jpg'),
 
 --  bar
- ('Barcelona Museum of Contemporary Art', 10000, '11AM-7:30PM', 41.38354, 2.1607643, 10, 'https://www.richardmeier.com/wp-content/uploads/2014/07/P10.95SF40.016-660x525.jpg'), 
+ ('Barcelona Museum of Contemporary Art', 10000, '11AM-7:30PM', 41.38354, 2.1607643, 10, 'https://www.richardmeier.com/wp-content/uploads/2014/07/P10.95SF40.016-660x525.jpg'),
  ('La Sagrada Familia', 10000, '9AM-6PM', 41.4036299, 2.1721671, 10, 'https://lonelyplanetimages.imgix.net/a/g/hi/t/8ae1c56041e64517e29372a889f1beb7-la-sagrada-familia.jpg'),
  ('Aquarium Barcelona', 8000, '10AM-8PM', 41.3768344, 2.1823064, 10, 'https://cdn-imgix-open.headout.com/blog/Barcelona/Barcelona+Aquarium/barcelona+aquarium+5.jpg?auto=compress&fm=pjpg&w=750&h=400&fit=min&q=60'),
  ('Güell Palace', 15000, '10AM-8PM', 41.3691841, 2.1543595, 10, 'https://cdn.casabatllo.es/wp-content/uploads/1886/01/xfachada-palau-guell-gaudi.jpg.pagespeed.ic.-H42Y4WUpD.jpg'),
- ('Excursions Barcelona', 10000, '11AM-7:30PM', 41.3792951,2.1213199, 10, 'https://static.outdoorvisit.com/photos/retina/d/0/d0373bec-6f72-408b-88f9-ef81f719b7af.jpg'), 
+ ('Excursions Barcelona', 10000, '11AM-7:30PM', 41.3792951,2.1213199, 10, 'https://static.outdoorvisit.com/photos/retina/d/0/d0373bec-6f72-408b-88f9-ef81f719b7af.jpg'),
  ('Picasso Museum', 9000, '11AM-8:30PM', 41.385248, 2.180833, 10, 'https://www.discoverwalks.com/blog/wp-content/uploads/2014/12/the-picasso-museum-big.jpg');
