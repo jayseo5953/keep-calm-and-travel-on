@@ -15,7 +15,12 @@ const FormSection = props => {
         </h1>
         <h2>
           {" "}
-          {props.budget >= 0 ? `$${props.budget}` : `-$${-props.budget}`}{" "}
+          {!props.budget || isNaN(props.budget)?'$'+0:
+          <>
+          {props.budget > 0 ? `$${props.budget}` : `-$${-props.budget}`}
+          </> 
+          }
+          {" "}
         </h2>
       </div>
       <Form budget={props.budget} setBudget={props.setBudget} />
