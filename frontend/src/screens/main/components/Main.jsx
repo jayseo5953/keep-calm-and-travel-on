@@ -89,8 +89,8 @@ function Main(props) {
       tripId, 
       setColumns, 
       columnsFromBackend, 
-      setActivities
-      // setBudget
+      setActivities,
+      setInitialBudget
       );
     if(props.user) {
       axios.get(`/users/${props.user.id}/friends/${city}`)
@@ -108,12 +108,10 @@ function Main(props) {
     }
   }
 
-
   // useEffect(()=>{
   //   setBudget(mybudget-totalCost)
   // },[totalCost])
 
-  console.log(lastItem)
   const budget = initialBudget-totalCost
   // console.log(budget)
 
@@ -130,7 +128,7 @@ function Main(props) {
           saveToLocal={saveToLocal}
           columns={columns}
           tripName={tripName}
-          budget={budget}
+          budget={initialBudget}
         />
       </div>
 

@@ -13,7 +13,7 @@ const CityItem = props => {
             props.setBackGround(props.image_url);
           }}
         >
-          {props.numActs <= 1
+          {props.numActs && props.numActs <= 1
             ? `${props.city} (enjoy ${props.numActs} activity)`
             : `${props.city} (enjoy ${props.numActs} activities)`}
         </Link>

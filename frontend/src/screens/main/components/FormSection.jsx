@@ -30,16 +30,17 @@ const FormSection = props => {
             tripId={props.tripId}
             tripName={props.tripName}
           />
-          <FriendsList
+          {props.friends.length?<FriendsList
             friendsActivities={props.friendsActivities}
             friends={props.friends}
             city={props.city}
             userId={props.user.id}
             setFriendsActivities={props.setFriendsActivities}
-          />
+          />:""}
+          
         </div>
       ) : (
-        <Link onClick={() => saveToLocal(props.columns)} to="/login">
+        <Link onClick={() => saveToLocal(props.columns,props.budget)} to="/login">
           Login to Save
         </Link>
       )}
