@@ -139,21 +139,21 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 ('Sky Tour', 20000, '10AM-6PM', 25.2397743,55.2661226, 6, 'https://i.ytimg.com/vi/0BXGh0EYJtE/maxresdefault.jpg'),
 
 --san
-('The Escape Game', 8000, '8AM-9PM', 37.7902349, -122.4191579, 1, 'https://lh5.googleusercontent.com/p/AF1QipOje5cjJkY6YoLJIwRdPXfIS6Cnm9miobnwSMqr=w408-h272-k-no'),
-('Aquarium of the Bay', 8500, '10AM-9PM', 37.8086121,-122.4095662, 1, 'https://lh5.googleusercontent.com/p/AF1QipNKMYC4XBDUdTGeNGGy2tpPchRTz4gYanHl820c=w432-h240-k-no'),
-('San Francisco Museum', 8500, '10AM-8PM', 37.7905071, -122.4140478, 1, 'https://lh5.googleusercontent.com/p/AF1QipNmsJYSIkJjo1RZRIdcY6q8Hh85ROJzv0bjhzkx=w408-h306-k-no'),
-('Exploratorium', 12000, '10AM-7PM', 37.7992793, -122.4032841, 1, 'https://lh5.googleusercontent.com/p/AF1QipPV4cHGKkrKN4_0uCEqpt3S3FLdSh6VHRxRco1E=w408-h306-k-no'),
-('Academy of Sciences', 9000, '9:30AM-9PM', 37.7698688,-122.4682834, 1, 'https://lh5.googleusercontent.com/p/AF1QipMM56l8VgD7GAg2TDppckaDT2rOCO_ROIgVAhcb=w408-h301-k-no'),
+('The Escape Game', 8000, '8AM-9PM', 37.7902349, -122.4191579, 1, 'https://theescapegamecom-images.s3.amazonaws.com/wp-content/uploads/2018/10/TEG-Houston-84-700x467.jpg'),
+('Aquarium of the Bay', 8500, '10AM-9PM', 37.8086121,-122.4095662, 1, 'https://www.visitmarin.org/site/assets/files/14377/kid_image.jpg'),
+('San Francisco Museum', 8500, '10AM-8PM', 37.7905071, -122.4140478, 1, 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/2017_SFMOMA_from_Yerba_Buena_Gardens.jpg/600px-2017_SFMOMA_from_Yerba_Buena_Gardens.jpg'),
+('Exploratorium', 12000, '10AM-7PM', 37.7992793, -122.4032841, 1, 'https://www.exploratorium.edu/sites/default/files/events/programs/Glow_DSC_3219_Square.jpg'),
+('Academy of Sciences', 9000, '9:30AM-9PM', 37.7698688,-122.4682834, 1, 'http://tdr.aaa.com/tdr-images/variation/101340?ratio=9:6&rwidth=500'),
 ('Twin Peaks Hike',6500, '8AM-9PM', 37.754336, -122.446953, 1, 'https://c1.sfdcstatic.com/content/dam/blogs/us/thumbnails/top-running-and-hiking-routes-during-dreamforce-and-win-a-free-fitbit-to-track/TwinPeaks.jpg'),
 ('Golden Gate', 7000, '8AM-9PM', 37.803942, -122.476590, 1, 'https://live.staticflickr.com/4636/38734794314_04e5d5028d_b.jpg'),
 
 -- flor
  ('Grape Tours ', 9000, '9:30AM-8PM', 43.7691584, 11.2515191, 2, 'https://cdn3.gttwl.net/attachments/global/1395076798_original.jpeg?w=original&h=&fit=crop&crop=entropy&auto=format,enhance&q=60'),
  ('Galleria dell', 6000, '8:15AM-7PM', 43.7761899, 11.2530771, 2, 'https://flashmomentcontinued.files.wordpress.com/2015/03/florence-2014-1054.jpg?w=1280&h=1706'),
- ('Bargello Museum', 4500 , '8:15AM-2PM', 43.7692821, 11.2509416, 2, 'https://lh5.googleusercontent.com/p/AF1QipPWkloB5_sypgPwM7HtqwOeUxjLmU-dQ1sKT21G=w408-h306-k-no'),
- ('Museo Galileo', 1500, '9:30AM-6PM', 43.7677337, 11.2537145, 2, 'https://lh5.googleusercontent.com/p/AF1QipNonfCRZReiPVpfOg5OJU-OI_QnQLeP0GIBdZrh=w921-h240-k-no'),
+ ('Bargello Museum', 4500 , '8:15AM-2PM', 43.7692821, 11.2509416, 2, 'http://cdn4.discovertuscany.com/img/florence/museums/bargello/bargello-exterior-view.jpg?w=750&q=65'),
+ ('Museo Galileo', 1500, '9:30AM-6PM', 43.7677337, 11.2537145, 2, 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6b/66/ce.jpg'),
  ('Leonardo Museum', 10000, '10AM-6PM', 43.766711, 11.2492942, 2, 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/73/f8/11.jpg'),
- ('Basilica di San Lorenzo', 8000, '10AM-5PM', 43.7660269, 11.2486197, 2, 'https://lh5.googleusercontent.com/p/AF1QipMhlcWLnNP2fr6Wuf7d90kjcAdh9BWU2xv_xFkh=w426-h240-k-no'),
+ ('Basilica di San Lorenzo', 8000, '10AM-5PM', 43.7660269, 11.2486197, 2, 'https://cdn.hswstatic.com/gif/michelangelo-buildings-3.jpg'),
  ('La Pedera Casa Milà', 5000, '9AM-9PM', 41.38354, 2.1607643, 10, 'https://www.lapedrera.com/sites/default/files/2019-11/home-la-pedrera-terrat-azotea-rooftop.jpg'),
 
 --  bar

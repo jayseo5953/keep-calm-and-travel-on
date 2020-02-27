@@ -33,12 +33,9 @@ export default function manageStates (
       let columnsFromLocal = JSON.parse(localStorage.getItem('columns')); 
       let listOfColumns = columnsFromLocal || columnsFromBackend(result);
 
-      if(localStorage.getItem('budget')) {
-       
+      if(!isNaN(localStorage.getItem('budget'))) {
         let budgetFromLocal = Number(localStorage.getItem('budget'))
-        console.log("bb",budgetFromLocal)
         setInitialBudget(budgetFromLocal)
-        
       }
       localStorage.removeItem("budget");
       localStorage.removeItem("columns");

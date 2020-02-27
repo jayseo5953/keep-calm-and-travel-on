@@ -45,7 +45,11 @@ const FormSection = props => {
           
         </div>
       ) : (
-        <Link onClick={() => saveToLocal(props.columns,props.budget)} to="/login">
+        <Link onClick={() => {
+          if(props.columns) {
+            saveToLocal(props.columns, props.budget)
+          }
+        }}to="/login">
           Login to Save
         </Link>
       )}

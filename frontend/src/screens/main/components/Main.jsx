@@ -17,7 +17,6 @@ import Button from '@material-ui/core/Button';
 
 
 function Main(props) {
-  // console.log("local storage", localStorage.getItem('columns'))
 
   const params = props.match.params;
   const city = params.city;
@@ -228,7 +227,7 @@ function Main(props) {
         
         <Button style={{color:'white',padding:0}} variant="contained"  color='secondary'>
          
-        <i class="material-icons">
+        <i className="material-icons">
         post_add
         </i>
           </Button>
