@@ -1,7 +1,12 @@
 
 .main {
   /* background-color: #F0EFF4; */
-  background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/beach-birds-calm-clouds-219998.jpg?raw=true");
+  background-image: url("https://images.pexels.com/photos/286758/pexels-photo-286758.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+/* https://images.pexels.com/photos/613826/pexels-photo-613826.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 */
+  /* https://images.pexels.com/photos/286758/pexels-photo-286758.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 */
+  /* background-color: #202020; */
+
+  /* https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/beach-birds-calm-clouds-219998.jpg?raw=true */
   /* background-image: url("https://images.pexels.com/photos/163185/old-retro-antique-vintage-163185.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"); */
   /* background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/bokeh-hd-wallpaper-54278.jpg?raw=true"); */
  
@@ -63,7 +68,7 @@
 }
 /* Handle */
 .days-container::-webkit-scrollbar-thumb {
-  background: rgba(136, 136, 136,0.5);
+  /* background: rgba(136, 136, 136,0.5); */
   border-radius:5px;
 }
 /* Handle on hover */
@@ -171,6 +176,7 @@
   padding:0px 10px;
   border-radius:8px;
 
+  /* background: linear-gradient(to left, #3627d8, #082259); */
   background: linear-gradient(to left, #f2709c, #ff9472);
   /* background: linear-gradient(to left, #ec9523, #e9a961); */
   /* background: linear-gradient(to left, #1a36a3, #27144e); */
