@@ -21,7 +21,7 @@ const Card = props => {
               userSelect: "none",
               backgroundColor: snapshot.isDragging
                 ? "rgba(50, 50, 54, 1)"
-                : "rgba(50, 50, 50, 0.9)",
+                : "rgba(30, 50, 100, 0.8)",
               ...provided.draggableProps.style
             }}
           >
