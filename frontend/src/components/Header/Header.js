@@ -59,9 +59,8 @@ export default function Header(props) {
           :  
         <Button className={classes.title} onClick={()=>{
           console.log("props.columns",props.columns)
-          saveToLocal(props.columns
-          
-          )}} component= { Link } to="/login">LOGIN</Button>}
+          saveToLocal(props.columns, props.budget)
+          }} component= { Link } to="/login">LOGIN</Button>}
     </AppBar>
   )
 }

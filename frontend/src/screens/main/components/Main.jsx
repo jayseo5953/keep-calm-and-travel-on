@@ -89,8 +89,9 @@ function Main(props) {
       tripId, 
       setColumns, 
       columnsFromBackend, 
-      activities,
-      setActivities);
+      setActivities,
+      setInitialBudget
+      );
     if(props.user) {
       axios.get(`/users/${props.user.id}/friends/${city}`)
       .then(res=>{
@@ -107,12 +108,10 @@ function Main(props) {
     }
   }
 
-
   // useEffect(()=>{
   //   setBudget(mybudget-totalCost)
   // },[totalCost])
 
-  console.log(lastItem)
   const budget = initialBudget-totalCost
   // console.log(budget)
 
@@ -129,6 +128,7 @@ function Main(props) {
           saveToLocal={saveToLocal}
           columns={columns}
           tripName={tripName}
+          budget={initialBudget}
         />
       </div>
 
@@ -221,7 +221,7 @@ function Main(props) {
        
 
   
-        <a  style={numOfColumns<=3?{right:'39vw'}:{}} className='add-list' href={`#${lastItem}`} onClick={(()=>{
+        <a  style={numOfColumns<=3?{right:'34vw'}:{}} className='add-list' href={`#${lastItem}`} onClick={(()=>{
         addCardList(columns, setColumns)
         setIndex(lastItem)
         })}> 

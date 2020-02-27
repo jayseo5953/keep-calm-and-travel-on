@@ -92,7 +92,7 @@
 }
 
 .delete-list {
-  background-color: rgb(225, 0,0,0.3);
+  background-color: rgb(225, 0,0,0.5);
   border: 0;
 }
 
@@ -433,5 +433,13 @@ body {
 .add-list {
   position: fixed;
   bottom:35vh;
-  right: 25vw;
+  right: 25vw
+}
+
+.list-name {
+  position:fixed;
+  bottom:34.5vh;
+  left:30.5vw;
+  color:white;
+  font-weight: bold;
 }

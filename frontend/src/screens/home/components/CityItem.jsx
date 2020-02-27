@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { promises } from "dns";
 
 const CityItem = props => {
   let budget = !isNaN(props.value) ? props.value : "budget_not_given";
@@ -13,9 +14,12 @@ const CityItem = props => {
             props.setBackGround(props.image_url);
           }}
         >
-          {props.numActs <= 1
+          {!props.numActs? "":
+            <>  {props.numActs <= 1
             ? `${props.city} (enjoy ${props.numActs} activity)`
-            : `${props.city} (enjoy ${props.numActs} activities)`}
+            : `${props.city} (enjoy ${props.numActs} activities)`} 
+            </> }
+        
         </Link>
       </div>
     );

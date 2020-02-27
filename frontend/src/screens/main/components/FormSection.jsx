@@ -15,7 +15,12 @@ const FormSection = props => {
         </h1>
         <h2>
           {" "}
-          {props.budget >= 0 ? `$${props.budget}` : `-$${-props.budget}`}{" "}
+          {!props.budget || isNaN(props.budget)?'$'+0:
+          <>
+          {props.budget > 0 ? `$${props.budget}` : `-$${-props.budget}`}
+          </> 
+          }
+          {" "}
         </h2>
       </div>
       <Form budget={props.budget} setBudget={props.setBudget} />
@@ -30,16 +35,17 @@ const FormSection = props => {
             tripId={props.tripId}
             tripName={props.tripName}
           />
-          <FriendsList
+          {props.friends.length?<FriendsList
             friendsActivities={props.friendsActivities}
             friends={props.friends}
             city={props.city}
             userId={props.user.id}
             setFriendsActivities={props.setFriendsActivities}
-          />
+          />:""}
+          
         </div>
       ) : (
-        <Link onClick={() => saveToLocal(props.columns)} to="/login">
+        <Link onClick={() => saveToLocal(props.columns,props.budget)} to="/login">
           Login to Save
         </Link>
       )}
