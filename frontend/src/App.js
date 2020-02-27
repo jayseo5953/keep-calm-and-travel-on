@@ -12,7 +12,6 @@ import Main from './screens/main/components/Main'
 import Trips from './screens/trips/components/Trips'
 import Login from './screens/login/components/Login'
 import Itinerary from './screens/itinerary/components/Itinerary'
-// import EditTrip from './screens/editTrip/components/EditTrip'
 
 
 export default function App() {
