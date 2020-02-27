@@ -86,7 +86,7 @@ const Map = props => {
               />
               <p>🌟🌟🌟🌟🌟</p>
               <p style={{ wordWrap: "break-word", maxWidth: "100px" }}>
-                Hello. This is going to be the review.
+                Great value for price! Loved it.
               </p>
             </div>
           </InfoWindow>

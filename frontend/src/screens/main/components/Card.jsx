@@ -45,7 +45,7 @@ const Card = props => {
               }}
             >
               <div className='drag' >
-                <i class="material-icons">
+                <i className="material-icons">
                 dehaze</i>
               </div>
               <div className="item-cont">

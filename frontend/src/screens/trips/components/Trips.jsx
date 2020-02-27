@@ -82,11 +82,6 @@ const Trips = props => {
                     <TripList trips={trips} setTrips={setTrips} />
                   </div>
                 </CardBody>
-
-                {/* <CardFooter className={classes.cardFooter}>
-                <h1>Enjoy your trip!</h1>
-                
-                </CardFooter> */}
               </Card>
             </GridItem>
           </GridContainer>

@@ -41,12 +41,12 @@ export default function SearchBar (props) {
         />
       </form>
       <div className="cityItemList">
-      <CityItemList 
-        cities={cities} 
-        setCity={setCity} 
-        value={city}
-        setBackGround={props.setBackGround}
-      />
+        <CityItemList 
+          cities={cities} 
+          setCity={setCity} 
+          value={city}
+          setBackGround={props.setBackGround}
+        />
       </div>
       
     </>

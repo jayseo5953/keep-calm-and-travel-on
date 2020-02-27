@@ -228,7 +228,7 @@ function Main(props) {
         
         <Button style={{color:'white',padding:0}} variant="contained"  color='secondary'>
          
-        <i class="material-icons">
+        <i className="material-icons">
         post_add
         </i>
           </Button>
