@@ -3,7 +3,7 @@
   /* background-color: #F0EFF4; */
   /* background-image: url("https://raw.githubusercontent.com/sjs5953/keep-calm-and-travel-on/master/frontend/src/assets/img/bg7.jpg"); */
 
-  background-image: url("https://images.pexels.com/photos/935884/pexels-photo-935884.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-image: url("https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/silhouette-of-airplane-during-evening-935884.jpg?raw=true");
   
 /* https://images.pexels.com/photos/613826/pexels-photo-613826.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 */
   /* https://images.pexels.com/photos/286758/pexels-photo-286758.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 */
@@ -84,7 +84,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right:2vw;
+  margin-right:4vw;
 }
 
 .column-name {
@@ -256,7 +256,7 @@ body {
 }
 
 .progress {
-  background-color: rgba(240, 239, 239,0.5);
+  background-color: rgba(240, 239, 239,0.2);
   border-radius: 10px;
   position: fixed;
   margin: 0;
@@ -446,7 +446,7 @@ body {
 .list-name {
   position:fixed;
   bottom:34.5vh;
-  left:30.5vw;
+  left:33vw;
   color:white;
   font-weight: bold;
 }

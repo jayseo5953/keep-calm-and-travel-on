@@ -33,8 +33,8 @@ const CardList = props => {
             className={"inside-column"}
             style={{
               background: snapshot.isDraggingOver
-                ? "rgba(211,211,211,1)"
-                : "rgba(211,211,211,0.6)"
+                ? "rgba(211,211,211,0.3)"
+                : "rgba(211,211,211,0.2)"
             }}
           >
             {props.column.items.map((item, index) => {
