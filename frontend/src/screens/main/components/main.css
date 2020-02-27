@@ -3,7 +3,7 @@
   /* background-color: #F0EFF4; */
   /* background-image: url("https://raw.githubusercontent.com/sjs5953/keep-calm-and-travel-on/master/frontend/src/assets/img/bg7.jpg"); */
 
-  background-image: url("https://images.pexels.com/photos/286758/pexels-photo-286758.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-image: url("https://images.pexels.com/photos/935884/pexels-photo-935884.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
   
 /* https://images.pexels.com/photos/613826/pexels-photo-613826.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 */
   /* https://images.pexels.com/photos/286758/pexels-photo-286758.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260 */
@@ -84,10 +84,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right:2vw;
 }
 
 .column-name {
   margin:12px;
+  margin-left:0;
   font-weight: bold;
 }
 
@@ -151,11 +153,17 @@
 .card {
   border-radius:5px;
   padding: 30px;
+  padding-left:10px;
   margin: 0;
   min-width: 250px;
   height:13vh;
   color: white;
   text-align: center;
+}
+.drag .material-icons{
+  margin-left:5px;
+  margin-right:15px;
+  font-size:30px;
 }
 .item-cont {
   display: flex;
@@ -178,11 +186,10 @@
   font-size: 20px;
   padding:0px 10px;
   border-radius:8px;
-
-  background: linear-gradient(to left, #0967da, #5f89e3);
-  /* background: linear-gradient(to left, #f2709c, #ff9472); */
+  /* background: linear-gradient(to left, #5f9fee, #7d9de4); */
+  background: linear-gradient(to left, #f2709c, #f77c5e);
   /* background: linear-gradient(to left, #ec9523, #a75900); */
-  /* background: linear-gradient(to left, #1a36a3, #27144e); */
+  /* background: linear-gradient(to left, #1a36a3, #d6cfe2); */
 
 }
 
@@ -202,7 +209,7 @@
 }
 
 .item-delete {
-  margin-left:20px;
+  margin-left:2px;
   width:25px;
   height:25px;
   padding:0;
@@ -215,8 +222,8 @@
   text-align: center;
   font-weight: bold;
   padding-right:3px;
-  padding-top:2px;
-
+  padding-top:1.1px;
+  margin-left:.5px;
 }
 
 .delete-list  {
@@ -424,7 +431,7 @@ body {
 }
 .slider {
   border-radius: 10px;
-  background-color:rgba(237, 237, 237, 0.5);
+  /* background-color:rgba(237, 237, 237, 0.5); */
   width:60%;
   display: flex;
   justify-content: space-between;

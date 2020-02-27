@@ -15,13 +15,15 @@ const Card = props => {
             ref={provided.innerRef}
             {...provided.draggableProps}
             {...provided.dragHandleProps}
-            className="card"
+            className="card shadow"
             style={{
               backgroundSize: "contain",
               userSelect: "none",
               backgroundColor: snapshot.isDragging
-                ? "rgba(50, 50, 54, 1)"
-                : "rgba(30, 50, 100, 0.8)",
+              ? "rgb(38, 59, 74)"
+              : "rgb(69, 108, 124)",
+                // ? "rgba(50, 50, 54, 1)"
+                // : "rgba(50, 50, 50, .9)",
               ...provided.draggableProps.style
             }}
           >
@@ -42,8 +44,13 @@ const Card = props => {
                 }
               }}
             >
+              <div className='drag' >
+                <i class="material-icons">
+                dehaze</i>
+              </div>
               <div className="item-cont">
-                <img
+              
+                                <img
                   className="item-photo"
                   src={`${props.item.image_url}`}
                   alt="activty"

@@ -221,7 +221,7 @@ function Main(props) {
        
 
   
-        <a  style={numOfColumns<=3?{right:'34vw'}:{}} className='add-list' href={`#${lastItem}`} onClick={(()=>{
+        <a  style={numOfColumns<=2?{right:'34vw',top:'55vh'}:{}} className='add-list' href={`#${lastItem}`} onClick={(()=>{
         addCardList(columns, setColumns)
         setIndex(lastItem)
         })}> 
