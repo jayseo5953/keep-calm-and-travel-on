@@ -49,7 +49,7 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 ('Paragliding', 2500, '7AM-5PM',-8.7330639, 115.1681143, 3, 'https://df8r7aly9nid3.cloudfront.net/app/uploads/production/photo/photo/22298/large_73d9135398f21b27f00f5ac1e3398385.jpg'),
 ('Sunset Tour', 5000, '10AM-7PM', -8.6633737,115.2115082, 3, 'https://storage.needpix.com/rsynced_images/bali-992566_1280.jpg'),
 ('Island Hopping', 1500, '7AM-5PM', -8.7394861,115.1827169, 3, 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/The_beautiful_turquoise_water_surrounding_the_Gili_Islands_%2816975598051%29.jpg/800px-The_beautiful_turquoise_water_surrounding_the_Gili_Islands_%2816975598051%29.jpg'),
-('Mount Batur Sunrise Trek', 10000, '2AM-7AM', -8.6814856,115.2359566, 3, 'https://p0.piqsels.com/preview/1002/129/230/mountain-covered-by-clouds-during-sunset.jpg'),
+('Sunrise Trek', 10000, '2AM-7AM', -8.6814856,115.2359566, 3, 'https://p0.piqsels.com/preview/1002/129/230/mountain-covered-by-clouds-during-sunset.jpg'),
 ('Dolphin Watching', 4000, '2AM-7PM', -8.1668301,115.0609733, 3, 'https://i0.pickpik.com/photos/851/294/363/dolphins-aquarium-jumping-fish-thumb.jpg'),
 
 -- cebu
@@ -85,7 +85,7 @@ INSERT INTO activities(name, price_cents, time_operation, lat, long, destination
 ('Golden Gate Overlook', 10000, '8AM-9PM', 37.803942, -122.476590, 1, 'https://live.staticflickr.com/4636/38734794314_04e5d5028d_b.jpg'), 
 
 -- flor
- ('Grape Tours SIGNATURE tour', 17500, '9:30AM-8PM', 43.7691584, 11.2515191, 2, 'https://lh5.googleusercontent.com/p/AF1QipNwpHnBdgSsMwOdWh03MkeAGlFBW82raoKJ3KiF=w426-h240-k-no'), 
+ ('Winery Tours ', 17500, '9:30AM-8PM', 43.7691584, 11.2515191, 2, 'https://lh5.googleusercontent.com/p/AF1QipNwpHnBdgSsMwOdWh03MkeAGlFBW82raoKJ3KiF=w426-h240-k-no'), 
  ('Galleria dell Accademia', 5000, '8:15AM-7PM', 43.7761899, 11.2530771, 2, 'https://lh5.googleusercontent.com/p/AF1QipPsg0cgyIiaQEkSMISZ54K9-ZabJySOowQJr8Au=w408-h306-k-no'), 
  ('Bargello National Museum', 1500 , '8:15AM-2PM', 43.7692821, 11.2509416, 2, 'https://lh5.googleusercontent.com/p/AF1QipPWkloB5_sypgPwM7HtqwOeUxjLmU-dQ1sKT21G=w408-h306-k-no'), 
  ('Museo Galileo', 1500, '9:30AM-6PM', 43.7677337, 11.2537145, 2, 'https://lh5.googleusercontent.com/p/AF1QipNonfCRZReiPVpfOg5OJU-OI_QnQLeP0GIBdZrh=w921-h240-k-no'), 
