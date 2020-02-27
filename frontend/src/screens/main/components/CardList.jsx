@@ -4,7 +4,7 @@ import Card from "./Card";
 
 const CardList = props => {
 
-  useEffect(() => {
+  useEffect((props) => {
     if (props.column.name !== "List of Activities") {
       const listOfCosts = props.column.items.map(act => {
         return act.price_cents / 100;
