@@ -5,18 +5,18 @@ INSERT INTO users (first_name, last_name, email, password) VALUES
 ('Jay', 'Seo', 'jay@gmail.com', '123');
 
 INSERT INTO destinations(id, city, country, image_url) VALUES
-(1,'San Francisco', 'USA', 'https://cdn.britannica.com/13/77413-050-95217C0B/Golden-Gate-Bridge-San-Francisco.jpg'),
-(2,'Florence', 'Italy', 'https://cdn-image.departures.com/sites/default/files/styles/responsive_900x600/public/1539722614/duomo-church-architecture-sunset-florence-italy-FLORENCEITALY1018.jpg?itok=p9ytJcSJ'),
+(1,'San Francisco', 'USA', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/SanFran.jpg'),
+(2,'Florence', 'Italy', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Florence.jpg'),
 
-(3, 'Bali', 'Indonesia', 'https://media.giphy.com/media/gVevFiq0p4ewo/giphy.gif'),
-(4, 'Cebu', 'Philippines', 'https://media.giphy.com/media/SX0tnMyfWaZ4zjvbxO/giphy.gif'),
-(5, 'Halong Bay', 'Vietnam', 'https://media.giphy.com/media/gBxL0G0DqZd84/giphy.gif'),
-(6, 'Dubai', 'Dubai', 'https://media.giphy.com/media/3o7TKUIvq0GWg9rzpK/giphy.gif'),
+(3, 'Bali', 'Indonesia', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Bali.jpg'),
+(4, 'Cebu', 'Philippines', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Cebu.jpg'),
+(5, 'Ha Long Bay', 'Vietnam', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Ha%20Long%20Bay.jpg'),
+(6, 'Dubai', 'Dubai', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Dubai.jpg'),
 
-(7, 'Jeju', 'South Korea', 'https://media1.giphy.com/media/vB7WSUfplJahO/source.gif'),
-(8, 'Okinawa', 'Japan', 'https://media.giphy.com/media/13GU4FcPocoXT2/giphy.gif'),
-(9, 'Taipei', 'Taiwan', 'https://lp-cms-production.imgix.net/2019-06/f15f7b57ab31c217f471c6712a2654e0-taipei-101.jpg'),
-(10,'Barcelona', 'Spain', 'https://s27363.pcdn.co/wp-content/uploads/2019/03/Tibidabo-and-Sagrat-Cor.jpg.optimal.jpg');
+(7, 'Jeju', 'South Korea', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Jeju.jpg'),
+(8, 'Okinawa', 'Japan', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Okinawa.jpg'),
+(9, 'Taipei', 'Taiwan', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Taipai.jpg'),
+(10,'Barcelona', 'Spain', 'https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/frontend/src/assets/img/dest_img/Barcelona.jpg');
 
 
 INSERT INTO activities(name, price_cents, time_operation, lat, long, image_url, destination_id) VALUES
