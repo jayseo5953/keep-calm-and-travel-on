@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
-let addOrSubtract = "";
+
 
 const Form = props => {
-
+  let addOrSubtract = "";
   const [inputValue, setInputValue] = useState(props.budget || "");
 
   return (
@@ -48,7 +48,7 @@ const Form = props => {
           type="submit"
           onClick={() => {
             if (isNaN(inputValue)) return;
-            props.setBudget(inputValue || 0);
+            props.setBudget(Number(inputValue) || 0);
             setInputValue("");
             addOrSubtract = "submitted";
           }}
