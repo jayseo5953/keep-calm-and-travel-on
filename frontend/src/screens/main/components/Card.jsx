@@ -44,10 +44,10 @@ const Card = props => {
                 }
               }}
             >
-              <div className='drag' >
+              {/* <div className='drag' >
                 <i className="material-icons">
                 dehaze</i>
-              </div>
+              </div> */}
               <div className="item-cont">
               
                                 <img

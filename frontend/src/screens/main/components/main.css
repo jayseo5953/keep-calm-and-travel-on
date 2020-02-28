@@ -153,7 +153,7 @@
 .card {
   border-radius:5px;
   padding: 30px;
-  padding-left:10px;
+  /* padding-left:10px; */
   margin: 0;
   min-width: 250px;
   height:13vh;
@@ -181,7 +181,7 @@
   text-align: center;
   line-height: 200%;
   max-height:100%;
-  width:11vw;
+  width:10vw;
   margin:0 40px;
   font-size: 20px;
   padding:0px 10px;
