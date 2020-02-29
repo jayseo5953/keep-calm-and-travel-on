@@ -78,11 +78,9 @@ html {
 }
 
 .itinerary-item {
-  /* border: 1px solid grey; */
-  /* border-radius:12px; */
   margin:20px 0;
   width:200%;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }

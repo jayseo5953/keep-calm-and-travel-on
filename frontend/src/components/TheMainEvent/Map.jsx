@@ -85,7 +85,7 @@ const Map = props => {
                 src={selectedActivity.image_url}
                 alt="act_img"
               />
-              <p><span role='img'>🌟🌟🌟🌟🌟</span></p>
+              <span role='img'>🌟🌟🌟🌟🌟</span>
               <p style={{ wordWrap: "break-word", maxWidth: "100px" }}>
                 Great value for price! Loved it.
               </p>
