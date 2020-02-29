@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import getFriendsActivities from '../helpers/getFriendsActivities';
-// import { useTheme } from "@material-ui/core";
 
 const FriendsList = props => {
 
@@ -18,10 +15,11 @@ const FriendsList = props => {
         {props.friends.map(friend => {
           return (
             <a
+              href='#'
               key={friend.id}
               style={clicked === friend.first_name ? { color: "grey" } : {}}
               onClick={() => {
-                if (clicked == friend.first_name) {
+                if (clicked === friend.first_name) {
                   props.setFriendsActivities(null);
                   setClicked(null);
                 } else {
@@ -34,7 +32,6 @@ const FriendsList = props => {
                   );
                 }
               }}
-              href='#'
             >
               <h5 className="friend-name">{friend.first_name}</h5>
             </a>

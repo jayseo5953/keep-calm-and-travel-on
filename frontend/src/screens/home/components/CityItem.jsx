@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { promises } from "dns";
 
 const CityItem = props => {
   let budget = !isNaN(props.value) ? props.value : "budget_not_given";
