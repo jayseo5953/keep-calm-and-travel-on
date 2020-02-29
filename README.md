@@ -21,27 +21,27 @@ Users can search destinations by city, country, activity, or budget. In the main
 ## Final Project
 
 This is the landing page where users can search destinations by city name, country name, or their budget
-!["Screenshot of Home Page"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Landing.png?raw=true')
+!["Screenshot of Home Page"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Landing.png')
 Once the user input their budget it shows a list of destinations along with the number of activities they can do
-!["Screenshot of Search Bar"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Search.png?raw=true')
+!["Screenshot of Search Bar"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Search.png')
 This is our main page where most of the interactions happen
-!["Screenshot of Main page 1"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Main.png?raw=true')
+!["Screenshot of Main page 1"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Main.png')
 Users can easily drag and drop the activity items they want into the container
-!["Screenshot of Main page 2: drag and drop"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Drag%20and%20Drop.png?raw=true')
+!["Screenshot of Main page 2: drag and drop"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Drag%20and%20Drop.png')
 Users can add more containers by clicking a button and once there is more than 2 days, a slider shows up to help users navigate better
-!["Screenshot of Main page 3: add more days"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Slider.png?raw=true')
+!["Screenshot of Main page 3: add more days"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Slider.png')
 When the budget goes nagative, users can choose to add more budget but still not stopped from adding more activities
-!["Screenshot of Main page 4: adjust budget"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Adjust.png?raw=true')
+!["Screenshot of Main page 4: adjust budget"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Adjust.png')
 After finished user can log in
-!["Screenshot of Log in Page"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Adjust.png?raw=true')
+!["Screenshot of Log in Page"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Adjust.png')
 Once they log in, user can see a list of friends who have been to the same city, and toggle on/off to see the activities they have done before
-!["Screenshot of Main page 5: friends"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Friends.png?raw=true')
+!["Screenshot of Main page 5: friends"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Friends.png')
 Save and name the trip
-!["Screenshot of Main Page 6: save"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Save.png?raw=true')
+!["Screenshot of Main Page 6: save"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Save.png')
 User can edit or delete trips
-!["Screenshot of Show page"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Show.png?raw=true')
+!["Screenshot of Show page"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Show.png')
 User can see a summary of their itineraries
-!["Screenshot of Summary page"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Summary.png?raw=true')
+!["Screenshot of Summary page"]('https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Summary.png')
 
 ## Getting Started
 
