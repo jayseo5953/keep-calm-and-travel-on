@@ -43,6 +43,7 @@ User can edit or delete trips
 User can see a summary of their itineraries
 !["Screenshot of Summary page"](https://github.com/sjs5953/keep-calm-and-travel-on/blob/master/Screenshots/Summary.png?raw=true)
 
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
