@@ -1,13 +1,19 @@
-# Keep Calm and Travel On
+# Tripper
 ## Final Project (Lighthouse Labs) 
 
 #### Contributors: [Jay Seo](https://github.com/sjs5953), [Tausif Khan ](https://github.com/tausvels), [Porson Lee](https://github.com/oddporson)
 
+## Problems & Solutions
+When people plan for travel, visiting multiple websites to decide destinations and activities to do, taking notes of how much money they have spent, all those cumbersome planning becomes tasks and ruins the traveling experience.
+
+To provide a solution to this, our team myself Jay, Porson, and Tausif came together to build a user friendly website where they can easily browse different destinations and activities, get all necessary information and make decisions in one page.
+
 ## Overview
-An app that let users to search for activity based on city, country, budget and their preferred activity as well. The user will then be able to drag and drop their preferred activity from the list shown onto Day 1, Day 2, etc. The user will also have the ability to add multiple days to their activity itineraries and also add more budget. The budget guage indicator will show the user how much money they are left with or need to add once they complete their itinerary. Once logged in, the user will be able to save their planned itinerary and also be able to view them in their trip summary.
+A highly responsive & interactive website for users to build their own itineraries with activity items by easily dragging & dropping. 
+Users can search destinations by city, country, activity, or budget. In the main page, users can easily drag and drop avaialbe activities into container and see the budget meter changes accordingly to keep track of how much money they are spending. User can check markers on the map to see where the activities are. Also, users can see a list of friends who have been to the same destination and toggle their name to see their activities. Once they are done, users have the ability to edit/delete/view their itineraries.
 
 ## Tech Stacks
-**Front End:** React, JavaScript, CSS <br/> 
+**Front End:** React, JavaScript <br/> 
 **Back End:** Node, Express, Postgres(Elephant SQL)<br/>
 **API:** Google Maps
 
