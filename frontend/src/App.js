@@ -25,7 +25,7 @@ export default function App() {
   let userObject = JSON.parse(cookieAsObject.user || 'null'); // get user object from parsed cookie
 
   const [user, setUser] = useState(userObject);
-  const [background, setBackGround] = useState('https://media2.giphy.com/media/yTwbZGqO360Mw/source.gif');
+  const [background, setBackGround] = useState('https://media2.giphy.com/media/yTwbZGqO360Mw/source.gif')
 
   return (
     <Router>
