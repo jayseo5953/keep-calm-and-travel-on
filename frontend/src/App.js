@@ -12,7 +12,6 @@ import Main from './screens/main/components/Main'
 import Trips from './screens/trips/components/Trips'
 import Login from './screens/login/components/Login'
 import Itinerary from './screens/itinerary/components/Itinerary'
-// import EditTrip from './screens/editTrip/components/EditTrip'
 
 
 export default function App() {
@@ -26,7 +25,7 @@ export default function App() {
   let userObject = JSON.parse(cookieAsObject.user || 'null'); // get user object from parsed cookie
 
   const [user, setUser] = useState(userObject);
-  const [background, setBackGround] = useState('https://media2.giphy.com/media/yTwbZGqO360Mw/source.gif');
+  const [background, setBackGround] = useState('https://media2.giphy.com/media/yTwbZGqO360Mw/source.gif')
 
   return (
     <Router>
