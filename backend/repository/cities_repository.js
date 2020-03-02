@@ -32,7 +32,7 @@ module.exports = (db) => {
         .catch(e => console.error(e))
     },
     getCityByActivity: (arg) => {
-      const qs = `SELECT destinations.id, city FROM activities JOIN destinations ON (destination_id = destinations.id)
+      const qs = `SELECT destinations.id, city, image_url FROM activities JOIN destinations ON (destination_id = destinations.id)
       WHERE lower (activities.name) LIKE '%'|| $1 ||'%';`;
       return db.query(qs,[arg])
         .then((res) => res.rows)
