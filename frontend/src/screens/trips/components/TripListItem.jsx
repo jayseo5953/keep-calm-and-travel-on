@@ -1,7 +1,5 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import { useHistory, Link } from "react-router-dom";
-import { inherits } from 'util';
 
 const TripListItem = props => {
   let history = useHistory();

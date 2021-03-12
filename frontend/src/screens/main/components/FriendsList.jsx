@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import getFriendsActivities from '../helpers/getFriendsActivities';
 // import { useTheme } from "@material-ui/core";
 

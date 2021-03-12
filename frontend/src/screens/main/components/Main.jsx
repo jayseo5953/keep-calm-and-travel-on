@@ -112,7 +112,6 @@ function Main(props) {
   // },[totalCost])
 
   const budget = initialBudget-totalCost
-  // console.log(budget)
 
   return (
     <div className="main">

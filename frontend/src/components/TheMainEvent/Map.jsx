@@ -83,8 +83,9 @@ const Map = props => {
                 height="80px"
                 width="100px"
                 src={selectedActivity.image_url}
+                alt="images of activities when user pin point"
               />
-              <p>🌟🌟🌟🌟🌟</p>
+              <p><span>🌟🌟🌟🌟🌟</span></p>
               <p style={{ wordWrap: "break-word", maxWidth: "100px" }}>
                 Hello. This is going to be the review.
               </p>

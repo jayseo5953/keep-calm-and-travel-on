@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 // @material-ui/core/components
 import { makeStyles } from "@material-ui/core/styles";
@@ -11,7 +10,6 @@ import GridItem from "../../../components/Grid/GridItem";
 import Card from "../../../components/Card/Card";
 import CardHeader from "../../../components/Card/CardHeader";
 import CardBody from "../../../components/Card/CardBody";
-// import CardContent from '@material-ui/core/CardContent';
 import CardFooter from "../../../components/Card/CardFooter";
 import ItineraryList from "./ItineraryList";
 import styles from "../../../assets/jss/material-kit-react/views/itineraryPage";
